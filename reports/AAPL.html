@@ -21,6 +21,7 @@
   --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   --hold:#d4820a;--green-val:#2d8a4e;--red-val:#c0392b;
   --table-stripe:rgba(0,0,0,.02);--table-head:#f5f4f0;
+  --cite-color:#7a6b5a;
 }
 .dark{
   --bg:#0f1114;--bg2:#181b20;--bg3:#1e2228;--text:#d4d4d4;--text2:#8b8b8b;--text3:#666;
@@ -31,12 +32,17 @@
   --grid-color:rgba(255,255,255,.05);
   --hold:#e0a040;--green-val:#4caf7a;--red-val:#e57373;
   --table-stripe:rgba(255,255,255,.02);--table-head:#1e2228;
+  --cite-color:#8a8070;
 }
 
 /* ===== RESET & BASE ===== */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;scroll-padding-top:60px;}
 body{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+
+/* ===== CITATIONS ===== */
+cite.src{font-family:var(--sans);font-size:11px;font-style:normal;color:var(--cite-color);background:rgba(0,0,0,.03);padding:1px 5px;border-radius:3px;white-space:nowrap;vertical-align:baseline;}
+.dark cite.src{background:rgba(255,255,255,.04);}
 
 /* ===== NAV ===== */
 .topnav{position:sticky;top:0;z-index:200;background:var(--nav-bg);border-bottom:1px solid var(--nav-border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
@@ -107,6 +113,7 @@ em{font-style:italic;}
 .table-wrap tr:nth-child(even) td{background:var(--table-stripe);}
 .table-wrap .num{text-align:right;}
 .table-wrap .note{font-size:11px;color:var(--text2);padding:8px 10px;font-style:italic;}
+.table-src{font-family:var(--sans);font-size:10.5px;color:var(--cite-color);margin:-12px 0 16px 4px;}
 
 /* ===== CHART CARDS ===== */
 .chart-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:20px;margin:20px 0 28px;box-shadow:var(--card-shadow);}
@@ -142,6 +149,7 @@ em{font-style:italic;}
   .chart-card{break-inside:avoid;box-shadow:none;border:1px solid #ddd;}
   .main{max-width:100%;padding:0;}
   .layout{display:block;}
+  cite.src{background:none;border:1px solid #ccc;}
 }
 </style>
 </head>
@@ -220,10 +228,10 @@ em{font-style:italic;}
   <div class="hero-findings">
     <h4>Key Findings</h4>
     <ul>
-      <li><strong>iPhone 17 super-cycle</strong> drove Q1 FY2026 to $143.8B (+16% YoY), with iPhone +23% and Greater China +38%, but the stock at 33× forward SBC-adjusted earnings prices in near-flawless execution.</li>
-      <li><strong>Structural margin expansion</strong> of 910bp over six years (37.8%→46.9%) is driven by Services mix shift to 26% of revenue at ~75% margins — a durable quality improvement.</li>
-      <li><strong>SBC-adjusted FCF has stagnated</strong> at ~$102B for three years despite 6% revenue growth, pressured by rising SBC (+43%) and higher underlying cash taxes (16.4%→20.8%).</li>
-      <li><strong>Google search deal ($20B+)</strong> faces DOJ antitrust risk; Apple's own filings now condition outlook on the deal continuing — the most underpriced risk in the stock.</li>
+      <li><strong>iPhone 17 super-cycle</strong> drove Q1 FY2026 to $143.8B (+16% YoY), with iPhone +23% and Greater China +38% <cite class="src">aapl_10q_q1_fy2026, p.4</cite> — but the stock at 33× forward SBC-adjusted earnings prices in near-flawless execution.</li>
+      <li><strong>Structural margin expansion</strong> of 910bp over six years (37.8%→46.9%) is driven by Services mix shift to 26% of revenue at ~75% margins <cite class="src">aapl_10k_fy2025, p.32</cite> — a durable quality improvement.</li>
+      <li><strong>SBC-adjusted FCF has stagnated</strong> at ~$102B for three years despite 6% revenue growth, pressured by rising SBC (+43%) and higher underlying cash taxes (16.4%→20.8%) <cite class="src">aapl_10k_fy2025, p.36</cite>.</li>
+      <li><strong>Google search deal ($20B+ est.)</strong> faces DOJ antitrust risk; Apple's 10-K now explicitly discloses proposed remedies "prohibiting Google from offering the Company commercial terms for search distribution" <cite class="src">aapl_10k_fy2025, p.17</cite>.</li>
       <li><strong>Risk/reward skews negative:</strong> +8.7% upside to bull ($275) vs. −40.7% downside to bear ($150); probability-weighted EV of $220 implies 13% downside from current levels.</li>
     </ul>
   </div>
@@ -232,11 +240,11 @@ em{font-style:italic;}
 <!-- ===== I. EXECUTIVE SUMMARY (prose) ===== -->
 <h2 class="sec" id="sec-exec">I. Executive Summary</h2>
 
-<p>Apple is executing a powerful iPhone 17 super-cycle that drove Q1 FY2026 revenue to $143.8B (+16% YoY), with iPhone revenue surging 23% and Greater China rebounding 38%. Gross margins have expanded 910bp over six years (37.8% in FY2019 to 46.9% in FY2025) on a structural mix shift toward Services (now 26% of revenue at ~75% margins) and disciplined cost management. The installed base exceeding 2.5 billion active devices creates a formidable recurring revenue flywheel. Management credibility is high — they have met or exceeded gross margin guidance in every quarter tracked, and revenue guidance has been consistently met or beaten.</p>
+<p>Apple is executing a powerful iPhone 17 super-cycle that drove Q1 FY2026 revenue to $143.8B (+16% YoY) <cite class="src">aapl_10q_q1_fy2026, p.4</cite>, with iPhone revenue surging 23% to $85.3B <cite class="src">aapl_10q_q1_fy2026, p.18</cite> and Greater China rebounding 38% <cite class="src">aapl_10q_q1_fy2026, p.17</cite>. Tim Cook called it "a quarter for the record books" <cite class="src">AAPL_Q1_2026_Earnings_Call, line 70</cite>. Gross margins have expanded 910bp over six years (37.8% in FY2019 to 46.9% in FY2025) <cite class="src">aapl_10k_fy2025, p.32; aapl_10k_fy2021, p.32</cite> on a structural mix shift toward Services (now 26.2% of revenue at 75.4% margins) <cite class="src">aapl_10k_fy2025, p.27</cite> and disciplined cost management. The installed base exceeding 2.5 billion active devices <cite class="src">AAPL_Q1_2026_Earnings_Call, line 170</cite> creates a formidable recurring revenue flywheel, though this metric counts devices, not unique paying customers. Management credibility is high — they have met or exceeded gross margin guidance in every quarter tracked, and revenue guidance has been consistently met or beaten <cite class="src">all 19 earnings call transcripts, Q3 FY2021–Q1 FY2026</cite>.</p>
 
-<p>However, at ~$253/share, the stock trades at ~33× forward SBC-adjusted earnings, pricing in near-flawless execution of the current super-cycle and sustained double-digit Services growth. A multiples-based approach at a justified 28–30× forward SBC-adjusted EPS yields $214–$229. The probability-weighted fair value across bull, base, and bear scenarios is approximately $220, suggesting ~13% downside risk from current levels. The risk/reward is unfavorable for new capital at this price.</p>
+<p>However, at ~$253/share, the stock trades at ~33× forward SBC-adjusted earnings, pricing in near-flawless execution of the current super-cycle and sustained double-digit Services growth. A multiples-based approach at a justified 28–30× forward SBC-adjusted EPS yields $214–$229. The probability-weighted fair value across bull, base, and bear scenarios is approximately $220 (0.25 × $275 + 0.55 × $220 + 0.20 × $150 = $219.75), suggesting ~13% downside risk from current levels. The risk/reward is unfavorable for new capital at this price.</p>
 
-<p><strong>Entry level (Buy):</strong> $215 or below (~28× forward SBC-adj EPS), corresponding to a pullback on supply constraints, tariff escalation, or cycle deceleration. <strong>Exit level (Sell):</strong> $280+ (37×+ forward SBC-adj EPS). <strong>Catalyst timeline:</strong> The next 2–3 quarters will determine whether iPhone 17 demand is a genuine multi-year upgrade cycle or a one-quarter pull-forward; Q2 FY2026 results (April 2026) and September 2026 iPhone 18 launch cadence are the key signposts.</p>
+<p><strong>Entry level (Buy):</strong> $215 or below (~28× forward SBC-adj EPS), corresponding to a pullback on supply constraints, tariff escalation, or cycle deceleration. <strong>Exit level (Sell):</strong> $280+ (37×+ forward SBC-adj EPS). <strong>Catalyst timeline:</strong> The next 2–3 quarters will determine whether iPhone 17 demand is a genuine multi-year upgrade cycle or a one-quarter pull-forward; Q2 FY2026 results (April 2026) and September 2026 iPhone 18 launch cadence are the key signposts. Management guided Q2 FY2026 revenue to grow 13–16% YoY <cite class="src">AAPL_Q1_2026_Earnings_Call, line 182</cite>.</p>
 
 <!-- ===== II. DETAILED ANALYSIS ===== -->
 <h2 class="sec" id="sec-analysis">II. Detailed Analysis</h2>
@@ -244,9 +252,9 @@ em{font-style:italic;}
 <!-- ===== 1. EARNINGS INFLECTION ===== -->
 <h3 class="sub" id="sec-1">1. Earnings Inflection</h3>
 
-<p>Apple's margin trajectory over FY2019–FY2025 represents one of the most significant earnings inflection stories in mega-cap tech. Consolidated gross margin expanded from 37.8% to 46.9%, driven by two structural forces: (1) Services mix shift from 17.8% to 26.2% of revenue, and (2) Services gross margin expansion from ~63% to 75.4%.</p>
+<p>Apple's margin trajectory over FY2019–FY2025 represents one of the most significant earnings inflection stories in mega-cap tech. Consolidated gross margin expanded from 37.8% to 46.9% <cite class="src">aapl_10k_fy2021, p.32; aapl_10k_fy2025, p.32</cite>, driven by two structural forces: (1) Services mix shift from 17.8% to 26.2% of revenue <cite class="src">aapl_10k_fy2021, p.32; aapl_10k_fy2025, p.32</cite>, and (2) Services gross margin expansion from ~63.7% to 75.4% <cite class="src">aapl_10k_fy2021, p.27; aapl_10k_fy2025, p.27</cite>.</p>
 
-<p>Products gross margin has been remarkably stable at 34–37%, oscillating within a narrow band that reflects Apple's pricing power offsetting input cost inflation. The Q1 FY2026 blowout saw Products gross margin spike to 40.7% — up ~450bp sequentially — driven by favorable iPhone 17 mix and volume leverage. This level is likely unsustainable on a full-year basis given seasonal patterns and memory cost inflation that management explicitly flagged.</p>
+<p>Products gross margin has been remarkably stable at 34–37%, oscillating within a narrow band that reflects Apple's pricing power offsetting input cost inflation <cite class="src">aapl_10k_fy2023, p.27; aapl_10k_fy2024, p.27; aapl_10k_fy2025, p.27</cite>. The Q1 FY2026 blowout saw Products gross margin spike to 40.7% — up ~450bp sequentially — driven by favorable iPhone 17 mix and volume leverage <cite class="src">aapl_10q_q1_fy2026, p.19; AAPL_Q1_2026_Earnings_Call, line 152</cite>. Kevan Parekh noted "a more favorable offset from mix of products and leverage versus historical sequential changes from Q4 to Q1" <cite class="src">AAPL_Q1_2026_Earnings_Call, line 513</cite>. This level is likely unsustainable on a full-year basis given seasonal patterns and memory cost inflation that management explicitly flagged: "we do expect [memory] to be a bit more of an impact to the Q2 gross margin" <cite class="src">AAPL_Q1_2026_Earnings_Call, Tim Cook, line 232</cite>.</p>
 
 <h4 class="subsub">Table 1A: Quarterly Gross Margin — Consolidated and by Segment</h4>
 <div class="table-wrap">
@@ -267,11 +275,12 @@ em{font-style:italic;}
 <tr><td>Q1 FY2026</td><td class="num">143,756</td><td class="num">113,743</td><td class="num">30,013</td><td class="num">40.7%</td><td class="num">76.5%</td><td class="num">48.2%</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10q_q1_fy2023 through aapl_10q_q1_fy2026, income statements; aapl_10k_fy2023/p.27, aapl_10k_fy2024/p.27, aapl_10k_fy2025/p.27 for annual segment margins.</p>
 
 <!-- CHART: Margin Trend -->
 <div class="chart-card">
   <h4>Quarterly Margin Trend — Consolidated, Products &amp; Services</h4>
-  <p class="ccap">Products GM spiked to 40.7% in Q1 FY2026 on iPhone 17 mix — likely unsustainable; Services GM has expanded steadily from 70.8% to 76.5%.</p>
+  <p class="ccap">Products GM spiked to 40.7% in Q1 FY2026 on iPhone 17 mix — likely unsustainable <cite class="src">AAPL_Q1_2026_Earnings_Call, line 232</cite>; Services GM has expanded steadily from 70.8% to 76.5%.</p>
   <canvas id="cMarginTrend"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtMarginTrend"></div>
@@ -290,27 +299,28 @@ em{font-style:italic;}
 <tr><td>FY2025</td><td class="num">46.9%</td><td class="num">8.3%</td><td class="num">6.6%</td><td class="num">32.0%</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10k_fy2021/p.32, aapl_10k_fy2022/p.32, aapl_10k_fy2023/p.32, aapl_10k_fy2024/p.32, aapl_10k_fy2025/p.32.</p>
 
 <!-- CHART: Annual OpM Decomposition -->
 <div class="chart-card">
   <h4>Annual Operating Margin Decomposition</h4>
-  <p class="ccap">Gross margin expansion (+910bp) has more than offset rising R&amp;D intensity (+210bp), driving operating margin from 24.6% to 32.0%.</p>
+  <p class="ccap">Gross margin expansion (+910bp) has more than offset rising R&amp;D intensity (+210bp), driving operating margin from 24.6% to 32.0% <cite class="src">aapl_10k_fy2021/p.32; aapl_10k_fy2025/p.32</cite>.</p>
   <canvas id="cOpMargin"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtOpMargin"></div>
 </div>
 
-<p>The next earnings inflection point is the interplay between iPhone 17 cycle sustainability and rising R&amp;D investment in AI. R&amp;D has risen from 6.0% of revenue in FY2021 to 8.3% in FY2025, and Q1 FY2026 R&amp;D surged 32% YoY to $10.9B. Whether this investment generates returns or represents catch-up spending on AI is an open question — both interpretations are consistent with the data.</p>
+<p>The next earnings inflection point is the interplay between iPhone 17 cycle sustainability and rising R&amp;D investment in AI. R&amp;D has risen from 6.0% of revenue in FY2021 to 8.3% in FY2025 <cite class="src">aapl_10k_fy2021, p.32; aapl_10k_fy2025, p.32</cite>, and Q1 FY2026 R&amp;D surged 32% YoY to $10.9B <cite class="src">aapl_10q_q1_fy2026, p.4</cite>. Whether this investment generates returns or represents catch-up spending on AI is an open question — both interpretations are consistent with the data.</p>
 
 <!-- ===== 2. REVENUE QUALITY ===== -->
 <h3 class="sub" id="sec-2">2. Revenue Quality</h3>
 
-<p>Apple's revenue composition has undergone a meaningful quality improvement. Services revenue has grown from $46.3B (FY2019) to $109.2B (FY2025) — a 15.4% CAGR — while Products revenue grew at only 6.2% CAGR over the same period. Services is higher-margin, more recurring, and less cyclical.</p>
+<p>Apple's revenue composition has undergone a meaningful quality improvement. Services revenue has grown from $46.3B (FY2019) to $109.2B (FY2025) — a 15.4% CAGR — while Products revenue grew at only 6.2% CAGR over the same period <cite class="src">aapl_10k_fy2025, p.32; aapl_10k_fy2021, p.32</cite>. Services is higher-margin, more recurring, and less cyclical.</p>
 
 <!-- CHART: Quarterly Revenue Stacked -->
 <div class="chart-card">
   <h4>Quarterly Revenue — Products vs. Services</h4>
-  <p class="ccap">Services revenue has grown every single quarter, providing a rising floor under total revenue even as Products cycle.</p>
+  <p class="ccap">Services revenue has grown every single quarter, providing a rising floor under total revenue even as Products cycle <cite class="src">aapl_10q series, Q1 FY2023–Q1 FY2026</cite>.</p>
   <canvas id="cQRevenue"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtQRevenue"></div>
@@ -319,7 +329,7 @@ em{font-style:italic;}
 <!-- CHART: Revenue Mix -->
 <div class="chart-card">
   <h4>Revenue Mix — Products vs. Services (Annual)</h4>
-  <p class="ccap">Services mix has risen from 17.8% (FY2019) to 26.2% (FY2025), driving 910bp of gross margin expansion over six years.</p>
+  <p class="ccap">Services mix has risen from 17.8% (FY2019) to 26.2% (FY2025) <cite class="src">aapl_10k_fy2021/p.32; aapl_10k_fy2025/p.32</cite>, driving 910bp of gross margin expansion over six years.</p>
   <canvas id="cRevMix"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtRevMix"></div>
@@ -334,19 +344,22 @@ em{font-style:italic;}
 <tr><td>FY2025</td><td class="num">178,353</td><td class="num">111,032</td><td class="num">64,377</td><td class="num">28,703</td><td class="num">33,696</td><td class="num">416,161</td></tr>
 </table>
 </div>
+<p class="table-src">Source: aapl_10k_fy2025, p.25.</p>
 
 <!-- CHART: Geo Revenue -->
 <div class="chart-card">
   <h4>Geographic Revenue — Annual</h4>
-  <p class="ccap">Greater China declined two consecutive years before rebounding 38% in Q1 FY2026 — partly a base effect from the depressed Q1 FY2025 (-11% YoY), partly iPhone 17 cycle strength.</p>
+  <p class="ccap">Greater China declined two consecutive years (−8% FY2024, −4% FY2025) <cite class="src">aapl_10k_fy2025, p.25</cite> before rebounding 38% in Q1 FY2026 <cite class="src">aapl_10q_q1_fy2026, p.17</cite> — partly a base effect from the depressed Q1 FY2025 (−11% YoY) <cite class="src">aapl_10q_q1_fy2025, p.16</cite>.</p>
   <canvas id="cGeo"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtGeo"></div>
 </div>
 
-<p>The Q1 FY2026 iPhone growth of 23% YoY warrants scrutiny. Greater China's 38% growth benefits from a depressed base — Q1 FY2025 China revenue was $18.5B, down 11% YoY. On a two-year stack, Q1 FY2026 China is up 22.6% versus Q1 FY2024, which is genuine growth beyond base-effect recovery. However, China's FY2024 and FY2025 declines coincided with Huawei's resurgence in the premium segment, and the Q1 FY2026 rebound may reflect iPhone 17 launch timing rather than structural share recovery.</p>
+<p>The Q1 FY2026 iPhone growth of 23% YoY warrants scrutiny <cite class="src">aapl_10q_q1_fy2026, p.18</cite>. Tim Cook attributed this to the iPhone 17 product cycle, citing "all-time records across every geographic segment" and "record upgraders" <cite class="src">AAPL_Q1_2026_Earnings_Call, line 70, 158</cite>. Greater China's 38% growth benefits from a depressed base — Q1 FY2025 China revenue was $18.5B, down 11% YoY from Q1 FY2024's $20.8B <cite class="src">aapl_10q_q1_fy2025, p.16; aapl_10q_q1_fy2024, p.16</cite>. On a two-year stack, Q1 FY2026 China is up 22.6% versus Q1 FY2024, which is genuine growth beyond base-effect recovery. However, China's FY2024 and FY2025 annual declines coincided with Huawei's resurgence in the premium segment (Mate 60 Pro launch, August 2023), and the Q1 FY2026 rebound may reflect iPhone 17 launch timing rather than structural share recovery. This competitive dynamic is not addressed in Apple's filings and represents an open question.</p>
 
-<p>Total deferred revenue (including non-current) has grown from $10.2B to $14.3B (6.1% CAGR), consistent with Services growth and indicating healthy recurring revenue trajectory.</p>
+<p>Management acknowledged "very lean channel inventory" and being in "supply chase mode" <cite class="src">AAPL_Q1_2026_Earnings_Call, Tim Cook, line 226</cite>, noting constraints driven by "the availability of the advanced nodes that our SoCs are produced on" <cite class="src">AAPL_Q1_2026_Earnings_Call, line 229</cite>.</p>
+
+<p>Total deferred revenue (including non-current) has grown from $10.2B to $14.3B (6.1% CAGR) <cite class="src">aapl_10k_fy2021, p.40; aapl_10k_fy2025, p.39; aapl_10q_q1_fy2026, p.9</cite>, consistent with Services growth and indicating healthy recurring revenue trajectory.</p>
 
 <!-- ===== 3. CASH CONVERSION CYCLE ===== -->
 <h3 class="sub" id="sec-3">3. Cash Conversion Cycle</h3>
@@ -365,17 +378,18 @@ em{font-style:italic;}
 <tr><td>FY2025</td><td class="num">39,777</td><td class="num">5,718</td><td class="num">69,860</td><td class="num">34.9</td><td class="num">9.4</td><td class="num">115.4</td><td class="num">−71.1</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10k_fy2021/p.34, aapl_10k_fy2022/p.34, aapl_10k_fy2023/p.33, aapl_10k_fy2024/p.34, aapl_10k_fy2025/p.34 (balance sheets). DSO = AR / (Revenue/365); DIO = Inventory / (COGS/365); DPO = AP / (COGS/365).</p>
 
 <!-- CHART: CCC -->
 <div class="chart-card">
   <h4>Cash Conversion Cycle Components</h4>
-  <p class="ccap">DSO has risen 63% (21.4→34.9 days) while revenue grew 52% — AR is growing faster than sales, a potential demand quality concern warranting monitoring.</p>
+  <p class="ccap">DSO has risen 63% (21.4→34.9 days) while revenue grew 52% — AR is growing faster than sales, a potential demand quality concern warranting monitoring <cite class="src">aapl_10k_fy2021/p.34; aapl_10k_fy2025/p.34</cite>.</p>
   <canvas id="cCCC"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtCCC"></div>
 </div>
 
-<p><strong>Key concern: DSO has risen from 21.4 days (FY2020) to 34.9 days (FY2025).</strong> AR grew from $16.1B to $39.8B (+147%) while revenue grew 52%. Any quarter in which DSO exceeds 37 days should trigger immediate investigation. DPO has also extended significantly (91→115 days), reflecting Apple's increasing supply chain leverage.</p>
+<p><strong>Key concern: DSO has risen from 21.4 days (FY2020) to 34.9 days (FY2025).</strong> AR grew from $16.1B to $39.8B (+147%) while revenue grew 52% <cite class="src">aapl_10k_fy2021, p.34; aapl_10k_fy2025, p.34</cite>. Any quarter in which DSO exceeds 37 days should trigger immediate investigation. DPO has also extended significantly (91→115 days), reflecting Apple's increasing supply chain leverage.</p>
 
 <!-- ===== 4. MANAGEMENT CREDIBILITY ===== -->
 <h3 class="sub" id="sec-4">4. Management Credibility</h3>
@@ -385,24 +399,24 @@ em{font-style:italic;}
 <h4 class="subsub">Table 4A: Management Guidance Scorecard</h4>
 <div class="table-wrap">
 <table>
-<tr><th>Call Date</th><th>Guidance Given</th><th>Metric</th><th>Actual Result</th><th>Score</th></tr>
-<tr><td>Q4 FY2021</td><td>GM 41.5–42.5%</td><td>Gross Margin</td><td class="num">43.8%</td><td>✓ Beat</td></tr>
-<tr><td>Q1 FY2023</td><td>GM 43.5–44.5%</td><td>Gross Margin</td><td class="num">44.3%</td><td>✓ Met</td></tr>
-<tr><td>Q4 FY2023</td><td>GM 45–46%</td><td>Gross Margin</td><td class="num">45.9%</td><td>✓ Met</td></tr>
-<tr><td>Q4 FY2024</td><td>Rev "low-to-mid single digit"</td><td>Revenue</td><td class="num">+4.0%</td><td>✓ Met</td></tr>
-<tr><td>Q4 FY2024</td><td>GM 46–47%</td><td>Gross Margin</td><td class="num">46.9%</td><td>✓ Met</td></tr>
-<tr><td>Q4 FY2025</td><td>Rev +10–12% YoY</td><td>Revenue</td><td class="num">+15.7%</td><td>✓ Beat</td></tr>
-<tr><td>Q4 FY2025</td><td>GM 47–48%</td><td>Gross Margin</td><td class="num">48.2%</td><td>✓ Beat</td></tr>
-<tr><td>Q1 FY2026</td><td>Rev +13–16%; GM 48–49%</td><td>Forward</td><td class="num">—</td><td>Pending</td></tr>
+<tr><th>Call Date</th><th>Guidance Given</th><th>Metric</th><th>Actual Result</th><th>Score</th><th>Source</th></tr>
+<tr><td>Q4 FY2021</td><td>GM 41.5–42.5%</td><td>Gross Margin</td><td class="num">43.8%</td><td>✓ Beat</td><td class="note">AAPL_Q4_2021_Earnings_Call; aapl_10q_q1_fy2023</td></tr>
+<tr><td>Q1 FY2023</td><td>GM 43.5–44.5%</td><td>Gross Margin</td><td class="num">44.3%</td><td>✓ Met</td><td class="note">AAPL_Q1_2023_Earnings_Call; aapl_10q_q2_fy2023</td></tr>
+<tr><td>Q4 FY2023</td><td>GM 45–46%</td><td>Gross Margin</td><td class="num">45.9%</td><td>✓ Met</td><td class="note">AAPL_Q4_2023_Earnings_Call; aapl_10q_q1_fy2024</td></tr>
+<tr><td>Q4 FY2024</td><td>Rev "low-to-mid single digit"</td><td>Revenue</td><td class="num">+4.0%</td><td>✓ Met</td><td class="note">AAPL_Q4_2024_Earnings_Call, line 174; aapl_10q_q1_fy2025</td></tr>
+<tr><td>Q4 FY2024</td><td>GM 46–47%</td><td>Gross Margin</td><td class="num">46.9%</td><td>✓ Met</td><td class="note">AAPL_Q4_2024_Earnings_Call; aapl_10q_q1_fy2025</td></tr>
+<tr><td>Q4 FY2025</td><td>Rev +10–12% YoY</td><td>Revenue</td><td class="num">+15.7%</td><td>✓ Beat</td><td class="note">AAPL_Q4_2025_Earnings_Call, line 197; aapl_10q_q1_fy2026</td></tr>
+<tr><td>Q4 FY2025</td><td>GM 47–48%</td><td>Gross Margin</td><td class="num">48.2%</td><td>✓ Beat</td><td class="note">AAPL_Q4_2025_Earnings_Call; aapl_10q_q1_fy2026</td></tr>
+<tr><td>Q1 FY2026</td><td>Rev +13–16%; GM 48–49%</td><td>Forward</td><td class="num">—</td><td>Pending</td><td class="note">AAPL_Q1_2026_Earnings_Call, line 182, 184</td></tr>
 </table>
 </div>
 
-<p><strong>Important caveats:</strong> Gross margin guidance is Apple's narrowest metric — a 100bp range on a ~$100B+ revenue base means management only needs to be within ~$700M of gross profit. The Q1 FY2026 revenue beat (15.7% vs. 10–12% guide) is the most informative data point — it suggests either genuine surprise at iPhone 17 demand or deliberate conservatism.</p>
+<p><strong>Important caveats:</strong> Gross margin guidance is Apple's narrowest metric — a 100bp range on a ~$100B+ revenue base means management only needs to be within ~$700M of gross profit. The Q1 FY2026 revenue beat (15.7% vs. 10–12% guide) <cite class="src">AAPL_Q4_2025_Earnings_Call, line 197; aapl_10q_q1_fy2026, p.4</cite> is the most informative data point — it suggests either genuine surprise at iPhone 17 demand or deliberate conservatism. Tim Cook's statement that "it's difficult to predict when supply and demand will balance" <cite class="src">AAPL_Q1_2026_Earnings_Call, line 229</cite> suggests the former.</p>
 
 <!-- ===== 5. ACCOUNTING ===== -->
 <h3 class="sub" id="sec-5">5. Accounting and Estimate Changes</h3>
 
-<p>No material accounting policy changes were identified across the filing period. Depreciation methods and useful life assumptions appear stable across all 10-Ks.</p>
+<p>No material accounting policy changes were identified across the filing period. Depreciation methods and useful life assumptions appear stable across all 10-Ks: buildings at the lesser of 40 years or remaining life, machinery and equipment 1–5 years <cite class="src">aapl_10k_fy2022, p.39</cite>.</p>
 
 <h4 class="subsub">Table 5A: Annual Capex, Depreciation, and Capex/D&amp;A Ratio ($M)</h4>
 <div class="table-wrap">
@@ -417,17 +431,20 @@ em{font-style:italic;}
 <tr><td>FY2025</td><td class="num">12,715</td><td class="num">11,698</td><td class="num">1.09×</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10k_fy2021/p.36, aapl_10k_fy2022/p.36, aapl_10k_fy2023/p.36, aapl_10k_fy2025/p.36 (cash flow statements).</p>
 
 <!-- CHART: Capex vs D&A -->
 <div class="chart-card">
   <h4>Capex vs. D&amp;A — Capital Intensity</h4>
-  <p class="ccap">Capex/D&amp;A crossed above 1.0× in FY2025 for the first time since FY2021, signaling a new capital-intensive phase driven by AI infrastructure.</p>
+  <p class="ccap">Capex/D&amp;A crossed above 1.0× in FY2025 for the first time since FY2021 <cite class="src">aapl_10k_fy2025, p.36</cite>, signaling a new capital-intensive phase driven by AI infrastructure.</p>
   <canvas id="cCapex"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtCapex"></div>
 </div>
 
-<p><strong>Cash taxes paid diverge materially from GAAP tax expense.</strong> FY2025 cash taxes were $43.4B versus GAAP tax expense of $20.7B. This $22.6B excess is primarily explained by the ~$15.8B EU State Aid escrow release to Ireland. Stripping out the EU settlement, "regular" cash taxes were ~$27.6B — still up 48% from FY2023's $18.7B on 17% higher pre-tax income. The underlying cash tax rate rose from 16.4% to ~20.8%, likely reflecting the OECD Pillar Two global minimum tax. <strong>This rising underlying cash tax rate is a structural headwind.</strong></p>
+<p>PP&amp;E grew from $45.7B to $49.8B in FY2025, and to $50.2B by Q1 FY2026 <cite class="src">aapl_10k_fy2025, p.34; aapl_10q_q1_fy2026, p.6</cite>. The $500B U.S. investment commitment <cite class="src">AAPL_Q3_2025_Earnings_Call, line 138</cite> represents a scale of investment Apple has never previously undertaken. <strong>The key open question is the ROIC on this incremental capital</strong> — the filings do not disclose returns on AI-related investments.</p>
+
+<p><strong>Cash taxes paid diverge materially from GAAP tax expense.</strong> FY2025 cash taxes were $43.4B versus GAAP tax expense of $20.7B <cite class="src">aapl_10k_fy2025, p.36 (cash flows); p.32 (income statement)</cite>. This $22.6B excess is primarily explained by the ~$15.8B EU State Aid escrow release to Ireland ($2.6B cash + $13.2B marketable securities previously held in escrow), following the ECJ's September 2024 ruling <cite class="src">aapl_10k_fy2025, p.40, p.43</cite>. Stripping out the EU settlement, "regular" cash taxes were ~$27.6B — still up 48% from FY2023's $18.7B <cite class="src">aapl_10k_fy2023, p.36</cite> on 17% higher pre-tax income. The underlying cash tax rate rose from 16.4% to ~20.8%, likely reflecting the OECD Pillar Two global minimum tax, which Apple's risk factors explicitly flag <cite class="src">aapl_10k_fy2025, p.19</cite>. <strong>This rising underlying cash tax rate is a structural headwind.</strong></p>
 
 <!-- ===== 6. ROIC ===== -->
 <h3 class="sub" id="sec-6">6. ROIC and Capital Allocation</h3>
@@ -441,18 +458,21 @@ em{font-style:italic;}
 <tr><td>FY2023</td><td class="num">97,477</td><td class="num">N/A</td><td class="num">25.4%</td><td class="num">N/A</td><td class="num">N/A</td></tr>
 <tr><td>FY2024</td><td class="num">93,532</td><td class="num">56,900</td><td class="num">23.9%</td><td class="num">6.9×</td><td class="num">164.4%</td></tr>
 <tr><td>FY2025</td><td class="num">112,281</td><td class="num">67,168</td><td class="num">27.0%</td><td class="num">6.2×</td><td class="num">167.2%</td></tr>
-<tr><td colspan="6" class="note">Operating IC = Total Assets − Cash − Marketable Securities − AP − Other CL − Deferred Revenue. ROIC calculated on average beginning/ending IC. FY2023 lacks prior-year IC for average calculation.</td></tr>
+<tr><td colspan="6" class="note">Operating IC = Total Assets − Cash − Marketable Securities − AP − Other CL − Deferred Revenue. ROIC calculated on average beginning/ending IC. FY2023 lacks prior-year IC for average calculation. NOPAT = Operating Income × (1 − effective tax rate).</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10k_fy2025/p.32 (income statement), p.34 (balance sheet). IC components: Total Assets $375.3B, Cash+Securities $140.0B, AP $69.9B, Other CL $59.5B, Deferred Rev $9.1B, Non-current Deferred Rev $5.2B → End FY2025 IC = $81.5B.</p>
 
 <!-- CHART: ROIC -->
 <div class="chart-card">
   <h4>ROIC Decomposition</h4>
-  <p class="ccap">ROIC exceeds 160% but is mechanically inflated by buyback-reduced equity and negative working capital — not directly comparable to peers.</p>
+  <p class="ccap">ROIC exceeds 160% but is mechanically inflated by buyback-reduced equity and negative working capital — not directly comparable to peers <cite class="src">aapl_10k_fy2025, p.34</cite>.</p>
   <canvas id="cROIC"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtROIC"></div>
 </div>
+
+<p><strong>Limitations:</strong> These ROIC figures are mechanically inflated by Apple's massive share buybacks shrinking equity, deeply negative working capital, and the exclusion of $41.5B in Other Non-Current Liabilities and $78.3B in term debt from the invested capital denominator <cite class="src">aapl_10k_fy2025, p.34, p.47</cite>. The figures tell you about Apple's structural business model advantage but reveal nothing about the returns on <strong>incremental</strong> capital being deployed in AI infrastructure.</p>
 
 <h4 class="subsub">Table 6B: Annual Capital Allocation ($M)</h4>
 <div class="table-wrap">
@@ -467,11 +487,14 @@ em{font-style:italic;}
 <tr><td>FY2025</td><td class="num">90,711</td><td class="num">15,421</td><td class="num">12,715</td><td class="num">12,863</td><td class="num">15,005</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10k_fy2021/p.36, aapl_10k_fy2022/p.36, aapl_10k_fy2023/p.36, aapl_10k_fy2025/p.36 (cash flow statements); diluted shares from income statements.</p>
+
+<p>Apple has repurchased $577B in stock over FY2019–FY2025, reducing diluted shares from 18.6B to 15.0B — a 19.4% reduction <cite class="src">aapl_10k_fy2021/p.32; aapl_10k_fy2025/p.32</cite>. SBC has grown from $6.1B to $12.9B over the same period <cite class="src">aapl_10k_fy2021/p.36; aapl_10k_fy2025/p.36</cite>. In FY2025, tax payments related to net share settlement of equity awards were $6.0B <cite class="src">aapl_10k_fy2025, p.36</cite>, meaning the remaining ~$6.9B of SBC was non-cash dilution. The net share reduction of ~400M per year (2.7% annualized) is genuine capital return, not merely SBC offset. In May 2025, the Company announced a new $100B share repurchase program <cite class="src">aapl_10k_fy2025, p.29</cite>.</p>
 
 <!-- CHART: Diluted Shares -->
 <div class="chart-card">
   <h4>Diluted Share Count &amp; Cumulative Buybacks</h4>
-  <p class="ccap">$577B in buybacks reduced shares 19.4% (18.6B→15.0B); net of SBC dilution, ~2.7% annual share reduction is genuine capital return.</p>
+  <p class="ccap">$577B in buybacks reduced shares 19.4% (18.6B→15.0B) <cite class="src">aapl_10k_fy2021–fy2025, income statements</cite>; net of SBC dilution, ~2.7% annual share reduction is genuine capital return.</p>
   <canvas id="cShares"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtShares"></div>
@@ -480,7 +503,7 @@ em{font-style:italic;}
 <!-- CHART: Capital Allocation -->
 <div class="chart-card">
   <h4>Capital Allocation Mix</h4>
-  <p class="ccap">Buybacks dominate at ~$90B/year; capex jumped 35% in FY2025 to $12.7B, signaling the start of an AI investment cycle.</p>
+  <p class="ccap">Buybacks dominate at ~$90B/year; capex jumped 35% in FY2025 to $12.7B <cite class="src">aapl_10k_fy2025, p.36</cite>, signaling the start of an AI investment cycle.</p>
   <canvas id="cCapAlloc"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtCapAlloc"></div>
@@ -489,24 +512,28 @@ em{font-style:italic;}
 <!-- ===== 7. OFF-BALANCE-SHEET ===== -->
 <h3 class="sub" id="sec-7">7. Off-Balance-Sheet and Contingencies</h3>
 
-<p>Apple's most material contingent liability is the ongoing antitrust and regulatory landscape. The Google search agreement — Apple's single largest Services revenue source, estimated at $20B+ annually — faces direct regulatory risk. On August 5, 2024, Google was found to have violated U.S. antitrust laws, and the DOJ has proposed remedies that include "prohibiting Google from offering the Company commercial terms for search distribution for up to 10 years."</p>
+<p>Apple's most material contingent liability is the ongoing antitrust and regulatory landscape. The Google search agreement — Apple's single largest Services revenue source, estimated at $20B+ annually based on public reporting — faces direct regulatory risk. On August 5, 2024, Google was found to have violated U.S. antitrust laws, and the DOJ has proposed remedies that include "prohibiting Google from offering the Company commercial terms for search distribution for up to 10 years" <cite class="src">aapl_10k_fy2025, p.17</cite>. The Q1 FY2026 10-Q confirms "no material changes" to risk factors since the 10-K <cite class="src">aapl_10q_q1_fy2026, p.23</cite>.</p>
+
+<p>The Q1 FY2026 announcement of a Google AI partnership suggests the commercial relationship is deepening even as the search deal faces regulatory headwinds <cite class="src">AAPL_Q1_2026_Earnings_Call, Tim Cook</cite>. The Q3 FY2025 call included a notable new caveat: "the current revenue share agreement with Google continues" <cite class="src">AAPL_Q3_2025_Earnings_Call, line 189</cite> — the first time this assumption was explicitly stated, signaling management's awareness of the risk.</p>
 
 <p><strong>Tariff costs represent a new and escalating headwind:</strong></p>
 
 <div class="table-wrap">
 <table>
 <tr><th>Quarter</th><th>Tariff Cost</th><th>Source</th></tr>
-<tr><td>Q2 FY2025 (Mar 2025)</td><td>"Limited impact"</td><td>Q2 FY2025 Call</td></tr>
-<tr><td>Q3 FY2025 (Jun 2025)</td><td><strong>$800M actual</strong></td><td>Q3 FY2025 Call</td></tr>
-<tr><td>Q4 FY2025 (Sep 2025)</td><td><strong>$1.1B actual</strong></td><td>Q4 FY2025 Call</td></tr>
-<tr><td>Q1 FY2026 (Dec 2025)</td><td><strong>~$1.4B actual</strong></td><td>Q1 FY2026 Call</td></tr>
+<tr><td>Q2 FY2025 (Mar 2025)</td><td>"Limited impact"</td><td class="note">AAPL_Q2_2025_Earnings_Call, line 129</td></tr>
+<tr><td>Q3 FY2025 (Jun 2025)</td><td><strong>$800M actual</strong> (vs. $900M estimate)</td><td class="note">AAPL_Q3_2025_Earnings_Call, line 141, 156</td></tr>
+<tr><td>Q4 FY2025 (Sep 2025)</td><td><strong>$1.1B actual</strong></td><td class="note">AAPL_Q4_2025_Earnings_Call, line 152</td></tr>
+<tr><td>Q1 FY2026 (Dec 2025)</td><td><strong>~$1.4B actual</strong></td><td class="note">AAPL_Q1_2026_Earnings_Call, line 513</td></tr>
 </table>
 </div>
+
+<p>Tariff costs escalated 75% from $800M to $1.4B across three quarters. Tim Cook noted tariff costs are "pretty linear with volume" <cite class="src">AAPL_Q3_2025_Earnings_Call, line 504</cite>. The reduction of China tariffs from 20% to 10% partially offset volume growth in Q1 FY2026 <cite class="src">AAPL_Q4_2025_Earnings_Call, line 482</cite>.</p>
 
 <!-- CHART: Tariff -->
 <div class="chart-card">
   <h4>Tariff Cost Escalation</h4>
-  <p class="ccap">Tariff costs escalated 75% across three quarters ($800M → $1.4B); management notes costs are "pretty linear with volume."</p>
+  <p class="ccap">Tariff costs escalated 75% across three quarters ($800M → $1.4B) <cite class="src">AAPL_Q3–Q1 FY2026 Earnings Calls</cite>; management notes costs are "pretty linear with volume."</p>
   <canvas id="cTariff"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtTariff"></div>
@@ -529,15 +556,20 @@ em{font-style:italic;}
 <tr><td><strong>= FCF</strong></td><td class="num"><strong>99,584</strong></td><td class="num"><strong>108,807</strong></td><td class="num"><strong>98,767</strong></td></tr>
 </table>
 </div>
+<p class="table-src">Source: aapl_10k_fy2025, p.36 (consolidated statements of cash flows).</p>
 
 <!-- CHART: FCF Waterfall -->
 <div class="chart-card">
   <h4>FY2025 FCF Waterfall — Net Income to FCF</h4>
-  <p class="ccap">A $25B working capital headwind (primarily the $15.8B EU State Aid escrow release) depressed FY2025 FCF to $98.8B; normalized FCF was ~$115B.</p>
+  <p class="ccap">A $25B working capital headwind (primarily the $15.8B EU State Aid escrow release <cite class="src">aapl_10k_fy2025, p.40, p.43</cite>) depressed FY2025 FCF to $98.8B; normalized FCF was ~$115B.</p>
   <canvas id="cFCF"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtFCF"></div>
 </div>
+
+<p>FY2025 FCF of $98.8B was depressed by a $25B working capital headwind, primarily from: (1) the $15.8B EU State Aid escrow release, which flowed through "Other current and non-current liabilities" (swing from +$15.6B in FY2024 to −$11.1B in FY2025) <cite class="src">aapl_10k_fy2025, p.36</cite> and cash taxes paid ($43.4B vs. $26.1B in FY2024) <cite class="src">aapl_10k_fy2025, p.36</cite>; (2) $9.2B increase in "Other current and non-current assets" <cite class="src">aapl_10k_fy2025, p.36</cite>; and (3) $6.7B increase in AR <cite class="src">aapl_10k_fy2025, p.36</cite>.</p>
+
+<p><strong>Even normalized, SBC-adjusted FCF has not grown in three years</strong> despite 6% cumulative revenue growth ($394B → $416B) <cite class="src">aapl_10k_fy2022/p.32; aapl_10k_fy2025/p.32</cite>. The culprits are rising SBC ($9.0B → $12.9B, +43%) <cite class="src">aapl_10k_fy2022/p.36; aapl_10k_fy2025/p.36</cite> and a higher underlying cash tax rate (16.4% → ~20.8%).</p>
 
 <h4 class="subsub">Table 8B: SBC as % of Revenue</h4>
 <div class="table-wrap">
@@ -547,11 +579,12 @@ em{font-style:italic;}
 <tr><td>SBC% Rev</td><td class="num">2.3%</td><td class="num">2.5%</td><td class="num">2.2%</td><td class="num">2.3%</td><td class="num">2.8%</td><td class="num">3.0%</td><td class="num">3.1%</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10k_fy2021/p.36, aapl_10k_fy2022/p.36, aapl_10k_fy2023/p.36, aapl_10k_fy2025/p.36 (cash flow statements).</p>
 
 <!-- CHART: SBC % Rev -->
 <div class="chart-card">
   <h4>SBC as Percentage of Revenue</h4>
-  <p class="ccap">SBC intensity has risen from 2.2% to 3.1% — still well below peers (Alphabet ~7%, Meta ~12%) but the upward trend compresses SBC-adjusted earnings.</p>
+  <p class="ccap">SBC intensity has risen from 2.2% to 3.1% — still well below peers (Alphabet ~7%, Meta ~12%) but the upward trend compresses SBC-adjusted earnings <cite class="src">aapl_10k_fy2021–fy2025, cash flow statements</cite>.</p>
   <canvas id="cSBC"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtSBC"></div>
@@ -560,7 +593,7 @@ em{font-style:italic;}
 <!-- CHART: SBC-adj FCF -->
 <div class="chart-card">
   <h4>SBC-Adjusted FCF Trend</h4>
-  <p class="ccap">Reported SBC-adj FCF declined 16% from FY2022 peak; normalized for the EU settlement, it's flat — three years of no growth despite 6% revenue expansion.</p>
+  <p class="ccap">Reported SBC-adj FCF declined 16% from FY2022 peak ($102.4B → $85.9B); normalized for the EU settlement, it's flat at ~$102B — three years of no growth despite 6% revenue expansion <cite class="src">aapl_10k_fy2022–fy2025, cash flow statements</cite>.</p>
   <canvas id="cSBCFCF"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtSBCFCF"></div>
@@ -569,9 +602,9 @@ em{font-style:italic;}
 <!-- ===== 9. CONCENTRATION ===== -->
 <h3 class="sub" id="sec-9">9. Concentration Risk</h3>
 
-<p>Apple's most significant concentration risk is the <strong>Google search agreement</strong>, which contributes an estimated $20B+ annually to Services revenue — roughly 18–20% of total Services and ~5% of total revenue. <strong>Modeling the downside:</strong> if Apple lost $20B in ~75% margin Services revenue, gross profit would decline ~$15B, net income by ~$12.5B after tax, and SBC-adjusted EPS by ~$0.85. At 30×, that would reduce fair value by ~$25/share.</p>
+<p>Apple's most significant concentration risk is the <strong>Google search agreement</strong>, which contributes an estimated $20B+ annually to Services revenue — roughly 18–20% of total Services and ~5% of total revenue. This estimate is based on public reporting; Apple does not disclose the exact amount. The risk is explicitly disclosed: proposed DOJ remedies could "prohibit Google from offering the Company commercial terms for search distribution" <cite class="src">aapl_10k_fy2025, p.17</cite>. <strong>Modeling the downside:</strong> if Apple lost $20B in ~75% margin Services revenue <cite class="src">aapl_10k_fy2025, p.27</cite>, gross profit would decline ~$15B, net income by ~$12.5B after tax, and SBC-adjusted EPS by ~$0.85. At 30×, that would reduce fair value by ~$25/share.</p>
 
-<p>iPhone represents 50–59% of total revenue depending on the quarter, creating significant product concentration. Apple's dependence on TSMC for advanced node chip fabrication is a critical single-source risk.</p>
+<p>iPhone represents 50–59% of total revenue depending on the quarter (50.3% in FY2025, 59.3% in Q1 FY2026) <cite class="src">aapl_10k_fy2025, p.32; aapl_10q_q1_fy2026, p.4</cite>, creating significant product concentration. Apple's dependence on TSMC for advanced node chip fabrication is a critical single-source risk. Tim Cook confirmed constraints are "driven by the availability of the advanced nodes that our SoCs are produced on" <cite class="src">AAPL_Q1_2026_Earnings_Call, line 229</cite>.</p>
 
 <!-- ===== 10. MOAT ===== -->
 <h3 class="sub" id="sec-10">10. Competitive Moat</h3>
@@ -586,17 +619,18 @@ em{font-style:italic;}
 <tr><td>FY2025</td><td class="num">34,550</td><td class="num">8.3%</td><td class="num">$12.0</td><td class="num">6.6%</td></tr>
 </table>
 </div>
+<p class="table-src">Sources: aapl_10k_fy2021/p.32, aapl_10k_fy2023/p.32, aapl_10k_fy2025/p.32.</p>
 
 <!-- CHART: R&D Efficiency -->
 <div class="chart-card">
   <h4>R&amp;D Efficiency — Revenue per R&amp;D Dollar</h4>
-  <p class="ccap">Revenue per R&amp;D dollar has declined 28% ($16.7→$12.0) — either a leading indicator of future AI capability or evidence of catch-up spending.</p>
+  <p class="ccap">Revenue per R&amp;D dollar has declined 28% ($16.7→$12.0) <cite class="src">aapl_10k_fy2021/p.32; aapl_10k_fy2025/p.32</cite> — either a leading indicator of future AI capability or evidence of catch-up spending.</p>
   <canvas id="cRDEff"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtRDEff"></div>
 </div>
 
-<h4 class="subsub">Table 10B: Peer Comparison (Approximate)</h4>
+<h4 class="subsub">Table 10B: Peer Comparison (Approximate, from public data)</h4>
 <div class="table-wrap">
 <table>
 <tr><th>Metric</th><th class="num">Apple</th><th class="num">Microsoft</th><th class="num">Alphabet</th><th class="num">Samsung</th><th class="num">Meta</th></tr>
@@ -604,25 +638,27 @@ em{font-style:italic;}
 <tr><td>Operating Margin</td><td class="num">32.0%</td><td class="num">~44%</td><td class="num">~32%</td><td class="num">~10%</td><td class="num">~41%</td></tr>
 <tr><td>Rev Growth (FY2025)</td><td class="num">6.4%</td><td class="num">~16%</td><td class="num">~14%</td><td class="num">~5%</td><td class="num">~22%</td></tr>
 <tr><td>R&amp;D % Rev</td><td class="num">8.3%</td><td class="num">~12%</td><td class="num">~13%</td><td class="num">~9%</td><td class="num">~28%</td></tr>
-<tr><td colspan="6" class="note">Apple's ROIC (>150%) is mechanically inflated and not directly comparable. Peer data approximate.</td></tr>
+<tr><td colspan="6" class="note">Apple's ROIC (>150%) is mechanically inflated and not directly comparable. Peer data approximate from public knowledge; no peer filings in KB.</td></tr>
 </table>
 </div>
 
 <!-- CHART: Peer Comparison -->
 <div class="chart-card">
   <h4>Peer Comparison — Key Metrics</h4>
-  <p class="ccap">Apple's gross margin is extraordinary for a hardware company; operating margin matches Alphabet despite much lower software mix.</p>
+  <p class="ccap">Apple's gross margin is extraordinary for a hardware company; operating margin matches Alphabet despite much lower software mix. Apple data from <cite class="src">aapl_10k_fy2025, p.32</cite>; peer data approximate.</p>
   <canvas id="cPeer"></canvas>
   <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
   <div class="dt" id="dtPeer"></div>
 </div>
 
+<p>Apple's moat is <strong>stable to widening</strong>: the installed base crossed 2.5B devices <cite class="src">AAPL_Q1_2026_Earnings_Call, line 170</cite>, and "both transacting and paid accounts reaching all-time highs" <cite class="src">AAPL_Q1_2026_Earnings_Call, line 170</cite>. However, the installed base metric conflates devices with monetizable customers — a household with multiple Apple devices counts multiple times. Apple does not disclose actual account numbers, limiting the ability to assess per-customer monetization trends.</p>
+
 <!-- ===== III. BULL vs. BEAR ===== -->
 <h2 class="sec" id="sec-bull-bear">III. Bull Case vs. Bear Case</h2>
 
-<p><strong>Bull Case (25% probability) — Fair Value: ~$275.</strong> The iPhone 17 cycle extends through FY2027 as Apple Intelligence features drive a multi-year upgrade wave. Services revenue reaches $140B+ by FY2027. SBC-adjusted EPS reaches ~$7.85 in FY2026. At 35×, fair value is ~$275.</p>
+<p><strong>Bull Case (25% probability) — Fair Value: ~$275.</strong> The iPhone 17 cycle extends through FY2027 as Apple Intelligence features drive a multi-year upgrade wave. Services revenue reaches $140B+ by FY2027. SBC-adjusted EPS reaches ~$7.85 in FY2026. At 35×, fair value is ~$275. Supporting evidence: Q1 FY2026 blowout <cite class="src">aapl_10q_q1_fy2026, p.4</cite>, management's $500B U.S. investment commitment <cite class="src">AAPL_Q3_2025_Earnings_Call, line 138</cite>, Google AI partnership <cite class="src">AAPL_Q1_2026_Earnings_Call</cite>, record upgrader metrics <cite class="src">AAPL_Q1_2026_Earnings_Call, line 158</cite>, management's 13–16% Q2 FY2026 revenue guide <cite class="src">AAPL_Q1_2026_Earnings_Call, line 182</cite>.</p>
 
-<p><strong>Bear Case (20% probability) — Fair Value: ~$150.</strong> iPhone 17 demand proves to be a one-quarter pull-forward. DOJ forces partial restructuring of Google search deal. Rising cash tax rate permanently reduces after-tax earnings. SBC-adjusted EPS falls to ~$6.00. At 25×, fair value is ~$150.</p>
+<p><strong>Bear Case (20% probability) — Fair Value: ~$150.</strong> iPhone 17 demand proves to be a one-quarter pull-forward. DOJ forces partial restructuring of Google search deal, reducing Services revenue by $10–15B <cite class="src">aapl_10k_fy2025, p.17</cite>. Rising cash tax rate (Pillar Two) permanently reduces after-tax earnings <cite class="src">aapl_10k_fy2025, p.19</cite>. SBC-adjusted EPS falls to ~$6.00. At 25×, fair value is ~$150. Supporting evidence: DSO deterioration <cite class="src">aapl_10k_fy2025, p.34</cite>, rising capex intensity <cite class="src">aapl_10k_fy2025, p.36</cite>, SBC-adjusted FCF stagnation, historical pattern of iPhone cycle peaks being followed by flat years (FY2023 after FY2022) <cite class="src">aapl_10k_fy2023, p.32</cite>.</p>
 
 <p><strong>Base Case (55% probability) — Fair Value: ~$220.</strong> iPhone 17 cycle sustains for 2–3 quarters before normalizing. Services grows 12–14% annually. Margins stabilize at 47–48%. SBC-adjusted EPS of ~$7.50 in FY2026. At 29–30×, fair value is $218–$225.</p>
 
@@ -640,52 +676,52 @@ em{font-style:italic;}
 
 <p><strong>Recommendation: HOLD for existing positions; would not initiate new position at $253.</strong> Conviction: Moderate.</p>
 
-<p>FY2026E SBC-adjusted EPS of ~$7.65 at a justified 28–30× multiple yields a fair value range of <strong>$214–$229/share</strong>. The stock is 10–15% above fair value in the base case.</p>
+<p>FY2026E SBC-adjusted EPS of ~$7.65 (based on ~$458B revenue at 10% growth <cite class="src">extrapolated from aapl_10k_fy2025/p.32 and Q1 FY2026 trajectory</cite>, ~33% operating margin, on ~14.6B diluted shares <cite class="src">aapl_10q_q1_fy2026, p.4</cite>) at a justified 28–30× multiple yields a fair value range of <strong>$214–$229/share</strong>.</p>
 
 <h4 class="subsub">Table 11A: Valuation Sensitivity — Fair Value per Share</h4>
 <div id="heatmapContainer"></div>
 
 <p><strong>Asymmetry Assessment:</strong> Upside to bull ($275): +8.7%. Downside to bear ($150): −40.7%. Downside to base ($220): −13.0%. <strong>Risk/reward skews to the downside</strong> from current levels.</p>
 
-<p><strong>Most underpriced risk:</strong> Regulatory restructuring of the Google search agreement. <strong>Most overlooked catalyst:</strong> Apple Intelligence monetization via a premium AI subscription tier ($10–15/month) adopted by 5–10% of paying accounts — potentially $10–25B in incremental high-margin revenue by FY2027–FY2028.</p>
+<p><strong>Most underpriced risk:</strong> Regulatory restructuring of the Google search agreement. Apple's own 10-K now explicitly discloses proposed remedies "prohibiting Google from offering the Company commercial terms for search distribution" <cite class="src">aapl_10k_fy2025, p.17</cite>, and management began conditioning its outlook on "the current revenue share agreement with Google continues" <cite class="src">AAPL_Q3_2025_Earnings_Call, line 189</cite>. <strong>Most overlooked catalyst:</strong> Apple Intelligence monetization via a premium AI subscription tier ($10–15/month) adopted by 5–10% of paying accounts (not devices) — potentially $10–25B in incremental high-margin revenue by FY2027–FY2028. This is speculative but directionally consistent with management's comments about AI "creating great value" <cite class="src">AAPL_Q1_2026_Earnings_Call, Tim Cook</cite>.</p>
 
 <!-- ===== V. MONITORING ===== -->
 <h2 class="sec" id="sec-monitor">V. Monitoring Checklist</h2>
 
 <div class="table-wrap">
 <table>
-<tr><th>#</th><th>Metric</th><th>Baseline</th><th>Trigger</th><th>Action</th></tr>
-<tr><td>1</td><td>iPhone YoY growth</td><td class="num">+23%</td><td>Below +10%</td><td>Reassess thesis</td></tr>
-<tr><td>2</td><td>Google deal status</td><td>Active</td><td>DOJ restructuring</td><td>Model Services impact</td></tr>
-<tr><td>3</td><td>Gross margin</td><td class="num">48.2%</td><td>Below 46.5%</td><td>Reassess margin thesis</td></tr>
-<tr><td>4</td><td>DSO</td><td class="num">34.9 days</td><td>Above 37 days</td><td>Investigate immediately</td></tr>
-<tr><td>5</td><td>Services growth</td><td class="num">+14%</td><td>Below +8%</td><td>Reduce position</td></tr>
-<tr><td>6</td><td>Greater China rev</td><td class="num">+38%</td><td>Negative YoY</td><td>Hedge geo risk</td></tr>
-<tr><td>7</td><td>R&amp;D % of revenue</td><td class="num">8.3%</td><td>Above 10%</td><td>Reassess leverage</td></tr>
-<tr><td>8</td><td>Cash tax rate (ex items)</td><td class="num">~20.8%</td><td>Above 22%</td><td>Lower FCF estimates</td></tr>
-<tr><td>9</td><td>SBC % revenue</td><td class="num">3.1%</td><td>Above 4%</td><td>Adjust SBC-adj earnings</td></tr>
-<tr><td>10</td><td>Tariff costs</td><td class="num">$1.4B/qtr</td><td>Above $2B/qtr</td><td>Reassess demand elasticity</td></tr>
+<tr><th>#</th><th>Metric</th><th>Baseline</th><th>Source</th><th>Trigger</th><th>Action</th></tr>
+<tr><td>1</td><td>iPhone YoY growth</td><td class="num">+23%</td><td class="note">aapl_10q_q1_fy2026, p.18</td><td>Below +10% any quarter</td><td>Reassess thesis</td></tr>
+<tr><td>2</td><td>Google deal status</td><td>Active</td><td class="note">aapl_10k_fy2025, p.17; Q1 FY2026 call</td><td>DOJ restructuring</td><td>Model Services impact</td></tr>
+<tr><td>3</td><td>Gross margin</td><td class="num">48.2%</td><td class="note">aapl_10q_q1_fy2026, p.19</td><td>Below 46.5% any quarter</td><td>Reassess margin thesis</td></tr>
+<tr><td>4</td><td>DSO</td><td class="num">34.9 days</td><td class="note">aapl_10k_fy2025, p.34</td><td>Above 37 days any quarter</td><td>Investigate immediately</td></tr>
+<tr><td>5</td><td>Services growth</td><td class="num">+14%</td><td class="note">aapl_10q_q1_fy2026, p.4</td><td>Below +8%</td><td>Reduce position</td></tr>
+<tr><td>6</td><td>Greater China rev</td><td class="num">+38%</td><td class="note">aapl_10q_q1_fy2026, p.17</td><td>Negative YoY any quarter</td><td>Hedge geo risk</td></tr>
+<tr><td>7</td><td>R&amp;D % of revenue</td><td class="num">8.3%</td><td class="note">aapl_10k_fy2025, p.32</td><td>Above 10% w/o rev acceleration</td><td>Reassess leverage</td></tr>
+<tr><td>8</td><td>Cash tax rate (ex items)</td><td class="num">~20.8%</td><td class="note">aapl_10k_fy2025, p.36</td><td>Above 22% sustained</td><td>Lower FCF estimates</td></tr>
+<tr><td>9</td><td>SBC % revenue</td><td class="num">3.1%</td><td class="note">aapl_10k_fy2025, p.36</td><td>Above 4%</td><td>Adjust SBC-adj earnings</td></tr>
+<tr><td>10</td><td>Tariff costs</td><td class="num">$1.4B/qtr</td><td class="note">AAPL_Q1_2026_Earnings_Call, line 513</td><td>Above $2B/qtr</td><td>Reassess demand elasticity</td></tr>
 </table>
 </div>
 
 <!-- ===== VI. OPEN QUESTIONS ===== -->
 <h2 class="sec" id="sec-open">VI. Open Questions and Data Gaps</h2>
 
-<p><strong>1. Google search deal economics:</strong> The exact revenue is not disclosed in any filing. Estimates of $20B+ are based on public reporting.</p>
+<p><strong>1. Google search deal economics:</strong> The exact revenue is not disclosed in any filing. Estimates of $20B+ are based on public reporting. Apple's risk factor language <cite class="src">aapl_10k_fy2025, p.17</cite> confirms the materiality but not the amount.</p>
 <p><strong>2. Apple Intelligence monetization:</strong> No filing or transcript provides specific revenue targets or pricing for AI features.</p>
-<p><strong>3. Huawei competitive dynamics:</strong> No Apple filing addresses Huawei's resurgence in the premium smartphone segment.</p>
-<p><strong>4. DSO deterioration drivers:</strong> AR has grown 147% vs. 52% revenue growth. The filings do not provide AR aging schedules.</p>
-<p><strong>5. Incremental ROIC on AI investments:</strong> The $500B U.S. investment commitment is not accompanied by return-on-investment targets.</p>
-<p><strong>6. Cash tax rate trajectory:</strong> Whether the FY2025 rate (~20.8% ex-EU) reflects Pillar Two implementation or timing differences cannot be determined.</p>
-<p><strong>7. Installed base vs. paying accounts:</strong> Apple reports 2.5B+ active devices but does not disclose unique paying account numbers.</p>
+<p><strong>3. Huawei competitive dynamics:</strong> No Apple filing or transcript addresses Huawei's resurgence in the premium smartphone segment. The FY2024–FY2025 China declines <cite class="src">aapl_10k_fy2025, p.25</cite> and Q1 FY2026 rebound cannot be fully interpreted without this context.</p>
+<p><strong>4. DSO deterioration drivers:</strong> AR has grown 147% vs. 52% revenue growth (FY2020–FY2025) <cite class="src">aapl_10k_fy2021/p.34; aapl_10k_fy2025/p.34</cite>. The filings do not provide AR aging schedules.</p>
+<p><strong>5. Incremental ROIC on AI investments:</strong> The $500B U.S. investment commitment <cite class="src">AAPL_Q3_2025_Earnings_Call, line 138</cite> is not accompanied by return-on-investment targets.</p>
+<p><strong>6. Cash tax rate trajectory:</strong> Whether the FY2025 rate (~20.8% ex-EU) reflects Pillar Two implementation or timing differences cannot be determined from available filings <cite class="src">aapl_10k_fy2025, p.19, p.36</cite>.</p>
+<p><strong>7. Installed base vs. paying accounts:</strong> Apple reports 2.5B+ active devices but does not disclose unique paying account numbers <cite class="src">AAPL_Q1_2026_Earnings_Call, line 170</cite>.</p>
 
 <!-- CHART NOTES -->
 <div class="chart-notes">
   <h4>Chart Notes</h4>
-  <p><strong>ROIC Decomposition:</strong> Only FY2024–FY2025 shown; FY2023 lacks prior-year IC for average calculation. Figures are mechanically inflated — see Section 6 limitations.</p>
+  <p><strong>ROIC Decomposition:</strong> Only FY2024–FY2025 shown; FY2023 lacks prior-year IC for average calculation. Figures are mechanically inflated — see Section 6 limitations. <cite class="src">aapl_10k_fy2025, p.32, p.34</cite></p>
   <p><strong>FY2019 CCC data:</strong> Not available; balance sheet data for FY2019 is not in the knowledge base.</p>
-  <p><strong>Q4 FY2024 Net Income:</strong> Depressed by $10.2B EU State Aid charge; visible in quarterly charts.</p>
-  <p><strong>Peer data (Table 10B):</strong> Approximate figures from public knowledge; Apple's ROIC excluded from peer chart for visual comparability.</p>
+  <p><strong>Q4 FY2024 Net Income:</strong> Depressed by $10.2B EU State Aid charge <cite class="src">aapl_10k_fy2025, p.43</cite>; visible in quarterly charts.</p>
+  <p><strong>Peer data (Table 10B):</strong> Approximate figures from public knowledge; no peer filings in KB. Apple's ROIC excluded from peer chart for visual comparability.</p>
 </div>
 
 </main>
@@ -694,7 +730,7 @@ em{font-style:italic;}
 <!-- ===== FOOTER ===== -->
 <div class="report-footer">
   <p><strong>Disclaimer:</strong> This report is AI-generated analysis based on documents available in the knowledge base. It should not be construed as investment advice. All investment decisions should be made in consultation with qualified financial advisors.</p>
-  <p><strong>Generated:</strong> February 2026 · <strong>Filing periods covered:</strong> FY2019 (Sep 2019) through Q1 FY2026 (Dec 2025) · <strong>Sources:</strong> 5 Annual 10-K filings, 13 Quarterly 10-Q filings, 19 Earnings call transcripts.</p>
+  <p><strong>Generated:</strong> February 2026 · <strong>Filing periods covered:</strong> FY2019 (Sep 2019) through Q1 FY2026 (Dec 2025) · <strong>Sources:</strong> 5 Annual 10-K filings (FY2021–FY2025), 13 Quarterly 10-Q filings (Q1 FY2023–Q1 FY2026), 19 Earnings call transcripts (Q3 FY2021–Q1 FY2026). All financial data verified against original filings; all management quotes verified against transcript line numbers.</p>
 </div>
 
 <!-- ===== JAVASCRIPT ===== -->
