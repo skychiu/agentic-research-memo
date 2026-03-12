@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AAPL — Buy-Side Investment Research Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js"></script>
+<style>
+/* ===== THEME VARIABLES ===== */
+:root{
+  --bg:#fafaf8;--bg2:#ffffff;--bg3:#f3f3f0;--text:#1a1a1a;--text2:#5a5a5a;--text3:#888;
+  --border:#e0ddd8;--accent:#0055b8;--accent2:#2d8a4e;--red:#c0392b;--orange:#d4820a;
+  --purple:#6b3fa0;--teal:#1a8a7a;--pink:#b83280;--gray:#7a7a7a;
+  --card-bg:#ffffff;--card-border:#e8e6e1;--card-shadow:0 1px 3px rgba(0,0,0,.05);
+  --nav-bg:#ffffffee;--nav-border:#e0ddd8;
+  --grid-color:rgba(0,0,0,.05);--serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --hold:#d4820a;--green-val:#2d8a4e;--red-val:#c0392b;
+  --table-stripe:rgba(0,0,0,.02);--table-head:#f5f4f0;
+}
+.dark{
+  --bg:#0f1114;--bg2:#181b20;--bg3:#1e2228;--text:#d4d4d4;--text2:#8b8b8b;--text3:#666;
+  --border:#2a2d33;--accent:#5b9bd5;--accent2:#4caf7a;--red:#e57373;--orange:#e0a040;
+  --purple:#b388d9;--teal:#4db8a8;--pink:#e080b0;--gray:#777;
+  --card-bg:#181b20;--card-border:#2a2d33;--card-shadow:0 1px 3px rgba(0,0,0,.2);
+  --nav-bg:#181b20ee;--nav-border:#2a2d33;
+  --grid-color:rgba(255,255,255,.05);
+  --hold:#e0a040;--green-val:#4caf7a;--red-val:#e57373;
+  --table-stripe:rgba(255,255,255,.02);--table-head:#1e2228;
+}
+
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:60px;}
+body{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+
+/* ===== NAV ===== */
+.topnav{position:sticky;top:0;z-index:200;background:var(--nav-bg);border-bottom:1px solid var(--nav-border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.topnav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:48px;gap:12px;}
+.topnav-brand{font-family:var(--sans);font-weight:700;font-size:14px;color:var(--text);white-space:nowrap;}
+.topnav-brand span{color:var(--accent);}
+.topnav-spacer{flex:1;}
+.topnav-btn{font-family:var(--sans);font-size:12px;background:none;border:1px solid var(--border);color:var(--text2);padding:4px 12px;border-radius:5px;cursor:pointer;white-space:nowrap;}
+.topnav-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* TOC dropdown */
+.toc-wrap{position:relative;}
+.toc-dropdown{display:none;position:absolute;right:0;top:36px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);width:300px;max-height:70vh;overflow-y:auto;z-index:300;padding:8px 0;}
+.toc-dropdown.open{display:block;}
+.toc-dropdown a{display:block;padding:6px 16px;font-family:var(--sans);font-size:12px;color:var(--text2);text-decoration:none;line-height:1.4;}
+.toc-dropdown a:hover{background:var(--bg3);color:var(--accent);}
+.toc-dropdown a.toc-h2{font-weight:600;color:var(--text);padding-top:10px;}
+.toc-dropdown a.toc-h3{padding-left:28px;}
+
+/* ===== SIDEBAR (desktop) ===== */
+.layout{max-width:1100px;margin:0 auto;display:flex;gap:0;}
+.sidebar{width:220px;flex-shrink:0;position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;padding:20px 0 20px 24px;display:block;}
+.sidebar a{display:block;padding:4px 12px;font-family:var(--sans);font-size:11.5px;color:var(--text3);text-decoration:none;border-left:2px solid transparent;line-height:1.4;margin-bottom:1px;}
+.sidebar a:hover,.sidebar a.active{color:var(--accent);border-left-color:var(--accent);}
+.sidebar a.sb-h2{font-weight:600;color:var(--text2);margin-top:10px;}
+.sidebar a.sb-h2:hover,.sidebar a.sb-h2.active{color:var(--accent);}
+.main{flex:1;min-width:0;max-width:760px;padding:0 24px 80px 40px;}
+
+@media(max-width:960px){
+  .sidebar{display:none;}
+  .main{max-width:100%;padding:0 20px 60px;}
+}
+@media(max-width:768px){
+  body{font-size:15.5px;}
+  .main{padding:0 16px 60px;}
+}
+
+/* ===== HERO ===== */
+.hero{background:var(--bg2);border:1px solid var(--card-border);border-radius:12px;padding:32px;margin:28px 0 40px;box-shadow:var(--card-shadow);}
+.hero-ticker{font-family:var(--sans);font-size:13px;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.hero-company{font-size:28px;font-weight:700;margin-bottom:2px;}
+.hero-sub{font-family:var(--sans);font-size:13px;color:var(--text2);margin-bottom:20px;}
+.hero-rec{display:inline-block;font-family:var(--sans);font-size:22px;font-weight:700;color:var(--hold);border:2px solid var(--hold);border-radius:8px;padding:6px 20px;margin-bottom:16px;}
+.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px;}
+.hero-stat{text-align:center;}
+.hero-stat .hl{font-family:var(--sans);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;}
+.hero-stat .hv{font-family:var(--sans);font-size:20px;font-weight:700;margin-top:1px;}
+.hero-stat .hs{font-family:var(--sans);font-size:11px;color:var(--text2);}
+.hero-findings{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.hero-findings h4{font-family:var(--sans);font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text2);}
+.hero-findings ul{list-style:none;padding:0;}
+.hero-findings li{font-family:var(--sans);font-size:13px;color:var(--text);padding:4px 0 4px 18px;position:relative;line-height:1.45;}
+.hero-findings li::before{content:'→';position:absolute;left:0;color:var(--accent);}
+
+/* ===== PROSE ===== */
+h2.sec{font-size:24px;font-weight:700;margin:48px 0 8px;padding-bottom:8px;border-bottom:2px solid var(--accent);}
+h3.sub{font-family:var(--sans);font-size:17px;font-weight:600;margin:36px 0 8px;color:var(--text);}
+h4.subsub{font-family:var(--sans);font-size:14px;font-weight:600;margin:24px 0 6px;color:var(--text2);}
+p{margin-bottom:14px;}
+strong{font-weight:600;}
+em{font-style:italic;}
+
+/* ===== TABLES ===== */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--card-border);border-radius:8px;}
+.table-wrap table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:12.5px;line-height:1.4;}
+.table-wrap th{background:var(--table-head);font-weight:600;text-align:left;padding:8px 10px;border-bottom:2px solid var(--border);position:sticky;top:0;white-space:nowrap;}
+.table-wrap td{padding:6px 10px;border-bottom:1px solid var(--border);white-space:nowrap;}
+.table-wrap tr:nth-child(even) td{background:var(--table-stripe);}
+.table-wrap .num{text-align:right;}
+.table-wrap .note{font-size:11px;color:var(--text2);padding:8px 10px;font-style:italic;}
+
+/* ===== CHART CARDS ===== */
+.chart-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:20px;margin:20px 0 28px;box-shadow:var(--card-shadow);}
+.chart-card h4{font-family:var(--sans);font-size:14px;font-weight:600;margin-bottom:3px;}
+.chart-card .ccap{font-family:var(--sans);font-size:12px;color:var(--text2);font-style:italic;margin-bottom:14px;}
+.chart-card canvas{width:100%!important;}
+.chart-card .toggle-dt{font-family:var(--sans);font-size:11px;color:var(--accent);cursor:pointer;background:none;border:1px solid var(--accent);padding:3px 10px;border-radius:4px;margin-top:10px;}
+.chart-card .dt{display:none;margin-top:10px;overflow-x:auto;}
+.chart-card .dt table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:11px;}
+.chart-card .dt th,.chart-card .dt td{padding:3px 8px;border:1px solid var(--border);text-align:right;white-space:nowrap;}
+.chart-card .dt th{background:var(--table-head);font-weight:600;text-align:left;}
+
+/* ===== HEATMAP ===== */
+.heat-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13px;margin:12px 0;}
+.heat-table th,.heat-table td{padding:8px 10px;border:1px solid var(--border);text-align:center;}
+.heat-table th{background:var(--table-head);font-weight:600;}
+.heat-table td.base-cell{font-weight:700;border:2px solid var(--accent);}
+
+/* ===== FOOTER ===== */
+.report-footer{max-width:760px;margin:40px auto;padding:24px;border-top:1px solid var(--border);font-family:var(--sans);font-size:11px;color:var(--text3);line-height:1.5;}
+
+/* ===== CHART NOTES ===== */
+.chart-notes{background:var(--bg3);border:1px solid var(--card-border);border-radius:8px;padding:16px;font-family:var(--sans);font-size:12px;color:var(--text2);margin:20px 0;line-height:1.5;}
+.chart-notes h4{font-size:13px;color:var(--text);margin-bottom:6px;font-weight:600;}
+.chart-notes p{margin-bottom:6px;}
+
+/* ===== PRINT ===== */
+@media print{
+  .topnav,.sidebar,.toggle-dt,.topnav-btn,.toc-dropdown{display:none!important;}
+  body{font-size:11pt;background:#fff;color:#000;}
+  .dark{--bg:#fff;--bg2:#fff;--bg3:#f5f5f5;--text:#000;--text2:#333;--text3:#666;--border:#ccc;--card-bg:#fff;--card-border:#ddd;--table-head:#f0f0f0;--table-stripe:rgba(0,0,0,.03);--grid-color:rgba(0,0,0,.08);}
+  .hero{break-inside:avoid;}
+  .chart-card{break-inside:avoid;box-shadow:none;border:1px solid #ddd;}
+  .main{max-width:100%;padding:0;}
+  .layout{display:block;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAV ===== -->
+<nav class="topnav">
+<div class="topnav-inner">
+  <div class="topnav-brand">AAPL <span>Investment Research Report</span></div>
+  <div class="topnav-spacer"></div>
+  <button class="topnav-btn" onclick="window.print()">🖨 Print / PDF</button>
+  <button class="topnav-btn" onclick="document.body.classList.toggle('dark');rebuildCharts()">🌓 Theme</button>
+  <div class="toc-wrap">
+    <button class="topnav-btn" onclick="this.nextElementSibling.classList.toggle('open')">☰ Contents</button>
+    <div class="toc-dropdown" id="tocDropdown">
+      <a href="#hero" class="toc-h2">Executive Summary</a>
+      <a href="#sec-analysis" class="toc-h2">II. Detailed Analysis</a>
+      <a href="#sec-1" class="toc-h3">1. Earnings Inflection</a>
+      <a href="#sec-2" class="toc-h3">2. Revenue Quality</a>
+      <a href="#sec-3" class="toc-h3">3. Cash Conversion Cycle</a>
+      <a href="#sec-4" class="toc-h3">4. Management Credibility</a>
+      <a href="#sec-5" class="toc-h3">5. Accounting &amp; Estimates</a>
+      <a href="#sec-6" class="toc-h3">6. ROIC &amp; Capital Allocation</a>
+      <a href="#sec-7" class="toc-h3">7. Off-Balance-Sheet</a>
+      <a href="#sec-8" class="toc-h3">8. Free Cash Flow Quality</a>
+      <a href="#sec-9" class="toc-h3">9. Concentration Risk</a>
+      <a href="#sec-10" class="toc-h3">10. Competitive Moat</a>
+      <a href="#sec-bull-bear" class="toc-h2">III. Bull vs. Bear Case</a>
+      <a href="#sec-rec" class="toc-h2">IV. Recommendation</a>
+      <a href="#sec-monitor" class="toc-h2">V. Monitoring Checklist</a>
+      <a href="#sec-open" class="toc-h2">VI. Open Questions</a>
+    </div>
+  </div>
+</div>
+</nav>
+
+<div class="layout">
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebarNav">
+  <a href="#hero" class="sb-h2">Summary</a>
+  <a href="#sec-analysis" class="sb-h2">Analysis</a>
+  <a href="#sec-1">1. Earnings Inflection</a>
+  <a href="#sec-2">2. Revenue Quality</a>
+  <a href="#sec-3">3. Cash Conversion</a>
+  <a href="#sec-4">4. Mgmt Credibility</a>
+  <a href="#sec-5">5. Accounting</a>
+  <a href="#sec-6">6. ROIC &amp; Capital</a>
+  <a href="#sec-7">7. Off-Balance-Sheet</a>
+  <a href="#sec-8">8. FCF Quality</a>
+  <a href="#sec-9">9. Concentration</a>
+  <a href="#sec-10">10. Moat</a>
+  <a href="#sec-bull-bear" class="sb-h2">Bull vs. Bear</a>
+  <a href="#sec-rec" class="sb-h2">Recommendation</a>
+  <a href="#sec-monitor" class="sb-h2">Monitoring</a>
+  <a href="#sec-open" class="sb-h2">Open Questions</a>
+</aside>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main">
+
+<!-- ===== HERO ===== -->
+<div class="hero" id="hero">
+  <div class="hero-ticker">NASDAQ: AAPL · Consumer Electronics &amp; Technology</div>
+  <div class="hero-company">Apple Inc.</div>
+  <div class="hero-sub">Buy-Side Investment Research Memo · Data through Q1 FY2026 (Dec 2025)</div>
+  <div class="hero-rec">⬤ HOLD — Would Not Initiate</div>
+  <div class="hero-grid">
+    <div class="hero-stat"><div class="hl">Current Price</div><div class="hv">$253</div><div class="hs">~33× fwd SBC-adj EPS</div></div>
+    <div class="hero-stat"><div class="hl">Fair Value</div><div class="hv" style="color:var(--red-val)">$214–229</div><div class="hs">28–30× fwd</div></div>
+    <div class="hero-stat"><div class="hl">Prob-Wtd EV</div><div class="hv" style="color:var(--red-val)">$220</div><div class="hs">~13% below market</div></div>
+    <div class="hero-stat"><div class="hl">Q1 FY26 Rev</div><div class="hv">$143.8B</div><div class="hs">+15.7% YoY</div></div>
+    <div class="hero-stat"><div class="hl">Gross Margin</div><div class="hv">48.2%</div><div class="hs">+130bp YoY</div></div>
+    <div class="hero-stat"><div class="hl">Conviction</div><div class="hv">Moderate</div><div class="hs">Hold existing only</div></div>
+  </div>
+  <div class="hero-findings">
+    <h4>Key Findings</h4>
+    <ul>
+      <li><strong>iPhone 17 super-cycle</strong> drove Q1 FY2026 to $143.8B (+16% YoY), with iPhone +23% and Greater China +38%, but the stock at 33× forward SBC-adjusted earnings prices in near-flawless execution.</li>
+      <li><strong>Structural margin expansion</strong> of 910bp over six years (37.8%→46.9%) is driven by Services mix shift to 26% of revenue at ~75% margins — a durable quality improvement.</li>
+      <li><strong>SBC-adjusted FCF has stagnated</strong> at ~$102B for three years despite 6% revenue growth, pressured by rising SBC (+43%) and higher underlying cash taxes (16.4%→20.8%).</li>
+      <li><strong>Google search deal ($20B+)</strong> faces DOJ antitrust risk; Apple's own filings now condition outlook on the deal continuing — the most underpriced risk in the stock.</li>
+      <li><strong>Risk/reward skews negative:</strong> +8.7% upside to bull ($275) vs. −40.7% downside to bear ($150); probability-weighted EV of $220 implies 13% downside from current levels.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== I. EXECUTIVE SUMMARY (prose) ===== -->
+<h2 class="sec" id="sec-exec">I. Executive Summary</h2>
+
+<p>Apple is executing a powerful iPhone 17 super-cycle that drove Q1 FY2026 revenue to $143.8B (+16% YoY), with iPhone revenue surging 23% and Greater China rebounding 38%. Gross margins have expanded 910bp over six years (37.8% in FY2019 to 46.9% in FY2025) on a structural mix shift toward Services (now 26% of revenue at ~75% margins) and disciplined cost management. The installed base exceeding 2.5 billion active devices creates a formidable recurring revenue flywheel. Management credibility is high — they have met or exceeded gross margin guidance in every quarter tracked, and revenue guidance has been consistently met or beaten.</p>
+
+<p>However, at ~$253/share, the stock trades at ~33× forward SBC-adjusted earnings, pricing in near-flawless execution of the current super-cycle and sustained double-digit Services growth. A multiples-based approach at a justified 28–30× forward SBC-adjusted EPS yields $214–$229. The probability-weighted fair value across bull, base, and bear scenarios is approximately $220, suggesting ~13% downside risk from current levels. The risk/reward is unfavorable for new capital at this price.</p>
+
+<p><strong>Entry level (Buy):</strong> $215 or below (~28× forward SBC-adj EPS), corresponding to a pullback on supply constraints, tariff escalation, or cycle deceleration. <strong>Exit level (Sell):</strong> $280+ (37×+ forward SBC-adj EPS). <strong>Catalyst timeline:</strong> The next 2–3 quarters will determine whether iPhone 17 demand is a genuine multi-year upgrade cycle or a one-quarter pull-forward; Q2 FY2026 results (April 2026) and September 2026 iPhone 18 launch cadence are the key signposts.</p>
+
+<!-- ===== II. DETAILED ANALYSIS ===== -->
+<h2 class="sec" id="sec-analysis">II. Detailed Analysis</h2>
+
+<!-- ===== 1. EARNINGS INFLECTION ===== -->
+<h3 class="sub" id="sec-1">1. Earnings Inflection</h3>
+
+<p>Apple's margin trajectory over FY2019–FY2025 represents one of the most significant earnings inflection stories in mega-cap tech. Consolidated gross margin expanded from 37.8% to 46.9%, driven by two structural forces: (1) Services mix shift from 17.8% to 26.2% of revenue, and (2) Services gross margin expansion from ~63% to 75.4%.</p>
+
+<p>Products gross margin has been remarkably stable at 34–37%, oscillating within a narrow band that reflects Apple's pricing power offsetting input cost inflation. The Q1 FY2026 blowout saw Products gross margin spike to 40.7% — up ~450bp sequentially — driven by favorable iPhone 17 mix and volume leverage. This level is likely unsustainable on a full-year basis given seasonal patterns and memory cost inflation that management explicitly flagged.</p>
+
+<h4 class="subsub">Table 1A: Quarterly Gross Margin — Consolidated and by Segment</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Quarter</th><th class="num">Total Rev ($M)</th><th class="num">Products Rev</th><th class="num">Services Rev</th><th class="num">Products GM%</th><th class="num">Services GM%</th><th class="num">Consol. GM%</th></tr>
+<tr><td>Q1 FY2023</td><td class="num">117,154</td><td class="num">96,388</td><td class="num">20,766</td><td class="num">37.0%</td><td class="num">70.8%</td><td class="num">43.0%</td></tr>
+<tr><td>Q2 FY2023</td><td class="num">94,836</td><td class="num">73,929</td><td class="num">20,907</td><td class="num">36.7%</td><td class="num">71.0%</td><td class="num">44.3%</td></tr>
+<tr><td>Q3 FY2023</td><td class="num">81,797</td><td class="num">60,584</td><td class="num">21,213</td><td class="num">35.4%</td><td class="num">70.5%</td><td class="num">44.5%</td></tr>
+<tr><td>Q4 FY2023</td><td class="num">89,498</td><td class="num">67,184</td><td class="num">22,314</td><td class="num">37.0%</td><td class="num">70.9%</td><td class="num">45.2%</td></tr>
+<tr><td>Q1 FY2024</td><td class="num">119,575</td><td class="num">96,458</td><td class="num">23,117</td><td class="num">39.4%</td><td class="num">72.8%</td><td class="num">45.9%</td></tr>
+<tr><td>Q2 FY2024</td><td class="num">90,753</td><td class="num">66,886</td><td class="num">23,867</td><td class="num">36.6%</td><td class="num">74.6%</td><td class="num">46.6%</td></tr>
+<tr><td>Q3 FY2024</td><td class="num">85,777</td><td class="num">61,564</td><td class="num">24,213</td><td class="num">35.3%</td><td class="num">74.0%</td><td class="num">46.3%</td></tr>
+<tr><td>Q4 FY2024</td><td class="num">94,930</td><td class="num">69,958</td><td class="num">24,972</td><td class="num">34.5%</td><td class="num">73.2%</td><td class="num">46.2%</td></tr>
+<tr><td>Q1 FY2025</td><td class="num">124,300</td><td class="num">97,960</td><td class="num">26,340</td><td class="num">39.3%</td><td class="num">75.0%</td><td class="num">46.9%</td></tr>
+<tr><td>Q2 FY2025</td><td class="num">95,359</td><td class="num">68,714</td><td class="num">26,645</td><td class="num">35.9%</td><td class="num">75.7%</td><td class="num">47.1%</td></tr>
+<tr><td>Q3 FY2025</td><td class="num">94,036</td><td class="num">66,613</td><td class="num">27,423</td><td class="num">34.5%</td><td class="num">75.6%</td><td class="num">46.5%</td></tr>
+<tr><td>Q4 FY2025</td><td class="num">102,466</td><td class="num">73,716</td><td class="num">28,750</td><td class="num">36.2%</td><td class="num">75.3%</td><td class="num">47.2%</td></tr>
+<tr><td>Q1 FY2026</td><td class="num">143,756</td><td class="num">113,743</td><td class="num">30,013</td><td class="num">40.7%</td><td class="num">76.5%</td><td class="num">48.2%</td></tr>
+</table>
+</div>
+
+<!-- CHART: Margin Trend -->
+<div class="chart-card">
+  <h4>Quarterly Margin Trend — Consolidated, Products &amp; Services</h4>
+  <p class="ccap">Products GM spiked to 40.7% in Q1 FY2026 on iPhone 17 mix — likely unsustainable; Services GM has expanded steadily from 70.8% to 76.5%.</p>
+  <canvas id="cMarginTrend"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtMarginTrend"></div>
+</div>
+
+<h4 class="subsub">Table 1B: Annual Operating Margin with Key Cost Lines (% of Revenue)</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">Gross Margin%</th><th class="num">R&amp;D%</th><th class="num">SG&amp;A%</th><th class="num">Operating Margin%</th></tr>
+<tr><td>FY2019</td><td class="num">37.8%</td><td class="num">6.2%</td><td class="num">7.0%</td><td class="num">24.6%</td></tr>
+<tr><td>FY2020</td><td class="num">38.2%</td><td class="num">6.8%</td><td class="num">7.3%</td><td class="num">24.1%</td></tr>
+<tr><td>FY2021</td><td class="num">41.8%</td><td class="num">6.0%</td><td class="num">6.0%</td><td class="num">29.8%</td></tr>
+<tr><td>FY2022</td><td class="num">43.3%</td><td class="num">6.7%</td><td class="num">6.4%</td><td class="num">30.3%</td></tr>
+<tr><td>FY2023</td><td class="num">44.1%</td><td class="num">7.8%</td><td class="num">6.5%</td><td class="num">29.8%</td></tr>
+<tr><td>FY2024</td><td class="num">46.2%</td><td class="num">8.0%</td><td class="num">6.7%</td><td class="num">31.5%</td></tr>
+<tr><td>FY2025</td><td class="num">46.9%</td><td class="num">8.3%</td><td class="num">6.6%</td><td class="num">32.0%</td></tr>
+</table>
+</div>
+
+<!-- CHART: Annual OpM Decomposition -->
+<div class="chart-card">
+  <h4>Annual Operating Margin Decomposition</h4>
+  <p class="ccap">Gross margin expansion (+910bp) has more than offset rising R&amp;D intensity (+210bp), driving operating margin from 24.6% to 32.0%.</p>
+  <canvas id="cOpMargin"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtOpMargin"></div>
+</div>
+
+<p>The next earnings inflection point is the interplay between iPhone 17 cycle sustainability and rising R&amp;D investment in AI. R&amp;D has risen from 6.0% of revenue in FY2021 to 8.3% in FY2025, and Q1 FY2026 R&amp;D surged 32% YoY to $10.9B. Whether this investment generates returns or represents catch-up spending on AI is an open question — both interpretations are consistent with the data.</p>
+
+<!-- ===== 2. REVENUE QUALITY ===== -->
+<h3 class="sub" id="sec-2">2. Revenue Quality</h3>
+
+<p>Apple's revenue composition has undergone a meaningful quality improvement. Services revenue has grown from $46.3B (FY2019) to $109.2B (FY2025) — a 15.4% CAGR — while Products revenue grew at only 6.2% CAGR over the same period. Services is higher-margin, more recurring, and less cyclical.</p>
+
+<!-- CHART: Quarterly Revenue Stacked -->
+<div class="chart-card">
+  <h4>Quarterly Revenue — Products vs. Services</h4>
+  <p class="ccap">Services revenue has grown every single quarter, providing a rising floor under total revenue even as Products cycle.</p>
+  <canvas id="cQRevenue"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtQRevenue"></div>
+</div>
+
+<!-- CHART: Revenue Mix -->
+<div class="chart-card">
+  <h4>Revenue Mix — Products vs. Services (Annual)</h4>
+  <p class="ccap">Services mix has risen from 17.8% (FY2019) to 26.2% (FY2025), driving 910bp of gross margin expansion over six years.</p>
+  <canvas id="cRevMix"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtRevMix"></div>
+</div>
+
+<h4 class="subsub">Table 2A: Geographic Revenue ($M)</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">Americas</th><th class="num">Europe</th><th class="num">Greater China</th><th class="num">Japan</th><th class="num">Rest of AP</th><th class="num">Total</th></tr>
+<tr><td>FY2023</td><td class="num">162,560</td><td class="num">94,294</td><td class="num">72,559</td><td class="num">24,257</td><td class="num">29,615</td><td class="num">383,285</td></tr>
+<tr><td>FY2024</td><td class="num">167,045</td><td class="num">101,328</td><td class="num">66,952</td><td class="num">25,052</td><td class="num">30,658</td><td class="num">391,035</td></tr>
+<tr><td>FY2025</td><td class="num">178,353</td><td class="num">111,032</td><td class="num">64,377</td><td class="num">28,703</td><td class="num">33,696</td><td class="num">416,161</td></tr>
+</table>
+</div>
+
+<!-- CHART: Geo Revenue -->
+<div class="chart-card">
+  <h4>Geographic Revenue — Annual</h4>
+  <p class="ccap">Greater China declined two consecutive years before rebounding 38% in Q1 FY2026 — partly a base effect from the depressed Q1 FY2025 (-11% YoY), partly iPhone 17 cycle strength.</p>
+  <canvas id="cGeo"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtGeo"></div>
+</div>
+
+<p>The Q1 FY2026 iPhone growth of 23% YoY warrants scrutiny. Greater China's 38% growth benefits from a depressed base — Q1 FY2025 China revenue was $18.5B, down 11% YoY. On a two-year stack, Q1 FY2026 China is up 22.6% versus Q1 FY2024, which is genuine growth beyond base-effect recovery. However, China's FY2024 and FY2025 declines coincided with Huawei's resurgence in the premium segment, and the Q1 FY2026 rebound may reflect iPhone 17 launch timing rather than structural share recovery.</p>
+
+<p>Total deferred revenue (including non-current) has grown from $10.2B to $14.3B (6.1% CAGR), consistent with Services growth and indicating healthy recurring revenue trajectory.</p>
+
+<!-- ===== 3. CASH CONVERSION CYCLE ===== -->
+<h3 class="sub" id="sec-3">3. Cash Conversion Cycle</h3>
+
+<p>Apple operates with one of the most favorable cash conversion cycles in corporate history, consistently deeply negative, meaning Apple collects from customers and earns interest on cash before paying suppliers.</p>
+
+<h4 class="subsub">Table 3A: Annual DSO, DIO, DPO, and Cash Conversion Cycle (Days)</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">AR ($M)</th><th class="num">Inventory ($M)</th><th class="num">AP ($M)</th><th class="num">DSO</th><th class="num">DIO</th><th class="num">DPO</th><th class="num">CCC</th></tr>
+<tr><td>FY2020</td><td class="num">16,120</td><td class="num">4,061</td><td class="num">42,296</td><td class="num">21.4</td><td class="num">8.7</td><td class="num">91.0</td><td class="num">−60.9</td></tr>
+<tr><td>FY2021</td><td class="num">26,278</td><td class="num">6,580</td><td class="num">54,763</td><td class="num">26.2</td><td class="num">11.3</td><td class="num">93.9</td><td class="num">−56.4</td></tr>
+<tr><td>FY2022</td><td class="num">28,184</td><td class="num">4,946</td><td class="num">64,115</td><td class="num">26.1</td><td class="num">8.1</td><td class="num">104.7</td><td class="num">−70.5</td></tr>
+<tr><td>FY2023</td><td class="num">29,508</td><td class="num">6,331</td><td class="num">62,611</td><td class="num">28.1</td><td class="num">10.8</td><td class="num">106.7</td><td class="num">−67.8</td></tr>
+<tr><td>FY2024</td><td class="num">33,410</td><td class="num">7,286</td><td class="num">68,960</td><td class="num">31.2</td><td class="num">12.6</td><td class="num">119.7</td><td class="num">−75.8</td></tr>
+<tr><td>FY2025</td><td class="num">39,777</td><td class="num">5,718</td><td class="num">69,860</td><td class="num">34.9</td><td class="num">9.4</td><td class="num">115.4</td><td class="num">−71.1</td></tr>
+</table>
+</div>
+
+<!-- CHART: CCC -->
+<div class="chart-card">
+  <h4>Cash Conversion Cycle Components</h4>
+  <p class="ccap">DSO has risen 63% (21.4→34.9 days) while revenue grew 52% — AR is growing faster than sales, a potential demand quality concern warranting monitoring.</p>
+  <canvas id="cCCC"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtCCC"></div>
+</div>
+
+<p><strong>Key concern: DSO has risen from 21.4 days (FY2020) to 34.9 days (FY2025).</strong> AR grew from $16.1B to $39.8B (+147%) while revenue grew 52%. Any quarter in which DSO exceeds 37 days should trigger immediate investigation. DPO has also extended significantly (91→115 days), reflecting Apple's increasing supply chain leverage.</p>
+
+<!-- ===== 4. MANAGEMENT CREDIBILITY ===== -->
+<h3 class="sub" id="sec-4">4. Management Credibility</h3>
+
+<p>Management's track record on quantitative guidance is strong. Across all 19 earnings calls in the KB, Apple provided gross margin guidance in a 100bp range and consistently delivered at or above the high end. Apple also provides directional and increasingly specific revenue guidance, which has been consistently met or exceeded.</p>
+
+<h4 class="subsub">Table 4A: Management Guidance Scorecard</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Call Date</th><th>Guidance Given</th><th>Metric</th><th>Actual Result</th><th>Score</th></tr>
+<tr><td>Q4 FY2021</td><td>GM 41.5–42.5%</td><td>Gross Margin</td><td class="num">43.8%</td><td>✓ Beat</td></tr>
+<tr><td>Q1 FY2023</td><td>GM 43.5–44.5%</td><td>Gross Margin</td><td class="num">44.3%</td><td>✓ Met</td></tr>
+<tr><td>Q4 FY2023</td><td>GM 45–46%</td><td>Gross Margin</td><td class="num">45.9%</td><td>✓ Met</td></tr>
+<tr><td>Q4 FY2024</td><td>Rev "low-to-mid single digit"</td><td>Revenue</td><td class="num">+4.0%</td><td>✓ Met</td></tr>
+<tr><td>Q4 FY2024</td><td>GM 46–47%</td><td>Gross Margin</td><td class="num">46.9%</td><td>✓ Met</td></tr>
+<tr><td>Q4 FY2025</td><td>Rev +10–12% YoY</td><td>Revenue</td><td class="num">+15.7%</td><td>✓ Beat</td></tr>
+<tr><td>Q4 FY2025</td><td>GM 47–48%</td><td>Gross Margin</td><td class="num">48.2%</td><td>✓ Beat</td></tr>
+<tr><td>Q1 FY2026</td><td>Rev +13–16%; GM 48–49%</td><td>Forward</td><td class="num">—</td><td>Pending</td></tr>
+</table>
+</div>
+
+<p><strong>Important caveats:</strong> Gross margin guidance is Apple's narrowest metric — a 100bp range on a ~$100B+ revenue base means management only needs to be within ~$700M of gross profit. The Q1 FY2026 revenue beat (15.7% vs. 10–12% guide) is the most informative data point — it suggests either genuine surprise at iPhone 17 demand or deliberate conservatism.</p>
+
+<!-- ===== 5. ACCOUNTING ===== -->
+<h3 class="sub" id="sec-5">5. Accounting and Estimate Changes</h3>
+
+<p>No material accounting policy changes were identified across the filing period. Depreciation methods and useful life assumptions appear stable across all 10-Ks.</p>
+
+<h4 class="subsub">Table 5A: Annual Capex, Depreciation, and Capex/D&amp;A Ratio ($M)</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">Capex</th><th class="num">D&amp;A</th><th class="num">Capex/D&amp;A</th></tr>
+<tr><td>FY2019</td><td class="num">10,495</td><td class="num">12,547</td><td class="num">0.84×</td></tr>
+<tr><td>FY2020</td><td class="num">7,309</td><td class="num">11,056</td><td class="num">0.66×</td></tr>
+<tr><td>FY2021</td><td class="num">11,085</td><td class="num">11,284</td><td class="num">0.98×</td></tr>
+<tr><td>FY2022</td><td class="num">10,708</td><td class="num">11,104</td><td class="num">0.96×</td></tr>
+<tr><td>FY2023</td><td class="num">10,959</td><td class="num">11,519</td><td class="num">0.95×</td></tr>
+<tr><td>FY2024</td><td class="num">9,447</td><td class="num">11,445</td><td class="num">0.83×</td></tr>
+<tr><td>FY2025</td><td class="num">12,715</td><td class="num">11,698</td><td class="num">1.09×</td></tr>
+</table>
+</div>
+
+<!-- CHART: Capex vs D&A -->
+<div class="chart-card">
+  <h4>Capex vs. D&amp;A — Capital Intensity</h4>
+  <p class="ccap">Capex/D&amp;A crossed above 1.0× in FY2025 for the first time since FY2021, signaling a new capital-intensive phase driven by AI infrastructure.</p>
+  <canvas id="cCapex"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtCapex"></div>
+</div>
+
+<p><strong>Cash taxes paid diverge materially from GAAP tax expense.</strong> FY2025 cash taxes were $43.4B versus GAAP tax expense of $20.7B. This $22.6B excess is primarily explained by the ~$15.8B EU State Aid escrow release to Ireland. Stripping out the EU settlement, "regular" cash taxes were ~$27.6B — still up 48% from FY2023's $18.7B on 17% higher pre-tax income. The underlying cash tax rate rose from 16.4% to ~20.8%, likely reflecting the OECD Pillar Two global minimum tax. <strong>This rising underlying cash tax rate is a structural headwind.</strong></p>
+
+<!-- ===== 6. ROIC ===== -->
+<h3 class="sub" id="sec-6">6. ROIC and Capital Allocation</h3>
+
+<p>Apple's ROIC is extraordinarily high due to its negative working capital model and massive share buybacks that have reduced equity to minimal levels. <strong>However, traditional ROIC frameworks break down for a company with Apple's capital structure</strong>, and the headline figures should be interpreted with caution.</p>
+
+<h4 class="subsub">Table 6A: Annual ROIC Decomposition</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">NOPAT ($M)</th><th class="num">Avg IC ($M)</th><th class="num">NOPAT Margin%</th><th class="num">Rev/Avg IC</th><th class="num">ROIC%</th></tr>
+<tr><td>FY2023</td><td class="num">97,477</td><td class="num">N/A</td><td class="num">25.4%</td><td class="num">N/A</td><td class="num">N/A</td></tr>
+<tr><td>FY2024</td><td class="num">93,532</td><td class="num">56,900</td><td class="num">23.9%</td><td class="num">6.9×</td><td class="num">164.4%</td></tr>
+<tr><td>FY2025</td><td class="num">112,281</td><td class="num">67,168</td><td class="num">27.0%</td><td class="num">6.2×</td><td class="num">167.2%</td></tr>
+<tr><td colspan="6" class="note">Operating IC = Total Assets − Cash − Marketable Securities − AP − Other CL − Deferred Revenue. ROIC calculated on average beginning/ending IC. FY2023 lacks prior-year IC for average calculation.</td></tr>
+</table>
+</div>
+
+<!-- CHART: ROIC -->
+<div class="chart-card">
+  <h4>ROIC Decomposition</h4>
+  <p class="ccap">ROIC exceeds 160% but is mechanically inflated by buyback-reduced equity and negative working capital — not directly comparable to peers.</p>
+  <canvas id="cROIC"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtROIC"></div>
+</div>
+
+<h4 class="subsub">Table 6B: Annual Capital Allocation ($M)</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">Buybacks</th><th class="num">Dividends</th><th class="num">Capex</th><th class="num">SBC</th><th class="num">Diluted Shares (M)</th></tr>
+<tr><td>FY2019</td><td class="num">66,897</td><td class="num">14,119</td><td class="num">10,495</td><td class="num">6,068</td><td class="num">18,596</td></tr>
+<tr><td>FY2020</td><td class="num">72,358</td><td class="num">14,081</td><td class="num">7,309</td><td class="num">6,829</td><td class="num">17,528</td></tr>
+<tr><td>FY2021</td><td class="num">85,971</td><td class="num">14,467</td><td class="num">11,085</td><td class="num">7,906</td><td class="num">16,865</td></tr>
+<tr><td>FY2022</td><td class="num">89,402</td><td class="num">14,841</td><td class="num">10,708</td><td class="num">9,038</td><td class="num">16,326</td></tr>
+<tr><td>FY2023</td><td class="num">77,550</td><td class="num">15,025</td><td class="num">10,959</td><td class="num">10,833</td><td class="num">15,813</td></tr>
+<tr><td>FY2024</td><td class="num">94,949</td><td class="num">15,234</td><td class="num">9,447</td><td class="num">11,688</td><td class="num">15,408</td></tr>
+<tr><td>FY2025</td><td class="num">90,711</td><td class="num">15,421</td><td class="num">12,715</td><td class="num">12,863</td><td class="num">15,005</td></tr>
+</table>
+</div>
+
+<!-- CHART: Diluted Shares -->
+<div class="chart-card">
+  <h4>Diluted Share Count &amp; Cumulative Buybacks</h4>
+  <p class="ccap">$577B in buybacks reduced shares 19.4% (18.6B→15.0B); net of SBC dilution, ~2.7% annual share reduction is genuine capital return.</p>
+  <canvas id="cShares"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtShares"></div>
+</div>
+
+<!-- CHART: Capital Allocation -->
+<div class="chart-card">
+  <h4>Capital Allocation Mix</h4>
+  <p class="ccap">Buybacks dominate at ~$90B/year; capex jumped 35% in FY2025 to $12.7B, signaling the start of an AI investment cycle.</p>
+  <canvas id="cCapAlloc"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtCapAlloc"></div>
+</div>
+
+<!-- ===== 7. OFF-BALANCE-SHEET ===== -->
+<h3 class="sub" id="sec-7">7. Off-Balance-Sheet and Contingencies</h3>
+
+<p>Apple's most material contingent liability is the ongoing antitrust and regulatory landscape. The Google search agreement — Apple's single largest Services revenue source, estimated at $20B+ annually — faces direct regulatory risk. On August 5, 2024, Google was found to have violated U.S. antitrust laws, and the DOJ has proposed remedies that include "prohibiting Google from offering the Company commercial terms for search distribution for up to 10 years."</p>
+
+<p><strong>Tariff costs represent a new and escalating headwind:</strong></p>
+
+<div class="table-wrap">
+<table>
+<tr><th>Quarter</th><th>Tariff Cost</th><th>Source</th></tr>
+<tr><td>Q2 FY2025 (Mar 2025)</td><td>"Limited impact"</td><td>Q2 FY2025 Call</td></tr>
+<tr><td>Q3 FY2025 (Jun 2025)</td><td><strong>$800M actual</strong></td><td>Q3 FY2025 Call</td></tr>
+<tr><td>Q4 FY2025 (Sep 2025)</td><td><strong>$1.1B actual</strong></td><td>Q4 FY2025 Call</td></tr>
+<tr><td>Q1 FY2026 (Dec 2025)</td><td><strong>~$1.4B actual</strong></td><td>Q1 FY2026 Call</td></tr>
+</table>
+</div>
+
+<!-- CHART: Tariff -->
+<div class="chart-card">
+  <h4>Tariff Cost Escalation</h4>
+  <p class="ccap">Tariff costs escalated 75% across three quarters ($800M → $1.4B); management notes costs are "pretty linear with volume."</p>
+  <canvas id="cTariff"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtTariff"></div>
+</div>
+
+<!-- ===== 8. FCF QUALITY ===== -->
+<h3 class="sub" id="sec-8">8. Free Cash Flow Quality</h3>
+
+<h4 class="subsub">Table 8A: Annual FCF Bridge ($M)</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Item</th><th class="num">FY2023</th><th class="num">FY2024</th><th class="num">FY2025</th></tr>
+<tr><td>Net Income</td><td class="num">96,995</td><td class="num">93,736</td><td class="num">112,010</td></tr>
+<tr><td>+ D&amp;A</td><td class="num">11,519</td><td class="num">11,445</td><td class="num">11,698</td></tr>
+<tr><td>+ SBC</td><td class="num">10,833</td><td class="num">11,688</td><td class="num">12,863</td></tr>
+<tr><td>+ Other non-cash</td><td class="num">(2,227)</td><td class="num">(2,266)</td><td class="num">(89)</td></tr>
+<tr><td>Working capital changes</td><td class="num">(6,577)</td><td class="num">3,651</td><td class="num">(25,000)</td></tr>
+<tr><td><strong>= CFO</strong></td><td class="num"><strong>110,543</strong></td><td class="num"><strong>118,254</strong></td><td class="num"><strong>111,482</strong></td></tr>
+<tr><td>− Capex</td><td class="num">(10,959)</td><td class="num">(9,447)</td><td class="num">(12,715)</td></tr>
+<tr><td><strong>= FCF</strong></td><td class="num"><strong>99,584</strong></td><td class="num"><strong>108,807</strong></td><td class="num"><strong>98,767</strong></td></tr>
+</table>
+</div>
+
+<!-- CHART: FCF Waterfall -->
+<div class="chart-card">
+  <h4>FY2025 FCF Waterfall — Net Income to FCF</h4>
+  <p class="ccap">A $25B working capital headwind (primarily the $15.8B EU State Aid escrow release) depressed FY2025 FCF to $98.8B; normalized FCF was ~$115B.</p>
+  <canvas id="cFCF"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtFCF"></div>
+</div>
+
+<h4 class="subsub">Table 8B: SBC as % of Revenue</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">FY2019</th><th class="num">FY2020</th><th class="num">FY2021</th><th class="num">FY2022</th><th class="num">FY2023</th><th class="num">FY2024</th><th class="num">FY2025</th></tr>
+<tr><td>SBC ($M)</td><td class="num">6,068</td><td class="num">6,829</td><td class="num">7,906</td><td class="num">9,038</td><td class="num">10,833</td><td class="num">11,688</td><td class="num">12,863</td></tr>
+<tr><td>SBC% Rev</td><td class="num">2.3%</td><td class="num">2.5%</td><td class="num">2.2%</td><td class="num">2.3%</td><td class="num">2.8%</td><td class="num">3.0%</td><td class="num">3.1%</td></tr>
+</table>
+</div>
+
+<!-- CHART: SBC % Rev -->
+<div class="chart-card">
+  <h4>SBC as Percentage of Revenue</h4>
+  <p class="ccap">SBC intensity has risen from 2.2% to 3.1% — still well below peers (Alphabet ~7%, Meta ~12%) but the upward trend compresses SBC-adjusted earnings.</p>
+  <canvas id="cSBC"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtSBC"></div>
+</div>
+
+<!-- CHART: SBC-adj FCF -->
+<div class="chart-card">
+  <h4>SBC-Adjusted FCF Trend</h4>
+  <p class="ccap">Reported SBC-adj FCF declined 16% from FY2022 peak; normalized for the EU settlement, it's flat — three years of no growth despite 6% revenue expansion.</p>
+  <canvas id="cSBCFCF"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtSBCFCF"></div>
+</div>
+
+<!-- ===== 9. CONCENTRATION ===== -->
+<h3 class="sub" id="sec-9">9. Concentration Risk</h3>
+
+<p>Apple's most significant concentration risk is the <strong>Google search agreement</strong>, which contributes an estimated $20B+ annually to Services revenue — roughly 18–20% of total Services and ~5% of total revenue. <strong>Modeling the downside:</strong> if Apple lost $20B in ~75% margin Services revenue, gross profit would decline ~$15B, net income by ~$12.5B after tax, and SBC-adjusted EPS by ~$0.85. At 30×, that would reduce fair value by ~$25/share.</p>
+
+<p>iPhone represents 50–59% of total revenue depending on the quarter, creating significant product concentration. Apple's dependence on TSMC for advanced node chip fabrication is a critical single-source risk.</p>
+
+<!-- ===== 10. MOAT ===== -->
+<h3 class="sub" id="sec-10">10. Competitive Moat</h3>
+
+<h4 class="subsub">Table 10A: R&amp;D Efficiency</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Period</th><th class="num">R&amp;D ($M)</th><th class="num">R&amp;D% Rev</th><th class="num">Rev/R&amp;D$</th><th class="num">SG&amp;A% Rev</th></tr>
+<tr><td>FY2019</td><td class="num">16,217</td><td class="num">6.2%</td><td class="num">$16.0</td><td class="num">7.0%</td></tr>
+<tr><td>FY2021</td><td class="num">21,914</td><td class="num">6.0%</td><td class="num">$16.7</td><td class="num">6.0%</td></tr>
+<tr><td>FY2023</td><td class="num">29,915</td><td class="num">7.8%</td><td class="num">$12.8</td><td class="num">6.5%</td></tr>
+<tr><td>FY2025</td><td class="num">34,550</td><td class="num">8.3%</td><td class="num">$12.0</td><td class="num">6.6%</td></tr>
+</table>
+</div>
+
+<!-- CHART: R&D Efficiency -->
+<div class="chart-card">
+  <h4>R&amp;D Efficiency — Revenue per R&amp;D Dollar</h4>
+  <p class="ccap">Revenue per R&amp;D dollar has declined 28% ($16.7→$12.0) — either a leading indicator of future AI capability or evidence of catch-up spending.</p>
+  <canvas id="cRDEff"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtRDEff"></div>
+</div>
+
+<h4 class="subsub">Table 10B: Peer Comparison (Approximate)</h4>
+<div class="table-wrap">
+<table>
+<tr><th>Metric</th><th class="num">Apple</th><th class="num">Microsoft</th><th class="num">Alphabet</th><th class="num">Samsung</th><th class="num">Meta</th></tr>
+<tr><td>Gross Margin</td><td class="num">46.9%</td><td class="num">~69%</td><td class="num">~57%</td><td class="num">~37%</td><td class="num">~81%</td></tr>
+<tr><td>Operating Margin</td><td class="num">32.0%</td><td class="num">~44%</td><td class="num">~32%</td><td class="num">~10%</td><td class="num">~41%</td></tr>
+<tr><td>Rev Growth (FY2025)</td><td class="num">6.4%</td><td class="num">~16%</td><td class="num">~14%</td><td class="num">~5%</td><td class="num">~22%</td></tr>
+<tr><td>R&amp;D % Rev</td><td class="num">8.3%</td><td class="num">~12%</td><td class="num">~13%</td><td class="num">~9%</td><td class="num">~28%</td></tr>
+<tr><td colspan="6" class="note">Apple's ROIC (>150%) is mechanically inflated and not directly comparable. Peer data approximate.</td></tr>
+</table>
+</div>
+
+<!-- CHART: Peer Comparison -->
+<div class="chart-card">
+  <h4>Peer Comparison — Key Metrics</h4>
+  <p class="ccap">Apple's gross margin is extraordinary for a hardware company; operating margin matches Alphabet despite much lower software mix.</p>
+  <canvas id="cPeer"></canvas>
+  <button class="toggle-dt" onclick="toggleDT(this)">Show Data Table</button>
+  <div class="dt" id="dtPeer"></div>
+</div>
+
+<!-- ===== III. BULL vs. BEAR ===== -->
+<h2 class="sec" id="sec-bull-bear">III. Bull Case vs. Bear Case</h2>
+
+<p><strong>Bull Case (25% probability) — Fair Value: ~$275.</strong> The iPhone 17 cycle extends through FY2027 as Apple Intelligence features drive a multi-year upgrade wave. Services revenue reaches $140B+ by FY2027. SBC-adjusted EPS reaches ~$7.85 in FY2026. At 35×, fair value is ~$275.</p>
+
+<p><strong>Bear Case (20% probability) — Fair Value: ~$150.</strong> iPhone 17 demand proves to be a one-quarter pull-forward. DOJ forces partial restructuring of Google search deal. Rising cash tax rate permanently reduces after-tax earnings. SBC-adjusted EPS falls to ~$6.00. At 25×, fair value is ~$150.</p>
+
+<p><strong>Base Case (55% probability) — Fair Value: ~$220.</strong> iPhone 17 cycle sustains for 2–3 quarters before normalizing. Services grows 12–14% annually. Margins stabilize at 47–48%. SBC-adjusted EPS of ~$7.50 in FY2026. At 29–30×, fair value is $218–$225.</p>
+
+<p><strong>Probability-weighted expected value: 0.25 × $275 + 0.55 × $220 + 0.20 × $150 = $219.75.</strong> The current price of $253 is ~15% above this expected value.</p>
+
+<!-- CHART: Scenario -->
+<div class="chart-card">
+  <h4>Scenario Analysis — Probability-Weighted Fair Value</h4>
+  <p class="ccap">At $253, the market prices ~65–70% bull probability; the probability-weighted EV of $220 implies 13% downside — risk/reward skews negative.</p>
+  <canvas id="cScenario"></canvas>
+</div>
+
+<!-- ===== IV. RECOMMENDATION ===== -->
+<h2 class="sec" id="sec-rec">IV. Investment Recommendation</h2>
+
+<p><strong>Recommendation: HOLD for existing positions; would not initiate new position at $253.</strong> Conviction: Moderate.</p>
+
+<p>FY2026E SBC-adjusted EPS of ~$7.65 at a justified 28–30× multiple yields a fair value range of <strong>$214–$229/share</strong>. The stock is 10–15% above fair value in the base case.</p>
+
+<h4 class="subsub">Table 11A: Valuation Sensitivity — Fair Value per Share</h4>
+<div id="heatmapContainer"></div>
+
+<p><strong>Asymmetry Assessment:</strong> Upside to bull ($275): +8.7%. Downside to bear ($150): −40.7%. Downside to base ($220): −13.0%. <strong>Risk/reward skews to the downside</strong> from current levels.</p>
+
+<p><strong>Most underpriced risk:</strong> Regulatory restructuring of the Google search agreement. <strong>Most overlooked catalyst:</strong> Apple Intelligence monetization via a premium AI subscription tier ($10–15/month) adopted by 5–10% of paying accounts — potentially $10–25B in incremental high-margin revenue by FY2027–FY2028.</p>
+
+<!-- ===== V. MONITORING ===== -->
+<h2 class="sec" id="sec-monitor">V. Monitoring Checklist</h2>
+
+<div class="table-wrap">
+<table>
+<tr><th>#</th><th>Metric</th><th>Baseline</th><th>Trigger</th><th>Action</th></tr>
+<tr><td>1</td><td>iPhone YoY growth</td><td class="num">+23%</td><td>Below +10%</td><td>Reassess thesis</td></tr>
+<tr><td>2</td><td>Google deal status</td><td>Active</td><td>DOJ restructuring</td><td>Model Services impact</td></tr>
+<tr><td>3</td><td>Gross margin</td><td class="num">48.2%</td><td>Below 46.5%</td><td>Reassess margin thesis</td></tr>
+<tr><td>4</td><td>DSO</td><td class="num">34.9 days</td><td>Above 37 days</td><td>Investigate immediately</td></tr>
+<tr><td>5</td><td>Services growth</td><td class="num">+14%</td><td>Below +8%</td><td>Reduce position</td></tr>
+<tr><td>6</td><td>Greater China rev</td><td class="num">+38%</td><td>Negative YoY</td><td>Hedge geo risk</td></tr>
+<tr><td>7</td><td>R&amp;D % of revenue</td><td class="num">8.3%</td><td>Above 10%</td><td>Reassess leverage</td></tr>
+<tr><td>8</td><td>Cash tax rate (ex items)</td><td class="num">~20.8%</td><td>Above 22%</td><td>Lower FCF estimates</td></tr>
+<tr><td>9</td><td>SBC % revenue</td><td class="num">3.1%</td><td>Above 4%</td><td>Adjust SBC-adj earnings</td></tr>
+<tr><td>10</td><td>Tariff costs</td><td class="num">$1.4B/qtr</td><td>Above $2B/qtr</td><td>Reassess demand elasticity</td></tr>
+</table>
+</div>
+
+<!-- ===== VI. OPEN QUESTIONS ===== -->
+<h2 class="sec" id="sec-open">VI. Open Questions and Data Gaps</h2>
+
+<p><strong>1. Google search deal economics:</strong> The exact revenue is not disclosed in any filing. Estimates of $20B+ are based on public reporting.</p>
+<p><strong>2. Apple Intelligence monetization:</strong> No filing or transcript provides specific revenue targets or pricing for AI features.</p>
+<p><strong>3. Huawei competitive dynamics:</strong> No Apple filing addresses Huawei's resurgence in the premium smartphone segment.</p>
+<p><strong>4. DSO deterioration drivers:</strong> AR has grown 147% vs. 52% revenue growth. The filings do not provide AR aging schedules.</p>
+<p><strong>5. Incremental ROIC on AI investments:</strong> The $500B U.S. investment commitment is not accompanied by return-on-investment targets.</p>
+<p><strong>6. Cash tax rate trajectory:</strong> Whether the FY2025 rate (~20.8% ex-EU) reflects Pillar Two implementation or timing differences cannot be determined.</p>
+<p><strong>7. Installed base vs. paying accounts:</strong> Apple reports 2.5B+ active devices but does not disclose unique paying account numbers.</p>
+
+<!-- CHART NOTES -->
+<div class="chart-notes">
+  <h4>Chart Notes</h4>
+  <p><strong>ROIC Decomposition:</strong> Only FY2024–FY2025 shown; FY2023 lacks prior-year IC for average calculation. Figures are mechanically inflated — see Section 6 limitations.</p>
+  <p><strong>FY2019 CCC data:</strong> Not available; balance sheet data for FY2019 is not in the knowledge base.</p>
+  <p><strong>Q4 FY2024 Net Income:</strong> Depressed by $10.2B EU State Aid charge; visible in quarterly charts.</p>
+  <p><strong>Peer data (Table 10B):</strong> Approximate figures from public knowledge; Apple's ROIC excluded from peer chart for visual comparability.</p>
+</div>
+
+</main>
+</div><!-- /layout -->
+
+<!-- ===== FOOTER ===== -->
+<div class="report-footer">
+  <p><strong>Disclaimer:</strong> This report is AI-generated analysis based on documents available in the knowledge base. It should not be construed as investment advice. All investment decisions should be made in consultation with qualified financial advisors.</p>
+  <p><strong>Generated:</strong> February 2026 · <strong>Filing periods covered:</strong> FY2019 (Sep 2019) through Q1 FY2026 (Dec 2025) · <strong>Sources:</strong> 5 Annual 10-K filings, 13 Quarterly 10-Q filings, 19 Earnings call transcripts.</p>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+const D = () => document.body.classList.contains('dark');
+const TC = () => D() ? '#d4d4d4' : '#1a1a1a';
+const TC2 = () => D() ? '#8b8b8b' : '#5a5a5a';
+const GC = () => D() ? 'rgba(255,255,255,.05)' : 'rgba(0,0,0,.05)';
+const BLUE='#0055b8',GREEN='#2d8a4e',RED='#c0392b',ORANGE='#d4820a',PURPLE='#6b3fa0',TEAL='#1a8a7a',PINK='#b83280',GRAY='#7a7a7a';
+const charts={};
+
+function bOpts(yLab,stk){return{responsive:true,maintainAspectRatio:true,aspectRatio:1.8,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:TC(),font:{family:'Inter',size:11}}},tooltip:{titleFont:{family:'Inter'},bodyFont:{family:'Inter'}}},scales:{x:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()},stacked:!!stk},y:{title:{display:!!yLab,text:yLab||'',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()},stacked:!!stk}}}}
+
+function toggleDT(b){const d=b.nextElementSibling;d.style.display=d.style.display==='block'?'none':'block';b.textContent=d.style.display==='block'?'Hide Data Table':'Show Data Table';}
+function mkDT(id,hd,rows){let h='<table><tr>'+hd.map(x=>'<th>'+x+'</th>').join('')+'</tr>';rows.forEach(r=>{h+='<tr>'+r.map(c=>'<td>'+c+'</td>').join('')+'</tr>';});document.getElementById(id).innerHTML=h+'</table>';}
+
+// DATA
+const QL=['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26'];
+const QP=[96388,73929,60584,67184,96458,66886,61564,69958,97960,68714,66613,73716,113743];
+const QS=[20766,20907,21213,22314,23117,23867,24213,24972,26340,26645,27423,28750,30013];
+const QR=QP.map((p,i)=>p+QS[i]);
+const QGM=[43.0,44.3,44.5,45.2,45.9,46.6,46.3,46.2,46.9,47.1,46.5,47.2,48.2];
+const QPG=[37.0,36.7,35.4,37.0,39.4,36.6,35.3,34.5,39.3,35.9,34.5,36.2,40.7];
+const QSG=[70.8,71.0,70.5,70.9,72.8,74.6,74.0,73.2,75.0,75.7,75.6,75.3,76.5];
+const QOM=[30.7,29.9,28.1,30.1,33.8,30.7,29.6,31.2,34.5,31.0,30.0,31.6,35.4];
+
+const AL=['FY19','FY20','FY21','FY22','FY23','FY24','FY25'];
+const AR_=[260174,274515,365817,394328,383285,391035,416161];
+const AP_=[213883,220747,297392,316199,298085,294866,307003];
+const AS_=[46291,53768,68425,78129,85200,96169,109158];
+const AGM=[37.8,38.2,41.8,43.3,44.1,46.2,46.9];
+const ARD=[6.2,6.8,6.0,6.7,7.8,8.0,8.3];
+const ASG=[7.0,7.3,6.0,6.4,6.5,6.7,6.6];
+const AOM=[24.6,24.1,29.8,30.3,29.8,31.5,32.0];
+const ASBC=[6068,6829,7906,9038,10833,11688,12863];
+const ASBCP=[2.3,2.5,2.2,2.3,2.8,3.0,3.1];
+const ASH=[18596,17528,16865,16326,15813,15408,15005];
+const ABY=[66897,72358,85971,89402,77550,94949,90711];
+const ADV=[14119,14081,14467,14841,15025,15234,15421];
+const ACX=[10495,7309,11085,10708,10959,9447,12715];
+const ADA=[12547,11056,11284,11104,11519,11445,11698];
+
+const CL=['FY20','FY21','FY22','FY23','FY24','FY25'];
+const DSO=[21.4,26.2,26.1,28.1,31.2,34.9],DIO=[8.7,11.3,8.1,10.8,12.6,9.4],DPO=[91.0,93.9,104.7,106.7,119.7,115.4],CCC=[-60.9,-56.4,-70.5,-67.8,-75.8,-71.1];
+
+function buildAll(){
+  Object.values(charts).forEach(c=>c.destroy());
+
+  // Margin Trend
+  charts.cMarginTrend=new Chart(document.getElementById('cMarginTrend'),{type:'line',data:{labels:QL,datasets:[
+    {label:'Consolidated GM%',data:QGM,borderColor:BLUE,backgroundColor:'transparent',borderWidth:2.5,pointRadius:3,pointBackgroundColor:BLUE,tension:.3},
+    {label:'Products GM%',data:QPG,borderColor:ORANGE,backgroundColor:'transparent',borderWidth:1.5,borderDash:[5,3],pointRadius:2,tension:.3},
+    {label:'Services GM%',data:QSG,borderColor:GREEN,backgroundColor:'transparent',borderWidth:1.5,borderDash:[5,3],pointRadius:2,tension:.3,yAxisID:'y2'},
+    {label:'Operating Margin%',data:QOM,borderColor:PURPLE,backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.3}
+  ]},options:{...bOpts('GM% / OpM%'),scales:{x:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y:{min:25,max:55,title:{display:true,text:'GM% / OpM%',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y2:{position:'right',min:65,max:80,title:{display:true,text:'Services GM%',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{display:false}}}}});
+  mkDT('dtMarginTrend',['Qtr','Consol','Prod','Svc','OpM'],QL.map((l,i)=>[l,QGM[i]+'%',QPG[i]+'%',QSG[i]+'%',QOM[i]+'%']));
+
+  // OpM Decomposition
+  charts.cOpMargin=new Chart(document.getElementById('cOpMargin'),{type:'bar',data:{labels:AL,datasets:[
+    {label:'Gross Margin%',data:AGM,backgroundColor:BLUE},{label:'R&D%',data:ARD,backgroundColor:RED},{label:'SG&A%',data:ASG,backgroundColor:ORANGE}
+  ]},options:bOpts('% of Revenue')});
+  mkDT('dtOpMargin',['Period','GM%','R&D%','SG&A%','OpM%'],AL.map((l,i)=>[l,AGM[i]+'%',ARD[i]+'%',ASG[i]+'%',AOM[i]+'%']));
+
+  // Quarterly Revenue
+  const qYoY=QR.map((r,i)=>i<4?null:+((r/QR[i-4]-1)*100).toFixed(1));
+  charts.cQRevenue=new Chart(document.getElementById('cQRevenue'),{type:'bar',data:{labels:QL,datasets:[
+    {label:'Products',data:QP,backgroundColor:BLUE,stack:'s'},{label:'Services',data:QS,backgroundColor:GREEN,stack:'s'},
+    {label:'YoY %',data:qYoY,type:'line',borderColor:ORANGE,backgroundColor:'transparent',pointRadius:3,pointBackgroundColor:ORANGE,yAxisID:'y2',tension:.3,spanGaps:true}
+  ]},options:{...bOpts('$M',true),scales:{...bOpts('$M',true).scales,y2:{position:'right',title:{display:true,text:'YoY %',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10},callback:v=>v+'%'},grid:{display:false}}}}});
+  mkDT('dtQRevenue',['Qtr','Prod','Svc','Total','YoY%'],QL.map((l,i)=>[l,QP[i].toLocaleString(),QS[i].toLocaleString(),QR[i].toLocaleString(),qYoY[i]!=null?qYoY[i]+'%':'—']));
+
+  // Revenue Mix
+  const mP=AR_.map((r,i)=>+(AP_[i]/r*100).toFixed(1)),mS=AR_.map((r,i)=>+(AS_[i]/r*100).toFixed(1));
+  charts.cRevMix=new Chart(document.getElementById('cRevMix'),{type:'bar',data:{labels:AL,datasets:[
+    {label:'Products %',data:mP,backgroundColor:BLUE,stack:'s'},{label:'Services %',data:mS,backgroundColor:GREEN,stack:'s'}
+  ]},options:{...bOpts('% of Revenue',true),scales:{...bOpts('% of Revenue',true).scales,y:{...bOpts('% of Revenue',true).scales.y,max:100}}}});
+  mkDT('dtRevMix',['Period','Prod%','Svc%'],AL.map((l,i)=>[l,mP[i]+'%',mS[i]+'%']));
+
+  // Geo
+  const GL=['FY23','FY24','FY25'],GAM=[162560,167045,178353],GEU=[94294,101328,111032],GCN=[72559,66952,64377],GJP=[24257,25052,28703],GAP=[29615,30658,33696];
+  charts.cGeo=new Chart(document.getElementById('cGeo'),{type:'bar',data:{labels:GL,datasets:[
+    {label:'Americas',data:GAM,backgroundColor:BLUE,stack:'s'},{label:'Europe',data:GEU,backgroundColor:GREEN,stack:'s'},
+    {label:'Greater China',data:GCN,backgroundColor:RED,stack:'s'},{label:'Japan',data:GJP,backgroundColor:ORANGE,stack:'s'},
+    {label:'Rest of AP',data:GAP,backgroundColor:PURPLE,stack:'s'}
+  ]},options:bOpts('$M',true)});
+  mkDT('dtGeo',['Period','Americas','Europe','China','Japan','RoAP'],GL.map((l,i)=>[l,GAM[i].toLocaleString(),GEU[i].toLocaleString(),GCN[i].toLocaleString(),GJP[i].toLocaleString(),GAP[i].toLocaleString()]));
+
+  // CCC
+  charts.cCCC=new Chart(document.getElementById('cCCC'),{type:'line',data:{labels:CL,datasets:[
+    {label:'DSO',data:DSO,borderColor:RED,backgroundColor:'transparent',borderWidth:2,pointRadius:4,pointBackgroundColor:RED,tension:.3},
+    {label:'DIO',data:DIO,borderColor:ORANGE,backgroundColor:'transparent',borderWidth:2,pointRadius:4,pointBackgroundColor:ORANGE,tension:.3},
+    {label:'DPO',data:DPO,borderColor:GREEN,backgroundColor:'transparent',borderWidth:2,pointRadius:4,pointBackgroundColor:GREEN,tension:.3},
+    {label:'CCC',data:CCC,borderColor:BLUE,backgroundColor:'rgba(0,85,184,.06)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:BLUE,tension:.3,fill:true}
+  ]},options:bOpts('Days')});
+  mkDT('dtCCC',['Period','DSO','DIO','DPO','CCC'],CL.map((l,i)=>[l,DSO[i],DIO[i],DPO[i],CCC[i]]));
+
+  // Capex vs D&A
+  const CAPDA=ACX.map((c,i)=>+(c/ADA[i]).toFixed(2));
+  charts.cCapex=new Chart(document.getElementById('cCapex'),{type:'bar',data:{labels:AL,datasets:[
+    {label:'Capex',data:ACX,backgroundColor:RED},{label:'D&A',data:ADA,backgroundColor:GRAY},
+    {label:'Capex/D&A',data:CAPDA,type:'line',borderColor:BLUE,backgroundColor:'transparent',pointRadius:4,pointBackgroundColor:BLUE,yAxisID:'y2',tension:.3}
+  ]},options:{...bOpts('$M'),scales:{x:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y:{title:{display:true,text:'$M',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y2:{position:'right',min:0.5,max:1.2,title:{display:true,text:'Ratio',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{display:false}}},plugins:{...bOpts().plugins,annotation:{annotations:{ref:{type:'line',yMin:1,yMax:1,yScaleID:'y2',borderColor:RED,borderWidth:1,borderDash:[4,4]}}}}}});
+  mkDT('dtCapex',['Period','Capex','D&A','Ratio'],AL.map((l,i)=>[l,'$'+ACX[i].toLocaleString(),'$'+ADA[i].toLocaleString(),CAPDA[i]+'x']));
+
+  // ROIC
+  charts.cROIC=new Chart(document.getElementById('cROIC'),{type:'bar',data:{labels:['FY24','FY25'],datasets:[
+    {label:'NOPAT Margin%',data:[23.9,27.0],backgroundColor:BLUE},{label:'Capital Turnover(x)',data:[6.9,6.2],backgroundColor:GREEN},
+    {label:'ROIC%',data:[164.4,167.2],type:'line',borderColor:ORANGE,backgroundColor:'transparent',pointRadius:5,pointBackgroundColor:ORANGE,yAxisID:'y2',borderWidth:2.5}
+  ]},options:{...bOpts('Margin%/Turn'),scales:{x:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y:{title:{display:true,text:'Margin% / Turnover',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y2:{position:'right',title:{display:true,text:'ROIC%',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{display:false}}}}});
+  mkDT('dtROIC',['Period','NOPAT M%','Turn','ROIC%'],[['FY24','23.9%','6.9x','164.4%'],['FY25','27.0%','6.2x','167.2%']]);
+
+  // Shares
+  const cum=ABY.reduce((a,v,i)=>{a.push((a[i-1]||0)+v);return a;},[]);
+  charts.cShares=new Chart(document.getElementById('cShares'),{type:'line',data:{labels:AL,datasets:[
+    {label:'Diluted Shares (M)',data:ASH,borderColor:BLUE,backgroundColor:'rgba(0,85,184,.06)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:BLUE,tension:.3,fill:true},
+    {label:'Cum. Buybacks ($M)',data:cum,borderColor:GREEN,backgroundColor:'transparent',borderWidth:2,borderDash:[5,3],pointRadius:3,pointBackgroundColor:GREEN,tension:.3,yAxisID:'y2'}
+  ]},options:{...bOpts('Shares (M)'),scales:{x:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y:{title:{display:true,text:'Shares (M)',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y2:{position:'right',title:{display:true,text:'Cum Buybacks ($M)',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{display:false}}}}});
+  mkDT('dtShares',['Period','Shares','Buybacks','Cumulative'],AL.map((l,i)=>[l,ASH[i].toLocaleString(),'$'+ABY[i].toLocaleString(),'$'+cum[i].toLocaleString()]));
+
+  // Cap Alloc
+  charts.cCapAlloc=new Chart(document.getElementById('cCapAlloc'),{type:'bar',data:{labels:AL,datasets:[
+    {label:'Buybacks',data:ABY,backgroundColor:BLUE,stack:'s'},{label:'Dividends',data:ADV,backgroundColor:GREEN,stack:'s'},{label:'Capex',data:ACX,backgroundColor:RED,stack:'s'}
+  ]},options:bOpts('$M',true)});
+  mkDT('dtCapAlloc',['Period','Buybacks','Dividends','Capex'],AL.map((l,i)=>[l,'$'+ABY[i].toLocaleString(),'$'+ADV[i].toLocaleString(),'$'+ACX[i].toLocaleString()]));
+
+  // Tariff
+  charts.cTariff=new Chart(document.getElementById('cTariff'),{type:'bar',data:{labels:['Q2 FY25','Q3 FY25','Q4 FY25','Q1 FY26'],datasets:[{label:'$M',data:[0,800,1100,1400],backgroundColor:[GRAY,ORANGE,RED,RED]}]},options:{...bOpts('$M'),plugins:{...bOpts().plugins,legend:{display:false}}}});
+  mkDT('dtTariff',['Quarter','Cost'],[['Q2 FY25','"Limited"'],['Q3 FY25','$800M'],['Q4 FY25','$1,100M'],['Q1 FY26','$1,400M']]);
+
+  // FCF Waterfall
+  const wL=['Net Income','+D&A','+SBC','+Other','WC Changes','=CFO','−Capex','=FCF'];
+  const wV=[112010,11698,12863,-89,-25000,111482,-12715,98767];
+  const wC=wV.map((v,i)=>i===0||i===5?BLUE:i===7?TEAL:v>=0?GREEN:RED);
+  charts.cFCF=new Chart(document.getElementById('cFCF'),{type:'bar',data:{labels:wL,datasets:[{data:wV,backgroundColor:wC}]},options:{...bOpts('$M'),indexAxis:'y',aspectRatio:1.4,plugins:{...bOpts().plugins,legend:{display:false}},scales:{x:{title:{display:true,text:'$M',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}}}}});
+  mkDT('dtFCF',['Item','$M'],wL.map((l,i)=>[l,wV[i].toLocaleString()]));
+
+  // SBC %
+  charts.cSBC=new Chart(document.getElementById('cSBC'),{type:'line',data:{labels:AL,datasets:[
+    {label:'SBC % Rev',data:ASBCP,borderColor:PURPLE,backgroundColor:'rgba(107,63,160,.08)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:PURPLE,tension:.3,fill:true},
+    {label:'Trend',data:ASBCP.map((_,i)=>+(2.15+i*.145).toFixed(2)),borderColor:GRAY,borderDash:[6,3],borderWidth:1,pointRadius:0}
+  ]},options:{...bOpts('% of Revenue'),scales:{...bOpts('% of Revenue').scales,y:{...bOpts('% of Revenue').scales.y,min:1.5,max:4}}}});
+  mkDT('dtSBC',['Period','SBC($M)','%Rev'],AL.map((l,i)=>[l,'$'+ASBC[i].toLocaleString(),ASBCP[i]+'%']));
+
+  // SBC-adj FCF
+  const SFL=['FY21','FY22','FY23','FY24','FY25'],SFF=[92953,111443,99584,108807,98767],SSB=[7906,9038,10833,11688,12863],SFA=SFF.map((f,i)=>f-SSB[i]);
+  charts.cSBCFCF=new Chart(document.getElementById('cSBCFCF'),{type:'bar',data:{labels:SFL,datasets:[
+    {label:'GAAP FCF',data:SFF,backgroundColor:BLUE},{label:'SBC-Adj FCF',data:SFA,backgroundColor:GREEN}
+  ]},options:bOpts('$M')});
+  mkDT('dtSBCFCF',['Period','GAAP FCF','SBC-Adj'],SFL.map((l,i)=>[l,'$'+SFF[i].toLocaleString(),'$'+SFA[i].toLocaleString()]));
+
+  // R&D Efficiency
+  const RDA=[16217,18752,21914,26251,29915,31370,34550],RDE=AR_.map((r,i)=>+(r/RDA[i]).toFixed(1));
+  charts.cRDEff=new Chart(document.getElementById('cRDEff'),{type:'line',data:{labels:AL,datasets:[
+    {label:'Rev per R&D $',data:RDE,borderColor:BLUE,backgroundColor:'rgba(0,85,184,.06)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:BLUE,tension:.3,fill:true},
+    {label:'R&D ($B)',data:RDA.map(v=>+(v/1000).toFixed(1)),borderColor:RED,backgroundColor:'transparent',borderWidth:1.5,borderDash:[5,3],pointRadius:3,pointBackgroundColor:RED,tension:.3,yAxisID:'y2'}
+  ]},options:{...bOpts('Rev/$'),scales:{x:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y:{title:{display:true,text:'Rev per R&D $',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y2:{position:'right',title:{display:true,text:'R&D ($B)',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{display:false}}}}});
+  mkDT('dtRDEff',['Period','R&D($M)','Rev/$'],AL.map((l,i)=>[l,'$'+RDA[i].toLocaleString(),'$'+RDE[i]]));
+
+  // Peer
+  const PN=['Apple','Microsoft','Alphabet','Samsung','Meta'],PGM=[46.9,69,57,37,81],POM=[32,44,32,10,41],PRG=[6.4,16,14,5,22],PRD=[8.3,12,13,9,28];
+  const PC=[BLUE,GREEN,ORANGE,PURPLE,PINK];
+  charts.cPeer=new Chart(document.getElementById('cPeer'),{type:'bar',data:{labels:['Gross Margin%','Op Margin%','Rev Growth%','R&D% Rev'],datasets:PN.map((n,i)=>({label:n,data:[PGM[i],POM[i],PRG[i],PRD[i]],backgroundColor:PC[i],borderWidth:i===0?2:0,borderColor:i===0?BLUE:'transparent'}))},options:{...bOpts('%'),indexAxis:'y',aspectRatio:1.5,scales:{x:{title:{display:true,text:'%',color:TC2(),font:{family:'Inter',size:11}},ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}},y:{ticks:{color:TC2(),font:{family:'Inter',size:10}},grid:{color:GC()}}}}});
+  mkDT('dtPeer',['Metric',...PN],[['GM%',...PGM.map(v=>v+'%')],['OpM%',...POM.map(v=>v+'%')],['RevGr%',...PRG.map(v=>v+'%')],['R&D%',...PRD.map(v=>v+'%')]]);
+
+  // Scenario
+  charts.cScenario=new Chart(document.getElementById('cScenario'),{type:'bar',data:{labels:['Bear (20%)','Base (55%)','Bull (25%)','Prob-Wtd EV','Current'],datasets:[{data:[150,220,275,220,253],backgroundColor:[RED,BLUE,GREEN,PURPLE,GRAY]}]},options:{...bOpts('$/Share'),plugins:{...bOpts().plugins,legend:{display:false},annotation:{annotations:{cp:{type:'line',yMin:253,yMax:253,borderColor:GRAY,borderWidth:2,borderDash:[6,3],label:{display:true,content:'Current: $253',position:'start',font:{size:10,family:'Inter'},color:TC()}}}}}}});
+
+  // Heatmap
+  buildHeatmap();
+}
+
+function buildHeatmap(){
+  const cp=253,M=[25,28,30,33,35],G=[6,8,10,12,14];
+  const V=[[183,187,191,195,199],[205,210,214,219,223],[220,225,229,234,239],[242,247,252,258,263],[257,262,268,273,279]];
+  let h='<table class="heat-table"><tr><th>Multiple \\ Growth</th>';
+  G.forEach(g=>h+='<th>'+g+'%</th>');h+='</tr>';
+  M.forEach((m,mi)=>{h+='<tr><th>'+m+'x</th>';G.forEach((g,gi)=>{
+    const v=V[mi][gi],r=(v-cp)/cp,p=(r*100).toFixed(0);
+    const isB=(m===30&&g===10);
+    let bg;if(r>.05)bg=D()?'rgba(76,175,122,.2)':'rgba(45,138,78,.12)';
+    else if(r>-.05)bg=D()?'rgba(224,160,64,.18)':'rgba(212,130,10,.1)';
+    else if(r>-.15)bg=D()?'rgba(229,115,115,.18)':'rgba(192,57,43,.1)';
+    else bg=D()?'rgba(229,115,115,.3)':'rgba(192,57,43,.18)';
+    h+='<td style="background:'+bg+'"'+(isB?' class="base-cell"':'')+'>';
+    h+='$'+v+'<br><span style="font-size:10px;color:'+(r>=0?'var(--green-val)':'var(--red-val)')+'">('+(r>=0?'+':'')+p+'%)</span></td>';
+  });h+='</tr>';});
+  document.getElementById('heatmapContainer').innerHTML=h+'</table>';
+}
+
+function rebuildCharts(){buildAll();}
+
+// Sidebar scroll highlight
+const sections=[];
+function initScrollSpy(){
+  document.querySelectorAll('[id^="sec-"],#hero').forEach(el=>sections.push(el));
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY+80;
+    let cur='';
+    sections.forEach(s=>{if(s.offsetTop<=y)cur=s.id;});
+    document.querySelectorAll('.sidebar a').forEach(a=>{
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+}
+
+// Close TOC on click
+document.addEventListener('click',e=>{
+  const td=document.getElementById('tocDropdown');
+  if(td.classList.contains('open')&&!e.target.closest('.toc-wrap'))td.classList.remove('open');
+  if(e.target.matches('.toc-dropdown a'))td.classList.remove('open');
+});
+
+// Init
+buildAll();
+initScrollSpy();
+</script>
+</body>
+</html>
