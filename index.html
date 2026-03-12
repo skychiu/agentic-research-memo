@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Equity Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        header {
+            margin-bottom: 64px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #737373;
+            line-height: 1.6;
+            max-width: 540px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #1f1f1f;
+            margin: 40px 0;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #525252;
+            margin-bottom: 24px;
+        }
+
+        .report-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .report-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            background: #141414;
+            border: 1px solid #1f1f1f;
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .report-card:hover {
+            border-color: #333;
+            background: #1a1a1a;
+        }
+
+        .report-card-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .ticker-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 500;
+            color: #22c55e;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 6px 12px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .report-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .report-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .report-meta {
+            font-size: 13px;
+            color: #525252;
+        }
+
+        .report-card-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .report-tag {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .tag-hold {
+            color: #eab308;
+            background: rgba(234, 179, 8, 0.1);
+            border: 1px solid rgba(234, 179, 8, 0.15);
+        }
+
+        .arrow {
+            color: #525252;
+            font-size: 18px;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .report-card:hover .arrow {
+            color: #e5e5e5;
+            transform: translateX(2px);
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid #1f1f1f;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: #404040;
+            line-height: 1.7;
+        }
+
+        .footer a {
+            color: #525252;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #e5e5e5;
+        }
+
+        .how-it-works {
+            margin-bottom: 48px;
+        }
+
+        .how-text {
+            font-size: 14px;
+            color: #737373;
+            line-height: 1.8;
+        }
+
+        .how-text strong {
+            color: #a3a3a3;
+            font-weight: 500;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 32px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #525252;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 48px 16px 80px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .report-card {
+                padding: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .report-card-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .stat-row {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Equity Research</h1>
+            <p class="subtitle">Buy-side investment research memos generated autonomously by an agentic AI system. No human editing, no templates.</p>
+        </header>
+
+        <div class="how-it-works">
+            <p class="section-label">How it works</p>
+            <p class="how-text">
+                The system ingests <strong>raw SEC filings</strong> (10-Ks, 10-Qs) and <strong>earnings call transcripts</strong>, then produces a full research memo end-to-end — analytical framework, tables, charts, scenario analysis, and recommendation.
+            </p>
+            <div class="stat-row">
+                <div class="stat">
+                    <span class="stat-value">10-K</span>
+                    <span class="stat-label">Annual filings</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">10-Q</span>
+                    <span class="stat-label">Quarterly filings</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">Transcripts</span>
+                    <span class="stat-label">Earnings calls</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="section-label">Reports</p>
+        <div class="report-list">
+            <a href="reports/AAPL.html" class="report-card">
+                <div class="report-card-left">
+                    <span class="ticker-badge">AAPL</span>
+                    <div class="report-info">
+                        <span class="report-name">Apple Inc.</span>
+                        <span class="report-meta">FY2019 – Q1 FY2026 · 5 10-Ks · 13 10-Qs · 19 transcripts</span>
+                    </div>
+                </div>
+                <div class="report-card-right">
+                    <span class="report-tag tag-hold">HOLD</span>
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+
+            <!-- Add more reports here:
+            <a href="reports/MSFT.html" class="report-card">
+                <div class="report-card-left">
+                    <span class="ticker-badge">MSFT</span>
+                    <div class="report-info">
+                        <span class="report-name">Microsoft Corporation</span>
+                        <span class="report-meta">FY2019 – Q2 FY2026 · 5 10-Ks · 13 10-Qs · 19 transcripts</span>
+                    </div>
+                </div>
+                <div class="report-card-right">
+                    <span class="report-tag tag-hold">HOLD</span>
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+            -->
+        </div>
+
+        <div class="footer">
+            <p>
+                This is a personal project by <a href="https://www.linkedin.com/in/skychiu/">Sky Chiu</a>. Reports are AI-generated and should not be construed as investment advice.
+            </p>
+        </div>
+    </div>
+
+
+</body></html>
