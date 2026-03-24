@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 2. Evidence Convergence Map: Natural Interventions Targeting the NRF2/Barrier Axis in Atopic Dermatitis</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #1a1a2e;
+  }
+  .figure-container {
+    width: 100%;
+    max-width: 1100px;
+  }
+  .figure-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #1a1a2e;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .figure-title span.fig-label {
+    font-weight: 700;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .legend-container {
+    margin-top: 10px;
+    padding: 12px 16px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background: #fafafa;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: #333;
+  }
+  .legend-container .legend-title {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #1a1a2e;
+  }
+  .legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 6px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+  .legend-note {
+    font-size: 10.5px;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="figure-container">
+  <div class="figure-title">
+    <span class="fig-label">Figure 2.</span> Evidence Convergence Map: Natural Interventions Targeting the NRF2/Barrier Axis in Atopic Dermatitis
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1060" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <defs>
+      <!-- Gradient for central hub -->
+      <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#6C63FF" stop-opacity="0.15"/>
+        <stop offset="100%" stop-color="#6C63FF" stop-opacity="0.03"/>
+      </radialGradient>
+      <!-- Glow for hub -->
+      <filter id="hubGlow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+        <feFlood flood-color="#6C63FF" flood-opacity="0.15"/>
+        <feComposite in2="blur" operator="in" result="glow"/>
+        <feMerge>
+          <feMergeNode in="glow"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <!-- Shadow for cards -->
+      <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="112%">
+        <feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+      </filter>
+      <!-- Arrow marker -->
+      <marker id="arrowEnd" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#9a9ab0"/>
+      </marker>
+      <!-- Discipline colors -->
+      <!-- Using inline fills per spoke -->
+    </defs>
+
+    <!-- ================================================================== -->
+    <!--  BACKGROUND RADIAL RINGS                                           -->
+    <!-- ================================================================== -->
+    <circle cx="550" cy="490" r="420" fill="none" stroke="#e8e8f0" stroke-width="0.5" stroke-dasharray="6,4"/>
+    <circle cx="550" cy="490" r="300" fill="none" stroke="#e8e8f0" stroke-width="0.5" stroke-dasharray="6,4"/>
+    <circle cx="550" cy="490" r="180" fill="none" stroke="#e8e8f0" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+    <!-- ================================================================== -->
+    <!--  CONNECTOR LINES (drawn first, behind cards)                       -->
+    <!-- ================================================================== -->
+    <!-- 1. Proteomics - top (angle 270° i.e. straight up) -->
+    <line x1="550" y1="440" x2="550" y2="168" stroke="#7B8CDE" stroke-width="2.2" stroke-dasharray="6,3" marker-end="url(#arrowEnd)" opacity="0.55" transform="rotate(0,550,490)"/>
+    <!-- 2. Gut Microbiome - upper-left (angle 315° from top, i.e. -45°) -->
+    <line x1="550" y1="440" x2="268" y2="168" stroke="#5BA08C" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <!-- 3. In Vitro - left -->
+    <line x1="500" y1="490" x2="168" y2="420" stroke="#D4894A" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <!-- 4. Preclinical - lower-left -->
+    <line x1="510" y1="535" x2="228" y2="760" stroke="#D4894A" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <!-- 5. Pharmacology - bottom -->
+    <line x1="550" y1="545" x2="550" y2="802" stroke="#3A9B5E" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <!-- 6. Immunology - lower-right -->
+    <line x1="595" y1="535" x2="862" y2="760" stroke="#3A9B5E" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <!-- 7. Clinical Trials - right -->
+    <line x1="605" y1="490" x2="928" y2="420" stroke="#3A9B5E" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <!-- 8. Epidemiology - upper-right -->
+    <line x1="595" y1="445" x2="832" y2="168" stroke="#5BA08C" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+
+    <!-- ================================================================== -->
+    <!--  CENTRAL HUB                                                       -->
+    <!-- ================================================================== -->
+    <g filter="url(#hubGlow)">
+      <circle cx="550" cy="490" r="72" fill="url(#hubGrad)" stroke="#6C63FF" stroke-width="2.5"/>
+      <circle cx="550" cy="490" r="72" fill="none" stroke="#6C63FF" stroke-width="1" opacity="0.3"/>
+    </g>
+    <!-- Hub icon: simplified NRF2 / shield shape -->
+    <path d="M550,438 L570,452 L570,478 C570,498 550,510 550,510 C550,510 530,498 530,478 L530,452 Z"
+          fill="none" stroke="#6C63FF" stroke-width="1.8" opacity="0.6"/>
+    <text x="550" y="469" text-anchor="middle" font-size="9" font-weight="700" fill="#6C63FF" letter-spacing="0.5">NRF2</text>
+    <text x="550" y="530" text-anchor="middle" font-size="11" font-weight="700" fill="#3a3a5c">NRF2 Activation</text>
+    <text x="550" y="544" text-anchor="middle" font-size="9.5" fill="#5a5a7c">Barrier Gene Expression</text>
+    <text x="550" y="556" text-anchor="middle" font-size="8" fill="#8888a8" font-style="italic">(convergence point)</text>
+
+    <!-- ================================================================== -->
+    <!--  SPOKE CARDS                                                       -->
+    <!-- ================================================================== -->
+
+    <!-- ==================== 1. PROTEOMICS (top center) ==================== -->
+    <g transform="translate(400, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="300" height="130" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <!-- Discipline header bar -->
+      <rect x="0" y="0" width="300" height="26" rx="6" fill="#5B6ABF"/>
+      <rect x="0" y="14" width="300" height="12" fill="#5B6ABF"/>
+      <text x="150" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">PROTEOMICS</text>
+      <!-- Key finding -->
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">NRF2 reduced in AD epidermis</text>
+      <!-- Evidence type -->
+      <text x="15" y="62" font-size="9" fill="#6a6a8a">Quantitative proteomics</text>
+      <!-- Citation -->
+      <text x="15" y="80" font-size="9" fill="#555">Koch et al. 2023, <tspan font-style="italic">J Invest Dermatol</tspan></text>
+      <text x="15" y="94" font-size="8.5" fill="#888">PMID: 36108803</text>
+      <!-- Evidence strength tag -->
+      <rect x="15" y="105" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="45" y="116" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- ==================== 2. GUT MICROBIOME (upper-left) ==================== -->
+    <g transform="translate(28, 82)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#2E8B72"/>
+      <rect x="0" y="14" width="290" height="12" fill="#2E8B72"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">GUT MICROBIOME</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Low fecal butyrate → adjOR 13.2</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">for eczema</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Birth cohort (n = 75)</text>
+      <text x="15" y="96" font-size="9" fill="#555">Cheng et al. 2022, GUSTO cohort</text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 35769572</text>
+      <rect x="15" y="120" width="72" height="16" rx="3" fill="#D4894A"/>
+      <text x="51" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Preliminary</text>
+    </g>
+
+    <!-- ==================== 3. IN VITRO / CELL BIOLOGY (left) ==================== -->
+    <g transform="translate(8, 330)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="280" height="150" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="280" height="26" rx="6" fill="#C47A35"/>
+      <rect x="0" y="14" width="280" height="12" fill="#C47A35"/>
+      <text x="140" y="17.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" letter-spacing="1">IN VITRO / CELL BIOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Butyrate → NRF2 ↑ + Filaggrin ↑</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">in keratinocytes</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Primary human keratinocytes</text>
+      <text x="15" y="96" font-size="9" fill="#555">PMIDs: 40283951, 24451036</text>
+      <rect x="15" y="118" width="68" height="16" rx="3" fill="#CBA832"/>
+      <text x="49" y="129" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Moderate</text>
+    </g>
+
+    <!-- ==================== 4. PRECLINICAL (lower-left) ==================== -->
+    <g transform="translate(28, 680)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#8B6CB5"/>
+      <rect x="0" y="14" width="290" height="12" fill="#8B6CB5"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">PRECLINICAL</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Dietary fiber → gut SCFA →</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">skin barrier ↑ → AD ↓</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Mouse model</text>
+      <text x="15" y="96" font-size="9" fill="#555">Trompette et al. 2022, <tspan font-style="italic">Mucosal Immunol</tspan></text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 35672452</text>
+      <rect x="15" y="120" width="68" height="16" rx="3" fill="#CBA832"/>
+      <text x="49" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Moderate</text>
+    </g>
+
+    <!-- ==================== 5. PHARMACOLOGY (bottom center) ==================== -->
+    <g transform="translate(390, 810)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="318" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="318" height="26" rx="6" fill="#B54848"/>
+      <rect x="0" y="14" width="318" height="12" fill="#B54848"/>
+      <text x="159" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">PHARMACOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Tapinarof (AHR→NRF2 agonist):</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">52% clearance</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Phase 3 RCT (n = 891)</text>
+      <text x="15" y="96" font-size="9" fill="#555">Phase 3 ADORING trials</text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 38777187</text>
+      <rect x="15" y="120" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="45" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- ==================== 6. IMMUNOLOGY (lower-right) ==================== -->
+    <g transform="translate(782, 680)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#4A8BB5"/>
+      <rect x="0" y="14" width="290" height="12" fill="#4A8BB5"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">IMMUNOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Butyrate → HDAC inhibition →</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">Foxp3+ Tregs</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Mechanistic (<tspan font-style="italic">Nature</tspan>)</text>
+      <text x="15" y="96" font-size="9" fill="#555">Arpaia et al. 2013, <tspan font-style="italic">Nature</tspan></text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 24226773</text>
+      <rect x="15" y="120" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="45" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- ==================== 7. CLINICAL TRIALS (right) ==================== -->
+    <g transform="translate(810, 310)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="278" height="175" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="278" height="26" rx="6" fill="#2B7A4B"/>
+      <rect x="0" y="14" width="278" height="12" fill="#2B7A4B"/>
+      <text x="139" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">CLINICAL TRIALS</text>
+      <text x="15" y="46" font-size="10" font-weight="600" fill="#2a2a4a"><tspan font-style="italic">L. rhamnosus</tspan> GG: RR 0.60</text>
+      <text x="15" y="60" font-size="9.5" fill="#444">(11 RCTs, meta-analysis)</text>
+      <text x="15" y="78" font-size="10" font-weight="600" fill="#2a2a4a">Vitamin D: SMD −0.41</text>
+      <text x="15" y="92" font-size="9.5" fill="#444">(11 RCTs, meta-analysis)</text>
+      <text x="15" y="110" font-size="10" font-weight="600" fill="#2a2a4a">Topical B12: 77.6% SCORAD ↓</text>
+      <text x="15" y="128" font-size="9" fill="#555">PMIDs: 36161401, 39683522,</text>
+      <text x="15" y="141" font-size="9" fill="#555">28677237</text>
+      <text x="15" y="155" font-size="9" fill="#6a6a8a">Meta-analyses + RCTs</text>
+      <rect x="190" y="150" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="220" y="161" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- ==================== 8. EPIDEMIOLOGY (upper-right) ==================== -->
+    <g transform="translate(782, 82)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#6B8E5B"/>
+      <rect x="0" y="14" width="290" height="12" fill="#6B8E5B"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">EPIDEMIOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Fermented food diversity →</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">OR 0.51 for AD</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Prospective cohort (n = 931)</text>
+      <text x="15" y="96" font-size="9" fill="#555">PASTURE cohort, 931 children</text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 30368847</text>
+      <rect x="15" y="120" width="68" height="16" rx="3" fill="#CBA832"/>
+      <text x="49" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Moderate</text>
+    </g>
+
+    <!-- ================================================================== -->
+    <!--  DIRECTIONAL ARROW HEADS on spokes (triangles near hub)            -->
+    <!-- ================================================================== -->
+    <!-- Small convergence arrows pointing toward hub, placed along each spoke -->
+    <!-- 1. Proteomics → hub (from top) -->
+    <polygon points="550,448 543,432 557,432" fill="#7B8CDE" opacity="0.7"/>
+    <!-- 2. Gut Microbiome → hub (from upper-left) -->
+    <polygon points="514,460 502,448 516,446" fill="#5BA08C" opacity="0.7"/>
+    <!-- 3. In Vitro → hub (from left) -->
+    <polygon points="486,488 474,480 476,494" fill="#D4894A" opacity="0.7"/>
+    <!-- 4. Preclinical → hub (from lower-left) -->
+    <polygon points="514,522 502,532 516,536" fill="#D4894A" opacity="0.7"/>
+    <!-- 5. Pharmacology → hub (from bottom) -->
+    <polygon points="550,554 543,568 557,568" fill="#3A9B5E" opacity="0.7"/>
+    <!-- 6. Immunology → hub (from lower-right) -->
+    <polygon points="588,522 600,532 586,536" fill="#3A9B5E" opacity="0.7"/>
+    <!-- 7. Clinical Trials → hub (from right) -->
+    <polygon points="616,488 628,480 626,494" fill="#3A9B5E" opacity="0.7"/>
+    <!-- 8. Epidemiology → hub (from upper-right) -->
+    <polygon points="588,460 600,448 586,446" fill="#5BA08C" opacity="0.7"/>
+
+    <!-- ================================================================== -->
+    <!--  RING LABELS                                                       -->
+    <!-- ================================================================== -->
+    <text x="550" y="1048" text-anchor="middle" font-size="9" fill="#aaa" font-style="italic">
+      Eight independent evidence streams converging on NRF2-mediated barrier restoration
+    </text>
+
+  </svg>
+
+  <!-- ================================================================== -->
+  <!--  LEGEND                                                            -->
+  <!-- ================================================================== -->
+  <div class="legend-container">
+    <div class="legend-title">Legend — Evidence Strength Classification</div>
+    <div class="legend-row">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#3A9B5E;"></div>
+        <span><strong>Strong</strong> — Phase 3 RCTs, large meta-analyses, high-impact mechanistic studies (<em>Nature</em>), or validated omics</span>
+      </div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#CBA832;"></div>
+        <span><strong>Moderate</strong> — In vitro cell biology, animal models, or prospective cohorts with moderate sample size</span>
+      </div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#D4894A;"></div>
+        <span><strong>Preliminary</strong> — Pilot cohorts, small-n observational data, or hypothesis-generating studies</span>
+      </div>
+    </div>
+    <div class="legend-note">
+      Each card shows the discipline, key quantitative finding, study citation with PubMed ID, study type, and evidence strength.
+      Dashed lines represent mechanistic convergence on the central NRF2/barrier restoration pathway.
+      Card header colors distinguish scientific disciplines; evidence-strength badges (lower-left of each card) use the three-tier scheme above.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

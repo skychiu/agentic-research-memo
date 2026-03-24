@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 1. The Gut–Butyrate–NRF2–Skin Barrier Axis in Atopic Dermatitis</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .figure-container {
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .legend-box {
+    max-width: 1400px;
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px 18px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: #fafafa;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: #333;
+  }
+  .legend-box b { color: #111; }
+  .legend-row { display: flex; align-items: center; margin: 3px 0; flex-wrap: wrap; }
+  .legend-swatch {
+    display: inline-block; width: 36px; height: 5px; border-radius: 2px; margin-right: 8px; flex-shrink: 0;
+  }
+  .legend-swatch-box {
+    display: inline-block; width: 16px; height: 16px; border-radius: 3px; margin-right: 8px; flex-shrink: 0; border: 1.5px solid;
+  }
+  @media print {
+    body { padding: 0; }
+    .legend-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="figure-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" font-family="Arial, Helvetica, sans-serif">
+<defs>
+  <!-- Arrowheads -->
+  <marker id="ah-blue" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#2266AA"/>
+  </marker>
+  <marker id="ah-red" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#CC2222"/>
+  </marker>
+  <marker id="ah-green" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#1E8C45"/>
+  </marker>
+  <marker id="ah-purple" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#7B42B0"/>
+  </marker>
+  <marker id="ah-gray" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#888"/>
+  </marker>
+  <marker id="ah-orange" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#D4790A"/>
+  </marker>
+  <!-- Flat-head (inhibition) -->
+  <marker id="inh-red" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <line x1="9" y1="0" x2="9" y2="10" stroke="#CC2222" stroke-width="2.5"/>
+  </marker>
+  <marker id="inh-blue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <line x1="9" y1="0" x2="9" y2="10" stroke="#2266AA" stroke-width="2.5"/>
+  </marker>
+  <marker id="inh-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <line x1="9" y1="0" x2="9" y2="10" stroke="#1E8C45" stroke-width="2.5"/>
+  </marker>
+
+  <!-- Drop shadow -->
+  <filter id="shadow" x="-4%" y="-4%" width="110%" height="112%">
+    <feDropShadow dx="1" dy="1.5" stdDeviation="2" flood-opacity="0.13"/>
+  </filter>
+  <!-- Glow for keratinocyte -->
+  <filter id="glow-k">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#2266AA" flood-opacity="0.18"/>
+  </filter>
+
+  <!-- Background pattern for anatomy hint -->
+  <pattern id="dot-pattern" width="12" height="12" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="0.6" fill="#ccc" opacity="0.35"/>
+  </pattern>
+</defs>
+
+<!-- ===== TITLE ===== -->
+<text x="700" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a" letter-spacing="0.3">
+  Figure 1.  The Gut–Butyrate–NRF2–Skin Barrier Axis in Atopic Dermatitis
+</text>
+
+<!-- ===== BACKGROUND ZONES ===== -->
+<!-- Gut zone -->
+<rect x="16" y="48" width="340" height="540" rx="14" fill="#EAF5EA" opacity="0.45"/>
+<text x="186" y="70" text-anchor="middle" font-size="11.5" fill="#558855" font-weight="bold" letter-spacing="1">GUT COMPARTMENT</text>
+
+<!-- Systemic / Keratinocyte zone -->
+<rect x="372" y="48" width="440" height="540" rx="14" fill="#E8EEF8" opacity="0.4"/>
+<text x="592" y="70" text-anchor="middle" font-size="11.5" fill="#4466AA" font-weight="bold" letter-spacing="1">KERATINOCYTE SIGNALING</text>
+
+<!-- Skin/Immune zone -->
+<rect x="828" y="48" width="350" height="540" rx="14" fill="#FFF0E8" opacity="0.4"/>
+<text x="1003" y="70" text-anchor="middle" font-size="11.5" fill="#AA6633" font-weight="bold" letter-spacing="1">SKIN BARRIER &amp; IMMUNE</text>
+
+<!-- Intervention zone -->
+<rect x="1194" y="48" width="192" height="540" rx="14" fill="#E8F8EE" opacity="0.45"/>
+<text x="1290" y="70" text-anchor="middle" font-size="11" fill="#1E8C45" font-weight="bold" letter-spacing="1">INTERVENTIONS</text>
+
+<!-- Bottom immune zone -->
+<rect x="16" y="600" width="1370" height="135" rx="14" fill="#F5F0FA" opacity="0.35"/>
+<text x="700" y="620" text-anchor="middle" font-size="11.5" fill="#7B42B0" font-weight="bold" letter-spacing="1">IMMUNE MODULATION &amp; REGULATORY FEEDBACK</text>
+
+
+<!-- =========================================================================
+     LEFT SIDE — GUT
+     ========================================================================= -->
+
+<!-- Dietary Fiber box (green intervention) -->
+<rect x="28" y="84" width="155" height="56" rx="8" fill="#E0F5E0" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="105" y="103" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1E8C45">Dietary Fiber</text>
+<text x="105" y="116" text-anchor="middle" font-size="8.5" fill="#3a7a3a">Resistant starch, Inulin,</text>
+<text x="105" y="128" text-anchor="middle" font-size="8.5" fill="#3a7a3a">GOS, Pectin</text>
+
+<!-- Probiotics box (green intervention) -->
+<rect x="198" y="84" width="148" height="56" rx="8" fill="#E0F5E0" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="272" y="103" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1E8C45">Probiotics</text>
+<text x="272" y="116" text-anchor="middle" font-size="8.5" fill="#3a7a3a">L. rhamnosus GG</text>
+<text x="272" y="128" text-anchor="middle" font-size="8.5" fill="#3a7a3a">Bifidobacterium spp.</text>
+
+<!-- Arrows: Fiber/Probiotics → Gut Microbiome -->
+<line x1="105" y1="140" x2="155" y2="170" stroke="#1E8C45" stroke-width="1.8" marker-end="url(#ah-green)"/>
+<line x1="272" y1="140" x2="222" y2="170" stroke="#1E8C45" stroke-width="1.8" marker-end="url(#ah-green)"/>
+
+<!-- Gut Microbiome box (BLUE main pathway) -->
+<rect x="100" y="172" width="185" height="68" rx="10" fill="#D4E4F6" stroke="#2266AA" stroke-width="2" filter="url(#shadow)"/>
+<text x="192" y="192" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#1a3a6a">Gut Microbiome</text>
+<text x="192" y="207" text-anchor="middle" font-size="9" fill="#2255AA" font-style="italic">F. prausnitzii</text>
+<text x="192" y="219" text-anchor="middle" font-size="9" fill="#2255AA" font-style="italic">Roseburia, R. bromii</text>
+<text x="192" y="231" text-anchor="middle" font-size="8" fill="#6688BB">(butyrate producers)</text>
+
+<!-- Arrow: Gut Microbiome → Butyrate Production -->
+<line x1="192" y1="240" x2="192" y2="276" stroke="#2266AA" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+
+<!-- Butyrate Production box -->
+<rect x="118" y="278" width="150" height="50" rx="9" fill="#C8DCF0" stroke="#2266AA" stroke-width="2" filter="url(#shadow)"/>
+<text x="193" y="298" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Butyrate</text>
+<text x="193" y="313" text-anchor="middle" font-size="9.5" fill="#4477BB">Production (SCFA)</text>
+
+<!-- Tryptophan branch -->
+<!-- Arrow from Gut Microbiome going left-down to Tryptophan -->
+<path d="M135,240 L68,296" stroke="#7B42B0" stroke-width="1.6" fill="none" marker-end="url(#ah-purple)"/>
+
+<rect x="22" y="298" width="90" height="46" rx="7" fill="#F0E8F8" stroke="#7B42B0" stroke-width="1.4" filter="url(#shadow)"/>
+<text x="67" y="314" text-anchor="middle" font-size="9" font-weight="bold" fill="#5B2A90">Tryptophan</text>
+<text x="67" y="326" text-anchor="middle" font-size="8.5" fill="#7B42B0">Metabolism</text>
+
+<!-- Arrow Tryptophan → Indole Derivatives -->
+<line x1="67" y1="344" x2="67" y2="374" stroke="#7B42B0" stroke-width="1.5" marker-end="url(#ah-purple)"/>
+
+<rect x="18" y="376" width="100" height="56" rx="7" fill="#F0E8F8" stroke="#7B42B0" stroke-width="1.3" filter="url(#shadow)"/>
+<text x="68" y="392" text-anchor="middle" font-size="9" font-weight="bold" fill="#5B2A90">Indole</text>
+<text x="68" y="404" text-anchor="middle" font-size="9" font-weight="bold" fill="#5B2A90">Derivatives</text>
+<text x="68" y="418" text-anchor="middle" font-size="7.5" fill="#7B42B0">I3C, IAId, IPA</text>
+
+<!-- Arrow: Indoles → AHR (into center) -->
+<path d="M118,404 L400,390" stroke="#7B42B0" stroke-width="1.6" fill="none" marker-end="url(#ah-purple)" stroke-dasharray="6,3"/>
+
+
+<!-- =========================================================================
+     CENTER — SYSTEMIC & KERATINOCYTE
+     ========================================================================= -->
+
+<!-- Arrow: Butyrate Production → Systemic Butyrate -->
+<line x1="268" y1="303" x2="392" y2="200" stroke="#2266AA" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+
+<!-- Systemic Butyrate box -->
+<rect x="394" y="170" width="150" height="48" rx="9" fill="#B8D0EC" stroke="#2266AA" stroke-width="2" filter="url(#shadow)"/>
+<text x="469" y="190" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Systemic</text>
+<text x="469" y="205" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Butyrate</text>
+
+<!-- Arrow: Systemic Butyrate → Keratinocyte -->
+<line x1="469" y1="218" x2="469" y2="250" stroke="#2266AA" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+
+<!-- KERATINOCYTE mega-box -->
+<rect x="392" y="252" width="408" height="310" rx="12" fill="#ffffff" stroke="#2266AA" stroke-width="2.2" filter="url(#glow-k)"/>
+<text x="596" y="274" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a3a6a">Epidermal Keratinocytes</text>
+<line x1="404" y1="280" x2="788" y2="280" stroke="#ccd8ee" stroke-width="0.8"/>
+
+<!-- HDAC Inhibition -->
+<rect x="410" y="290" width="120" height="36" rx="6" fill="#D8E8FA" stroke="#3377BB" stroke-width="1.3"/>
+<text x="470" y="313" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#2255AA">HDAC Inhibition</text>
+
+<!-- Arrow HDAC → NRF2 -->
+<line x1="530" y1="308" x2="566" y2="308" stroke="#2266AA" stroke-width="1.8" marker-end="url(#ah-blue)"/>
+
+<!-- NRF2 Activation (star node) -->
+<rect x="568" y="286" width="130" height="44" rx="8" fill="#2266AA" stroke="#1a4488" stroke-width="2"/>
+<text x="633" y="305" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#ffffff">NRF2</text>
+<text x="633" y="319" text-anchor="middle" font-size="9.5" fill="#cce0ff">Activation</text>
+
+<!-- AHR Activation box -->
+<rect x="410" y="374" width="120" height="44" rx="7" fill="#EDE4F4" stroke="#7B42B0" stroke-width="1.5"/>
+<text x="470" y="393" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#5B2A90">AHR</text>
+<text x="470" y="406" text-anchor="middle" font-size="9" fill="#7B42B0">Activation</text>
+
+<!-- Arrow AHR → NRF2 -->
+<path d="M530,393 L580,340" stroke="#7B42B0" stroke-width="1.5" fill="none" marker-end="url(#ah-purple)"/>
+
+<!-- NF-κB suppression -->
+<rect x="410" y="436" width="120" height="38" rx="6" fill="#FEE8E8" stroke="#CC2222" stroke-width="1.3"/>
+<text x="470" y="452" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#CC2222">NF-κB</text>
+<text x="470" y="464" text-anchor="middle" font-size="8.5" fill="#CC2222">SUPPRESSED</text>
+<!-- Red X over NF-κB -->
+<line x1="414" y1="440" x2="526" y2="470" stroke="#CC2222" stroke-width="2.2" opacity="0.5"/>
+<line x1="526" y1="440" x2="414" y2="470" stroke="#CC2222" stroke-width="2.2" opacity="0.5"/>
+
+<!-- Arrow NRF2 ⊣ NF-κB -->
+<path d="M610,330 L535,440" stroke="#2266AA" stroke-width="1.5" fill="none" marker-end="url(#inh-blue)" stroke-dasharray="5,3"/>
+<text x="556" y="388" font-size="7.5" fill="#2266AA" transform="rotate(-50,556,388)">suppresses</text>
+
+<!-- NRF2 outputs — barrier genes -->
+<rect x="566" y="346" width="220" height="90" rx="7" fill="#F0F6FF" stroke="#5599CC" stroke-width="1"/>
+<text x="676" y="363" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#2266AA">Barrier Gene Outputs:</text>
+
+<text x="600" y="380" font-size="9.5" fill="#1a5a1a" font-weight="bold">Filaggrin ↑</text>
+<text x="600" y="395" font-size="9.5" fill="#1a5a1a" font-weight="bold">Loricrin ↑</text>
+<text x="600" y="410" font-size="9.5" fill="#1a5a1a" font-weight="bold">Involucrin ↑</text>
+<text x="715" y="380" font-size="9.5" fill="#1a5a1a" font-weight="bold">HO-1 ↑</text>
+<text x="715" y="395" font-size="9.5" fill="#1a5a1a" font-weight="bold">Tight Junctions ↑</text>
+<text x="715" y="410" font-size="9.5" fill="#1a5a1a" font-weight="bold">Claudins ↑</text>
+<text x="676" y="429" text-anchor="middle" font-size="8" fill="#5599CC">(antioxidant + structural)</text>
+
+<!-- Arrows from NRF2 to output box -->
+<line x1="665" y1="330" x2="665" y2="344" stroke="#2266AA" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+
+<!-- STAT6/STAT3 Suppression — vicious cycle entry into keratinocyte -->
+<rect x="572" y="478" width="220" height="48" rx="6" fill="#FDE0E0" stroke="#CC2222" stroke-width="1.5"/>
+<text x="682" y="496" text-anchor="middle" font-size="10" font-weight="bold" fill="#CC2222">STAT6 / STAT3</text>
+<text x="682" y="510" text-anchor="middle" font-size="9" fill="#CC2222">→ Barrier Gene Suppression</text>
+
+<!-- Arrow STAT → barrier genes (inhibitory) -->
+<path d="M682,478 L682,442" stroke="#CC2222" stroke-width="1.5" fill="none" marker-end="url(#inh-red)"/>
+<text x="695" y="465" font-size="7" fill="#CC2222">inhibits</text>
+
+
+<!-- =========================================================================
+     RIGHT SIDE — SKIN BARRIER & IMMUNE
+     ========================================================================= -->
+
+<!-- Arrow from barrier outputs → Skin Barrier box -->
+<line x1="786" y1="395" x2="848" y2="280" stroke="#2266AA" stroke-width="2" marker-end="url(#ah-blue)"/>
+
+<!-- Skin Barrier Integrity box -->
+<rect x="840" y="240" width="165" height="50" rx="9" fill="#D4E4F6" stroke="#2266AA" stroke-width="2" filter="url(#shadow)"/>
+<text x="922" y="260" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Skin Barrier</text>
+<text x="922" y="275" text-anchor="middle" font-size="10" fill="#4477BB">Integrity</text>
+
+<!-- When barrier fails → arrow -->
+<text x="922" y="305" text-anchor="middle" font-size="8.5" fill="#CC2222" font-style="italic">barrier failure ↓</text>
+<line x1="922" y1="310" x2="922" y2="340" stroke="#CC2222" stroke-width="1.8" marker-end="url(#ah-red)"/>
+
+<!-- Allergen/Microbe Penetration -->
+<rect x="845" y="342" width="156" height="44" rx="8" fill="#FFE8E0" stroke="#CC5522" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="923" y="360" text-anchor="middle" font-size="10" font-weight="bold" fill="#993311">Allergen / Microbe</text>
+<text x="923" y="374" text-anchor="middle" font-size="10" font-weight="bold" fill="#993311">Penetration</text>
+
+<!-- Arrow → Th2 -->
+<line x1="923" y1="386" x2="923" y2="416" stroke="#CC2222" stroke-width="1.8" marker-end="url(#ah-red)"/>
+
+<!-- Th2 Activation -->
+<rect x="845" y="418" width="156" height="52" rx="8" fill="#FDDCDC" stroke="#CC2222" stroke-width="2" filter="url(#shadow)"/>
+<text x="923" y="437" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#CC2222">Th2 Activation</text>
+<text x="923" y="453" text-anchor="middle" font-size="9" fill="#CC4444">IL-4, IL-13, IL-31, TSLP</text>
+
+<!-- S. aureus -->
+<rect x="1020" y="342" width="135" height="44" rx="7" fill="#FFE8E0" stroke="#CC5522" stroke-width="1.4" filter="url(#shadow)"/>
+<text x="1087" y="358" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#993311" font-style="italic">S. aureus</text>
+<text x="1087" y="372" text-anchor="middle" font-size="9" fill="#993311">Colonization</text>
+
+<!-- Arrow S. aureus → Th2 area -->
+<line x1="1055" y1="386" x2="985" y2="424" stroke="#CC2222" stroke-width="1.3" marker-end="url(#ah-red)"/>
+
+<!-- ===== VICIOUS CYCLE ARROW (RED) — Th2 → STAT6 in keratinocyte ===== -->
+<!-- Sweeping red dashed arc from Th2 box down and left into the STAT6/STAT3 box -->
+<path d="M845,460 C810,530 760,548 682,526" stroke="#CC2222" stroke-width="2.8" fill="none" marker-end="url(#ah-red)" stroke-dasharray="8,4"/>
+<!-- Vicious cycle label along the arc -->
+<text x="728" y="550" font-size="9.5" fill="#CC2222" font-weight="bold">VICIOUS CYCLE</text>
+<text x="790" y="530" font-size="8" fill="#CC2222" font-style="italic">Th2 cytokines</text>
+
+<!-- Barrier failure also feeds S. aureus -->
+<path d="M1001,265 Q1087,290 1087,340" stroke="#CC5522" stroke-width="1.3" fill="none" marker-end="url(#ah-orange)"/>
+<text x="1060" y="298" font-size="7.5" fill="#AA5522">dysbiosis</text>
+
+
+<!-- =========================================================================
+     BOTTOM — IMMUNE MODULATION (Treg pathway)
+     ========================================================================= -->
+
+<!-- Butyrate → Treg -->
+<path d="M193,328 L193,640 L350,640" stroke="#2266AA" stroke-width="2" fill="none" marker-end="url(#ah-blue)"/>
+<text x="230" y="580" font-size="8" fill="#2266AA" transform="rotate(-90,230,580)">butyrate</text>
+
+<!-- Foxp3+ Treg box -->
+<rect x="352" y="632" width="190" height="54" rx="9" fill="#E8DEEE" stroke="#7B42B0" stroke-width="1.8" filter="url(#shadow)"/>
+<text x="447" y="652" text-anchor="middle" font-size="11" font-weight="bold" fill="#5B2A90">Foxp3⁺ Treg</text>
+<text x="447" y="666" text-anchor="middle" font-size="9" fill="#7B42B0">Generation</text>
+<text x="447" y="680" text-anchor="middle" font-size="7.5" fill="#9977BB">HDAC inhib. at Foxp3 promoter</text>
+
+<!-- Arrow Treg → Th2 Suppression -->
+<line x1="542" y1="659" x2="630" y2="659" stroke="#7B42B0" stroke-width="2" marker-end="url(#ah-purple)"/>
+
+<!-- Th2 Suppression -->
+<rect x="632" y="636" width="150" height="46" rx="8" fill="#E0F0E0" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="707" y="655" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Th2 Suppression</text>
+<text x="707" y="669" text-anchor="middle" font-size="8.5" fill="#1E8C45">(breaks the vicious cycle)</text>
+
+<!-- Arrow Th2 Suppression ⊣ Th2 Activation -->
+<path d="M782,650 Q900,620 923,474" stroke="#1E8C45" stroke-width="2" fill="none" marker-end="url(#inh-green)" stroke-dasharray="6,3"/>
+<text x="890" y="570" font-size="8" fill="#1E8C45" font-weight="bold">suppresses</text>
+
+<!-- Butyrate also → IgA + mucosal immunity note -->
+<rect x="50" y="640" width="130" height="42" rx="6" fill="#F0F6FF" stroke="#5599CC" stroke-width="1"/>
+<text x="115" y="657" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#2266AA">Also: ↑ IgA</text>
+<text x="115" y="670" text-anchor="middle" font-size="8" fill="#5599CC">Mucosal barrier support</text>
+<line x1="180" y1="656" x2="193" y2="648" stroke="#5599CC" stroke-width="1" marker-end="url(#ah-blue)" stroke-dasharray="3,2"/>
+
+
+<!-- =========================================================================
+     RIGHT COLUMN — INTERVENTIONS (GREEN)
+     ========================================================================= -->
+
+<!-- Vitamin D -->
+<rect x="1202" y="90" width="176" height="72" rx="8" fill="#D8F0D8" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="1290" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Vitamin D</text>
+<text x="1290" y="126" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Cathelicidin (LL-37)</text>
+<text x="1290" y="139" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Th1/Th2 balance</text>
+<text x="1290" y="152" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Tight junction support</text>
+
+<!-- Arrow Vit D → Barrier -->
+<path d="M1202,130 L1010,266" stroke="#1E8C45" stroke-width="1.4" fill="none" marker-end="url(#ah-green)" stroke-dasharray="5,3"/>
+
+<!-- Topical B12 -->
+<rect x="1202" y="178" width="176" height="60" rx="8" fill="#D8F0D8" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="1290" y="198" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Topical B12</text>
+<text x="1290" y="213" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ NO scavenging</text>
+<text x="1290" y="226" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ ↓ Inflammation</text>
+
+<!-- Arrow B12 → near inflammation/Th2 -->
+<path d="M1202,218 L1010,430" stroke="#1E8C45" stroke-width="1.3" fill="none" marker-end="url(#inh-green)" stroke-dasharray="5,3"/>
+
+<!-- Colloidal Oatmeal -->
+<rect x="1202" y="256" width="176" height="60" rx="8" fill="#D8F0D8" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="1290" y="276" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Colloidal Oatmeal</text>
+<text x="1290" y="291" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Barrier support</text>
+<text x="1290" y="304" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Anti-inflammatory</text>
+
+<!-- Arrow oatmeal → barrier -->
+<path d="M1202,283 L1010,265" stroke="#1E8C45" stroke-width="1.3" fill="none" marker-end="url(#ah-green)" stroke-dasharray="5,3"/>
+
+
+<!-- =========================================================================
+     PHARMACOLOGICAL VALIDATION — TAPINAROF
+     ========================================================================= -->
+<rect x="1202" y="368" width="176" height="82" rx="9" fill="#FFF8E0" stroke="#D4790A" stroke-width="2" filter="url(#shadow)"/>
+<text x="1290" y="389" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#B06000">Tapinarof</text>
+<text x="1290" y="404" text-anchor="middle" font-size="8.5" fill="#B06000">AHR/NRF2 agonist</text>
+<line x1="1214" y1="412" x2="1366" y2="412" stroke="#E8D4A0" stroke-width="0.7"/>
+<text x="1290" y="426" text-anchor="middle" font-size="9" fill="#886600" font-weight="bold">Phase 3 Trial:</text>
+<text x="1290" y="440" text-anchor="middle" font-size="9.5" fill="#886600" font-weight="bold">52% clearance</text>
+
+<!-- Arrow Tapinarof → AHR in keratinocyte -->
+<path d="M1202,410 C1050,410 860,404 530,396" stroke="#D4790A" stroke-width="2" fill="none" marker-end="url(#ah-orange)"/>
+<text x="870" y="400" font-size="8" fill="#D4790A" font-weight="bold">AHR/NRF2 agonism</text>
+
+<!-- Additional pharmacological note -->
+<rect x="1202" y="468" width="176" height="48" rx="7" fill="#FFF8E0" stroke="#D4790A" stroke-width="1.3" filter="url(#shadow)"/>
+<text x="1290" y="487" text-anchor="middle" font-size="9" font-weight="bold" fill="#B06000">Pharmacological</text>
+<text x="1290" y="501" text-anchor="middle" font-size="9" font-weight="bold" fill="#B06000">Validation</text>
+<text x="1290" y="511" text-anchor="middle" font-size="7.5" fill="#B06000" font-style="italic">(confirms NRF2 mechanism)</text>
+
+
+<!-- =========================================================================
+     ANNOTATION LABELS & PATHWAY NUMBERS
+     ========================================================================= -->
+
+<!-- Step numbers along main blue pathway -->
+<circle cx="192" cy="168" r="10" fill="#2266AA"/>
+<text x="192" y="172" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">1</text>
+
+<circle cx="340" cy="248" r="10" fill="#2266AA"/>
+<text x="340" y="252" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">2</text>
+
+<circle cx="425" cy="248" r="10" fill="#2266AA"/>
+<text x="425" y="252" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">3</text>
+
+<circle cx="568" cy="283" r="10" fill="#2266AA"/>
+<text x="568" y="287" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">4</text>
+
+<circle cx="836" cy="247" r="10" fill="#2266AA"/>
+<text x="836" y="251" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">5</text>
+
+<!-- Step labels -->
+<text x="192" y="160" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">Dysbiosis</text>
+<text x="340" y="240" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">Gut–Skin</text>
+<text x="425" y="240" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">Uptake</text>
+<text x="568" y="275" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">NRF2</text>
+
+<!-- Vicious cycle arc label -->
+<circle cx="923" cy="500" r="10" fill="#CC2222"/>
+<text x="923" y="504" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">!</text>
+
+
+<!-- =========================================================================
+     LEGEND EMBEDDED IN SVG (at very bottom)
+     ========================================================================= -->
+<rect x="20" y="748" width="1360" height="166" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="1"/>
+<text x="40" y="770" font-size="12" font-weight="bold" fill="#222">Figure Legend</text>
+
+<!-- Row 1: Pathway colors -->
+<rect x="40" y="782" width="32" height="5" rx="2" fill="#2266AA"/>
+<text x="80" y="789" font-size="10" fill="#333"><tspan font-weight="bold" fill="#2266AA">Blue arrows</tspan> — Central hypothesis pathway: Gut dysbiosis → ↓Butyrate → ↓NRF2 → Barrier failure → AD</text>
+
+<rect x="40" y="800" width="32" height="5" rx="2" fill="#CC2222"/>
+<text x="80" y="807" font-size="10" fill="#333"><tspan font-weight="bold" fill="#CC2222">Red arrows / boxes</tspan> — Pathogenic / vicious cycle: Th2 cytokines (IL-4, IL-13) → STAT6/STAT3 → ↓Barrier genes → more allergen penetration</text>
+
+<rect x="40" y="818" width="32" height="5" rx="2" fill="#1E8C45"/>
+<text x="80" y="825" font-size="10" fill="#333"><tspan font-weight="bold" fill="#1E8C45">Green arrows / boxes</tspan> — Therapeutic interventions: Dietary fiber, probiotics, vitamin D, topical B12, colloidal oatmeal, Treg-mediated suppression</text>
+
+<rect x="40" y="836" width="32" height="5" rx="2" fill="#7B42B0"/>
+<text x="80" y="843" font-size="10" fill="#333"><tspan font-weight="bold" fill="#7B42B0">Purple arrows / boxes</tspan> — Tryptophan–indole–AHR axis (parallel microbiome-derived signaling pathway to NRF2)</text>
+
+<rect x="40" y="854" width="32" height="5" rx="2" fill="#D4790A"/>
+<text x="80" y="861" font-size="10" fill="#333"><tspan font-weight="bold" fill="#D4790A">Orange arrows / boxes</tspan> — Pharmacological validation: Tapinarof (AHR/NRF2 agonist; Phase 3 clinical evidence)</text>
+
+<!-- Row 2: symbols -->
+<text x="40" y="882" font-size="10" fill="#333"><tspan font-weight="bold">Numbered circles (①–⑤)</tspan> trace the main causal sequence.  <tspan font-weight="bold" fill="#CC2222">⊣</tspan> = inhibition/suppression.  Dashed lines = indirect or modulatory effects.</text>
+
+<text x="40" y="900" font-size="10" fill="#333"><tspan font-weight="bold">Key abbreviations:</tspan> SCFA = short-chain fatty acid; HDAC = histone deacetylase; NRF2 = nuclear factor erythroid 2-related factor 2; AHR = aryl hydrocarbon receptor;</text>
+<text x="40" y="912" font-size="10" fill="#333">HO-1 = heme oxygenase-1; Foxp3 = forkhead box P3; Treg = regulatory T cell; STAT = signal transducer and activator of transcription; I3C = indole-3-carbinol; IAId = indole-3-aldehyde; IPA = indole-3-propionic acid</text>
+
+</svg>
+</div>
+
+</body>
+</html>
