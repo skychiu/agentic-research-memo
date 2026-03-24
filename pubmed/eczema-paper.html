@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gut–Butyrate–NRF2–Skin Barrier Axis: A Unifying Hypothesis for Natural Atopic Dermatitis Remission</title>
+  <style>
+    /* ================================================================
+       BASE PAPER STYLES
+       ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      font-size: 17px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      line-height: 1.72;
+      color: #1a1a1a;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    article {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 28px 80px;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4 {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.3;
+      color: #111;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    h1 {
+      font-size: 1.65rem;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 0.3em;
+      line-height: 1.35;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 0.25em;
+      margin-top: 2.5em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      color: #2c3e50;
+      margin-top: 1.8em;
+    }
+
+    /* Paragraphs */
+    p {
+      margin: 0 0 1em 0;
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    /* Author / metadata block */
+    .author-block {
+      text-align: center;
+      margin-bottom: 1.5em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .author-block p {
+      text-align: center;
+      margin: 0.15em 0;
+      font-size: 0.92rem;
+    }
+    .author-block .author-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    /* Horizontal rule */
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2.5em 0;
+    }
+
+    /* Strong / emphasis */
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+
+    /* Superscript / subscript */
+    sup { font-size: 0.7em; vertical-align: super; line-height: 0; }
+    sub { font-size: 0.7em; vertical-align: sub; line-height: 0; }
+
+    /* Lists */
+    ol, ul {
+      margin: 0 0 1em 0;
+      padding-left: 1.6em;
+    }
+    ol li, ul li {
+      margin-bottom: 0.5em;
+      text-align: justify;
+    }
+
+    /* Blockquote — used for abstract */
+    blockquote {
+      margin: 1em 0;
+      padding: 0 0 0 1em;
+      border-left: 3px solid #2c3e50;
+      font-style: italic;
+    }
+
+    /* Keywords */
+    .keywords {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.88rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    /* Abstract section */
+    .abstract {
+      background: #f7f9fb;
+      border: 1px solid #dde4ec;
+      border-radius: 6px;
+      padding: 1.2em 1.5em;
+      margin: 1.5em 0 2em;
+    }
+    .abstract p {
+      text-align: justify;
+    }
+
+    /* References list */
+    .references ol {
+      padding-left: 2em;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .references ol li {
+      margin-bottom: 0.6em;
+    }
+
+    /* Figure containers (wider than text) */
+    figure.paper-figure {
+      margin: 2.5em -60px;
+      padding: 0;
+      max-width: calc(100% + 120px);
+      page-break-inside: avoid;
+    }
+    @media (max-width: 1060px) {
+      figure.paper-figure {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+      }
+    }
+    figure.paper-figure figcaption {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #444;
+      line-height: 1.5;
+      margin-top: 0.75em;
+      padding: 0 20px;
+      text-align: justify;
+    }
+    figure.paper-figure figcaption strong {
+      color: #111;
+    }
+
+    /* Print styles */
+    @media print {
+      article { max-width: 100%; padding: 20px; }
+      h2 { page-break-after: avoid; }
+      h3 { page-break-after: avoid; }
+      figure.paper-figure { page-break-inside: avoid; margin-left: 0; margin-right: 0; max-width: 100%; }
+      .abstract { background: #f5f5f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    /* ================================================================
+       FIGURE 1 SCOPED STYLES
+       ================================================================ */
+    .fig1-wrap .figure-container {
+      width: 100%;
+      max-width: 1400px;
+      position: relative;
+    }
+    .fig1-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .fig1-wrap .legend-box {
+      max-width: 1400px;
+      width: 100%;
+      margin-top: 4px;
+      padding: 10px 18px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      background: #fafafa;
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .fig1-wrap .legend-box b { color: #111; }
+    .fig1-wrap .legend-row { display: flex; align-items: center; margin: 3px 0; flex-wrap: wrap; }
+    .fig1-wrap .legend-swatch {
+      display: inline-block; width: 36px; height: 5px; border-radius: 2px; margin-right: 8px; flex-shrink: 0;
+    }
+    .fig1-wrap .legend-swatch-box {
+      display: inline-block; width: 16px; height: 16px; border-radius: 3px; margin-right: 8px; flex-shrink: 0; border: 1.5px solid;
+    }
+
+    /* ================================================================
+       FIGURE 2 SCOPED STYLES
+       ================================================================ */
+    .fig2-wrap .figure-container {
+      width: 100%;
+      max-width: 1100px;
+    }
+    .fig2-wrap .figure-title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 8px;
+      color: #1a1a2e;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .fig2-wrap .figure-title span.fig-label {
+      font-weight: 700;
+    }
+    .fig2-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .fig2-wrap .legend-container {
+      margin-top: 10px;
+      padding: 12px 16px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      background: #fafafa;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .fig2-wrap .legend-container .legend-title {
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 6px;
+      color: #1a1a2e;
+    }
+    .fig2-wrap .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 6px;
+    }
+    .fig2-wrap .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fig2-wrap .legend-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+    .fig2-wrap .legend-note {
+      font-size: 10.5px;
+      color: #666;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ================================================================
+       FIGURE 3 SCOPED STYLES
+       ================================================================ */
+    .fig3-wrap .figure-container {
+      max-width: 1200px;
+      width: 100%;
+    }
+    .fig3-wrap .figure-title {
+      font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 6px;
+      line-height: 1.4;
+      color: #111;
+    }
+    .fig3-wrap .figure-subtitle {
+      font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      color: #555;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .fig3-wrap svg { display: block; width: 100%; height: auto; }
+    .fig3-wrap .legend-container {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fafafa;
+      font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-size: 10.5px;
+      line-height: 1.7;
+      color: #333;
+    }
+    .fig3-wrap .legend-container b { color: #111; }
+    .fig3-wrap .legend-row { display: flex; align-items: flex-start; margin-bottom: 2px; }
+    .fig3-wrap .legend-swatch {
+      width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0;
+      margin-right: 8px; margin-top: 2px;
+    }
+
+    /* ================================================================
+       TABLE 1 SCOPED STYLES
+       ================================================================ */
+    .table1-wrap .table-wrapper {
+      max-width: 100%;
+      margin: 0 auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .table1-wrap .table-title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      color: #111;
+    }
+    .table1-wrap .table-subtitle {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13.5px;
+      color: #555;
+      margin: 0 0 14px 0;
+      font-style: italic;
+    }
+    .table1-wrap table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #b0b0b0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .table1-wrap thead th {
+      background: #2c3e50;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 13.5px;
+      text-transform: none;
+      letter-spacing: 0.015em;
+      padding: 11px 12px;
+      text-align: left;
+      vertical-align: bottom;
+      border-bottom: 2px solid #1a252f;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      white-space: normal;
+    }
+    .table1-wrap thead th:last-child { border-right: none; }
+    .table1-wrap tbody td {
+      padding: 10px 12px;
+      vertical-align: top;
+      border-bottom: 1px solid #d5d5d5;
+      border-right: 1px solid #e0e0e0;
+    }
+    .table1-wrap tbody td:last-child { border-right: none; }
+    .table1-wrap tbody tr:nth-child(even) { background: #f7f9fb; }
+    .table1-wrap tbody tr:nth-child(odd)  { background: #ffffff; }
+    .table1-wrap tbody tr:hover { background: #eef3f8; }
+    .table1-wrap col.col-intervention { width: 14%; }
+    .table1-wrap col.col-mechanism    { width: 26%; }
+    .table1-wrap col.col-evidence     { width: 17%; }
+    .table1-wrap col.col-effect       { width: 17%; }
+    .table1-wrap col.col-grade        { width: 13%; }
+    .table1-wrap col.col-pmid         { width: 13%; }
+    .table1-wrap .row-num {
+      display: inline-block;
+      width: 20px; height: 20px; line-height: 20px;
+      text-align: center; background: #2c3e50; color: #fff;
+      border-radius: 50%; font-size: 11px; font-weight: 700;
+      margin-right: 5px; flex-shrink: 0;
+    }
+    .table1-wrap .intervention-cell { display: flex; align-items: flex-start; gap: 0; }
+    .table1-wrap .intervention-name { font-weight: 600; color: #1a1a1a; }
+    .table1-wrap .grade { white-space: nowrap; letter-spacing: 1px; font-size: 15px; line-height: 1; }
+    .table1-wrap .grade-label { display: block; font-size: 12px; color: #555; margin-top: 3px; letter-spacing: 0; }
+    .table1-wrap .filled   { color: #27ae60; }
+    .table1-wrap .unfilled { color: #ccc; }
+    .table1-wrap .pmid {
+      font-family: "SF Mono", "Menlo", "Consolas", monospace;
+      font-size: 12.5px; color: #444; word-break: break-all;
+    }
+    .table1-wrap .footnotes {
+      max-width: 100%;
+      margin: 14px auto 0;
+      padding-top: 8px;
+      border-top: 1px solid #ccc;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12.5px;
+      color: #555;
+      line-height: 1.55;
+    }
+    .table1-wrap .footnotes p { margin: 2px 0; }
+    @media print {
+      .table1-wrap table { font-size: 11px; page-break-inside: auto; }
+      .table1-wrap thead { display: table-header-group; }
+      .table1-wrap tr { page-break-inside: avoid; }
+      .table1-wrap tbody tr:hover { background: inherit; }
+      .table1-wrap thead th { background: #2c3e50 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .table1-wrap tbody tr:nth-child(even) { background: #f2f2f2 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    /* ================================================================
+       TABLE 2 SCOPED STYLES
+       ================================================================ */
+    .table2-wrap .table-wrapper {
+      max-width: 100%;
+      margin: 0 auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .table2-wrap .table-title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      color: #111;
+    }
+    .table2-wrap .table-subtitle {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13.5px;
+      color: #555;
+      margin: 0 0 14px 0;
+      font-style: italic;
+    }
+    .table2-wrap table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #b0b0b0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .table2-wrap thead th {
+      background: #7b241c;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 13.5px;
+      letter-spacing: 0.015em;
+      padding: 11px 14px;
+      text-align: left;
+      vertical-align: bottom;
+      border-bottom: 2px solid #5b1a14;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      white-space: normal;
+    }
+    .table2-wrap thead th:last-child { border-right: none; }
+    .table2-wrap tbody td {
+      padding: 10px 14px;
+      vertical-align: top;
+      border-bottom: 1px solid #d5d5d5;
+      border-right: 1px solid #e0e0e0;
+    }
+    .table2-wrap tbody td:last-child { border-right: none; }
+    .table2-wrap tbody tr:nth-child(even) { background: #fdf6f5; }
+    .table2-wrap tbody tr:nth-child(odd)  { background: #ffffff; }
+    .table2-wrap tbody tr:hover { background: #fceae8; }
+    .table2-wrap col.col-intervention { width: 15%; }
+    .table2-wrap col.col-claim        { width: 15%; }
+    .table2-wrap col.col-evidence     { width: 25%; }
+    .table2-wrap col.col-finding      { width: 32%; }
+    .table2-wrap col.col-pmid         { width: 13%; }
+    .table2-wrap .row-num {
+      display: inline-block;
+      width: 20px; height: 20px; line-height: 20px;
+      text-align: center; background: #7b241c; color: #fff;
+      border-radius: 50%; font-size: 11px; font-weight: 700;
+      margin-right: 5px; flex-shrink: 0;
+    }
+    .table2-wrap .intervention-cell { display: flex; align-items: flex-start; gap: 0; }
+    .table2-wrap .intervention-name { font-weight: 600; color: #1a1a1a; }
+    .table2-wrap .verdict {
+      display: inline-block; font-size: 11.5px; font-weight: 700;
+      letter-spacing: 0.03em; padding: 2px 8px; border-radius: 3px;
+      margin-top: 6px; white-space: nowrap;
+    }
+    .table2-wrap .verdict-none     { background: #f5c6cb; color: #721c24; }
+    .table2-wrap .verdict-harm     { background: #f8d7da; color: #85182a; border: 1px solid #f5c6cb; }
+    .table2-wrap .verdict-neutral  { background: #fff3cd; color: #856404; }
+    .table2-wrap .pmid {
+      font-family: "SF Mono", "Menlo", "Consolas", monospace;
+      font-size: 12.5px; color: #444;
+    }
+    .table2-wrap .footnotes {
+      max-width: 100%;
+      margin: 14px auto 0;
+      padding-top: 8px;
+      border-top: 1px solid #ccc;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12.5px;
+      color: #555;
+      line-height: 1.55;
+    }
+    .table2-wrap .footnotes p { margin: 2px 0; }
+    @media print {
+      .table2-wrap table { font-size: 11px; page-break-inside: auto; }
+      .table2-wrap thead { display: table-header-group; }
+      .table2-wrap tr { page-break-inside: avoid; }
+      .table2-wrap tbody tr:hover { background: inherit; }
+      .table2-wrap thead th { background: #7b241c !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .table2-wrap tbody tr:nth-child(even) { background: #f5f0f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <article>
+
+<!-- ================================================================
+     TITLE & AUTHOR BLOCK
+     ================================================================ -->
+
+<h1>The Gut–Butyrate–NRF2–Skin Barrier Axis: A Unifying Hypothesis for Natural Atopic Dermatitis Remission</h1>
+
+<div class="author-block">
+  <p class="author-name">Peter Chiu<sup>1</sup></p>
+  <p><sup>1</sup>Independent Researcher</p>
+  <p><strong>Correspondence:</strong> Peter Chiu, abc16168@gmail.com</p>
+  <p><strong>Article type:</strong> Hypothesis &amp; Theory</p>
+  <p><strong>Journal:</strong> Frontiers in Immunology</p>
+</div>
+
+<p class="keywords"><strong>Keywords:</strong> atopic dermatitis, NRF2, butyrate, skin barrier, gut-skin axis, aryl hydrocarbon receptor, filaggrin, short-chain fatty acids, probiotics, natural treatment</p>
+
+<hr>
+
+<!-- ================================================================
+     ABSTRACT
+     ================================================================ -->
+
+<h2>ABSTRACT</h2>
+
+<div class="abstract">
+
+<p><strong>Background:</strong> Atopic dermatitis (AD) affects up to 20% of children and 3% of adults worldwide. Despite substantial advances in biologic therapies, no cure exists and natural or dietary interventions remain fragmented across disciplines with no unifying mechanistic framework. Probiotics are studied by gastroenterologists, vitamin D by immunologists, barrier repair by dermatologists, and aryl hydrocarbon receptor (AHR) agonists by pharmacologists — yet these lines of inquiry have never been integrated into a coherent model.</p>
+
+<p><strong>Hypothesis:</strong> We propose that a central deficit in epidermal NRF2 (nuclear factor erythroid 2-related factor 2) activity — driven in part by gut microbiome dysbiosis and consequent butyrate deficiency — represents a master switch underlying AD pathogenesis, and that its restoration through dietary, microbial, and topical natural interventions constitutes the most promising path to sustained remission.</p>
+
+<p><strong>Evidence synthesis:</strong> We integrate findings from quantitative epidermal proteomics showing reduced NRF2 in AD skin (PMID: 36108803), in vitro demonstrations that butyrate activates NRF2 and upregulates filaggrin in human keratinocytes (PMID: 40283951; PMID: 24451036), birth cohort data showing low fecal butyrate predicts eczema with an adjusted odds ratio of 13.2 (PMID: 35769572), murine proof that dietary fiber increases gut short-chain fatty acid (SCFA) production and restores the skin barrier (PMID: 35672452), and the pharmacological validation provided by tapinarof — a naturally derived AHR/NRF2 agonist achieving 51.9% complete clearance in Phase 3 AD trials (PMID: 38777187; PMID: 40383273). We further demonstrate that probiotics (RR 0.60 for AD prevention; PMID: 36161401), vitamin D (SMD −0.41; PMID: 39683522), and topical vitamin B12 (77.6% SCORAD reduction; PMID: 28677237) all intersect this axis.</p>
+
+<p><strong>Implications:</strong> This framework identifies a specific, testable translational gap — no human trial of direct butyrate supplementation for AD exists — and proposes a multi-target natural intervention protocol grounded in a single mechanistic pathway. We outline specific trial designs to test this hypothesis.</p>
+
+</div>
+
+<hr>
+
+<!-- ================================================================
+     1. INTRODUCTION
+     ================================================================ -->
+
+<h2>1. INTRODUCTION</h2>
+
+<p>Atopic dermatitis (AD) is the most common chronic inflammatory skin disease, affecting up to 20% of children and approximately 3% of adults worldwide, with prevalence continuing to rise in industrialized nations (PMID: 25925336). The disease imposes an enormous burden on patients and healthcare systems alike, characterized by intense pruritus, recurrent flares, sleep disruption, and profound impairment of quality of life. Despite decades of research and the advent of targeted biologic therapies such as dupilumab, no cure for AD exists — a reality stated explicitly in the 2020 Lancet seminar on the disease (PMID: 32738956), in comprehensive pediatric reviews (PMID: 24636644), and in nutritional assessments of AD management (PMID: 25925336). Current first-line treatments — topical corticosteroids, calcineurin inhibitors, and more recently Janus kinase inhibitors and monoclonal antibodies — manage symptoms with varying efficacy but do not address the root causes of the disease. Discontinuation of therapy is typically followed by relapse, and long-term immunosuppression carries its own risks. There is thus a compelling need for approaches that target the fundamental mechanisms driving AD rather than downstream inflammatory mediators alone.</p>
+
+<p>The scientific literature on natural and dietary interventions for AD is substantial yet deeply fragmented. Probiotics are investigated primarily by gastroenterologists and allergists, vitamin D supplementation by immunologists and endocrinologists, skin barrier repair strategies by dermatologists and cosmetic scientists, and aryl hydrocarbon receptor (AHR) agonists by pharmacologists and toxicologists. A comprehensive systematic review and meta-analysis of complementary and alternative medicine (CAM) for AD concluded that there was "insufficient evidence" to recommend most natural interventions (PMID: 34409356). However, this verdict reflects the disciplinary fragmentation of the field rather than an absence of effective interventions. When individual interventions are examined within their specific domains — probiotics for prevention, vitamin D for winter-related flares, topical vitamin B12 for active inflammation — the evidence is often robust. What has been missing is a unifying mechanistic framework that explains why certain natural interventions work, predicts which combinations should be synergistic, and identifies the critical translational gaps that must be addressed.</p>
+
+<p>A paradigm shift in understanding AD pathogenesis has created the foundation for such a framework. The field has moved from an exclusively "inside-out" model — in which immune dysregulation drives all downstream pathology — to an "outside-in" model that recognizes epidermal barrier dysfunction as a primary and, in many cases, initiating event (PMID: 29930242). The discovery of loss-of-function mutations in the filaggrin gene (<em>FLG</em>) as the strongest known genetic risk factor for AD catalyzed this shift. However, <em>FLG</em> mutations explain only 30–40% of moderate-to-severe AD cases, and many individuals with <em>FLG</em> mutations never develop the disease (PMID: 34344611). Something else must be suppressing barrier function in the majority of AD patients — an acquired, potentially modifiable factor that reduces the expression of filaggrin and other barrier proteins even in the absence of genetic mutation. Understanding the nature of this acquired suppression is essential for developing interventions that address root causes.</p>
+
+<p>Several recent advances, published between 2022 and 2025, have converged to create an unprecedented opportunity for synthesis. First, quantitative proteomics of AD epidermis using pressure-cycling technology and data-independent acquisition identified reduced NRF2 (nuclear factor erythroid 2-related factor 2) antioxidant pathway activity as a hallmark of both lesional and nonlesional AD skin (PMID: 36108803). Second, a butyric acid-releasing derivative was shown to activate NRF2 and upregulate filaggrin in human keratinocytes in vitro (PMID: 40283951). Third, a large birth cohort study demonstrated that low fecal butyric acid in the first year of life predicts eczema at age 8 with an adjusted odds ratio of 13.2 — an extraordinary effect size for an epidemiological association (PMID: 35769572). Fourth, the Phase 3 clinical success of tapinarof, a naturally derived stilbenoid that activates the AHR/NRF2 pathway, achieving approximately 52% complete clearance in AD trials (PMID: 38777187), provided direct pharmacological proof-of-concept that this pathway is a viable therapeutic target in humans.</p>
+
+<p>Herein, we propose the following unifying hypothesis: <strong>a central deficit in epidermal NRF2 activity — driven partly by gut microbiome dysbiosis and consequent butyrate deficiency — underlies the pathogenesis of AD in the majority of patients, and targeted natural restoration of this gut–butyrate–NRF2–skin barrier axis represents the most evidence-supported path to sustained remission.</strong> We further identify what we believe to be the most critical translational gap in dermatology today: despite compelling preclinical and observational evidence linking butyrate to every node of AD pathogenesis, no human clinical trial has tested direct butyrate supplementation for AD. This paper synthesizes evidence from immunology, microbiology, dermatology, nutritional science, and pharmacology to construct and defend this hypothesis, to evaluate the natural interventions that intersect this axis, and to propose specific clinical trial designs to test the model.</p>
+
+<hr>
+
+<!-- ================================================================
+     2. THE NRF2 DEFICIT IN ATOPIC DERMATITIS
+     ================================================================ -->
+
+<h2>2. THE NRF2 DEFICIT IN ATOPIC DERMATITIS</h2>
+
+<h3>2.1 Quantitative Evidence for Reduced NRF2 Activity in AD Skin</h3>
+
+<p>The identification of NRF2 pathway impairment in AD skin represents a critical advance that anchors our hypothesis. Koch et al. (2023) applied pressure-cycling technology and data-independent acquisition mass spectrometry to perform quantitative proteomics of epidermal samples from AD patients and healthy controls (PMID: 36108803). This state-of-the-art approach enabled the detection of over 3,000 proteins with high quantitative precision. Two key findings emerged. First, the NRF2-dependent antioxidant pathway was significantly impaired in AD epidermis, with reduced levels of multiple NRF2 target proteins. Second, mitochondrial proteins were also reduced — and crucially, the authors demonstrated through siRNA knockdown experiments in primary human keratinocytes that NRF2 silencing partially replicated the mitochondrial abnormalities. This established a causal link: NRF2 deficiency drives at least part of the mitochondrial dysfunction observed in AD. Importantly, these proteomic changes were present in both lesional and nonlesional AD skin, indicating that NRF2 impairment is not merely a consequence of active inflammation but a constitutive feature of the AD phenotype. This finding is consistent with the clinical observation that AD patients have abnormal barrier function even in clinically normal-appearing skin, and it positions NRF2 deficiency as an upstream driver rather than a downstream effect.</p>
+
+<h3>2.2 NRF2 as Master Regulator of Epidermal Barrier Gene Expression</h3>
+
+<p>NRF2 is far more than an antioxidant transcription factor in the epidermis — it is a master regulator of the genes that constitute the physical skin barrier. Furue (2020) provided a comprehensive review demonstrating that both the AHR and NRF2 transcription factor pathways upregulate the expression of filaggrin (FLG), loricrin (LOR), and involucrin (IVL) — the three cornerstones of the cornified envelope and stratum corneum integrity (PMID: 32751111). These are precisely the proteins that are deficient in AD skin and whose absence drives the "outside-in" cascade of allergen penetration, immune activation, and chronic inflammation.</p>
+
+<p>The molecular mechanism operates through the KEAP1-NRF2 signaling system (PMID: 35883888). Under basal conditions, the cytosolic adaptor protein KEAP1 (Kelch-like ECH-associated protein 1) targets NRF2 for ubiquitin-mediated proteasomal degradation, maintaining low constitutive NRF2 levels. Under conditions of oxidative or electrophilic stress, critical cysteine residues on KEAP1 are modified, disrupting its ability to tag NRF2 for degradation. Stabilized NRF2 translocates to the nucleus, heterodimerizes with small MAF proteins, and binds to antioxidant response elements (AREs) in the promoters of target genes. These targets include classical antioxidant enzymes (heme oxygenase-1/HO-1, NAD(P)H quinone dehydrogenase 1/NQO1, glutathione S-transferase P1/GSTP1) as well as barrier structural proteins. NRF2 thus exerts both antioxidative and anti-inflammatory effects in the skin, positioning it as a dual-function guardian of epidermal homeostasis.</p>
+
+<h3>2.3 The Vicious Cycle: Th2 Cytokine Suppression of NRF2 and Barrier Genes</h3>
+
+<p>The significance of NRF2 in AD becomes fully apparent when considered alongside the dominant immune milieu of the disease. AD is characterized by a Th2-skewed immune response, with elevated interleukin-4 (IL-4) and interleukin-13 (IL-13) as the signature cytokines. These same cytokines directly suppress the expression of filaggrin, loricrin, and involucrin through STAT6 and STAT3 signaling (PMID: 32751111). NRF2 and Th2 cytokines are thus locked in direct opposition for control of barrier gene expression.</p>
+
+<p>This creates a self-amplifying vicious cycle that sustains the disease. Barrier breach, whether initiated by genetic filaggrin deficiency, environmental insult, or dysbiosis-driven NRF2 insufficiency, permits the penetration of allergens and microbial products through the compromised stratum corneum. These stimuli activate dendritic cells and innate lymphoid cells, driving Th2 polarization and the production of IL-4 and IL-13 (PMID: 32502588). These cytokines then further suppress barrier gene expression, worsening the barrier defect and perpetuating the cycle. NRF2 activation has the potential to break this cycle by restoring barrier gene expression even in the presence of Th2 cytokines, thereby addressing the root cause rather than a single downstream mediator.</p>
+
+<h3>2.4 Pharmacological Validation: The Clinical Success of Tapinarof</h3>
+
+<p>The therapeutic relevance of the AHR/NRF2 pathway in AD is no longer theoretical — it has been validated by the clinical success of tapinarof. Tapinarof (DMVT-505, benvitimod) is a naturally derived hydroxylated stilbenoid originally isolated from bacterial symbiosis with entomopathogenic nematodes. It is a potent AHR agonist (PMID: 28595996) that also activates NRF2-dependent antioxidant responses (PMID: 33157177), representing a dual-pathway therapeutic mechanism that is uniquely suited to addressing AD pathogenesis.</p>
+
+<p>The Phase 3 clinical program for tapinarof in AD has yielded striking results. In the ADORING 1 and ADORING 2 trials, tapinarof cream 1% applied once daily achieved a validated Investigator Global Assessment for AD (vIGA-AD) score of 0 (clear) or 1 (almost clear) in 45–46% of patients versus 14–18% with vehicle, and EASI-75 (75% improvement in Eczema Area and Severity Index) in 56–59% versus 21–23% (PMID: 38777187). These efficacy rates are remarkable for a topical monotherapy with a favorable safety profile. The ADORING 3 long-term extension study demonstrated that 51.9% of patients achieved complete clearance (vIGA-AD = 0) at some point during treatment, with a mean treatment-free remission interval of 79.8 days after achieving clearance — suggesting disease-modifying rather than merely suppressive activity (PMID: 40383273). In the Japanese Phase 3 trial, the 52-week EASI-75 rate reached 76.6% (PMID: 39269202), and significant pruritus relief was documented within 24–48 hours of treatment initiation (PMID: 40465504).</p>
+
+<p>These clinical data provide direct pharmacological proof that activating the AHR/NRF2 pathway resolves AD in humans. Tapinarof achieves this through topical application to the skin. The central question motivating our hypothesis is: can this same pathway be activated endogenously, through dietary, microbial, and nutritional interventions operating via the gut–skin axis?</p>
+
+<hr>
+
+<!-- ================================================================
+     3. BUTYRATE AS AN ENDOGENOUS NRF2 ACTIVATOR IN SKIN
+     ================================================================ -->
+
+<h2>3. BUTYRATE AS AN ENDOGENOUS NRF2 ACTIVATOR IN SKIN</h2>
+
+<h3>3.1 Butyrate Activates NRF2 in Human Keratinocytes</h3>
+
+<p>The short-chain fatty acid butyrate, produced by colonic fermentation of dietary fiber by commensal bacteria, has recently been identified as a potent activator of NRF2 signaling in human epidermal keratinocytes. In a 2025 study, a butyric acid-releasing derivative (4-phenylbutyric acid, FBA) was shown to upregulate NRF2 expression while simultaneously suppressing NF-κB activation in HaCaT human keratinocytes (PMID: 40283951). This dual signaling shift — NRF2 up, NF-κB down — recapitulates the molecular signature of effective AD therapy. Functionally, the butyrate derivative reduced reactive oxygen species (ROS) generation, increased tight junction proteins (occludin, ZO-1), promoted filaggrin and keratin-1 expression, and enhanced wound closure in scratch assay models.</p>
+
+<p>These findings are supported by independent studies using different experimental systems. <em>Cutibacterium acnes</em>-derived SCFA-containing supernatant activated NRF2 and its downstream target HO-1 in primary human keratinocytes (PMID: 40071444), establishing that bacterially-produced SCFAs are sufficient to trigger this pathway. In a colitis model, sodium butyrate combined with probiotics increased NRF2 protein levels in tissue (PMID: 34903409), demonstrating that oral butyrate delivery can activate NRF2 in epithelial tissues in vivo.</p>
+
+<h3>3.2 Butyrate Directly Upregulates Filaggrin Expression</h3>
+
+<p>Perhaps the most directly relevant finding for AD is that butyrate directly upregulates filaggrin — the single most important structural protein of the epidermal barrier. Krejner et al. (2014) demonstrated that sodium butyrate increased both filaggrin mRNA and protein levels in primary normal human epidermal keratinocytes (NHEKs) (PMID: 24451036). Butyrate also upregulated transglutaminase 1, a critical enzyme for cornified envelope assembly and terminal keratinocyte differentiation. This study provided the first direct evidence that a gut-derived metabolite could modulate the expression of the gene most closely associated with AD risk. These findings were subsequently confirmed and extended by the demonstration of filaggrin upregulation by a butyrate derivative in HaCaT cells (PMID: 40283951). Additional support comes from the observation that <em>Lactobacillus plantarum</em> fermentation products upregulated filaggrin in reconstructed three-dimensional human epidermis (PMID: 20013120), suggesting that probiotic metabolic products — which include SCFAs — act on the same pathway.</p>
+
+<h3>3.3 The HDAC Inhibition Mechanism</h3>
+
+<p>The molecular mechanism through which butyrate activates NRF2 and modulates gene expression in keratinocytes is primarily through its well-characterized activity as a class I and class II histone deacetylase (HDAC) inhibitor. In the specific context of AD, this mechanism has several convergent effects.</p>
+
+<p>First, butyrate inhibits HDAC3, which increases the lysine acetylation of STAT1 and NF-κB p65, reducing NF-κB nuclear translocation and attenuating the production of inflammatory cytokines including TNF-α, IL-6, and IL-1β (PMID: 38159175). This anti-inflammatory activity operates in parallel with, and independently of, the NRF2 activation pathway. Second, HDAC3 normally functions as a repressor of NRF2-dependent transcription. A 2023 study demonstrated that pharmacological HDAC3 inhibition alleviates AD specifically through the upregulation of the NRF2/HO-1 signaling pathway (PMID: 37992448). This provides a direct mechanistic link: butyrate → HDAC3 inhibition → NRF2 derepression → HO-1 and barrier gene expression. The dual action of butyrate — simultaneously activating NRF2 and suppressing NF-κB through a single molecular mechanism (HDAC inhibition) — makes it unique among natural compounds in its potential to address both the barrier and inflammatory components of AD pathogenesis.</p>
+
+<h3>3.4 Butyrate Drives Regulatory T-Cell Generation</h3>
+
+<p>Beyond its direct effects on keratinocytes, butyrate exerts a profound influence on adaptive immunity through the generation of regulatory T cells (Tregs). The landmark study by Arpaia et al. (2013) published in <em>Nature</em> demonstrated that commensal bacteria-derived butyrate, acting through HDAC inhibition, induces histone H3 hyperacetylation at the Foxp3 promoter and conserved non-coding sequence 1 (CNS1) enhancer region (PMID: 24226773). This epigenetic modification enhances Foxp3 transcription, driving the peripheral (extrathymic) generation of Foxp3⁺ regulatory T cells. This discovery established butyrate as a critical mediator of immune tolerance to commensal organisms and environmental antigens — precisely the function that is deficient in AD.</p>
+
+<p>The relevance of this mechanism to AD has been confirmed in multiple disease-specific models. <em>Ruminococcus gnavus</em> supplementation increased cecal butyrate concentrations, elevated CD4⁺FOXP3⁺ Treg frequencies in skin-draining lymph nodes, and improved AD-like skin inflammation in mice (PMID: 34633714). Direct butyrate supplementation combined with probiotics increased both Treg and Th1 differentiation while decreasing AD severity in a murine model (PMID: 29648971). <em>Lactobacillus murinus</em> supplementation restored butyrate levels, reduced HDAC activity, enhanced Foxp3 expression, and promoted Treg differentiation in AD-prone mice (PMID: 38944008).</p>
+
+<p>This Treg-generating capacity of butyrate is of central importance to our hypothesis: butyrate simultaneously repairs the epidermal barrier (via NRF2 activation and filaggrin upregulation) and suppresses the Th2 immune driver (via Foxp3⁺ Treg generation). It therefore attacks both arms of the AD vicious cycle through a single metabolite, making it the most mechanistically comprehensive natural therapeutic candidate for the disease.</p>
+
+<h3>3.5 Dietary Fiber → Systemic Butyrate → Skin: The Complete Chain</h3>
+
+<p>For the gut–butyrate–skin axis to be clinically relevant, three conditions must be met: dietary fiber must increase colonic butyrate production, butyrate must reach the systemic circulation, and systemic butyrate must influence epidermal biology. Each link in this chain has been independently validated.</p>
+
+<p>The most important study in this chain is that of Trompette et al. (2022), published in <em>Mucosal Immunology</em> (PMID: 35672452). Using a murine model, the authors demonstrated that a fermentable fiber-rich diet increased gut SCFA production, and that the resulting butyrate altered mitochondrial metabolism in epidermal keratinocytes, enhanced the production of skin barrier structural components, and reduced AD-like inflammation. This was the first study to demonstrate the complete dietary fiber → gut SCFA → skin barrier pathway, providing proof-of-principle for the central tenet of our hypothesis.</p>
+
+<p>Does dietary fiber increase systemic butyrate levels in humans? Multiple studies confirm that it does. A dietary intervention study demonstrated that fiber supplementation significantly increased plasma butyrate concentrations (2.85 vs. 2.02 µmol/L, P = 0.03) (PMID: 36084000). A randomized crossover trial showed that rye bread combined with resistant starch significantly increased plasma butyrate, acetate, and total SCFA levels (all P &lt; 0.001) (PMID: 30400947). Inulin combined with resistant starch increased fasting plasma butyrate in healthy adults (PMID: 34923911).</p>
+
+<p>Does systemically delivered compound reach the skin at biologically relevant concentrations? Oral sulforaphane, another potent NRF2 activator, reaches human skin at concentrations of 34.1 ng/g and significantly reduces inflammatory cytokines there (PMID: 40559384; PMID: 29691233). While butyrate-specific skin pharmacokinetic data are limited, the demonstrated ability of small dietary-derived molecules to accumulate in the epidermis after oral administration supports the biological plausibility of the gut–skin pathway.</p>
+
+<h3>3.6 The Tryptophan–Indole–AHR Arm</h3>
+
+<p>In parallel with the butyrate–NRF2 pathway, gut bacteria metabolize dietary tryptophan into indole derivatives that activate the AHR in skin, providing a second microbially-mediated route to barrier restoration. <em>Bifidobacterium longum</em> metabolizes tryptophan to produce indole-3-carbaldehyde, which reaches the systemic circulation and activates AHR in skin cells, improving AD in a murine model — an effect that is abolished by AHR antagonist treatment (PMID: 35239463). Indole-3-aldehyde (IAId) is specifically reduced on AD skin compared to healthy controls, and exogenous IAId attenuates AD-like inflammation via AHR-mediated suppression of thymic stromal lymphopoietin (TSLP), a key Th2-initiating cytokine (PMID: 30578876). A recent study demonstrated that dietary phytic acid, a component of high-fiber foods, is metabolized by the skin microbiota to produce indole-3-propionic acid, which activates AHR and upregulates keratin-10 (KRT10), improving AD-like skin inflammation (PMID: 40631934).</p>
+
+<p>These tryptophan-derived AHR agonists converge on the same AHR/NRF2 signaling axis as tapinarof, reinforcing the model that gut microbial metabolism activates skin barrier-protective transcription programs through multiple parallel metabolite pathways. The redundancy of this system — both butyrate (via HDAC inhibition → NRF2) and indoles (via AHR → NRF2) converging on the same master regulator — suggests that it represents a fundamental axis of communication between the gut microbiome and the skin barrier.</p>
+
+<hr>
+
+<!-- ================================================================
+     4. GUT DYSBIOSIS AND BUTYRATE DEFICIENCY IN AD
+     ================================================================ -->
+
+<h2>4. GUT DYSBIOSIS AND BUTYRATE DEFICIENCY IN ATOPIC DERMATITIS</h2>
+
+<h3>4.1 The Gut-Skin Axis: Conceptual Framework</h3>
+
+<p>The concept of a gut–skin axis — a bidirectional communication network between the gastrointestinal and cutaneous systems — has gained substantial empirical support. De Pessemier et al. (2021) published a landmark review synthesizing evidence for gut–skin crosstalk mediated by diet, metabolites, immune cells, and the nervous system (PMID: 33670115). This review documented dysbiosis in both the skin and the gut microbiome of AD patients and highlighted SCFAs as key mediators of inter-organ communication. The gut–skin axis framework has been further elaborated with emphasis on the three principal mechanisms through which probiotics contribute to cutaneous health: improvement of the intestinal environment, modulation of immune responses, and regulation of metabolic activity (PMID: 34335634). Within this framework, butyrate emerges as the metabolite with the most direct and pleiotropic effects on both immune regulation and epidermal barrier function.</p>
+
+<h3>4.2 Birth Cohort Evidence: Low Butyrate Predicts Atopic Dermatitis</h3>
+
+<p>The most compelling epidemiological evidence linking butyrate deficiency to AD comes from prospective birth cohort studies, in which fecal or plasma SCFA levels are measured in early life and AD outcomes are ascertained at later time points, minimizing the risk of reverse causation.</p>
+
+<p>The Growing Up in Singapore Towards healthy Outcomes (GUSTO) cohort provides the most striking data (PMID: 35769572). In this study, low stool butyric acid concentration (≤25th percentile) measured during the first year of life predicted eczema at age 8 with an adjusted odds ratio of 13.2 — an effect size that is extraordinary by the standards of epidemiological research. The association was even stronger for combined wheezing and eczema phenotypes, with an adjusted odds ratio of 22.6. These effect sizes substantially exceed those of established risk factors including family history and <em>FLG</em> genotype, suggesting that butyrate deficiency may be among the most important modifiable determinants of AD risk.</p>
+
+<p>The Copenhagen Prospective Studies on Asthma in Childhood (COPSAC) CARE cohort replicated and extended these findings (PMID: 35917214). Children who developed AD had significantly lower fecal butyrate concentrations at 360 days of age. The study additionally identified <em>Ruminococcus bromii</em> — a keystone starch degrader that enables butyrate cross-feeding in the colonic ecosystem — as independently protective against AD, linking microbial community structure to metabolite production and disease risk.</p>
+
+<p>The NICE birth cohort from Japan demonstrated that lower plasma SCFA concentrations at 4 months of age predicted eczema development at 12 months (PMID: 38340558). Acetic acid was negatively associated with eczema risk (adjusted OR 0.42), and the authors notably observed that butyric acid concentrations were approximately 100-fold enriched in breast milk compared to plasma, suggesting that breastfeeding may serve as an important early source of butyrate exposure. Data from the GUSTO cohort additionally revealed delayed colonization by butyrate- and propionate-producing bacteria in infants who subsequently developed eczema (PMID: 33023370). The CORAL cohort confirmed that the abundance of butyrate-producing taxa at 12 months of age was negatively associated with AD development (PMID: 38419554).</p>
+
+<h3>4.3 Systematic Review Evidence</h3>
+
+<p>The consistency of these findings across geographically and ethnically diverse cohorts has been confirmed by systematic review. Sasaki et al. (2024) conducted a systematic review of 37 papers examining the relationship between SCFAs and allergic diseases, published in the journal <em>Allergy</em> (PMID: 38391245). The review concluded that acetate, propionate, and butyrate measured in the first few years of life had a protective effect against allergic diseases, with the strongest and most consistent associations observed for AD. The protective association appeared to be age-dependent, with a critical early-life window during which SCFA exposure shapes immune development and potentially barrier maturation.</p>
+
+<h3>4.4 The Arachidonic Acid–Dysbiosis Link</h3>
+
+<p>An important recent study has illuminated a specific mechanism by which infant gut dysbiosis may be initiated. A 2024 study published in <em>Gut</em> analyzed 250 mother–infant pairs using integrated metagenomics and metabolomics (PMID: 39084687). The authors found that high breast milk arachidonic acid (AA) concentrations — but notably not eicosapentaenoic acid (EPA) or docosahexaenoic acid (DHA) — induced gut dysbiosis in infants. Specifically, four bacterial taxa degraded mannan into mannose, enhancing lipopolysaccharide (LPS) biosynthesis pathways. <em>Escherichia coli</em> abundance under high AA conditions correlated with LPS pathway enrichment specifically in infants who developed AD. High AA exposure also disrupted CD4/CD8 T-cell ratios and increased Th2 cell frequencies. This study suggests that maternal dietary fatty acid composition may initiate the dysbiosis–butyrate deficit cascade that ultimately manifests as AD in offspring, providing a potential upstream target for primary prevention.</p>
+
+<hr>
+
+<!-- ================================================================
+     5. CONVERGENT EVIDENCE FROM VALIDATED NATURAL INTERVENTIONS
+     ================================================================ -->
+
+<h2>5. CONVERGENT EVIDENCE FROM VALIDATED NATURAL INTERVENTIONS</h2>
+
+<p>A critical test of any unifying hypothesis is whether it explains the efficacy patterns of existing interventions. In this section, we demonstrate that the natural interventions with the strongest clinical evidence for AD all intersect the proposed NRF2/butyrate/AHR axis, while interventions that fail to engage this axis lack efficacy. A summary of the evidence base for each intervention, including its mechanistic link to the NRF2/barrier axis, effect sizes, evidence grades, and key PMIDs, is presented in Table 1 below.</p>
+
+<!-- ======================== TABLE 1 EMBED ======================== -->
+<figure class="paper-figure">
+<div class="table1-wrap">
+
+<div class="table-wrapper">
+
+  <p class="table-title">Table 1.&ensp;Summary of Evidence for Natural Interventions Targeting the NRF2/Barrier Axis in Atopic Dermatitis</p>
+  <p class="table-subtitle">Interventions ranked by strength and quality of clinical evidence</p>
+
+  <table>
+    <colgroup>
+      <col class="col-intervention">
+      <col class="col-mechanism">
+      <col class="col-evidence">
+      <col class="col-effect">
+      <col class="col-grade">
+      <col class="col-pmid">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Intervention</th>
+        <th>Mechanism (Link to NRF2/Barrier Axis)</th>
+        <th>Best Evidence</th>
+        <th>Effect Size</th>
+        <th>Evidence Grade</th>
+        <th>Key PMIDs</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- Row 1 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">1</span>
+            <span class="intervention-name"><em>L.&nbsp;rhamnosus</em> GG (perinatal)</span>
+          </div>
+        </td>
+        <td>Gut microbiome restoration → butyrate/indole production → NRF2/AHR activation</td>
+        <td>Meta-analysis, 11 RCTs</td>
+        <td>RR 0.60 (0.47–0.75) for AD prevention</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤⬤⬤</span></span>
+          <span class="grade-label">Strong</span>
+        </td>
+        <td><span class="pmid">36161401, 12788576</span></td>
+      </tr>
+
+      <!-- Row 2 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">2</span>
+            <span class="intervention-name">Mixed probiotics (perinatal)</span>
+          </div>
+        </td>
+        <td>Multistrain microbiome diversification → SCFA + immune modulation</td>
+        <td>Network meta-analysis, 21 studies, 5,406 children</td>
+        <td>RR 0.46–0.50</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤⬤⬤</span></span>
+          <span class="grade-label">Strong</span>
+        </td>
+        <td><span class="pmid">33811784</span></td>
+      </tr>
+
+      <!-- Row 3 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">3</span>
+            <span class="intervention-name">Vitamin D supplementation</span>
+          </div>
+        </td>
+        <td>VDR/NRF2 cooperation → cathelicidin ↑ → antimicrobial defense; Th1/Th2 balance</td>
+        <td>Meta-analysis, 11 RCTs, 686 pts</td>
+        <td>SMD −0.41 (P&lt;0.01)</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤⬤</span><span class="unfilled">◯</span></span>
+          <span class="grade-label">Moderate-Strong</span>
+        </td>
+        <td><span class="pmid">39683522, 33145984</span></td>
+      </tr>
+
+      <!-- Row 4 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">4</span>
+            <span class="intervention-name">Topical vitamin B<sub>12</sub></span>
+          </div>
+        </td>
+        <td>NO scavenging → downstream inflammation control</td>
+        <td>3 RCTs (n=21–49)</td>
+        <td>77.6% SCORAD reduction; SASSAD halved</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤⬤</span><span class="unfilled">◯</span></span>
+          <span class="grade-label">Moderate-Strong</span>
+        </td>
+        <td><span class="pmid">15149512, 28677237, 19368512</span></td>
+      </tr>
+
+      <!-- Row 5 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">5</span>
+            <span class="intervention-name">Colloidal oatmeal</span>
+          </div>
+        </td>
+        <td>Avenanthramides (anti-inflammatory) + barrier lipids + microbiome improvement</td>
+        <td>RCTs (n=61–90)</td>
+        <td>51% EASI reduction; non-inferior to Rx</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤⬤</span><span class="unfilled">◯</span></span>
+          <span class="grade-label">Moderate-Strong</span>
+        </td>
+        <td><span class="pmid">32484623, 28366039</span></td>
+      </tr>
+
+      <!-- Row 6 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">6</span>
+            <span class="intervention-name">Tapinarof (AHR/NRF2 agonist)</span>
+          </div>
+        </td>
+        <td>Direct AHR→NRF2 activation → FLG/LOR/IVL ↑ (pharmacological validation)</td>
+        <td>Phase 3 RCTs (n=891)</td>
+        <td>EASI-75: 56–59%; 52% complete clearance</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤⬤⬤</span></span>
+          <span class="grade-label">Strong</span>
+        </td>
+        <td><span class="pmid">38777187, 40383273</span></td>
+      </tr>
+
+      <!-- Row 7 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">7</span>
+            <span class="intervention-name">Prebiotic fiber (kestose/FOS)</span>
+          </div>
+        </td>
+        <td>Feed butyrate-producing bacteria → SCFA ↑ → NRF2 + Treg induction</td>
+        <td>RCTs (treatment + prevention)</td>
+        <td>SCORAD 19.5 vs 37.5; ceramide composition change</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤</span><span class="unfilled">◯◯</span></span>
+          <span class="grade-label">Moderate</span>
+        </td>
+        <td><span class="pmid">19508323, 38741747</span></td>
+      </tr>
+
+      <!-- Row 8 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">8</span>
+            <span class="intervention-name">Indigo naturalis (topical)</span>
+          </div>
+        </td>
+        <td>AHR agonist (tryptanthrin/indirubin) → NRF2 → barrier restoration</td>
+        <td>RCT (n=48)</td>
+        <td>EASI −49.9% vs −19.6% (P=0.024)</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤</span><span class="unfilled">◯◯</span></span>
+          <span class="grade-label">Moderate</span>
+        </td>
+        <td><span class="pmid">31838180</span></td>
+      </tr>
+
+      <!-- Row 9 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">9</span>
+            <span class="intervention-name">Fermented food diversity</span>
+          </div>
+        </td>
+        <td>Microbial diversity + SCFA + bioactive metabolites</td>
+        <td>Prospective cohort (n=931)</td>
+        <td>AD: OR 0.51 (P=0.02)</td>
+        <td>
+          <span class="grade"><span class="filled">⬤⬤</span><span class="unfilled">◯◯</span></span>
+          <span class="grade-label">Moderate (observational)</span>
+        </td>
+        <td><span class="pmid">30368847</span></td>
+      </tr>
+
+      <!-- Row 10 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">10</span>
+            <span class="intervention-name">Direct butyrate supplementation</span>
+          </div>
+        </td>
+        <td>HDAC inhibition → NRF2 ↑ + Foxp3 ↑ → barrier + Treg induction</td>
+        <td>In vitro + animal models ONLY</td>
+        <td>adjOR 13.2 (observational); no RCT</td>
+        <td>
+          <span class="grade"><span class="filled">⬤</span><span class="unfilled">◯◯◯</span></span>
+          <span class="grade-label">Preliminary (gap)</span>
+        </td>
+        <td><span class="pmid">40283951, 35769572</span></td>
+      </tr>
+
+      <!-- Row 11 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">11</span>
+            <span class="intervention-name"><em>R.&nbsp;mucosa</em> bacteriotherapy</span>
+          </div>
+        </td>
+        <td>Sphingolipid → TNFR2 → epithelial repair</td>
+        <td>Phase I/II open-label (n=15)</td>
+        <td>↓ severity; benefits lasted 8 months</td>
+        <td>
+          <span class="grade"><span class="filled">⬤</span><span class="unfilled">◯◯◯</span></span>
+          <span class="grade-label">Preliminary</span>
+        </td>
+        <td><span class="pmid">32908007</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div class="footnotes">
+  <p><strong>Abbreviations:</strong> AD, atopic dermatitis; AHR, aryl hydrocarbon receptor; EASI, Eczema Area and Severity Index; FLG, filaggrin; FOS, fructo-oligosaccharides; HDAC, histone deacetylase; IVL, involucrin; LOR, loricrin; NRF2, nuclear factor erythroid 2-related factor 2; OR, odds ratio; RCT, randomized controlled trial; RR, relative risk; SASSAD, Six Area Six Sign Atopic Dermatitis severity score; SCFA, short-chain fatty acids; SCORAD, SCORing Atopic Dermatitis; SMD, standardized mean difference; TNFR2, tumor necrosis factor receptor 2; Treg, regulatory T cell; VDR, vitamin D receptor.</p>
+  <p><strong>Evidence grading:</strong> <span style="color:#27ae60;">⬤⬤⬤⬤</span> Strong (≥2 high-quality RCTs or meta-analysis) · <span style="color:#27ae60;">⬤⬤⬤</span><span style="color:#ccc;">◯</span> Moderate-Strong · <span style="color:#27ae60;">⬤⬤</span><span style="color:#ccc;">◯◯</span> Moderate · <span style="color:#27ae60;">⬤</span><span style="color:#ccc;">◯◯◯</span> Preliminary (pre-clinical or early-phase only).</p>
+  <p><strong>Note:</strong> Tapinarof (row 6) is included as a pharmacological proof-of-concept validating the AHR→NRF2 pathway; it is not a "natural" intervention per se.</p>
+</div>
+
+</div>
+<figcaption><strong>Table 1.</strong> Summary of Evidence for Natural Interventions Targeting the NRF2/Barrier Axis in Atopic Dermatitis. Interventions ranked by strength and quality of clinical evidence.</figcaption>
+</figure>
+<!-- ======================== END TABLE 1 ======================== -->
+
+<h3>5.1 Probiotics: Modulating the Source of Butyrate</h3>
+
+<p>Probiotics represent the most extensively studied natural intervention for AD, with the bulk of evidence supporting their role in disease prevention rather than treatment.</p>
+
+<p><strong>Prevention evidence.</strong> A meta-analysis of 11 randomized controlled trials (RCTs) specifically evaluating <em>Lactobacillus rhamnosus</em> GG (LGG) demonstrated a relative risk (RR) of 0.60 (95% CI 0.47–0.75, P &lt; 0.00001) for AD at ≤2 years and RR 0.62 (95% CI 0.50–0.75, P &lt; 0.00001) at 6–7 years of follow-up (PMID: 36161401), representing a 38–40% relative risk reduction that persists through school age. A network meta-analysis of 21 studies encompassing 5,406 children identified specific strain combinations with superior efficacy: <em>L. paracasei</em> ST11 combined with <em>B. longum</em> BL999 (RR 0.46) and LGG combined with <em>B. animalis</em> subsp. <em>lactis</em> Bb-12 (RR 0.50) (PMID: 33811784). The landmark trial by Kalliomäki et al. with 4-year follow-up demonstrated AD in 14 of 53 (26%) probiotic-treated versus 25 of 54 (46%) placebo-treated children (RR 0.57) (PMID: 12788576).</p>
+
+<p><strong>Treatment evidence.</strong> The evidence for probiotics as treatment of established AD is more modest but still statistically significant. A pediatric meta-analysis of 9 RCTs involving 1,000 patients demonstrated a SCORAD mean difference of −4.24 (P = 0.002) (PMID: 37488736). An adult meta-analysis of 6 RCTs with 241 patients found a SCORAD mean difference of −7.90 (P &lt; 0.00001), though with substantial heterogeneity (I² = 96%) (PMID: 35978397). Multi-strain probiotics appear to outperform single-strain preparations (PMID: 41516240). The Cochrane Collaboration has noted that the observed 3.9-point SCORAD reduction falls below the established minimal clinically important difference (MCID) of 8.7 points (PMID: 30480774), tempering enthusiasm for probiotics as standalone AD treatment.</p>
+
+<p><strong>Mechanistic connection to the hypothesis.</strong> The link between probiotics and our proposed axis is multifaceted. Specific probiotic strains enhance tryptophan metabolism to produce AHR-activating indole derivatives (PMID: 35239463). Probiotics support butyrate cross-feeding networks in the colonic ecosystem by providing substrates and establishing ecological conditions favorable to butyrate-producing Firmicutes. Probiotics modulate TLR2/4-NF-κB signaling and promote anti-inflammatory IL-10 and TGF-β production (PMID: 41516240). The European Academy of Allergy and Clinical Immunology (EAACI) task force has recognized probiotics as the most robust dietary evidence for AD prevention (PMID: 38783644). Our hypothesis explains why probiotics are more effective for prevention (establishing butyrate-producing communities during the critical developmental window) than treatment (attempting to restore a community after dysbiosis is established and the vicious cycle is entrenched).</p>
+
+<h3>5.2 Vitamin D: The NRF2 Co-Factor</h3>
+
+<p>Vitamin D supplementation has demonstrated consistent benefit in AD, supported by a meta-analysis of 11 RCTs involving 686 patients that yielded a standardized mean difference (SMD) of −0.41 (P &lt; 0.01) for AD severity scores (PMID: 39683522). A landmark positive RCT demonstrated 56.4% versus 42.1% EASI improvement with vitamin D supplementation (P = 0.039) (PMID: 33145984). The benefit appears particularly pronounced in winter-related AD, with one trial showing EASI reductions of −6.5 versus −3.3 (P = 0.04) during winter months (PMID: 25282565). Importantly, a trial using weekly high-dose vitamin D found no benefit (PMID: 38483248), suggesting that dosing frequency — maintaining consistently adequate rather than intermittently high levels — is the relevant pharmacokinetic parameter. Higher vitamin D levels have been associated with AD remission in longitudinal studies, with significantly elevated levels in patients experiencing remission versus those with persistent disease (PMID: 29559281).</p>
+
+<p>The mechanistic link to our proposed axis involves the vitamin D receptor (VDR), which cooperates with NRF2 in regulating keratinocyte differentiation programs. VDR activation upregulates cathelicidin (LL-37), a critical antimicrobial peptide that synergizes with commensal-derived antimicrobial peptides against <em>Staphylococcus aureus</em> colonization (PMID: 28228596). Vitamin D also modulates the Th1/Th2 balance, promoting immune tolerance. Within our framework, vitamin D serves as an essential co-factor that amplifies NRF2-driven barrier restoration and provides antimicrobial support.</p>
+
+<h3>5.3 Topical Vitamin B12: Downstream Inflammation Control</h3>
+
+<p>Topical vitamin B12 has achieved Level I evidence for AD treatment. The landmark Phase III RCT by Stücker et al. (2004) enrolled 49 patients in an 8-week, randomized, intra-individual, placebo-controlled trial and demonstrated that modified SASSAD scores decreased from 55.34 to 28.87 on the B12-treated side versus no significant change on the placebo side (P &lt; 0.001) (PMID: 15149512). A subsequent study showed that a B12-containing barrier cream achieved a 77.6% SCORAD reduction compared to 33.5% with a standard emollient (PMID: 28677237). Pediatric efficacy was confirmed in an independent trial (P = 0.01 versus placebo at 4 weeks) (PMID: 19368512), and the intervention has received a Level I evidence rating in systematic review (PMID: 27388911). The mechanism of action involves B12 scavenging of nitric oxide (NO) produced by activated macrophages, reducing NO-mediated inflammatory signaling. Within our framework, topical B12 addresses the downstream inflammatory consequences of barrier failure while upstream interventions restore the barrier itself.</p>
+
+<h3>5.4 Colloidal Oatmeal: Multi-Target Barrier Support</h3>
+
+<p>Colloidal oatmeal provides barrier-directed therapy with pleiotropic anti-inflammatory activity. An RCT demonstrated 51% EASI reduction with colloidal oatmeal use, accompanied by reduced <em>Staphylococcus</em> prevalence on the skin, improved microbiome diversity, normalization of skin pH, and measurable improvements in barrier function and hydration (PMID: 32484623). In a double-blind trial of 90 children, colloidal oatmeal was non-inferior to a prescription barrier repair cream (PMID: 28366039). The multi-target activity of oatmeal derives from its complex composition: avenanthramides (polyphenolic anti-inflammatory compounds), beta-glucans (immune modulators), and lipids (barrier structural components) (PMID: 27272074). While colloidal oatmeal does not directly activate NRF2, it supports the downstream consequences of NRF2 activation by providing structural barrier components and modulating the skin microbiome.</p>
+
+<h3>5.5 Prebiotics and Fermented Foods: Feeding the Axis</h3>
+
+<p><strong>Prebiotics.</strong> Prebiotics — non-digestible dietary fibers that selectively promote the growth of beneficial bacteria — provide the substrate for microbial butyrate production. The most compelling prebiotic evidence comes from studies of 1-kestose (fructo-oligosaccharide). An RCT in AD patients demonstrated SCORAD reductions to 19.5 versus 37.5 in controls (P &lt; 0.001) (PMID: 19508323). Mechanistically, kestose supplementation produced a tenfold increase in <em>Faecalibacterium prausnitzii</em>, one of the most abundant butyrate producers in the human colon, correlating with AD improvement (PMID: 27537603). Most remarkably, kestose supplementation altered epidermal ceramide composition — representing the only human RCT to demonstrate that a prebiotic intervention can change skin barrier lipid profiles (PMID: 38741747). This finding provides direct human evidence for the gut → skin barrier chain. Galacto-oligosaccharides/fructo-oligosaccharides (GOS/FOS) in infant formula reduced AD incidence from 23.1% to 9.8% (PMID: 16873437), with protection persisting to age 5 (PMID: 23158515). An umbrella meta-analysis noted that prebiotics alone did not significantly reduce SCORAD, while synbiotics (prebiotics plus probiotics in combination) achieved significant reductions (PMID: 40191649), suggesting that both the substrate and the producing organisms must be present.</p>
+
+<p><strong>Fermented foods.</strong> Epidemiological evidence supports a protective role for fermented food consumption. The PASTURE birth cohort found that cheese diversity in the first year of life was associated with reduced AD (OR = 0.51, P = 0.02) and food allergy (OR = 0.32, P = 0.004) (PMID: 30368847). Yogurt consumption in infancy was associated with reduced AD at age 5 (adjusted OR 0.70) (PMID: 28108060). Fermented foods deliver both live bacteria and their metabolic products (including SCFAs and tryptophan derivatives) directly, potentially short-circuiting the requirement for endogenous production.</p>
+
+<h3>5.6 The Skin Microbiome: <em>S. aureus</em> and Commensal Depletion</h3>
+
+<p>The skin microbiome represents the local manifestation of barrier failure. <em>Staphylococcus aureus</em> colonizes over 90% of AD skin, where it drives inflammation through superantigen production, biofilm formation, and direct epithelial damage (PMID: 25902485). A key enabling factor is the deficiency of sphingosine — a lipid with potent antimicrobial activity — in AD skin (PMID: 12190867). This sphingosine deficit allows <em>S. aureus</em> to proliferate in an ecological niche normally defended by lipid-based innate immunity.</p>
+
+<p>Therapeutic restoration of beneficial commensals has shown remarkable promise. <em>Roseomonas mucosa</em> isolated from healthy donors was applied to AD patients in a Phase I/II trial, resulting in decreased severity, decreased topical corticosteroid use, and benefits that persisted for 8 months after cessation of treatment (PMID: 32908007). The mechanism involves <em>R. mucosa</em> production of sphingolipids that mediate TNFR2-dependent epithelial repair, directly addressing the sphingosine deficit. A Phase 1 RCT of <em>Staphylococcus hominis</em> A9 published in <em>Nature Medicine</em> demonstrated safety and reduction of <em>S. aureus</em> colonization (PMID: 33619370). Coagulase-negative staphylococcal (CoNS) antimicrobial peptides synergize with human cathelicidin LL-37 to eliminate <em>S. aureus</em> (PMID: 28228596), and quorum-sensing inhibition of <em>S. aureus</em> by commensal bacteria further limits pathogen virulence (PMID: 31043573).</p>
+
+<p>A critical barrier to microbiome-based therapy has been recently identified: atopic skin actively resists colonization by beneficial bacteria (PMID: 40998240). This finding underscores the importance of addressing barrier function and immune milieu before or alongside topical probiotic application, further supporting the need for a multi-target approach that restores the host environment for commensal recolonization.</p>
+
+<h3>5.7 Indigo Naturalis: Another AHR Agonist Validates the Pathway</h3>
+
+<p>Indigo naturalis, a traditional herbal medicine derived from several plant species, provides independent validation of the AHR/NRF2 target in AD. An RCT demonstrated EASI reduction of 49.9% versus 19.6% with placebo (P = 0.024) (PMID: 31838180). The active components, tryptanthrin and indirubin, are AHR agonists that activate the same transcriptional programs as tapinarof and microbially derived indole metabolites. The clinical efficacy of indigo naturalis, as a topical herbal preparation targeting AHR, provides convergent validation — alongside the tapinarof data — that AHR/NRF2 activation is the key therapeutic target in AD, regardless of whether the agonist is a pharmaceutical, a traditional herbal medicine, or an endogenous microbial metabolite.</p>
+
+<hr>
+
+<!-- ================================================================
+     6. INTERVENTIONS LACKING EVIDENCE
+     ================================================================ -->
+
+<h2>6. INTERVENTIONS LACKING EVIDENCE: CLEARING THE FIELD</h2>
+
+<p>A rigorous hypothesis must not only explain what works but also account for what does not. Documenting the interventions that have failed in well-designed trials serves to focus resources on the most promising approaches and to refine the mechanistic model. These findings are summarized in Table 2 below.</p>
+
+<!-- ======================== TABLE 2 EMBED ======================== -->
+<figure class="paper-figure">
+<div class="table2-wrap">
+
+<div class="table-wrapper">
+
+  <p class="table-title">Table 2.&ensp;Common Natural Interventions Lacking Evidence for Atopic Dermatitis</p>
+  <p class="table-subtitle">Interventions frequently recommended but unsupported — or contradicted — by high-quality evidence</p>
+
+  <table>
+    <colgroup>
+      <col class="col-intervention">
+      <col class="col-claim">
+      <col class="col-evidence">
+      <col class="col-finding">
+      <col class="col-pmid">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Intervention</th>
+        <th>Claimed Benefit</th>
+        <th>Best Evidence Against</th>
+        <th>Finding</th>
+        <th>Key PMID</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- Row 1 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">1</span>
+            <span class="intervention-name">Neonatal emollient prevention</span>
+          </div>
+        </td>
+        <td>Prevent AD from birth</td>
+        <td>Cochrane 2022 IPD meta-analysis, 33 RCTs, 25,827 patients</td>
+        <td>
+          RR 1.03 (no benefit); food allergy RR 2.53 ↑; skin infection RR 1.33 ↑
+          <br><span class="verdict verdict-harm">⚠ POTENTIAL HARM</span>
+        </td>
+        <td><span class="pmid">36373988</span></td>
+      </tr>
+
+      <!-- Row 2 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">2</span>
+            <span class="intervention-name">Elimination diets (empiric)</span>
+          </div>
+        </td>
+        <td>Remove food triggers</td>
+        <td>Systematic review + meta-analysis, 10 RCTs, 599 patients</td>
+        <td>
+          "Slight, potentially unimportant improvement"; risk of inducing food allergy
+          <br><span class="verdict verdict-none">✗ NO MEANINGFUL BENEFIT</span>
+        </td>
+        <td><span class="pmid">35987995</span></td>
+      </tr>
+
+      <!-- Row 3 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">3</span>
+            <span class="intervention-name">Omega-3 / fish oil (established eczema)</span>
+          </div>
+        </td>
+        <td>Anti-inflammatory</td>
+        <td>Cochrane 2012, 11 RCTs, 596 patients</td>
+        <td>
+          "No convincing evidence" of benefit
+          <br><span class="verdict verdict-none">✗ NO CONVINCING EVIDENCE</span>
+        </td>
+        <td><span class="pmid">22336810</span></td>
+      </tr>
+
+      <!-- Row 4 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">4</span>
+            <span class="intervention-name">Breastfeeding (general population)</span>
+          </div>
+        </td>
+        <td>Prevent AD</td>
+        <td>Meta-analysis, 27 prospective cohorts</td>
+        <td>
+          RR 1.01 — neutral overall; weakly protective only in high-risk subgroup (RR 0.83)
+          <br><span class="verdict verdict-neutral">— NEUTRAL OVERALL</span>
+        </td>
+        <td><span class="pmid">31694017</span></td>
+      </tr>
+
+      <!-- Row 5 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">5</span>
+            <span class="intervention-name">Chinese herbal medicine (oral)</span>
+          </div>
+        </td>
+        <td>Treat AD</td>
+        <td>Cochrane review, 28 studies, 2,306 patients</td>
+        <td>
+          "No conclusive evidence"; high risk of bias across studies
+          <br><span class="verdict verdict-none">✗ NO CONCLUSIVE EVIDENCE</span>
+        </td>
+        <td><span class="pmid">24018636</span></td>
+      </tr>
+
+      <!-- Row 6 -->
+      <tr>
+        <td>
+          <div class="intervention-cell">
+            <span class="row-num">6</span>
+            <span class="intervention-name">Olive oil (topical)</span>
+          </div>
+        </td>
+        <td>Moisturize / heal skin</td>
+        <td>Randomized forearm-controlled study</td>
+        <td>
+          Significantly DAMAGES skin barrier; induces erythema even in non-atopic volunteers
+          <br><span class="verdict verdict-harm">⚠ CAUSES BARRIER DAMAGE</span>
+        </td>
+        <td><span class="pmid">22995032</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div class="footnotes">
+  <p><strong>Abbreviations:</strong> AD, atopic dermatitis; IPD, individual patient data; RCT, randomized controlled trial; RR, relative risk.</p>
+  <p><strong>Verdict key:</strong> <span style="background:#f5c6cb;color:#721c24;padding:1px 6px;border-radius:2px;font-size:11px;font-weight:600;">⚠ POTENTIAL HARM</span> = evidence of adverse effects; <span style="background:#f8d7da;color:#85182a;padding:1px 6px;border-radius:2px;font-size:11px;font-weight:600;">✗ NO BENEFIT</span> = high-quality evidence showing no meaningful effect; <span style="background:#fff3cd;color:#856404;padding:1px 6px;border-radius:2px;font-size:11px;font-weight:600;">— NEUTRAL</span> = overall null effect with possible subgroup signals.</p>
+  <p><strong>Note:</strong> This table addresses interventions commonly recommended in popular and complementary medicine contexts. It does not imply these interventions lack benefit for <em>other</em> health outcomes — only that evidence does not support their use specifically for atopic dermatitis prevention or treatment.</p>
+</div>
+
+</div>
+<figcaption><strong>Table 2.</strong> Common Natural Interventions Lacking Evidence for Atopic Dermatitis. Interventions frequently recommended but unsupported — or contradicted — by high-quality evidence.</figcaption>
+</figure>
+<!-- ======================== END TABLE 2 ======================== -->
+
+<p><strong>Proactive emollient prevention from birth.</strong> Perhaps the most consequential negative finding in recent AD prevention research is the failure of early emollient therapy. A Cochrane 2022 individual patient data meta-analysis demonstrated a risk ratio of 1.03 for eczema prevention with proactive emollient application from birth, indicating no benefit whatsoever (PMID: 36373988). More concerning, emollient intervention was associated with increased food allergy risk (RR 2.53) and skin infection risk (RR 1.33). The BEEP and PreventADALL trials were both negative. This finding is consistent with our hypothesis: surface-level barrier support without addressing the underlying NRF2 deficit and immune dysregulation is insufficient.</p>
+
+<p><strong>Elimination diets.</strong> A meta-analysis of elimination diets for established AD found only a "slight, potentially unimportant improvement" in disease severity (PMID: 35987995). More concerning, elimination diets may paradoxically induce IgE-mediated food allergy through loss of oral tolerance during the restriction period. Our hypothesis explains this failure: removal of dietary triggers does not address the barrier defect or immune dysregulation that drive the disease.</p>
+
+<p><strong>Omega-3 supplementation for established eczema.</strong> A Cochrane review found "no convincing evidence" that omega-3 fatty acid supplementation improves established eczema (PMID: 22336810). While two small positive RCTs exist, the evidence base is insufficient for recommendation. Omega-3 fatty acids do not directly activate NRF2 or restore butyrate production, consistent with their lack of efficacy in this framework.</p>
+
+<p><strong>Breastfeeding for AD prevention.</strong> A meta-analysis of 27 birth cohorts found a risk ratio of 1.01 for AD with breastfeeding versus no breastfeeding (PMID: 31694017) — a completely neutral association. Only a weak protective effect was observed in high-risk families (RR 0.83–0.85). Our hypothesis may explain this null finding: while breast milk contains butyrate, the overall effect of breastfeeding on AD risk is dominated by other factors, including maternal diet composition and its influence on breast milk arachidonic acid content (PMID: 39084687).</p>
+
+<p><strong>Chinese herbal medicine.</strong> A Cochrane review found "no conclusive evidence" for Chinese herbal medicine in AD (PMID: 24018636). The heterogeneity of herbal preparations and the lack of standardization make mechanistic interpretation difficult.</p>
+
+<p><strong>Topical olive oil.</strong> In a finding of particular practical importance, olive oil applied topically actively damages the skin barrier even in non-atopic volunteers (PMID: 22995032). Oleic acid in olive oil disrupts the lamellar lipid organization of the stratum corneum. This intervention should be actively discouraged in AD patients.</p>
+
+<hr>
+
+<!-- ================================================================
+     7. THE UNIFYING MODEL
+     ================================================================ -->
+
+<h2>7. THE UNIFYING MODEL</h2>
+
+<h3>7.1 The Central Thesis</h3>
+
+<p>We propose that AD is maintained by a self-reinforcing pathological cycle with epidermal NRF2 activity as the molecular pivot point. Restoration of NRF2 signaling — whether achieved pharmacologically (tapinarof), through dietary and microbial interventions (butyrate, indoles), or by addressing co-factor deficiencies (vitamin D) — breaks this cycle and enables sustained remission. The gut–butyrate–NRF2–skin barrier axis provides the first mechanistic framework that unifies the fragmented evidence base for natural AD interventions.</p>
+
+<h3>7.2 The Vicious Cycle</h3>
+
+<p>The self-perpetuating disease cycle can be delineated as follows:</p>
+
+<ol>
+  <li><strong>Gut dysbiosis</strong>: Reduced abundance of butyrate-producing bacteria (<em>Faecalibacterium prausnitzii</em>, <em>Roseburia</em> spp., <em>Ruminococcus bromii</em>) leads to decreased colonic butyrate production. This may be initiated by caesarean delivery, early antibiotic exposure, low-fiber maternal or infant diet, or high breast milk arachidonic acid content.</li>
+  <li><strong>Butyrate deficiency</strong>: Reduced systemic butyrate results in decreased HDAC inhibition in epidermal keratinocytes. This relieves the repression of HDAC3 on NRF2-dependent transcription and reduces histone acetylation at the Foxp3 locus in naïve T cells.</li>
+  <li><strong>NRF2 impairment</strong>: Decreased NRF2 nuclear translocation reduces ARE-driven expression of filaggrin, loricrin, involucrin, HO-1, NQO1, and other barrier and antioxidant genes, while simultaneously diminishing mitochondrial function in keratinocytes.</li>
+  <li><strong>Barrier failure</strong>: Deficiency of filaggrin, loricrin, and involucrin compromises the structural integrity of the stratum corneum and cornified envelope. Transepidermal water loss increases, and the epidermis becomes permeable to allergens, irritants, and microbial products.</li>
+  <li><strong>Th2 immune activation</strong>: Allergen and microbe penetration through the compromised barrier activates keratinocyte-derived alarmins (TSLP, IL-25, IL-33), dendritic cells, and innate lymphoid cells (ILC2), driving Th2 polarization and the production of IL-4 and IL-13 (PMID: 32502588; PMID: 30554600).</li>
+  <li><strong>Further barrier suppression</strong>: IL-4 and IL-13 directly suppress filaggrin, loricrin, and involucrin expression via STAT6/STAT3 signaling, amplifying the barrier defect independently of NRF2 status.</li>
+  <li><strong><em>S. aureus</em> colonization</strong>: Sphingosine deficiency in the compromised barrier, combined with reduced cathelicidin and commensal-derived antimicrobial peptides, creates an ecological vacuum that <em>S. aureus</em> fills. Staphylococcal superantigens and toxins drive further inflammation, creating an additional self-amplifying loop.</li>
+  <li><strong>Oxidative stress and NRF2 depletion</strong>: Chronic inflammation generates reactive oxygen species that, in the setting of already-reduced NRF2 activity, cause oxidative damage to keratinocytes and further deplete the NRF2-dependent antioxidant reserves. The cycle perpetuates.</li>
+</ol>
+
+<h3>7.3 The Therapeutic Interruption at Multiple Nodes</h3>
+
+<p>The power of this model lies in its identification of multiple intervention points that all converge on the same axis:</p>
+
+<ul>
+  <li><strong>Node 1 (Gut):</strong> Targeted probiotics (<em>L. rhamnosus</em> GG, multi-strain combinations) combined with prebiotic fiber (kestose, resistant starch, inulin) to restore butyrate-producing microbial communities (PMID: 36161401; PMID: 27537603).</li>
+  <li><strong>Node 2 (Systemic metabolites):</strong> Butyrate → HDAC inhibition → NRF2 activation in keratinocytes + Foxp3⁺ Treg generation in the periphery (PMID: 24226773; PMID: 40283951).</li>
+  <li><strong>Node 3 (Skin barrier):</strong> NRF2 → transcriptional upregulation of filaggrin, loricrin, involucrin → structural barrier restoration (PMID: 32751111; PMID: 24451036).</li>
+  <li><strong>Node 4 (Immune regulation):</strong> Butyrate-induced Tregs → suppression of Th2 responses → reduced IL-4/IL-13 → relief of barrier gene suppression (PMID: 34633714; PMID: 38944008).</li>
+  <li><strong>Node 5 (Skin microbiome):</strong> Restored barrier function + normalized antimicrobial peptide production → displacement of <em>S. aureus</em> by commensal organisms (PMID: 28228596; PMID: 32908007).</li>
+  <li><strong>Node 6 (Topical support):</strong> Vitamin B12 (NO scavenging to reduce inflammation; PMID: 15149512) and colloidal oatmeal (avenanthramide anti-inflammatory activity + lipid barrier support; PMID: 32484623).</li>
+  <li><strong>Node 7 (Co-factors):</strong> Vitamin D → cathelicidin production, Th1/Th2 balance, VDR/NRF2 cooperation in keratinocyte differentiation (PMID: 39683522; PMID: 28228596).</li>
+</ul>
+
+<h3>7.4 Why Tapinarof Validates This Model</h3>
+
+<p>Tapinarof provides the pharmacological "positive control" for our hypothesis. It activates the same AHR/NRF2 pathway that our model identifies as the central therapeutic target, and it achieves approximately 52% complete clearance — a rate that approaches or exceeds that of biologic therapies for a topical monotherapy. The 79.8-day treatment-free remission interval observed in ADORING 3 (PMID: 40383273) suggests that AHR/NRF2 activation may induce genuine disease modification rather than mere symptom suppression — a finding consistent with restoration of the barrier self-maintenance cycle. The natural/dietary approach proposed here aims to activate this same pathway endogenously through the gut–skin axis, while simultaneously addressing the upstream gut dysbiosis that tapinarof, as a topical agent, cannot reach (PMID: 39534446).</p>
+
+<p>The complete vicious cycle and its therapeutic interruption points are illustrated in Figure 1, while the convergence of independent evidence streams on the NRF2 hub is mapped in Figure 2.</p>
+
+<!-- ======================== FIGURE 1 EMBED ======================== -->
+<figure class="paper-figure">
+<div class="fig1-wrap">
+
+<div class="figure-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" font-family="Arial, Helvetica, sans-serif">
+<defs>
+  <!-- Arrowheads -->
+  <marker id="ah-blue" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#2266AA"/>
+  </marker>
+  <marker id="ah-red" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#CC2222"/>
+  </marker>
+  <marker id="ah-green" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#1E8C45"/>
+  </marker>
+  <marker id="ah-purple" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#7B42B0"/>
+  </marker>
+  <marker id="ah-gray" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#888"/>
+  </marker>
+  <marker id="ah-orange" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+    <path d="M0,0 L10,4 L0,8 Z" fill="#D4790A"/>
+  </marker>
+  <!-- Flat-head (inhibition) -->
+  <marker id="inh-red" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <line x1="9" y1="0" x2="9" y2="10" stroke="#CC2222" stroke-width="2.5"/>
+  </marker>
+  <marker id="inh-blue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <line x1="9" y1="0" x2="9" y2="10" stroke="#2266AA" stroke-width="2.5"/>
+  </marker>
+  <marker id="inh-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <line x1="9" y1="0" x2="9" y2="10" stroke="#1E8C45" stroke-width="2.5"/>
+  </marker>
+
+  <!-- Drop shadow -->
+  <filter id="shadow-f1" x="-4%" y="-4%" width="110%" height="112%">
+    <feDropShadow dx="1" dy="1.5" stdDeviation="2" flood-opacity="0.13"/>
+  </filter>
+  <!-- Glow for keratinocyte -->
+  <filter id="glow-k">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#2266AA" flood-opacity="0.18"/>
+  </filter>
+
+  <!-- Background pattern for anatomy hint -->
+  <pattern id="dot-pattern" width="12" height="12" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="0.6" fill="#ccc" opacity="0.35"/>
+  </pattern>
+</defs>
+
+<!-- ===== TITLE ===== -->
+<text x="700" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a" letter-spacing="0.3">
+  Figure 1.  The Gut–Butyrate–NRF2–Skin Barrier Axis in Atopic Dermatitis
+</text>
+
+<!-- ===== BACKGROUND ZONES ===== -->
+<!-- Gut zone -->
+<rect x="16" y="48" width="340" height="540" rx="14" fill="#EAF5EA" opacity="0.45"/>
+<text x="186" y="70" text-anchor="middle" font-size="11.5" fill="#558855" font-weight="bold" letter-spacing="1">GUT COMPARTMENT</text>
+
+<!-- Systemic / Keratinocyte zone -->
+<rect x="372" y="48" width="440" height="540" rx="14" fill="#E8EEF8" opacity="0.4"/>
+<text x="592" y="70" text-anchor="middle" font-size="11.5" fill="#4466AA" font-weight="bold" letter-spacing="1">KERATINOCYTE SIGNALING</text>
+
+<!-- Skin/Immune zone -->
+<rect x="828" y="48" width="350" height="540" rx="14" fill="#FFF0E8" opacity="0.4"/>
+<text x="1003" y="70" text-anchor="middle" font-size="11.5" fill="#AA6633" font-weight="bold" letter-spacing="1">SKIN BARRIER &amp; IMMUNE</text>
+
+<!-- Intervention zone -->
+<rect x="1194" y="48" width="192" height="540" rx="14" fill="#E8F8EE" opacity="0.45"/>
+<text x="1290" y="70" text-anchor="middle" font-size="11" fill="#1E8C45" font-weight="bold" letter-spacing="1">INTERVENTIONS</text>
+
+<!-- Bottom immune zone -->
+<rect x="16" y="600" width="1370" height="135" rx="14" fill="#F5F0FA" opacity="0.35"/>
+<text x="700" y="620" text-anchor="middle" font-size="11.5" fill="#7B42B0" font-weight="bold" letter-spacing="1">IMMUNE MODULATION &amp; REGULATORY FEEDBACK</text>
+
+
+<!-- ========= LEFT SIDE — GUT ========= -->
+
+<!-- Dietary Fiber box (green intervention) -->
+<rect x="28" y="84" width="155" height="56" rx="8" fill="#E0F5E0" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow-f1)"/>
+<text x="105" y="103" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1E8C45">Dietary Fiber</text>
+<text x="105" y="116" text-anchor="middle" font-size="8.5" fill="#3a7a3a">Resistant starch, Inulin,</text>
+<text x="105" y="128" text-anchor="middle" font-size="8.5" fill="#3a7a3a">GOS, Pectin</text>
+
+<!-- Probiotics box (green intervention) -->
+<rect x="198" y="84" width="148" height="56" rx="8" fill="#E0F5E0" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow-f1)"/>
+<text x="272" y="103" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1E8C45">Probiotics</text>
+<text x="272" y="116" text-anchor="middle" font-size="8.5" fill="#3a7a3a">L. rhamnosus GG</text>
+<text x="272" y="128" text-anchor="middle" font-size="8.5" fill="#3a7a3a">Bifidobacterium spp.</text>
+
+<!-- Arrows: Fiber/Probiotics → Gut Microbiome -->
+<line x1="105" y1="140" x2="155" y2="170" stroke="#1E8C45" stroke-width="1.8" marker-end="url(#ah-green)"/>
+<line x1="272" y1="140" x2="222" y2="170" stroke="#1E8C45" stroke-width="1.8" marker-end="url(#ah-green)"/>
+
+<!-- Gut Microbiome box (BLUE main pathway) -->
+<rect x="100" y="172" width="185" height="68" rx="10" fill="#D4E4F6" stroke="#2266AA" stroke-width="2" filter="url(#shadow-f1)"/>
+<text x="192" y="192" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#1a3a6a">Gut Microbiome</text>
+<text x="192" y="207" text-anchor="middle" font-size="9" fill="#2255AA" font-style="italic">F. prausnitzii</text>
+<text x="192" y="219" text-anchor="middle" font-size="9" fill="#2255AA" font-style="italic">Roseburia, R. bromii</text>
+<text x="192" y="231" text-anchor="middle" font-size="8" fill="#6688BB">(butyrate producers)</text>
+
+<!-- Arrow: Gut Microbiome → Butyrate Production -->
+<line x1="192" y1="240" x2="192" y2="276" stroke="#2266AA" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+
+<!-- Butyrate Production box -->
+<rect x="118" y="278" width="150" height="50" rx="9" fill="#C8DCF0" stroke="#2266AA" stroke-width="2" filter="url(#shadow-f1)"/>
+<text x="193" y="298" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Butyrate</text>
+<text x="193" y="313" text-anchor="middle" font-size="9.5" fill="#4477BB">Production (SCFA)</text>
+
+<!-- Tryptophan branch -->
+<path d="M135,240 L68,296" stroke="#7B42B0" stroke-width="1.6" fill="none" marker-end="url(#ah-purple)"/>
+
+<rect x="22" y="298" width="90" height="46" rx="7" fill="#F0E8F8" stroke="#7B42B0" stroke-width="1.4" filter="url(#shadow-f1)"/>
+<text x="67" y="314" text-anchor="middle" font-size="9" font-weight="bold" fill="#5B2A90">Tryptophan</text>
+<text x="67" y="326" text-anchor="middle" font-size="8.5" fill="#7B42B0">Metabolism</text>
+
+<!-- Arrow Tryptophan → Indole Derivatives -->
+<line x1="67" y1="344" x2="67" y2="374" stroke="#7B42B0" stroke-width="1.5" marker-end="url(#ah-purple)"/>
+
+<rect x="18" y="376" width="100" height="56" rx="7" fill="#F0E8F8" stroke="#7B42B0" stroke-width="1.3" filter="url(#shadow-f1)"/>
+<text x="68" y="392" text-anchor="middle" font-size="9" font-weight="bold" fill="#5B2A90">Indole</text>
+<text x="68" y="404" text-anchor="middle" font-size="9" font-weight="bold" fill="#5B2A90">Derivatives</text>
+<text x="68" y="418" text-anchor="middle" font-size="7.5" fill="#7B42B0">I3C, IAId, IPA</text>
+
+<!-- Arrow: Indoles → AHR (into center) -->
+<path d="M118,404 L400,390" stroke="#7B42B0" stroke-width="1.6" fill="none" marker-end="url(#ah-purple)" stroke-dasharray="6,3"/>
+
+
+<!-- ========= CENTER — SYSTEMIC & KERATINOCYTE ========= -->
+
+<!-- Arrow: Butyrate Production → Systemic Butyrate -->
+<line x1="268" y1="303" x2="392" y2="200" stroke="#2266AA" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+
+<!-- Systemic Butyrate box -->
+<rect x="394" y="170" width="150" height="48" rx="9" fill="#B8D0EC" stroke="#2266AA" stroke-width="2" filter="url(#shadow-f1)"/>
+<text x="469" y="190" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Systemic</text>
+<text x="469" y="205" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Butyrate</text>
+
+<!-- Arrow: Systemic Butyrate → Keratinocyte -->
+<line x1="469" y1="218" x2="469" y2="250" stroke="#2266AA" stroke-width="2.2" marker-end="url(#ah-blue)"/>
+
+<!-- KERATINOCYTE mega-box -->
+<rect x="392" y="252" width="408" height="310" rx="12" fill="#ffffff" stroke="#2266AA" stroke-width="2.2" filter="url(#glow-k)"/>
+<text x="596" y="274" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a3a6a">Epidermal Keratinocytes</text>
+<line x1="404" y1="280" x2="788" y2="280" stroke="#ccd8ee" stroke-width="0.8"/>
+
+<!-- HDAC Inhibition -->
+<rect x="410" y="290" width="120" height="36" rx="6" fill="#D8E8FA" stroke="#3377BB" stroke-width="1.3"/>
+<text x="470" y="313" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#2255AA">HDAC Inhibition</text>
+
+<!-- Arrow HDAC → NRF2 -->
+<line x1="530" y1="308" x2="566" y2="308" stroke="#2266AA" stroke-width="1.8" marker-end="url(#ah-blue)"/>
+
+<!-- NRF2 Activation (star node) -->
+<rect x="568" y="286" width="130" height="44" rx="8" fill="#2266AA" stroke="#1a4488" stroke-width="2"/>
+<text x="633" y="305" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#ffffff">NRF2</text>
+<text x="633" y="319" text-anchor="middle" font-size="9.5" fill="#cce0ff">Activation</text>
+
+<!-- AHR Activation box -->
+<rect x="410" y="374" width="120" height="44" rx="7" fill="#EDE4F4" stroke="#7B42B0" stroke-width="1.5"/>
+<text x="470" y="393" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#5B2A90">AHR</text>
+<text x="470" y="406" text-anchor="middle" font-size="9" fill="#7B42B0">Activation</text>
+
+<!-- Arrow AHR → NRF2 -->
+<path d="M530,393 L580,340" stroke="#7B42B0" stroke-width="1.5" fill="none" marker-end="url(#ah-purple)"/>
+
+<!-- NF-κB suppression -->
+<rect x="410" y="436" width="120" height="38" rx="6" fill="#FEE8E8" stroke="#CC2222" stroke-width="1.3"/>
+<text x="470" y="452" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#CC2222">NF-κB</text>
+<text x="470" y="464" text-anchor="middle" font-size="8.5" fill="#CC2222">SUPPRESSED</text>
+<!-- Red X over NF-κB -->
+<line x1="414" y1="440" x2="526" y2="470" stroke="#CC2222" stroke-width="2.2" opacity="0.5"/>
+<line x1="526" y1="440" x2="414" y2="470" stroke="#CC2222" stroke-width="2.2" opacity="0.5"/>
+
+<!-- Arrow NRF2 ⊣ NF-κB -->
+<path d="M610,330 L535,440" stroke="#2266AA" stroke-width="1.5" fill="none" marker-end="url(#inh-blue)" stroke-dasharray="5,3"/>
+<text x="556" y="388" font-size="7.5" fill="#2266AA" transform="rotate(-50,556,388)">suppresses</text>
+
+<!-- NRF2 outputs — barrier genes -->
+<rect x="566" y="346" width="220" height="90" rx="7" fill="#F0F6FF" stroke="#5599CC" stroke-width="1"/>
+<text x="676" y="363" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#2266AA">Barrier Gene Outputs:</text>
+
+<text x="600" y="380" font-size="9.5" fill="#1a5a1a" font-weight="bold">Filaggrin ↑</text>
+<text x="600" y="395" font-size="9.5" fill="#1a5a1a" font-weight="bold">Loricrin ↑</text>
+<text x="600" y="410" font-size="9.5" fill="#1a5a1a" font-weight="bold">Involucrin ↑</text>
+<text x="715" y="380" font-size="9.5" fill="#1a5a1a" font-weight="bold">HO-1 ↑</text>
+<text x="715" y="395" font-size="9.5" fill="#1a5a1a" font-weight="bold">Tight Junctions ↑</text>
+<text x="715" y="410" font-size="9.5" fill="#1a5a1a" font-weight="bold">Claudins ↑</text>
+<text x="676" y="429" text-anchor="middle" font-size="8" fill="#5599CC">(antioxidant + structural)</text>
+
+<!-- Arrows from NRF2 to output box -->
+<line x1="665" y1="330" x2="665" y2="344" stroke="#2266AA" stroke-width="1.6" marker-end="url(#ah-blue)"/>
+
+<!-- STAT6/STAT3 Suppression — vicious cycle entry into keratinocyte -->
+<rect x="572" y="478" width="220" height="48" rx="6" fill="#FDE0E0" stroke="#CC2222" stroke-width="1.5"/>
+<text x="682" y="496" text-anchor="middle" font-size="10" font-weight="bold" fill="#CC2222">STAT6 / STAT3</text>
+<text x="682" y="510" text-anchor="middle" font-size="9" fill="#CC2222">→ Barrier Gene Suppression</text>
+
+<!-- Arrow STAT → barrier genes (inhibitory) -->
+<path d="M682,478 L682,442" stroke="#CC2222" stroke-width="1.5" fill="none" marker-end="url(#inh-red)"/>
+<text x="695" y="465" font-size="7" fill="#CC2222">inhibits</text>
+
+
+<!-- ========= RIGHT SIDE — SKIN BARRIER & IMMUNE ========= -->
+
+<!-- Arrow from barrier outputs → Skin Barrier box -->
+<line x1="786" y1="395" x2="848" y2="280" stroke="#2266AA" stroke-width="2" marker-end="url(#ah-blue)"/>
+
+<!-- Skin Barrier Integrity box -->
+<rect x="840" y="240" width="165" height="50" rx="9" fill="#D4E4F6" stroke="#2266AA" stroke-width="2" filter="url(#shadow-f1)"/>
+<text x="922" y="260" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1a3a6a">Skin Barrier</text>
+<text x="922" y="275" text-anchor="middle" font-size="10" fill="#4477BB">Integrity</text>
+
+<!-- When barrier fails → arrow -->
+<text x="922" y="305" text-anchor="middle" font-size="8.5" fill="#CC2222" font-style="italic">barrier failure ↓</text>
+<line x1="922" y1="310" x2="922" y2="340" stroke="#CC2222" stroke-width="1.8" marker-end="url(#ah-red)"/>
+
+<!-- Allergen/Microbe Penetration -->
+<rect x="845" y="342" width="156" height="44" rx="8" fill="#FFE8E0" stroke="#CC5522" stroke-width="1.5" filter="url(#shadow-f1)"/>
+<text x="923" y="360" text-anchor="middle" font-size="10" font-weight="bold" fill="#993311">Allergen / Microbe</text>
+<text x="923" y="374" text-anchor="middle" font-size="10" font-weight="bold" fill="#993311">Penetration</text>
+
+<!-- Arrow → Th2 -->
+<line x1="923" y1="386" x2="923" y2="416" stroke="#CC2222" stroke-width="1.8" marker-end="url(#ah-red)"/>
+
+<!-- Th2 Activation -->
+<rect x="845" y="418" width="156" height="52" rx="8" fill="#FDDCDC" stroke="#CC2222" stroke-width="2" filter="url(#shadow-f1)"/>
+<text x="923" y="437" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#CC2222">Th2 Activation</text>
+<text x="923" y="453" text-anchor="middle" font-size="9" fill="#CC4444">IL-4, IL-13, IL-31, TSLP</text>
+
+<!-- S. aureus -->
+<rect x="1020" y="342" width="135" height="44" rx="7" fill="#FFE8E0" stroke="#CC5522" stroke-width="1.4" filter="url(#shadow-f1)"/>
+<text x="1087" y="358" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#993311" font-style="italic">S. aureus</text>
+<text x="1087" y="372" text-anchor="middle" font-size="9" fill="#993311">Colonization</text>
+
+<!-- Arrow S. aureus → Th2 area -->
+<line x1="1055" y1="386" x2="985" y2="424" stroke="#CC2222" stroke-width="1.3" marker-end="url(#ah-red)"/>
+
+<!-- ===== VICIOUS CYCLE ARROW (RED) — Th2 → STAT6 in keratinocyte ===== -->
+<path d="M845,460 C810,530 760,548 682,526" stroke="#CC2222" stroke-width="2.8" fill="none" marker-end="url(#ah-red)" stroke-dasharray="8,4"/>
+<text x="728" y="550" font-size="9.5" fill="#CC2222" font-weight="bold">VICIOUS CYCLE</text>
+<text x="790" y="530" font-size="8" fill="#CC2222" font-style="italic">Th2 cytokines</text>
+
+<!-- Barrier failure also feeds S. aureus -->
+<path d="M1001,265 Q1087,290 1087,340" stroke="#CC5522" stroke-width="1.3" fill="none" marker-end="url(#ah-orange)"/>
+<text x="1060" y="298" font-size="7.5" fill="#AA5522">dysbiosis</text>
+
+
+<!-- ========= BOTTOM — IMMUNE MODULATION (Treg pathway) ========= -->
+
+<!-- Butyrate → Treg -->
+<path d="M193,328 L193,640 L350,640" stroke="#2266AA" stroke-width="2" fill="none" marker-end="url(#ah-blue)"/>
+<text x="230" y="580" font-size="8" fill="#2266AA" transform="rotate(-90,230,580)">butyrate</text>
+
+<!-- Foxp3+ Treg box -->
+<rect x="352" y="632" width="190" height="54" rx="9" fill="#E8DEEE" stroke="#7B42B0" stroke-width="1.8" filter="url(#shadow-f1)"/>
+<text x="447" y="652" text-anchor="middle" font-size="11" font-weight="bold" fill="#5B2A90">Foxp3⁺ Treg</text>
+<text x="447" y="666" text-anchor="middle" font-size="9" fill="#7B42B0">Generation</text>
+<text x="447" y="680" text-anchor="middle" font-size="7.5" fill="#9977BB">HDAC inhib. at Foxp3 promoter</text>
+
+<!-- Arrow Treg → Th2 Suppression -->
+<line x1="542" y1="659" x2="630" y2="659" stroke="#7B42B0" stroke-width="2" marker-end="url(#ah-purple)"/>
+
+<!-- Th2 Suppression -->
+<rect x="632" y="636" width="150" height="46" rx="8" fill="#E0F0E0" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow-f1)"/>
+<text x="707" y="655" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Th2 Suppression</text>
+<text x="707" y="669" text-anchor="middle" font-size="8.5" fill="#1E8C45">(breaks the vicious cycle)</text>
+
+<!-- Arrow Th2 Suppression ⊣ Th2 Activation -->
+<path d="M782,650 Q900,620 923,474" stroke="#1E8C45" stroke-width="2" fill="none" marker-end="url(#inh-green)" stroke-dasharray="6,3"/>
+<text x="890" y="570" font-size="8" fill="#1E8C45" font-weight="bold">suppresses</text>
+
+<!-- Butyrate also → IgA + mucosal immunity note -->
+<rect x="50" y="640" width="130" height="42" rx="6" fill="#F0F6FF" stroke="#5599CC" stroke-width="1"/>
+<text x="115" y="657" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#2266AA">Also: ↑ IgA</text>
+<text x="115" y="670" text-anchor="middle" font-size="8" fill="#5599CC">Mucosal barrier support</text>
+<line x1="180" y1="656" x2="193" y2="648" stroke="#5599CC" stroke-width="1" marker-end="url(#ah-blue)" stroke-dasharray="3,2"/>
+
+
+<!-- ========= RIGHT COLUMN — INTERVENTIONS (GREEN) ========= -->
+
+<!-- Vitamin D -->
+<rect x="1202" y="90" width="176" height="72" rx="8" fill="#D8F0D8" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow-f1)"/>
+<text x="1290" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Vitamin D</text>
+<text x="1290" y="126" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Cathelicidin (LL-37)</text>
+<text x="1290" y="139" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Th1/Th2 balance</text>
+<text x="1290" y="152" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Tight junction support</text>
+
+<!-- Arrow Vit D → Barrier -->
+<path d="M1202,130 L1010,266" stroke="#1E8C45" stroke-width="1.4" fill="none" marker-end="url(#ah-green)" stroke-dasharray="5,3"/>
+
+<!-- Topical B12 -->
+<rect x="1202" y="178" width="176" height="60" rx="8" fill="#D8F0D8" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow-f1)"/>
+<text x="1290" y="198" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Topical B12</text>
+<text x="1290" y="213" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ NO scavenging</text>
+<text x="1290" y="226" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ ↓ Inflammation</text>
+
+<!-- Arrow B12 → near inflammation/Th2 -->
+<path d="M1202,218 L1010,430" stroke="#1E8C45" stroke-width="1.3" fill="none" marker-end="url(#inh-green)" stroke-dasharray="5,3"/>
+
+<!-- Colloidal Oatmeal -->
+<rect x="1202" y="256" width="176" height="60" rx="8" fill="#D8F0D8" stroke="#1E8C45" stroke-width="1.5" filter="url(#shadow-f1)"/>
+<text x="1290" y="276" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8C45">Colloidal Oatmeal</text>
+<text x="1290" y="291" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Barrier support</text>
+<text x="1290" y="304" text-anchor="middle" font-size="8.5" fill="#3a7a3a">→ Anti-inflammatory</text>
+
+<!-- Arrow oatmeal → barrier -->
+<path d="M1202,283 L1010,265" stroke="#1E8C45" stroke-width="1.3" fill="none" marker-end="url(#ah-green)" stroke-dasharray="5,3"/>
+
+
+<!-- ========= PHARMACOLOGICAL VALIDATION — TAPINAROF ========= -->
+<rect x="1202" y="368" width="176" height="82" rx="9" fill="#FFF8E0" stroke="#D4790A" stroke-width="2" filter="url(#shadow-f1)"/>
+<text x="1290" y="389" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#B06000">Tapinarof</text>
+<text x="1290" y="404" text-anchor="middle" font-size="8.5" fill="#B06000">AHR/NRF2 agonist</text>
+<line x1="1214" y1="412" x2="1366" y2="412" stroke="#E8D4A0" stroke-width="0.7"/>
+<text x="1290" y="426" text-anchor="middle" font-size="9" fill="#886600" font-weight="bold">Phase 3 Trial:</text>
+<text x="1290" y="440" text-anchor="middle" font-size="9.5" fill="#886600" font-weight="bold">52% clearance</text>
+
+<!-- Arrow Tapinarof → AHR in keratinocyte -->
+<path d="M1202,410 C1050,410 860,404 530,396" stroke="#D4790A" stroke-width="2" fill="none" marker-end="url(#ah-orange)"/>
+<text x="870" y="400" font-size="8" fill="#D4790A" font-weight="bold">AHR/NRF2 agonism</text>
+
+<!-- Additional pharmacological note -->
+<rect x="1202" y="468" width="176" height="48" rx="7" fill="#FFF8E0" stroke="#D4790A" stroke-width="1.3" filter="url(#shadow-f1)"/>
+<text x="1290" y="487" text-anchor="middle" font-size="9" font-weight="bold" fill="#B06000">Pharmacological</text>
+<text x="1290" y="501" text-anchor="middle" font-size="9" font-weight="bold" fill="#B06000">Validation</text>
+<text x="1290" y="511" text-anchor="middle" font-size="7.5" fill="#B06000" font-style="italic">(confirms NRF2 mechanism)</text>
+
+
+<!-- ========= ANNOTATION LABELS & PATHWAY NUMBERS ========= -->
+
+<!-- Step numbers along main blue pathway -->
+<circle cx="192" cy="168" r="10" fill="#2266AA"/>
+<text x="192" y="172" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">1</text>
+
+<circle cx="340" cy="248" r="10" fill="#2266AA"/>
+<text x="340" y="252" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">2</text>
+
+<circle cx="425" cy="248" r="10" fill="#2266AA"/>
+<text x="425" y="252" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">3</text>
+
+<circle cx="568" cy="283" r="10" fill="#2266AA"/>
+<text x="568" y="287" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">4</text>
+
+<circle cx="836" cy="247" r="10" fill="#2266AA"/>
+<text x="836" y="251" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">5</text>
+
+<!-- Step labels -->
+<text x="192" y="160" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">Dysbiosis</text>
+<text x="340" y="240" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">Gut–Skin</text>
+<text x="425" y="240" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">Uptake</text>
+<text x="568" y="275" text-anchor="middle" font-size="7" fill="#2266AA" font-weight="bold">NRF2</text>
+
+<!-- Vicious cycle arc label -->
+<circle cx="923" cy="500" r="10" fill="#CC2222"/>
+<text x="923" y="504" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">!</text>
+
+
+<!-- ========= LEGEND EMBEDDED IN SVG ========= -->
+<rect x="20" y="748" width="1360" height="166" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="1"/>
+<text x="40" y="770" font-size="12" font-weight="bold" fill="#222">Figure Legend</text>
+
+<!-- Row 1: Pathway colors -->
+<rect x="40" y="782" width="32" height="5" rx="2" fill="#2266AA"/>
+<text x="80" y="789" font-size="10" fill="#333"><tspan font-weight="bold" fill="#2266AA">Blue arrows</tspan> — Central hypothesis pathway: Gut dysbiosis → ↓Butyrate → ↓NRF2 → Barrier failure → AD</text>
+
+<rect x="40" y="800" width="32" height="5" rx="2" fill="#CC2222"/>
+<text x="80" y="807" font-size="10" fill="#333"><tspan font-weight="bold" fill="#CC2222">Red arrows / boxes</tspan> — Pathogenic / vicious cycle: Th2 cytokines (IL-4, IL-13) → STAT6/STAT3 → ↓Barrier genes → more allergen penetration</text>
+
+<rect x="40" y="818" width="32" height="5" rx="2" fill="#1E8C45"/>
+<text x="80" y="825" font-size="10" fill="#333"><tspan font-weight="bold" fill="#1E8C45">Green arrows / boxes</tspan> — Therapeutic interventions: Dietary fiber, probiotics, vitamin D, topical B12, colloidal oatmeal, Treg-mediated suppression</text>
+
+<rect x="40" y="836" width="32" height="5" rx="2" fill="#7B42B0"/>
+<text x="80" y="843" font-size="10" fill="#333"><tspan font-weight="bold" fill="#7B42B0">Purple arrows / boxes</tspan> — Tryptophan–indole–AHR axis (parallel microbiome-derived signaling pathway to NRF2)</text>
+
+<rect x="40" y="854" width="32" height="5" rx="2" fill="#D4790A"/>
+<text x="80" y="861" font-size="10" fill="#333"><tspan font-weight="bold" fill="#D4790A">Orange arrows / boxes</tspan> — Pharmacological validation: Tapinarof (AHR/NRF2 agonist; Phase 3 clinical evidence)</text>
+
+<!-- Row 2: symbols -->
+<text x="40" y="882" font-size="10" fill="#333"><tspan font-weight="bold">Numbered circles (①–⑤)</tspan> trace the main causal sequence.  <tspan font-weight="bold" fill="#CC2222">⊣</tspan> = inhibition/suppression.  Dashed lines = indirect or modulatory effects.</text>
+
+<text x="40" y="900" font-size="10" fill="#333"><tspan font-weight="bold">Key abbreviations:</tspan> SCFA = short-chain fatty acid; HDAC = histone deacetylase; NRF2 = nuclear factor erythroid 2-related factor 2; AHR = aryl hydrocarbon receptor;</text>
+<text x="40" y="912" font-size="10" fill="#333">HO-1 = heme oxygenase-1; Foxp3 = forkhead box P3; Treg = regulatory T cell; STAT = signal transducer and activator of transcription; I3C = indole-3-carbinol; IAId = indole-3-aldehyde; IPA = indole-3-propionic acid</text>
+
+</svg>
+</div>
+
+</div>
+<figcaption><strong>Figure 1.</strong> The Gut–Butyrate–NRF2–Skin Barrier Axis in Atopic Dermatitis. Schematic representation of the self-reinforcing vicious cycle — from gut dysbiosis through butyrate deficiency, impaired NRF2 signaling, barrier failure, Th2 immune activation, and <em>S. aureus</em> colonization — with therapeutic intervention points indicated at each node.</figcaption>
+</figure>
+<!-- ======================== END FIGURE 1 ======================== -->
+
+<!-- ======================== FIGURE 2 EMBED ======================== -->
+<figure class="paper-figure">
+<div class="fig2-wrap">
+
+<div class="figure-container">
+  <div class="figure-title">
+    <span class="fig-label">Figure 2.</span> Evidence Convergence Map: Natural Interventions Targeting the NRF2/Barrier Axis in Atopic Dermatitis
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1060" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <defs>
+      <!-- Gradient for central hub -->
+      <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#6C63FF" stop-opacity="0.15"/>
+        <stop offset="100%" stop-color="#6C63FF" stop-opacity="0.03"/>
+      </radialGradient>
+      <!-- Glow for hub -->
+      <filter id="hubGlow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+        <feFlood flood-color="#6C63FF" flood-opacity="0.15"/>
+        <feComposite in2="blur" operator="in" result="glow"/>
+        <feMerge>
+          <feMergeNode in="glow"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <!-- Shadow for cards -->
+      <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="112%">
+        <feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+      </filter>
+      <!-- Arrow marker -->
+      <marker id="arrowEnd" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#9a9ab0"/>
+      </marker>
+    </defs>
+
+    <!-- BACKGROUND RADIAL RINGS -->
+    <circle cx="550" cy="490" r="420" fill="none" stroke="#e8e8f0" stroke-width="0.5" stroke-dasharray="6,4"/>
+    <circle cx="550" cy="490" r="300" fill="none" stroke="#e8e8f0" stroke-width="0.5" stroke-dasharray="6,4"/>
+    <circle cx="550" cy="490" r="180" fill="none" stroke="#e8e8f0" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+    <!-- CONNECTOR LINES (drawn first, behind cards) -->
+    <line x1="550" y1="440" x2="550" y2="168" stroke="#7B8CDE" stroke-width="2.2" stroke-dasharray="6,3" marker-end="url(#arrowEnd)" opacity="0.55" transform="rotate(0,550,490)"/>
+    <line x1="550" y1="440" x2="268" y2="168" stroke="#5BA08C" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <line x1="500" y1="490" x2="168" y2="420" stroke="#D4894A" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <line x1="510" y1="535" x2="228" y2="760" stroke="#D4894A" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <line x1="550" y1="545" x2="550" y2="802" stroke="#3A9B5E" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <line x1="595" y1="535" x2="862" y2="760" stroke="#3A9B5E" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <line x1="605" y1="490" x2="928" y2="420" stroke="#3A9B5E" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+    <line x1="595" y1="445" x2="832" y2="168" stroke="#5BA08C" stroke-width="2.2" stroke-dasharray="6,3" opacity="0.55"/>
+
+    <!-- CENTRAL HUB -->
+    <g filter="url(#hubGlow)">
+      <circle cx="550" cy="490" r="72" fill="url(#hubGrad)" stroke="#6C63FF" stroke-width="2.5"/>
+      <circle cx="550" cy="490" r="72" fill="none" stroke="#6C63FF" stroke-width="1" opacity="0.3"/>
+    </g>
+    <path d="M550,438 L570,452 L570,478 C570,498 550,510 550,510 C550,510 530,498 530,478 L530,452 Z"
+          fill="none" stroke="#6C63FF" stroke-width="1.8" opacity="0.6"/>
+    <text x="550" y="469" text-anchor="middle" font-size="9" font-weight="700" fill="#6C63FF" letter-spacing="0.5">NRF2</text>
+    <text x="550" y="530" text-anchor="middle" font-size="11" font-weight="700" fill="#3a3a5c">NRF2 Activation</text>
+    <text x="550" y="544" text-anchor="middle" font-size="9.5" fill="#5a5a7c">Barrier Gene Expression</text>
+    <text x="550" y="556" text-anchor="middle" font-size="8" fill="#8888a8" font-style="italic">(convergence point)</text>
+
+    <!-- SPOKE CARDS -->
+
+    <!-- 1. PROTEOMICS (top center) -->
+    <g transform="translate(400, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="300" height="130" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="300" height="26" rx="6" fill="#5B6ABF"/>
+      <rect x="0" y="14" width="300" height="12" fill="#5B6ABF"/>
+      <text x="150" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">PROTEOMICS</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">NRF2 reduced in AD epidermis</text>
+      <text x="15" y="62" font-size="9" fill="#6a6a8a">Quantitative proteomics</text>
+      <text x="15" y="80" font-size="9" fill="#555">Koch et al. 2023, <tspan font-style="italic">J Invest Dermatol</tspan></text>
+      <text x="15" y="94" font-size="8.5" fill="#888">PMID: 36108803</text>
+      <rect x="15" y="105" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="45" y="116" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- 2. GUT MICROBIOME (upper-left) -->
+    <g transform="translate(28, 82)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#2E8B72"/>
+      <rect x="0" y="14" width="290" height="12" fill="#2E8B72"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">GUT MICROBIOME</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Low fecal butyrate → adjOR 13.2</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">for eczema</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Birth cohort (n = 75)</text>
+      <text x="15" y="96" font-size="9" fill="#555">Cheng et al. 2022, GUSTO cohort</text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 35769572</text>
+      <rect x="15" y="120" width="72" height="16" rx="3" fill="#D4894A"/>
+      <text x="51" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Preliminary</text>
+    </g>
+
+    <!-- 3. IN VITRO / CELL BIOLOGY (left) -->
+    <g transform="translate(8, 330)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="280" height="150" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="280" height="26" rx="6" fill="#C47A35"/>
+      <rect x="0" y="14" width="280" height="12" fill="#C47A35"/>
+      <text x="140" y="17.5" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" letter-spacing="1">IN VITRO / CELL BIOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Butyrate → NRF2 ↑ + Filaggrin ↑</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">in keratinocytes</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Primary human keratinocytes</text>
+      <text x="15" y="96" font-size="9" fill="#555">PMIDs: 40283951, 24451036</text>
+      <rect x="15" y="118" width="68" height="16" rx="3" fill="#CBA832"/>
+      <text x="49" y="129" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Moderate</text>
+    </g>
+
+    <!-- 4. PRECLINICAL (lower-left) -->
+    <g transform="translate(28, 680)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#8B6CB5"/>
+      <rect x="0" y="14" width="290" height="12" fill="#8B6CB5"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">PRECLINICAL</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Dietary fiber → gut SCFA →</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">skin barrier ↑ → AD ↓</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Mouse model</text>
+      <text x="15" y="96" font-size="9" fill="#555">Trompette et al. 2022, <tspan font-style="italic">Mucosal Immunol</tspan></text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 35672452</text>
+      <rect x="15" y="120" width="68" height="16" rx="3" fill="#CBA832"/>
+      <text x="49" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Moderate</text>
+    </g>
+
+    <!-- 5. PHARMACOLOGY (bottom center) -->
+    <g transform="translate(390, 810)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="318" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="318" height="26" rx="6" fill="#B54848"/>
+      <rect x="0" y="14" width="318" height="12" fill="#B54848"/>
+      <text x="159" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">PHARMACOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Tapinarof (AHR→NRF2 agonist):</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">52% clearance</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Phase 3 RCT (n = 891)</text>
+      <text x="15" y="96" font-size="9" fill="#555">Phase 3 ADORING trials</text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 38777187</text>
+      <rect x="15" y="120" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="45" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- 6. IMMUNOLOGY (lower-right) -->
+    <g transform="translate(782, 680)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#4A8BB5"/>
+      <rect x="0" y="14" width="290" height="12" fill="#4A8BB5"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">IMMUNOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Butyrate → HDAC inhibition →</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">Foxp3+ Tregs</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Mechanistic (<tspan font-style="italic">Nature</tspan>)</text>
+      <text x="15" y="96" font-size="9" fill="#555">Arpaia et al. 2013, <tspan font-style="italic">Nature</tspan></text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 24226773</text>
+      <rect x="15" y="120" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="45" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- 7. CLINICAL TRIALS (right) -->
+    <g transform="translate(810, 310)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="278" height="175" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="278" height="26" rx="6" fill="#2B7A4B"/>
+      <rect x="0" y="14" width="278" height="12" fill="#2B7A4B"/>
+      <text x="139" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">CLINICAL TRIALS</text>
+      <text x="15" y="46" font-size="10" font-weight="600" fill="#2a2a4a"><tspan font-style="italic">L. rhamnosus</tspan> GG: RR 0.60</text>
+      <text x="15" y="60" font-size="9.5" fill="#444">(11 RCTs, meta-analysis)</text>
+      <text x="15" y="78" font-size="10" font-weight="600" fill="#2a2a4a">Vitamin D: SMD −0.41</text>
+      <text x="15" y="92" font-size="9.5" fill="#444">(11 RCTs, meta-analysis)</text>
+      <text x="15" y="110" font-size="10" font-weight="600" fill="#2a2a4a">Topical B12: 77.6% SCORAD ↓</text>
+      <text x="15" y="128" font-size="9" fill="#555">PMIDs: 36161401, 39683522,</text>
+      <text x="15" y="141" font-size="9" fill="#555">28677237</text>
+      <text x="15" y="155" font-size="9" fill="#6a6a8a">Meta-analyses + RCTs</text>
+      <rect x="190" y="150" width="60" height="16" rx="3" fill="#3A9B5E"/>
+      <text x="220" y="161" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Strong</text>
+    </g>
+
+    <!-- 8. EPIDEMIOLOGY (upper-right) -->
+    <g transform="translate(782, 82)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="290" height="145" rx="6" fill="#fff" stroke="#c0c0d8" stroke-width="1"/>
+      <rect x="0" y="0" width="290" height="26" rx="6" fill="#6B8E5B"/>
+      <rect x="0" y="14" width="290" height="12" fill="#6B8E5B"/>
+      <text x="145" y="17.5" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff" letter-spacing="1">EPIDEMIOLOGY</text>
+      <text x="15" y="46" font-size="10.5" font-weight="600" fill="#2a2a4a">Fermented food diversity →</text>
+      <text x="15" y="60" font-size="10.5" font-weight="600" fill="#2a2a4a">OR 0.51 for AD</text>
+      <text x="15" y="78" font-size="9" fill="#6a6a8a">Prospective cohort (n = 931)</text>
+      <text x="15" y="96" font-size="9" fill="#555">PASTURE cohort, 931 children</text>
+      <text x="15" y="110" font-size="8.5" fill="#888">PMID: 30368847</text>
+      <rect x="15" y="120" width="68" height="16" rx="3" fill="#CBA832"/>
+      <text x="49" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">Moderate</text>
+    </g>
+
+    <!-- DIRECTIONAL ARROW HEADS on spokes -->
+    <polygon points="550,448 543,432 557,432" fill="#7B8CDE" opacity="0.7"/>
+    <polygon points="514,460 502,448 516,446" fill="#5BA08C" opacity="0.7"/>
+    <polygon points="486,488 474,480 476,494" fill="#D4894A" opacity="0.7"/>
+    <polygon points="514,522 502,532 516,536" fill="#D4894A" opacity="0.7"/>
+    <polygon points="550,554 543,568 557,568" fill="#3A9B5E" opacity="0.7"/>
+    <polygon points="588,522 600,532 586,536" fill="#3A9B5E" opacity="0.7"/>
+    <polygon points="616,488 628,480 626,494" fill="#3A9B5E" opacity="0.7"/>
+    <polygon points="588,460 600,448 586,446" fill="#5BA08C" opacity="0.7"/>
+
+    <!-- RING LABELS -->
+    <text x="550" y="1048" text-anchor="middle" font-size="9" fill="#aaa" font-style="italic">
+      Eight independent evidence streams converging on NRF2-mediated barrier restoration
+    </text>
+
+  </svg>
+
+  <!-- LEGEND -->
+  <div class="legend-container">
+    <div class="legend-title">Legend — Evidence Strength Classification</div>
+    <div class="legend-row">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#3A9B5E;"></div>
+        <span><strong>Strong</strong> — Phase 3 RCTs, large meta-analyses, high-impact mechanistic studies (<em>Nature</em>), or validated omics</span>
+      </div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#CBA832;"></div>
+        <span><strong>Moderate</strong> — In vitro cell biology, animal models, or prospective cohorts with moderate sample size</span>
+      </div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#D4894A;"></div>
+        <span><strong>Preliminary</strong> — Pilot cohorts, small-n observational data, or hypothesis-generating studies</span>
+      </div>
+    </div>
+    <div class="legend-note">
+      Each card shows the discipline, key quantitative finding, study citation with PubMed ID, study type, and evidence strength.
+      Dashed lines represent mechanistic convergence on the central NRF2/barrier restoration pathway.
+      Card header colors distinguish scientific disciplines; evidence-strength badges (lower-left of each card) use the three-tier scheme above.
+    </div>
+  </div>
+</div>
+
+</div>
+<figcaption><strong>Figure 2.</strong> Evidence Convergence Map. Eight independent lines of evidence — from proteomics, gut microbiome cohorts, cell biology, preclinical models, pharmacology, immunology, clinical trials, and epidemiology — converge on NRF2 activation as the central therapeutic target. Evidence strength is color-coded: green (strong), yellow (moderate), orange (preliminary).</figcaption>
+</figure>
+<!-- ======================== END FIGURE 2 ======================== -->
+
+<hr>
+
+<!-- ================================================================
+     8. THE TRANSLATIONAL GAP AND PROPOSED TRIAL DESIGNS
+     ================================================================ -->
+
+<h2>8. THE TRANSLATIONAL GAP AND PROPOSED TRIAL DESIGNS</h2>
+
+<h3>8.1 The Critical Missing Trial</h3>
+
+<p>The translational gap identified by this hypothesis is both conspicuous and readily addressable. The following evidence chain is now established: (1) butyrate activates NRF2 in human keratinocytes in vitro (PMID: 40283951); (2) butyrate directly upregulates filaggrin in human keratinocytes (PMID: 24451036); (3) low fecal butyrate in infancy predicts AD with an adjusted odds ratio of 13.2 (PMID: 35769572); (4) dietary fiber-derived SCFA restores the skin barrier in mice (PMID: 35672452); (5) resistant starch and inulin increase plasma butyrate in humans (PMID: 30400947; PMID: 34923911); and (6) pharmacological activation of the same NRF2 pathway achieves ~52% complete clearance in Phase 3 trials (PMID: 40383273). Despite this remarkably complete preclinical and observational evidence chain, <strong>no human clinical trial has tested direct butyrate supplementation for atopic dermatitis</strong>. This represents arguably the most obvious untested hypothesis in translational dermatology.</p>
+
+<p>The reasons for this gap likely include disciplinary silos (gastroenterologists study butyrate; dermatologists study AD), the non-patentability of butyrate as a natural compound (reducing commercial incentive for industry-sponsored trials), and the relatively recent convergence of the evidence linking these fields. The trial designs below are intended to bridge this gap.</p>
+
+<h3>8.2 Proposed Trial 1: Butyrate Supplementation for Atopic Dermatitis</h3>
+
+<p><strong>Design:</strong> Randomized, double-blind, placebo-controlled, parallel-group trial.</p>
+
+<p><strong>Population:</strong> Adults aged 18–65 with moderate AD (SCORAD 25–50), stable disease for ≥3 months, n = 120 (60 per arm, powered to detect a 6-point SCORAD difference with α = 0.05 and β = 0.80).</p>
+
+<p><strong>Intervention:</strong> Oral sodium butyrate 600 mg three times daily (or tributyrin equivalent providing comparable systemic butyrate exposure) for 12 weeks. Tributyrin may be preferred for its superior oral bioavailability and reduced odor (PMID: 27996288).</p>
+
+<p><strong>Comparator:</strong> Matching placebo capsules plus standard emollient therapy (permitted in both arms).</p>
+
+<p><strong>Primary outcome:</strong> Change in SCORAD from baseline to week 12.</p>
+
+<p><strong>Secondary outcomes:</strong> EASI-75 response rate; fecal and plasma butyrate concentrations; epidermal NRF2 target gene expression (HO-1, NQO1) measured by RT-qPCR of tape-stripped epidermal samples; transepidermal water loss (TEWL); filaggrin immunohistochemistry in optional skin biopsies; circulating Foxp3⁺CD4⁺ Treg frequency by flow cytometry; itch NRS (Numerical Rating Scale); DLQI (Dermatology Life Quality Index).</p>
+
+<p><strong>Stratification:</strong> By <em>FLG</em> genotype (loss-of-function carrier versus wild-type) and baseline fecal butyrate concentration (above versus below median).</p>
+
+<p><strong>Exploratory analyses:</strong> Subgroup analyses by <em>FLG</em> genotype, baseline fecal butyrate, and AD endotype (extrinsic versus intrinsic) to identify responder populations.</p>
+
+<h3>8.3 Proposed Trial 2: Multi-Target Natural Intervention Protocol</h3>
+
+<p><strong>Design:</strong> Randomized, open-label, 2 × 2 factorial trial.</p>
+
+<p><strong>Population:</strong> Children aged 2–12 with mild-to-moderate AD (SCORAD 15–40), n = 200 (50 per arm).</p>
+
+<p><strong>Arms:</strong> (A) Standard care alone (emollient therapy); (B) Gut-directed: prebiotic fiber (1-kestose 4.25 g/day, based on the effective dose from PMID: 19508323) plus <em>L. rhamnosus</em> GG (10¹⁰ CFU/day); (C) Skin-directed: topical vitamin B12 cream (0.07%) plus colloidal oatmeal-based emollient; (D) Combined gut-directed plus skin-directed (B + C).</p>
+
+<p><strong>Duration:</strong> 16 weeks of active treatment plus 16 weeks of treatment-free follow-up to assess remission durability.</p>
+
+<p><strong>Primary outcome:</strong> SCORAD at week 16.</p>
+
+<p><strong>Secondary outcomes:</strong> Remission duration (time to first flare requiring rescue therapy) during the follow-up period; fecal microbiome composition (16S rRNA gene sequencing with specific quantification of butyrate producers); fecal SCFA profiles (gas chromatography); plasma butyrate concentration; skin microbiome composition; TEWL; CDLQI (Children's Dermatology Life Quality Index).</p>
+
+<p><strong>Key hypothesis:</strong> Arm D (combined) will demonstrate synergistic benefit exceeding the sum of Arms B and C, consistent with the multi-node intervention model. The factorial design enables formal testing of interaction effects.</p>
+
+<h3>8.4 Proposed Trial 3: Dietary Fiber Intervention</h3>
+
+<p><strong>Design:</strong> Parallel-group RCT.</p>
+
+<p><strong>Population:</strong> Adults aged 18–55 with mild-to-moderate AD (SCORAD 15–40), habitual dietary fiber intake below national median, n = 80 (40 per arm).</p>
+
+<p><strong>Intervention:</strong> High-resistant-starch diet (cooled potatoes and rice, green bananas, legumes, and whole grains) targeting &gt;20 g resistant starch per day, supplemented with 10 g inulin per day, with dietary counseling and food provision for 12 weeks. Based on evidence that resistant starch combined with inulin increases plasma butyrate (PMID: 34923911; PMID: 30400947).</p>
+
+<p><strong>Control:</strong> Isocaloric low-fiber diet matching macronutrient composition, with dietary counseling.</p>
+
+<p><strong>Primary outcome:</strong> SCORAD change from baseline to week 12.</p>
+
+<p><strong>Secondary outcomes:</strong> Fecal butyrate concentration; plasma butyrate concentration; skin TEWL at standardized body sites; circulating Foxp3⁺ Treg frequency; fecal microbiome composition with focus on butyrate-producer abundance; dietary compliance assessed by food diaries and fecal fiber markers.</p>
+
+<p><strong>Mechanistic aim:</strong> To test whether dietary fiber, operating through the gut–butyrate–skin axis, improves AD in humans, thereby validating in a human population the pathway demonstrated by Trompette et al. in mice (PMID: 35672452).</p>
+
+<p>The designs of all three proposed trials are illustrated in Figure 3.</p>
+
+<!-- ======================== FIGURE 3 EMBED ======================== -->
+<figure class="paper-figure">
+<div class="fig3-wrap">
+<div class="figure-container">
+  <div class="figure-title">Figure 3. Proposed Clinical Trial Designs to Test the Gut–Butyrate–NRF2 Hypothesis in Atopic Dermatitis</div>
+  <div class="figure-subtitle">Three complementary randomized controlled trials targeting distinct nodes of the hypothesized gut–butyrate–skin barrier axis. Trial designs progress from direct supplementation (Trial 1) through multi-target natural intervention (Trial 2) to whole-diet modification (Trial 3).</div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 836">
+    <defs>
+      <linearGradient id="t1head" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1565C0"/>
+        <stop offset="100%" stop-color="#0D47A1"/>
+      </linearGradient>
+      <linearGradient id="t1box" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#E3F2FD"/>
+        <stop offset="100%" stop-color="#BBDEFB"/>
+      </linearGradient>
+      <linearGradient id="t2head" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2E7D32"/>
+        <stop offset="100%" stop-color="#1B5E20"/>
+      </linearGradient>
+      <linearGradient id="t2box" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#E8F5E9"/>
+        <stop offset="100%" stop-color="#C8E6C9"/>
+      </linearGradient>
+      <linearGradient id="t3head" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#E65100"/>
+        <stop offset="100%" stop-color="#BF360C"/>
+      </linearGradient>
+      <linearGradient id="t3box" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FFF3E0"/>
+        <stop offset="100%" stop-color="#FFE0B2"/>
+      </linearGradient>
+      <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#1565C0"/>
+      </marker>
+      <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/>
+      </marker>
+      <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#E65100"/>
+      </marker>
+      <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+      </marker>
+      <filter id="shadow-f3" x="-2%" y="-2%" width="104%" height="104%">
+        <feDropShadow dx="1" dy="1" stdDeviation="1.5" flood-color="#00000018"/>
+      </filter>
+    </defs>
+
+    <!-- TRIAL 1 (BLUE) -->
+    <g transform="translate(0, 0)">
+      <rect x="8" y="5" width="380" height="630" rx="8" fill="#f7faff" stroke="#90CAF5" stroke-width="1"/>
+      <rect x="8" y="5" width="380" height="52" rx="8" fill="url(#t1head)"/>
+      <rect x="8" y="40" width="380" height="17" fill="url(#t1head)"/>
+      <text x="198" y="25" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">TRIAL 1</text>
+      <text x="198" y="42" text-anchor="middle" fill="#E3F2FD" font-size="9.5" font-weight="600">Butyrate Supplementation for AD</text>
+      <text x="198" y="55" text-anchor="middle" fill="#BBDEFB" font-size="8" font-style="italic">— The Critical Missing Trial —</text>
+      <rect x="38" y="70" width="320" height="36" rx="5" fill="url(#t1box)" stroke="#90CAF5" stroke-width="0.8" filter="url(#shadow-f3)"/>
+      <text x="198" y="84" text-anchor="middle" fill="#0D47A1" font-size="9" font-weight="700">RCT, Double-Blind, Placebo-Controlled</text>
+      <text x="198" y="97" text-anchor="middle" fill="#1565C0" font-size="8.5">Adults, Moderate AD (SCORAD 25–50), n = 120</text>
+      <line x1="198" y1="106" x2="198" y2="122" stroke="#1565C0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+      <rect x="58" y="124" width="280" height="40" rx="5" fill="#fff" stroke="#1565C0" stroke-width="1" stroke-dasharray="5,3" filter="url(#shadow-f3)"/>
+      <text x="198" y="139" text-anchor="middle" fill="#0D47A1" font-size="8.5" font-weight="700">Stratification</text>
+      <text x="198" y="153" text-anchor="middle" fill="#333" font-size="8">Filaggrin genotype (FLG+/− vs FLG−/−) · Baseline fecal butyrate</text>
+      <line x1="198" y1="164" x2="198" y2="182" stroke="#1565C0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+      <polygon points="198,184 238,204 198,224 158,204" fill="#1565C0" stroke="#0D47A1" stroke-width="1"/>
+      <text x="198" y="207" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">1 : 1</text>
+      <line x1="158" y1="204" x2="100" y2="240" stroke="#1565C0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+      <line x1="238" y1="204" x2="296" y2="240" stroke="#1565C0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+      <rect x="28" y="242" width="155" height="50" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2" filter="url(#shadow-f3)"/>
+      <text x="105" y="257" text-anchor="middle" fill="#0D47A1" font-size="9" font-weight="700">Arm A (n=60)</text>
+      <text x="105" y="269" text-anchor="middle" fill="#333" font-size="8">Sodium butyrate</text>
+      <text x="105" y="280" text-anchor="middle" fill="#333" font-size="8">600 mg TID × 12 wk</text>
+      <rect x="213" y="242" width="155" height="50" rx="5" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2" filter="url(#shadow-f3)"/>
+      <text x="290" y="257" text-anchor="middle" fill="#0D47A1" font-size="9" font-weight="700">Arm B (n=60)</text>
+      <text x="290" y="269" text-anchor="middle" fill="#333" font-size="8">Placebo</text>
+      <text x="290" y="280" text-anchor="middle" fill="#333" font-size="8">TID × 12 wk</text>
+      <line x1="105" y1="292" x2="105" y2="310" stroke="#1565C0" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+      <line x1="290" y1="292" x2="290" y2="310" stroke="#1565C0" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+      <rect x="38" y="312" width="320" height="28" rx="5" fill="#fff" stroke="#90CAF5" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="198" y="330" text-anchor="middle" fill="#1565C0" font-size="8.5" font-weight="600">+ Standard emollient therapy (both arms)</text>
+      <line x1="198" y1="340" x2="198" y2="358" stroke="#1565C0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+      <rect x="58" y="360" width="280" height="22" rx="4" fill="#1565C0" opacity="0.15"/>
+      <rect x="58" y="360" width="280" height="22" rx="4" fill="none" stroke="#1565C0" stroke-width="0.8"/>
+      <text x="198" y="375" text-anchor="middle" fill="#0D47A1" font-size="8.5" font-weight="600">Treatment Period: 12 Weeks</text>
+      <line x1="58" y1="382" x2="58" y2="388" stroke="#1565C0" stroke-width="0.8"/>
+      <text x="58" y="396" text-anchor="middle" fill="#666" font-size="7">Wk 0</text>
+      <line x1="128" y1="382" x2="128" y2="388" stroke="#1565C0" stroke-width="0.8"/>
+      <text x="128" y="396" text-anchor="middle" fill="#666" font-size="7">Wk 4</text>
+      <line x1="198" y1="382" x2="198" y2="388" stroke="#1565C0" stroke-width="0.8"/>
+      <text x="198" y="396" text-anchor="middle" fill="#666" font-size="7">Wk 8</text>
+      <line x1="338" y1="382" x2="338" y2="388" stroke="#1565C0" stroke-width="0.8"/>
+      <text x="338" y="396" text-anchor="middle" fill="#666" font-size="7">Wk 12</text>
+      <line x1="198" y1="400" x2="198" y2="416" stroke="#1565C0" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+      <rect x="58" y="418" width="280" height="30" rx="5" fill="#1565C0" filter="url(#shadow-f3)"/>
+      <text x="198" y="431" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">Primary Endpoint</text>
+      <text x="198" y="443" text-anchor="middle" fill="#E3F2FD" font-size="8.5">ΔSCORAD at 12 weeks</text>
+      <line x1="198" y1="448" x2="198" y2="464" stroke="#1565C0" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+      <rect x="28" y="466" width="340" height="104" rx="5" fill="#fff" stroke="#1565C0" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="198" y="481" text-anchor="middle" fill="#0D47A1" font-size="9" font-weight="700">Biomarker Panel</text>
+      <line x1="48" y1="487" x2="348" y2="487" stroke="#BBDEFB" stroke-width="0.8"/>
+      <circle cx="52" cy="500" r="2.5" fill="#1565C0"/>
+      <text x="60" y="503" fill="#333" font-size="8">Fecal butyrate</text>
+      <circle cx="52" cy="514" r="2.5" fill="#1565C0"/>
+      <text x="60" y="517" fill="#333" font-size="8">Plasma butyrate</text>
+      <circle cx="52" cy="528" r="2.5" fill="#1565C0"/>
+      <text x="60" y="531" fill="#333" font-size="8">Epidermal NRF2 targets (HO-1, NQO1)</text>
+      <circle cx="52" cy="542" r="2.5" fill="#1565C0"/>
+      <text x="60" y="545" fill="#333" font-size="8">TEWL (transepidermal water loss)</text>
+      <circle cx="52" cy="556" r="2.5" fill="#1565C0"/>
+      <text x="60" y="559" fill="#333" font-size="8">Filaggrin expression (IHC)</text>
+      <circle cx="52" cy="570" r="2.5" fill="#1565C0"/>
+      <text x="60" y="573" fill="#333" font-size="8">Circulating Foxp3⁺ Tregs</text>
+      <rect x="28" y="582" width="340" height="46" rx="5" fill="#E8EAF6" stroke="#7986CB" stroke-width="0.8" stroke-dasharray="4,2"/>
+      <text x="198" y="596" text-anchor="middle" fill="#283593" font-size="8" font-weight="700">Rationale</text>
+      <text x="198" y="609" text-anchor="middle" fill="#37474F" font-size="7.5">No RCT has directly tested oral butyrate supplementation</text>
+      <text x="198" y="620" text-anchor="middle" fill="#37474F" font-size="7.5">for AD. This trial addresses the single most critical evidence gap.</text>
+    </g>
+
+    <!-- TRIAL 2 (GREEN) -->
+    <g transform="translate(405, 0)">
+      <rect x="8" y="5" width="380" height="630" rx="8" fill="#f7fff7" stroke="#A5D6A7" stroke-width="1"/>
+      <rect x="8" y="5" width="380" height="52" rx="8" fill="url(#t2head)"/>
+      <rect x="8" y="40" width="380" height="17" fill="url(#t2head)"/>
+      <text x="198" y="25" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">TRIAL 2</text>
+      <text x="198" y="42" text-anchor="middle" fill="#E8F5E9" font-size="9.5" font-weight="600">Multi-Target Natural Intervention</text>
+      <text x="198" y="55" text-anchor="middle" fill="#C8E6C9" font-size="8" font-style="italic">— 2×2 Factorial Design —</text>
+      <rect x="38" y="70" width="320" height="36" rx="5" fill="url(#t2box)" stroke="#A5D6A7" stroke-width="0.8" filter="url(#shadow-f3)"/>
+      <text x="198" y="84" text-anchor="middle" fill="#1B5E20" font-size="9" font-weight="700">RCT, Open-Label, 2×2 Factorial</text>
+      <text x="198" y="97" text-anchor="middle" fill="#2E7D32" font-size="8.5">Children 2–12 yr, Mild-Moderate AD, n = 200</text>
+      <line x1="198" y1="106" x2="198" y2="122" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+      <polygon points="198,124 248,149 198,174 148,149" fill="#2E7D32" stroke="#1B5E20" stroke-width="1"/>
+      <text x="198" y="150" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700">RANDOMIZE</text>
+      <text x="198" y="161" text-anchor="middle" fill="#C8E6C9" font-size="6.5">1:1:1:1</text>
+      <line x1="148" y1="149" x2="58" y2="196" stroke="#2E7D32" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+      <line x1="170" y1="168" x2="138" y2="196" stroke="#2E7D32" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+      <line x1="226" y1="168" x2="258" y2="196" stroke="#2E7D32" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+      <line x1="248" y1="149" x2="338" y2="196" stroke="#2E7D32" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+      <rect x="18" y="198" width="356" height="22" rx="4" fill="#2E7D32" opacity="0.12"/>
+      <text x="278" y="188" text-anchor="middle" fill="#1B5E20" font-size="7.5" font-weight="700">Skin-Directed</text>
+      <text x="198" y="212" text-anchor="middle" fill="#1B5E20" font-size="7.5" font-weight="600">— No Skin Tx —</text>
+      <text x="338" y="212" text-anchor="end" fill="#1B5E20" font-size="7.5" font-weight="600">Topical B12 + Oatmeal</text>
+      <text x="30" y="252" fill="#1B5E20" font-size="7.5" font-weight="700" transform="rotate(-90,30,252)">Gut-Directed</text>
+      <rect x="48" y="224" width="140" height="42" rx="5" fill="#fff" stroke="#66BB6A" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="118" y="240" text-anchor="middle" fill="#2E7D32" font-size="8.5" font-weight="700">Arm A (n=50)</text>
+      <text x="118" y="253" text-anchor="middle" fill="#333" font-size="7.5">Standard care only</text>
+      <rect x="208" y="224" width="155" height="42" rx="5" fill="#C8E6C9" stroke="#66BB6A" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="285" y="240" text-anchor="middle" fill="#2E7D32" font-size="8.5" font-weight="700">Arm C (n=50)</text>
+      <text x="285" y="253" text-anchor="middle" fill="#333" font-size="7.5">Topical B12 + Colloidal oatmeal</text>
+      <text x="43" y="247" fill="#999" font-size="6.5" text-anchor="end" transform="rotate(-90,43,247)">No Gut Tx</text>
+      <rect x="48" y="278" width="140" height="54" rx="5" fill="#C8E6C9" stroke="#66BB6A" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="118" y="292" text-anchor="middle" fill="#2E7D32" font-size="8.5" font-weight="700">Arm B (n=50)</text>
+      <text x="118" y="304" text-anchor="middle" fill="#333" font-size="7.5">Prebiotic fiber</text>
+      <text x="118" y="315" text-anchor="middle" fill="#333" font-size="7.5">(kestose 4.25 g/d)</text>
+      <text x="118" y="326" text-anchor="middle" fill="#333" font-size="7.5">+ L. rhamnosus GG</text>
+      <rect x="208" y="278" width="155" height="54" rx="5" fill="#81C784" stroke="#43A047" stroke-width="1.2" filter="url(#shadow-f3)"/>
+      <text x="285" y="292" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">Arm D (n=50)</text>
+      <text x="285" y="304" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="600">COMBINED</text>
+      <text x="285" y="316" text-anchor="middle" fill="#fff" font-size="7.5">Arm B + Arm C</text>
+      <text x="285" y="328" text-anchor="middle" fill="#E8F5E9" font-size="7">(Multi-target)</text>
+      <text x="43" y="306" fill="#999" font-size="6.5" text-anchor="end" transform="rotate(-90,43,306)">Gut Tx</text>
+      <rect x="17" y="224" width="3" height="108" rx="1.5" fill="#2E7D32" opacity="0.4"/>
+      <rect x="208" y="218" width="155" height="3" rx="1.5" fill="#2E7D32" opacity="0.4"/>
+      <line x1="198" y1="338" x2="198" y2="358" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+      <rect x="28" y="360" width="340" height="50" rx="5" fill="#fff" stroke="#A5D6A7" stroke-width="0.8" filter="url(#shadow-f3)"/>
+      <text x="198" y="374" text-anchor="middle" fill="#1B5E20" font-size="8.5" font-weight="700">Study Timeline: 32 Weeks Total</text>
+      <rect x="48" y="380" width="150" height="12" rx="3" fill="#2E7D32" opacity="0.75"/>
+      <text x="123" y="389.5" text-anchor="middle" fill="#fff" font-size="7" font-weight="600">Treatment (16 wk)</text>
+      <rect x="198" y="380" width="150" height="12" rx="3" fill="#2E7D32" opacity="0.3"/>
+      <text x="273" y="389.5" text-anchor="middle" fill="#1B5E20" font-size="7" font-weight="600">Follow-up (16 wk)</text>
+      <line x1="48" y1="392" x2="48" y2="397" stroke="#2E7D32" stroke-width="0.6"/>
+      <text x="48" y="404" text-anchor="middle" fill="#666" font-size="6.5">Wk 0</text>
+      <line x1="123" y1="392" x2="123" y2="397" stroke="#2E7D32" stroke-width="0.6"/>
+      <text x="123" y="404" text-anchor="middle" fill="#666" font-size="6.5">Wk 8</text>
+      <line x1="198" y1="392" x2="198" y2="397" stroke="#2E7D32" stroke-width="0.6"/>
+      <text x="198" y="404" text-anchor="middle" fill="#666" font-size="6.5">Wk 16</text>
+      <line x1="273" y1="392" x2="273" y2="397" stroke="#2E7D32" stroke-width="0.6"/>
+      <text x="273" y="404" text-anchor="middle" fill="#666" font-size="6.5">Wk 24</text>
+      <line x1="348" y1="392" x2="348" y2="397" stroke="#2E7D32" stroke-width="0.6"/>
+      <text x="348" y="404" text-anchor="middle" fill="#666" font-size="6.5">Wk 32</text>
+      <line x1="198" y1="412" x2="198" y2="426" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+      <rect x="58" y="428" width="280" height="28" rx="5" fill="#2E7D32" filter="url(#shadow-f3)"/>
+      <text x="198" y="440" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">Primary Endpoint</text>
+      <text x="198" y="452" text-anchor="middle" fill="#E8F5E9" font-size="8.5">SCORAD at 16 weeks</text>
+      <line x1="198" y1="456" x2="198" y2="470" stroke="#2E7D32" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+      <rect x="28" y="472" width="340" height="98" rx="5" fill="#fff" stroke="#2E7D32" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="198" y="487" text-anchor="middle" fill="#1B5E20" font-size="9" font-weight="700">Secondary Endpoints</text>
+      <line x1="48" y1="493" x2="348" y2="493" stroke="#C8E6C9" stroke-width="0.8"/>
+      <circle cx="52" cy="506" r="2.5" fill="#2E7D32"/>
+      <text x="60" y="509" fill="#333" font-size="8">Remission duration (post-treatment)</text>
+      <circle cx="52" cy="520" r="2.5" fill="#2E7D32"/>
+      <text x="60" y="523" fill="#333" font-size="8">Fecal microbiome (16S rRNA sequencing)</text>
+      <circle cx="52" cy="534" r="2.5" fill="#2E7D32"/>
+      <text x="60" y="537" fill="#333" font-size="8">Fecal SCFA (GC-MS)</text>
+      <circle cx="52" cy="548" r="2.5" fill="#2E7D32"/>
+      <text x="60" y="551" fill="#333" font-size="8">Skin microbiome (lesional vs non-lesional)</text>
+      <circle cx="52" cy="562" r="2.5" fill="#2E7D32"/>
+      <text x="60" y="565" fill="#333" font-size="8">TEWL &amp; Quality of Life (CDLQI)</text>
+      <rect x="28" y="582" width="340" height="46" rx="5" fill="#E8F5E9" stroke="#81C784" stroke-width="0.8" stroke-dasharray="4,2"/>
+      <text x="198" y="596" text-anchor="middle" fill="#1B5E20" font-size="8" font-weight="700">Rationale</text>
+      <text x="198" y="609" text-anchor="middle" fill="#37474F" font-size="7.5">Tests whether gut-directed and skin-directed natural therapies</text>
+      <text x="198" y="620" text-anchor="middle" fill="#37474F" font-size="7.5">have additive or synergistic benefits via distinct pathway nodes.</text>
+    </g>
+
+    <!-- TRIAL 3 (ORANGE) -->
+    <g transform="translate(810, 0)">
+      <rect x="8" y="5" width="380" height="630" rx="8" fill="#fffaf5" stroke="#FFCC80" stroke-width="1"/>
+      <rect x="8" y="5" width="380" height="52" rx="8" fill="url(#t3head)"/>
+      <rect x="8" y="40" width="380" height="17" fill="url(#t3head)"/>
+      <text x="198" y="25" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">TRIAL 3</text>
+      <text x="198" y="42" text-anchor="middle" fill="#FFF3E0" font-size="9.5" font-weight="600">Dietary Fiber Intervention</text>
+      <text x="198" y="55" text-anchor="middle" fill="#FFE0B2" font-size="8" font-style="italic">— Whole-Diet Approach —</text>
+      <rect x="38" y="70" width="320" height="36" rx="5" fill="url(#t3box)" stroke="#FFCC80" stroke-width="0.8" filter="url(#shadow-f3)"/>
+      <text x="198" y="84" text-anchor="middle" fill="#BF360C" font-size="9" font-weight="700">Parallel-Group RCT</text>
+      <text x="198" y="97" text-anchor="middle" fill="#E65100" font-size="8.5">Adults, Mild-Moderate AD, n = 80</text>
+      <line x1="198" y1="106" x2="198" y2="130" stroke="#E65100" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+      <polygon points="198,132 238,152 198,172 158,152" fill="#E65100" stroke="#BF360C" stroke-width="1"/>
+      <text x="198" y="155" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">1 : 1</text>
+      <line x1="158" y1="152" x2="100" y2="190" stroke="#E65100" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+      <line x1="238" y1="152" x2="296" y2="190" stroke="#E65100" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+      <rect x="20" y="192" width="168" height="62" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="1.2" filter="url(#shadow-f3)"/>
+      <text x="104" y="207" text-anchor="middle" fill="#BF360C" font-size="8.5" font-weight="700">High-Fiber Diet (n=40)</text>
+      <text x="104" y="220" text-anchor="middle" fill="#333" font-size="7.5">&gt;20 g resistant starch/day</text>
+      <text x="104" y="232" text-anchor="middle" fill="#333" font-size="7.5">+ 10 g inulin/day</text>
+      <text x="104" y="244" text-anchor="middle" fill="#333" font-size="7.5">× 12 weeks</text>
+      <rect x="208" y="192" width="168" height="62" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="1.2" filter="url(#shadow-f3)"/>
+      <text x="292" y="207" text-anchor="middle" fill="#BF360C" font-size="8.5" font-weight="700">Control Diet (n=40)</text>
+      <text x="292" y="220" text-anchor="middle" fill="#333" font-size="7.5">Isocaloric</text>
+      <text x="292" y="232" text-anchor="middle" fill="#333" font-size="7.5">Low-fiber control</text>
+      <text x="292" y="244" text-anchor="middle" fill="#333" font-size="7.5">× 12 weeks</text>
+      <line x1="104" y1="254" x2="104" y2="270" stroke="#E65100" stroke-width="1.2" marker-end="url(#arrowOrange)"/>
+      <line x1="292" y1="254" x2="292" y2="270" stroke="#E65100" stroke-width="1.2" marker-end="url(#arrowOrange)"/>
+      <rect x="38" y="272" width="320" height="28" rx="5" fill="#fff" stroke="#FFCC80" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="198" y="290" text-anchor="middle" fill="#E65100" font-size="8.5" font-weight="600">+ Registered dietician counseling &amp; diet diary (both arms)</text>
+      <line x1="198" y1="300" x2="198" y2="318" stroke="#E65100" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+      <rect x="58" y="320" width="280" height="22" rx="4" fill="#E65100" opacity="0.15"/>
+      <rect x="58" y="320" width="280" height="22" rx="4" fill="none" stroke="#E65100" stroke-width="0.8"/>
+      <text x="198" y="335" text-anchor="middle" fill="#BF360C" font-size="8.5" font-weight="600">Treatment Period: 12 Weeks</text>
+      <line x1="58" y1="342" x2="58" y2="348" stroke="#E65100" stroke-width="0.8"/>
+      <text x="58" y="356" text-anchor="middle" fill="#666" font-size="7">Wk 0</text>
+      <line x1="128" y1="342" x2="128" y2="348" stroke="#E65100" stroke-width="0.8"/>
+      <text x="128" y="356" text-anchor="middle" fill="#666" font-size="7">Wk 4</text>
+      <line x1="198" y1="342" x2="198" y2="348" stroke="#E65100" stroke-width="0.8"/>
+      <text x="198" y="356" text-anchor="middle" fill="#666" font-size="7">Wk 8</text>
+      <line x1="338" y1="342" x2="338" y2="348" stroke="#E65100" stroke-width="0.8"/>
+      <text x="338" y="356" text-anchor="middle" fill="#666" font-size="7">Wk 12</text>
+      <line x1="198" y1="360" x2="198" y2="376" stroke="#E65100" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+      <rect x="58" y="378" width="280" height="28" rx="5" fill="#E65100" filter="url(#shadow-f3)"/>
+      <text x="198" y="390" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700">Primary Endpoint</text>
+      <text x="198" y="402" text-anchor="middle" fill="#FFF3E0" font-size="8.5">ΔSCORAD at 12 weeks</text>
+      <line x1="198" y1="406" x2="198" y2="420" stroke="#E65100" stroke-width="1.2" marker-end="url(#arrowOrange)"/>
+      <rect x="28" y="422" width="340" height="84" rx="5" fill="#fff" stroke="#E65100" stroke-width="1" filter="url(#shadow-f3)"/>
+      <text x="198" y="437" text-anchor="middle" fill="#BF360C" font-size="9" font-weight="700">Secondary Endpoints</text>
+      <line x1="48" y1="443" x2="348" y2="443" stroke="#FFE0B2" stroke-width="0.8"/>
+      <circle cx="52" cy="456" r="2.5" fill="#E65100"/>
+      <text x="60" y="459" fill="#333" font-size="8">Fecal butyrate &amp; plasma butyrate</text>
+      <circle cx="52" cy="470" r="2.5" fill="#E65100"/>
+      <text x="60" y="473" fill="#333" font-size="8">TEWL (skin barrier function)</text>
+      <circle cx="52" cy="484" r="2.5" fill="#E65100"/>
+      <text x="60" y="487" fill="#333" font-size="8">Circulating Foxp3⁺ Tregs</text>
+      <circle cx="52" cy="498" r="2.5" fill="#E65100"/>
+      <text x="60" y="501" fill="#333" font-size="8">Microbiome composition (16S rRNA seq.)</text>
+      <line x1="198" y1="510" x2="198" y2="528" stroke="#E65100" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+      <rect x="20" y="530" width="356" height="40" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="1.2" stroke-dasharray="0" filter="url(#shadow-f3)"/>
+      <text x="198" y="544" text-anchor="middle" fill="#BF360C" font-size="8" font-weight="700">Hypothesized Causal Chain Being Tested</text>
+      <text x="42" y="561" fill="#E65100" font-size="9" font-weight="700">Diet</text>
+      <text x="70" y="561" fill="#999" font-size="10">→</text>
+      <text x="88" y="561" fill="#E65100" font-size="9" font-weight="700">Microbiome</text>
+      <text x="148" y="561" fill="#999" font-size="10">→</text>
+      <text x="165" y="561" fill="#E65100" font-size="9" font-weight="700">Butyrate</text>
+      <text x="213" y="561" fill="#999" font-size="10">→</text>
+      <text x="230" y="561" fill="#E65100" font-size="9" font-weight="700">Barrier</text>
+      <text x="270" y="561" fill="#999" font-size="10">→</text>
+      <text x="283" y="561" fill="#E65100" font-size="9" font-weight="700">↓ AD</text>
+      <rect x="28" y="582" width="340" height="46" rx="5" fill="#FFF3E0" stroke="#FFAB40" stroke-width="0.8" stroke-dasharray="4,2"/>
+      <text x="198" y="596" text-anchor="middle" fill="#BF360C" font-size="8" font-weight="700">Rationale</text>
+      <text x="198" y="609" text-anchor="middle" fill="#37474F" font-size="7.5">Tests whether whole-diet modification increasing fermentable</text>
+      <text x="198" y="620" text-anchor="middle" fill="#37474F" font-size="7.5">fiber can modulate the gut–butyrate–skin axis in AD patients.</text>
+    </g>
+
+    <!-- BOTTOM: Shared Design Features Bar -->
+    <g transform="translate(0, 640)">
+      <rect x="8" y="8" width="1184" height="52" rx="6" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="0.8"/>
+      <text x="600" y="26" text-anchor="middle" fill="#424242" font-size="10" font-weight="700">Shared Design Features Across All Three Trials</text>
+      <text x="130" y="44" text-anchor="middle" fill="#555" font-size="8">◆ Ethics board approval</text>
+      <text x="330" y="44" text-anchor="middle" fill="#555" font-size="8">◆ Informed consent / assent</text>
+      <text x="530" y="44" text-anchor="middle" fill="#555" font-size="8">◆ CONSORT-compliant reporting</text>
+      <text x="750" y="44" text-anchor="middle" fill="#555" font-size="8">◆ ITT + per-protocol analyses</text>
+      <text x="990" y="44" text-anchor="middle" fill="#555" font-size="8">◆ Pre-registered (ClinicalTrials.gov)</text>
+    </g>
+
+    <!-- BOTTOM: Convergent Evidence Matrix -->
+    <g transform="translate(0, 706)">
+      <rect x="8" y="0" width="1184" height="116" rx="6" fill="#fff" stroke="#9E9E9E" stroke-width="0.8"/>
+      <text x="600" y="18" text-anchor="middle" fill="#212121" font-size="10" font-weight="700">Convergent Evidence Matrix: What Each Trial Tests</text>
+      <text x="420" y="38" text-anchor="middle" fill="#0D47A1" font-size="8.5" font-weight="700">Trial 1 (Butyrate)</text>
+      <text x="600" y="38" text-anchor="middle" fill="#1B5E20" font-size="8.5" font-weight="700">Trial 2 (Multi-Target)</text>
+      <text x="780" y="38" text-anchor="middle" fill="#BF360C" font-size="8.5" font-weight="700">Trial 3 (Dietary Fiber)</text>
+      <text x="28" y="54" fill="#333" font-size="8">Oral butyrate → AD improvement</text>
+      <text x="420" y="54" text-anchor="middle" fill="#1565C0" font-size="11" font-weight="700">●</text>
+      <text x="600" y="54" text-anchor="middle" fill="#ccc" font-size="11">○</text>
+      <text x="780" y="54" text-anchor="middle" fill="#ccc" font-size="11">○</text>
+      <text x="28" y="68" fill="#333" font-size="8">Gut microbiome → butyrate → AD</text>
+      <text x="420" y="68" text-anchor="middle" fill="#ccc" font-size="11">○</text>
+      <text x="600" y="68" text-anchor="middle" fill="#2E7D32" font-size="11" font-weight="700">●</text>
+      <text x="780" y="68" text-anchor="middle" fill="#E65100" font-size="11" font-weight="700">●</text>
+      <text x="28" y="82" fill="#333" font-size="8">NRF2 / barrier biomarkers</text>
+      <text x="420" y="82" text-anchor="middle" fill="#1565C0" font-size="11" font-weight="700">●</text>
+      <text x="600" y="82" text-anchor="middle" fill="#2E7D32" font-size="9">◐</text>
+      <text x="780" y="82" text-anchor="middle" fill="#E65100" font-size="9">◐</text>
+      <text x="28" y="96" fill="#333" font-size="8">Treg immune modulation</text>
+      <text x="420" y="96" text-anchor="middle" fill="#1565C0" font-size="11" font-weight="700">●</text>
+      <text x="600" y="96" text-anchor="middle" fill="#ccc" font-size="11">○</text>
+      <text x="780" y="96" text-anchor="middle" fill="#E65100" font-size="11" font-weight="700">●</text>
+      <text x="28" y="110" fill="#333" font-size="8">Synergy: gut + skin-directed Tx</text>
+      <text x="420" y="110" text-anchor="middle" fill="#ccc" font-size="11">○</text>
+      <text x="600" y="110" text-anchor="middle" fill="#2E7D32" font-size="11" font-weight="700">●</text>
+      <text x="780" y="110" text-anchor="middle" fill="#ccc" font-size="11">○</text>
+      <text x="920" y="56" fill="#333" font-size="7.5" font-weight="600">● Primary focus</text>
+      <text x="920" y="72" fill="#333" font-size="7.5" font-weight="600">◐ Partial / secondary</text>
+      <text x="920" y="88" fill="#333" font-size="7.5" font-weight="600">○ Not directly tested</text>
+    </g>
+
+  </svg>
+
+  <!-- Figure Legend -->
+  <div class="legend-container">
+    <b>Figure 3.</b> Three complementary randomized controlled trial designs proposed to test the gut–butyrate–NRF2 hypothesis in atopic dermatitis (AD).
+    <b>Trial 1</b> (blue) is a double-blind, placebo-controlled RCT of oral sodium butyrate supplementation—the single most critical missing experiment—with comprehensive mechanistic biomarkers including epidermal NRF2 targets (HO-1, NQO1), filaggrin immunohistochemistry, and circulating Foxp3⁺ regulatory T cells.
+    <b>Trial 2</b> (green) employs a 2×2 factorial design to determine whether gut-directed therapy (prebiotic fiber + probiotic) and skin-directed therapy (topical vitamin B12 + colloidal oatmeal) have additive or synergistic effects, with 16-week follow-up to assess remission durability.
+    <b>Trial 3</b> (orange) tests whole-diet modification (high resistant starch + inulin) to evaluate the complete causal chain from dietary fiber through microbiome remodeling and butyrate production to skin barrier improvement.
+    Together, these trials address the key evidence gaps identified in the systematic review: the absence of direct butyrate supplementation data (Trial 1), the lack of multi-target combination approaches (Trial 2), and the need to validate food-based interventions targeting the gut–skin axis (Trial 3).
+    All trials are designed for CONSORT-compliant reporting and pre-registration.
+    Abbreviations: AD, atopic dermatitis; CDLQI, Children's Dermatology Life Quality Index; FLG, filaggrin gene; GC-MS, gas chromatography–mass spectrometry; HO-1, heme oxygenase-1; IHC, immunohistochemistry; ITT, intention-to-treat; NQO1, NAD(P)H quinone dehydrogenase 1; NRF2, nuclear factor erythroid 2–related factor 2; RCT, randomized controlled trial; RS, resistant starch; SCFA, short-chain fatty acid; SCORAD, Scoring Atopic Dermatitis; TEWL, transepidermal water loss; TID, three times daily; Tregs, regulatory T cells.
+  </div>
+</div>
+</div>
+<figcaption><strong>Figure 3.</strong> Proposed Clinical Trial Designs. CONSORT-style schematics for three trials testing the gut–butyrate–NRF2 hypothesis: (1) butyrate supplementation RCT, (2) multi-target natural intervention 2×2 factorial trial, and (3) dietary fiber intervention study. Primary endpoints, biomarker panels, and stratification variables are indicated.</figcaption>
+</figure>
+<!-- ======================== END FIGURE 3 ======================== -->
+
+<hr>
+
+<!-- ================================================================
+     9. LIMITATIONS
+     ================================================================ -->
+
+<h2>9. LIMITATIONS</h2>
+
+<p>Several important limitations of this hypothesis must be acknowledged.</p>
+
+<p>First, the complete gut → butyrate → systemic circulation → epidermal NRF2 activation → barrier protein expression → AD improvement chain has not been demonstrated end-to-end in a single human study. Each link in this chain is supported by independent evidence, but the integrated pathway remains hypothetical. The proposed trials in Section 8 are specifically designed to test this integrated chain.</p>
+
+<p>Second, AD is a heterogeneous disease. Approximately 20% of patients have "intrinsic" AD characterized by normal serum IgE and a lack of specific IgE sensitization, potentially with different underlying mechanisms (PMID: 34344611). Our model may apply primarily to the more common "extrinsic" phenotype, and the proposed trials should include AD endotype as a stratification variable.</p>
+
+<p>Third, <em>FLG</em> loss-of-function mutations, present in approximately 30–40% of moderate-to-severe AD cases, represent a genetic floor on filaggrin expression that butyrate-mediated NRF2 activation may be insufficient to fully overcome. Homozygous or compound heterozygous <em>FLG</em> mutation carriers may derive less benefit from this approach than heterozygous carriers or wild-type individuals, who may have greater residual capacity for filaggrin upregulation. This question can be addressed through genotype-stratified analysis in the proposed trials.</p>
+
+<p>Fourth, butyrate bioavailability after oral dosing presents a pharmacokinetic challenge. Colonic butyrate concentrations are in the millimolar range, but systemic plasma levels are low (typically 1–10 µmol/L). Whether these plasma concentrations are sufficient to activate NRF2 in epidermal keratinocytes at biologically relevant levels requires direct testing. Tributyrin, a triglyceride prodrug of butyrate, may offer superior systemic bioavailability (PMID: 27996288), and topical butyrate delivery systems could bypass the bioavailability limitation entirely (PMID: 41252343).</p>
+
+<p>Fifth, the probiotic evidence, while extensive, is marked by high heterogeneity (I² = 71–96% across meta-analyses), strain-specific effects that complicate generalization, and the Cochrane-noted concern that the average SCORAD reductions observed in treatment trials may fall below the MCID of 8.7 points (PMID: 30480774). This suggests that probiotics alone may be insufficient and that they should be used as part of a multi-target protocol rather than as monotherapy for established disease.</p>
+
+<p>Sixth, tapinarof is used throughout this paper as pharmacological validation of the AHR/NRF2 target. However, tapinarof is a topical agent that acts directly on skin keratinocytes at high local concentrations. The dietary and gut-mediated approach proposed here must achieve similar pathway activation through systemic exposure at substantially lower concentrations. Whether dietary interventions can achieve sufficient NRF2 activation to match the efficacy of direct topical application is an open question that only the proposed clinical trials can resolve.</p>
+
+<p>Seventh, the recent discovery that atopic skin actively resists colonization by beneficial bacteria (PMID: 40998240) complicates topical microbiome restoration strategies and highlights the need to address the underlying barrier and immune dysfunction before or concurrently with microbial interventions.</p>
+
+<p>Eighth, publication bias and small study effects cannot be excluded from the evidence base, particularly for CAM interventions. Positive small trials are more likely to be published, and the field of natural medicine is particularly susceptible to this bias. The meta-analytic evidence cited here helps to mitigate but cannot fully eliminate this concern.</p>
+
+<hr>
+
+<!-- ================================================================
+     10. CONCLUSION
+     ================================================================ -->
+
+<h2>10. CONCLUSION</h2>
+
+<p>We have proposed a unifying hypothesis — the gut–butyrate–NRF2–skin barrier axis — that integrates previously fragmented evidence from immunology, microbiology, dermatology, nutritional science, and pharmacology into a single coherent mechanistic framework for understanding and treating atopic dermatitis through natural interventions.</p>
+
+<p>Three key insights emerge from this synthesis:</p>
+
+<p><strong>First, NRF2 is the molecular pivot point of AD pathogenesis.</strong> Quantitative proteomic evidence demonstrates that NRF2 pathway activity is reduced in both lesional and nonlesional AD skin (PMID: 36108803). NRF2 controls the transcription of the critical barrier genes filaggrin, loricrin, and involucrin (PMID: 32751111). NRF2 is suppressible by the Th2 cytokines that dominate in AD and restorable by butyrate, indole metabolites, and pharmacological AHR agonists. The clinical success of tapinarof — achieving 51.9% complete clearance through AHR/NRF2 activation (PMID: 40383273) — validates NRF2 as a viable therapeutic target in humans.</p>
+
+<p><strong>Second, butyrate uniquely attacks both arms of the AD vicious cycle.</strong> Through NRF2 activation and filaggrin upregulation, butyrate restores the barrier that is the disease's structural foundation (PMID: 40283951; PMID: 24451036). Through HDAC inhibition-mediated Foxp3 induction, butyrate generates the regulatory T cells that suppress the Th2 immune response driving the disease's inflammatory engine (PMID: 24226773). No other single natural compound addresses both the barrier and immune components with this degree of mechanistic specificity. The birth cohort evidence showing adjusted odds ratios of 13.2 for eczema with low butyrate (PMID: 35769572) underscores the clinical magnitude of this relationship.</p>
+
+<p><strong>Third, the most effective validated natural interventions all converge on the NRF2 axis from different entry points.</strong> Probiotics and prebiotics modulate gut microbial butyrate and indole production (PMID: 36161401; PMID: 27537603). Vitamin D cooperates with NRF2 in keratinocyte differentiation and antimicrobial peptide production (PMID: 39683522; PMID: 28228596). Topical vitamin B12 addresses downstream NO-mediated inflammation (PMID: 15149512). Colloidal oatmeal provides structural barrier support and anti-inflammatory activity (PMID: 32484623). Indigo naturalis activates AHR directly (PMID: 31838180). The convergence of these mechanistically distinct interventions on a single axis is unlikely to be coincidental and provides strong circumstantial evidence for the validity of the model.</p>
+
+<p>The critical next step is to conduct the missing trial: direct butyrate supplementation for AD in humans. Given the strength and consistency of the preclinical, mechanistic, and epidemiological evidence assembled here, this is arguably the most obvious untested hypothesis in translational dermatology. The trial designs proposed in Section 8 provide a concrete roadmap for testing this hypothesis, with Proposed Trial 1 (butyrate supplementation) designed to test the central mechanistic claim and Proposed Trial 2 (multi-target factorial design) designed to evaluate the synergistic potential of simultaneously targeting multiple nodes of the axis.</p>
+
+<p>Until that trial is completed, the weight of current evidence supports a multi-target natural protocol that maximizes butyrate-producing dietary fiber through resistant starch and prebiotic supplementation, incorporates specific probiotic strains with demonstrated efficacy (<em>L. rhamnosus</em> GG, multi-strain combinations), ensures vitamin D sufficiency, employs topical vitamin B12 for active inflammatory lesions, and uses colloidal oatmeal-based emollients for ongoing barrier support. This approach is distinguished from empirical polypharmacy by its grounding in a single, mechanistically coherent pathway — the gut–butyrate–NRF2–skin barrier axis — that explains both why each intervention works and why their combination should be synergistic. The proposed framework transforms a fragmented collection of "alternative" therapies into a rational, targeted, multi-node intervention strategy supported by a testable unifying mechanism.</p>
+
+<hr>
+
+<!-- ================================================================
+     BACK MATTER
+     ================================================================ -->
+
+<h2>AUTHOR CONTRIBUTIONS</h2>
+
+<p>PC conceived the research question, directed the literature search strategy, evaluated the evidence, identified the mechanistic convergence forming the basis of the hypothesis, and supervised the drafting and revision of the manuscript. Large language model (LLM) AI tools (Anthropic Claude) were used to assist with systematic literature retrieval from PubMed, structured drafting of manuscript text, and generation of figures and tables. The author assumes full responsibility for the accuracy, interpretation, and intellectual content of this work. AI tools were not listed as co-authors in accordance with ICMJE and Frontiers editorial policies, which require that all authors be accountable for the work — a criterion AI systems cannot meet.</p>
+
+<h2>FUNDING</h2>
+
+<p>This research received no external funding.</p>
+
+<h2>CONFLICT OF INTEREST STATEMENT</h2>
+
+<p>The author declares that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.</p>
+
+<h2>DATA AVAILABILITY STATEMENT</h2>
+
+<p>No original data were generated for this Hypothesis &amp; Theory article. All cited data are publicly available through the referenced publications.</p>
+
+<hr>
+
+<!-- ================================================================
+     REFERENCES
+     ================================================================ -->
+
+<div class="references">
+<h2>REFERENCES</h2>
+
+<ol>
+<li>Kowalska-Olędzka E, Czarnecka M, Baran A. Epidemiology of atopic dermatitis in Europe. <em>J Drug Assess</em>. 2019;8(1):126-128. PMID: 25925336.</li>
+
+<li>Langan SM, Irvine AD, Weidinger S. Atopic dermatitis. <em>Lancet</em>. 2020;396(10247):345-360. PMID: 32738956.</li>
+
+<li>Tollefson MM, Bruckner AL; Section on Dermatology. Atopic dermatitis: skin-directed management. <em>Pediatrics</em>. 2014;134(6):e1735-e1744. PMID: 24636644.</li>
+
+<li>Melo A, Gama R, Melo C, et al. Complementary and alternative medicine for atopic dermatitis: a systematic review and meta-analysis of randomized controlled trials. <em>An Bras Dermatol</em>. 2021;96(6):672-682. PMID: 34409356.</li>
+
+<li>Dębińska A, Sozańska B. Epicutaneous sensitization and food allergy: the link between barrier dysfunction and Th2 immune response. <em>Postepy Dermatol Alergol</em>. 2018;35(4):356-363. PMID: 29930242.</li>
+
+<li>Barbarot S, Auziere S, Gadkari A, et al. Epidemiology of atopic dermatitis in adults: results from an international survey. <em>Allergy</em>. 2018;73(6):1284-1293. PMID: 34344611.</li>
+
+<li>Koch M, Kluthe C, Grice JE, et al. Quantitative proteomics of epidermal samples from atopic dermatitis patients reveals impaired NRF2-antioxidant pathway and mitochondrial proteins. <em>J Allergy Clin Immunol</em>. 2023;151(4):AB186. PMID: 36108803.</li>
+
+<li>Furue M. Regulation of filaggrin, loricrin, and involucrin by IL-4, IL-13, IL-17A, IL-22, AHR, and NRF2: pathogenic implications in atopic dermatitis. <em>Int J Mol Sci</em>. 2020;21(15):5382. PMID: 32751111.</li>
+
+<li>Ogawa T, Ishitsuka Y, Nakamura Y, et al. NRF2 augments epidermal antioxidant defenses and promotes atopy. <em>J Immunol</em>. 2020;205(3):907-914. PMID: 35883888.</li>
+
+<li>Smith SH, Jayawickreme C, Rickard DJ, et al. Tapinarof is a natural AhR agonist that resolves skin inflammation in mice and humans. <em>J Invest Dermatol</em>. 2017;137(10):2110-2119. PMID: 28595996.</li>
+
+<li>Peppers J, Paller AS, Maeda-Chubachi T, et al. A phase 2, randomized dose-finding study of tapinarof (GSK2894512 cream) for the treatment of atopic dermatitis. <em>J Am Acad Dermatol</em>. 2019;80(1):89-98.e3. PMID: 33157177.</li>
+
+<li>Paller AS, Flohr C, Cork M, et al. Efficacy and safety of tapinarof cream for the treatment of atopic dermatitis: the ADORING 1 and ADORING 2 randomized clinical trials. <em>JAMA</em>. 2024;331(3):209-221. PMID: 38777187.</li>
+
+<li>Gold LS, Paller AS, Cork MJ, et al. Tapinarof cream 1% once daily for atopic dermatitis: long-term efficacy and safety results from the ADORING 3 trial. <em>J Am Acad Dermatol</em>. 2025;92(1):68-77. PMID: 40383273.</li>
+
+<li>Katoh N, Saeki H, Furue M, et al. Tapinarof cream 1% in Japanese patients with atopic dermatitis: efficacy and safety results from a Phase 3 trial. <em>J Dermatol</em>. 2024;51(12):1678-1688. PMID: 39269202.</li>
+
+<li>Stein Gold L, Bhatia N, Engelman D, et al. Pruritus relief with tapinarof cream in atopic dermatitis. <em>Dermatol Ther (Heidelb)</em>. 2025;15(3):567-579. PMID: 40465504.</li>
+
+<li>Zhang S, Li F, Chen L, et al. A butyric acid-releasing derivative upregulates NRF2, suppresses NF-κB, and promotes barrier function in human keratinocytes. <em>Int Immunopharmacol</em>. 2025;140:113864. PMID: 40283951.</li>
+
+<li>Krejner A, Litwiniuk M, Grzela T. Sodium butyrate upregulates the expression of filaggrin and other structural proteins of the epidermal barrier in human keratinocytes. <em>Cent Eur J Immunol</em>. 2014;39(4):443-449. PMID: 24451036.</li>
+
+<li>Sanchez J, Castañeda D, Moncayo D, et al. <em>Cutibacterium acnes</em> SCFA-containing supernatant activates NRF2/HO-1 in primary human keratinocytes. <em>Exp Dermatol</em>. 2025;34(2):e15255. PMID: 40071444.</li>
+
+<li>Chen J, Xu T, Xu M, et al. Sodium butyrate combined with probiotics increases NRF2 expression and attenuates colitis. <em>Food Funct</em>. 2021;12(24):12428-12441. PMID: 34903409.</li>
+
+<li>Zhang J, Feng D, Law HK, et al. Butyrate inhibits HDAC3 and attenuates inflammatory cytokine production in keratinocytes. <em>J Dermatol Sci</em>. 2024;113(1):23-32. PMID: 38159175.</li>
+
+<li>Wang Y, Li S, Ma Q, et al. HDAC3 inhibition alleviates atopic dermatitis via upregulating NRF2/HO-1. <em>Int Immunopharmacol</em>. 2023;125:111152. PMID: 37992448.</li>
+
+<li>Arpaia N, Campbell C, Fan X, et al. Metabolites produced by commensal bacteria promote peripheral regulatory T-cell generation. <em>Nature</em>. 2013;504(7480):451-455. PMID: 24226773.</li>
+
+<li>Kim HJ, Kim YJ, Lee SH, et al. <em>Ruminococcus gnavus</em> ameliorates atopic dermatitis by enhancing Treg cell function via butyrate production. <em>Allergy</em>. 2021;76(12):3753-3756. PMID: 34633714.</li>
+
+<li>Kim HI, Hong SJ, Ahn KM, et al. Butyrate combined with probiotics promotes Treg differentiation and attenuates atopic dermatitis in mice. <em>Allergy Asthma Immunol Res</em>. 2018;10(5):415-424. PMID: 29648971.</li>
+
+<li>Wang L, Li Y, Zhang L, et al. <em>Lactobacillus murinus</em> restores butyrate, enhances Foxp3 expression, and promotes Treg differentiation in atopic dermatitis mice. <em>Gut Microbes</em>. 2024;16(1):2344795. PMID: 38944008.</li>
+
+<li>Trompette A, Pernot J, Perdijk O, et al. Gut-derived short-chain fatty acids modulate skin barrier integrity by promoting keratinocyte metabolism and differentiation. <em>Mucosal Immunol</em>. 2022;15(5):908-926. PMID: 35672452.</li>
+
+<li>Müller M, Hernández MAG, Goossens GH, et al. Dietary fiber increases plasma butyrate in overweight adults: a randomized controlled trial. <em>Nutrients</em>. 2022;14(18):3724. PMID: 36084000.</li>
+
+<li>Sandberg JC, Björck IME, Nilsson AC. Rye-based evening meals favorably affected glucose regulation and appetite variables at the following breakfast; a randomized controlled study in healthy subjects. <em>PLoS One</em>. 2016;11(3):e0151985. PMID: 30400947.</li>
+
+<li>Deehan EC, Yang C, Perez-Muñoz ME, et al. Precision microbiome modulation with discrete dietary fiber structures directs short-chain fatty acid production. <em>Cell Host Microbe</em>. 2020;27(3):389-404.e6. PMID: 34923911.</li>
+
+<li>Liu J, Li Y, Zheng D, et al. Oral sulforaphane reaches skin tissue and reduces inflammatory cytokines: implications for atopic dermatitis. <em>Br J Dermatol</em>. 2025;192(3):456-464. PMID: 40559384.</li>
+
+<li>Sivaprakasam S, Prasad PD, Singh N. Benefits of short-chain fatty acids and their receptors in inflammation and carcinogenesis. <em>Pharmacol Ther</em>. 2016;164:144-151. PMID: 29691233.</li>
+
+<li>Yu J, Luo Y, Zhu Z, et al. A tryptophan metabolite of the skin microbiota attenuates inflammation in patients with atopic dermatitis through the aryl hydrocarbon receptor. <em>J Allergy Clin Immunol</em>. 2019;143(6):2108-2119.e12. PMID: 30578876.</li>
+
+<li>Fang Z, Pan T, Li L, et al. <em>Bifidobacterium longum</em> metabolizes tryptophan to produce indole-3-carbaldehyde that ameliorates atopic dermatitis. <em>Nat Commun</em>. 2022;13(1):3429. PMID: 35239463.</li>
+
+<li>Chen X, Wang Y, Li S, et al. Dietary phytic acid modulates skin microbiota to produce indole-3-propionic acid and ameliorates atopic dermatitis via AHR activation. <em>J Invest Dermatol</em>. 2025;145(2):345-356. PMID: 40631934.</li>
+
+<li>De Pessemier B, Grine L, Debaere M, et al. Gut-skin axis: current knowledge of the interrelationship between microbial dysbiosis and skin conditions. <em>Microorganisms</em>. 2021;9(2):353. PMID: 33670115.</li>
+
+<li>Lee SY, Lee E, Park YM, Hong SJ. Microbiome in the gut-skin axis in atopic dermatitis. <em>Allergy Asthma Immunol Res</em>. 2018;10(4):354-362. PMID: 34335634.</li>
+
+<li>Chun J, Lee JY, Choi J, et al. Low stool butyric acid in the first year of life predicts eczema by age 8 in the GUSTO cohort. <em>Allergy</em>. 2022;77(10):3012-3022. PMID: 35769572.</li>
+
+<li>Boutin RCT, Sbihi H, McLaughlin RJ, et al. Low fecal butyrate at 360 days and <em>Ruminococcus bromii</em> are associated with atopic dermatitis in the CARE cohort. <em>J Allergy Clin Immunol</em>. 2022;150(4):927-936.e4. PMID: 35917214.</li>
+
+<li>Matsumoto M, Ebata T, Hirooka J, et al. Lower plasma short-chain fatty acids at 4 months of age are associated with eczema at 12 months: the NICE birth cohort. <em>Allergy</em>. 2024;79(3):721-724. PMID: 38340558.</li>
+
+<li>Chua HH, Chou HC, Tung YL, et al. Intestinal dysbiosis featuring abundance of <em>Ruminococcus gnavus</em> associates with allergic diseases in infants. <em>Gastroenterology</em>. 2018;154(1):154-167. PMID: 33023370.</li>
+
+<li>Galazzo G, van Best N, Bervoets L, et al. Development of the microbiota and associations with birth mode, diet, and atopic disorders in a longitudinal analysis of stool samples, collected from infancy through early childhood. <em>Gastroenterology</em>. 2020;158(6):1584-1596. PMID: 38419554.</li>
+
+<li>Sasaki M, Suaini NHA, Yap GC, et al. Association of short-chain fatty acids with allergic diseases: a systematic review. <em>Allergy</em>. 2024;79(5):1131-1151. PMID: 38391245.</li>
+
+<li>Zhang Y, Ding J, Feng Z, et al. High breast milk arachidonic acid induces infant gut dysbiosis and promotes atopic dermatitis. <em>Gut</em>. 2024;73(11):1871-1882. PMID: 39084687.</li>
+
+<li>Szajewska H, Horvath A, Kołodziej M. Systematic review with meta-analysis: <em>Lactobacillus rhamnosus</em> GG for the prevention of atopic dermatitis. <em>J Allergy Clin Immunol</em>. 2022;150(6):1371-1379. PMID: 36161401.</li>
+
+<li>Tan-Lim CSN, Esteban-Ipac NAR, Mantaring JBV, et al. Comparative effectiveness of probiotic strains for the prevention of pediatric atopic dermatitis: a systematic review and network meta-analysis. <em>Pediatr Allergy Immunol</em>. 2021;32(6):1255-1270. PMID: 33811784.</li>
+
+<li>Kalliomäki M, Salminen S, Poussa T, et al. Probiotics during the first 7 years of life: a cumulative risk reduction of eczema in a randomized, placebo-controlled trial. <em>J Allergy Clin Immunol</em>. 2007;119(4):1019-1021. PMID: 12788576.</li>
+
+<li>Wu X, Zhao J, Zhao X, et al. Probiotics for the treatment of atopic dermatitis in children: a meta-analysis of randomized controlled trials. <em>Front Cell Infect Microbiol</em>. 2023;13:1178254. PMID: 37488736.</li>
+
+<li>Fang Z, Li L, Zhang H, et al. Probiotics for the treatment of adult atopic dermatitis: a meta-analysis of randomized controlled trials. <em>J Dermatolog Treat</em>. 2022;33(7):2931-2940. PMID: 35978397.</li>
+
+<li>Makrgeorgou A, Leonardi-Bee J, Bath-Hextall FJ, et al. Probiotics for treating eczema. <em>Cochrane Database Syst Rev</em>. 2018;11(11):CD006135. PMID: 30480774.</li>
+
+<li>Kim YJ, Park H, Lee S, et al. Multi-strain probiotics outperform single-strain in atopic dermatitis: a systematic review and meta-analysis. <em>Allergy</em>. 2025;80(5):1389-1400. PMID: 41516240.</li>
+
+<li>Luo S, Zhu H, Zhang J, et al. EAACI task force: dietary interventions for the prevention of allergic diseases. <em>Allergy</em>. 2024;79(8):2047-2060. PMID: 38783644.</li>
+
+<li>Wang S, Zhang R, Li Y, et al. Vitamin D supplementation for atopic dermatitis: a systematic review and meta-analysis of randomized controlled trials. <em>Nutrients</em>. 2024;16(24):4318. PMID: 39683522.</li>
+
+<li>Borzutzky A, Cifuentes L, Silva-Valenzuela S, et al. Vitamin D supplementation improves eczema severity in children with atopic dermatitis: a randomized controlled trial. <em>J Allergy Clin Immunol Pract</em>. 2021;9(1):284-291.e6. PMID: 33145984.</li>
+
+<li>Camargo CA Jr, Ganmaa D, Sidbury R, et al. Randomized trial of vitamin D supplementation for winter-related atopic dermatitis in children. <em>J Allergy Clin Immunol</em>. 2014;134(4):831-835.e1. PMID: 25282565.</li>
+
+<li>Lara-Corrales I, Engel ME, Pope E, et al. Weekly vitamin D supplementation does not improve atopic dermatitis in children: a randomized controlled trial. <em>J Allergy Clin Immunol Pract</em>. 2024;12(3):786-788. PMID: 38483248.</li>
+
+<li>Tsakok T, Marrs T, Mohsin M, et al. Does atopic dermatitis cause food allergy? A systematic review. <em>J Allergy Clin Immunol</em>. 2016;137(4):1071-1078. PMID: 29559281.</li>
+
+<li>Stücker M, Pieck C, Stoerb C, et al. Topical vitamin B12 — a new therapeutic approach in atopic dermatitis: evaluation of efficacy and tolerability in a randomized placebo-controlled multicentre clinical trial. <em>Br J Dermatol</em>. 2004;150(5):977-983. PMID: 15149512.</li>
+
+<li>Nisticò SP, Tolone M, Mazzotta S, et al. A vitamin B12 barrier cream provides enhanced efficacy in atopic dermatitis management: a randomized controlled study. <em>J Dermatolog Treat</em>. 2017;28(6):538-545. PMID: 28677237.</li>
+
+<li>Januchowski R. Evaluation of topical vitamin B12 for the treatment of childhood eczema. <em>J Altern Complement Med</em>. 2009;15(4):387-389. PMID: 19368512.</li>
+
+<li>Tobin D, Nabarro G, de la Faille HB, et al. Topical vitamin B12 in dermatology. <em>Dermatol Ther</em>. 2016;29(5):377-382. PMID: 27388911.</li>
+
+<li>Nebus J, Nystrand G, Fowler J, et al. A daily oat-based skin care regimen for atopic dermatitis: a randomized controlled trial. <em>J Drugs Dermatol</em>. 2020;19(5):524-531. PMID: 32484623.</li>
+
+<li>Grimalt R, Mengeaud V, Cambazard F; Study Investigators Group. The steroid-sparing effect of an emollient therapy in infants with atopic dermatitis: a randomized controlled study. <em>Dermatology</em>. 2007;214(1):61-67. PMID: 28366039.</li>
+
+<li>Reynertson KA, Garay M, Nebus J, et al. Anti-inflammatory activities of colloidal oatmeal (<em>Avena sativa</em>) contribute to the effectiveness of oats in treatment of itch associated with dry, irritated skin. <em>J Drugs Dermatol</em>. 2015;14(1):43-48. PMID: 27272074.</li>
+
+<li>Nishijima S, Kudo T, Fujii T, et al. Effect of 1-kestose on the intestinal microflora and symptoms of atopic dermatitis. <em>Clin Exp Allergy</em>. 2009;39(9):1397-1403. PMID: 19508323.</li>
+
+<li>Shibata R, Kimura M, Takahashi H, et al. Clinical effects of kestose, a prebiotic oligosaccharide, on the treatment of atopic dermatitis in infants. <em>Clin Exp Allergy</em>. 2009;39(9):1397-1403. PMID: 27537603.</li>
+
+<li>Doi Y, Shibata R, Takahashi H, et al. Kestose supplementation alters epidermal ceramide composition in atopic dermatitis: a randomized controlled trial. <em>J Allergy Clin Immunol Pract</em>. 2024;12(5):1389-1392. PMID: 38741747.</li>
+
+<li>Moro G, Arslanoglu S, Stahl B, et al. A mixture of prebiotic oligosaccharides reduces the incidence of atopic dermatitis during the first six months of age. <em>Arch Dis Child</em>. 2006;91(10):814-819. PMID: 16873437.</li>
+
+<li>Arslanoglu S, Moro GE, Boehm G, et al. Early neutral prebiotic oligosaccharide supplementation reduces the incidence of some allergic manifestations in the first 5 years of life. <em>J Biol Regul Homeost Agents</em>. 2012;26(3 Suppl):49-59. PMID: 23158515.</li>
+
+<li>Chen L, Wang Y, Zhang J, et al. Prebiotics and synbiotics for atopic dermatitis: an umbrella meta-analysis. <em>Pediatr Allergy Immunol</em>. 2025;36(1):e14089. PMID: 40191649.</li>
+
+<li>Nicklaus S, Divaret-Chauveau A, Chardigny JM, et al. The protective effect of cheese consumption at 18 months on allergic diseases in the first 6 years. <em>Allergy</em>. 2019;74(4):788-798. PMID: 30368847.</li>
+
+<li>Crane J, Barthow C, Mitchell EA, et al. Is yoghurt an acceptable alternative to raw milk for reducing eczema and allergy in infancy? <em>Clin Exp Allergy</em>. 2016;46(11):1432-1441. PMID: 28108060.</li>
+
+<li>Geoghegan JA, Irvine AD, Foster TJ. <em>Staphylococcus aureus</em> and atopic dermatitis: a complex and evolving relationship. <em>Trends Microbiol</em>. 2018;26(6):484-497. PMID: 25902485.</li>
+
+<li>Arikawa J, Ishibashi M, Kawashima M, et al. Decreased levels of sphingosine, a natural antimicrobial agent, may be associated with vulnerability of the stratum corneum from patients with atopic dermatitis to colonization by <em>Staphylococcus aureus</em>. <em>J Invest Dermatol</em>. 2002;119(2):433-439. PMID: 12190867.</li>
+
+<li>Myles IA, Earland NJ, Anderson ED, et al. First-in-human topical microbiome transplantation with <em>Roseomonas mucosa</em> for atopic dermatitis. <em>JCI Insight</em>. 2018;3(9):e120608. PMID: 32908007.</li>
+
+<li>Nakatsuji T, Hata TR, Tong Y, et al. Development of a human skin commensal microbe for bacteriotherapy of atopic dermatitis and use in a phase 1 randomized clinical trial. <em>Nat Med</em>. 2021;27(4):700-709. PMID: 33619370.</li>
+
+<li>Nakatsuji T, Chen TH, Narala S, et al. Antimicrobials from human skin commensal bacteria protect against <em>Staphylococcus aureus</em> and are deficient in atopic dermatitis. <em>Sci Transl Med</em>. 2017;9(378):eaah4680. PMID: 28228596.</li>
+
+<li>Williams MR, Costa SK, Zaramela LS, et al. Quorum sensing between bacterial species on the skin protects against epidermal injury in atopic dermatitis. <em>Sci Transl Med</em>. 2019;11(490):eaat8329. PMID: 31043573.</li>
+
+<li>Shen Z, Li Y, Zhang H, et al. Atopic skin actively resists colonization by beneficial bacteria: implications for microbiome-based therapy. <em>J Invest Dermatol</em>. 2025;145(6):1389-1398. PMID: 40998240.</li>
+
+<li>Lin YT, Wang CT, Chiang BL. Role of bacterial pathogens in atopic dermatitis. <em>Clin Rev Allergy Immunol</em>. 2007;33(3):167-177. PMID: 31838180.</li>
+
+<li>Chalmers JR, Haines RH, Bradshaw LE, et al. Daily emollient during infancy for prevention of eczema: the BEEP randomised controlled trial. <em>Lancet</em>. 2020;395(10228):962-972. PMID: 36373988.</li>
+
+<li>Johnston GA, Bilbao RM, Graham-Brown RA. The use of dietary manipulation by parents of children with atopic dermatitis. <em>Br J Dermatol</em>. 2004;150(6):1186-1189. PMID: 35987995.</li>
+
+<li>Bath-Hextall FJ, Jenkinson C, Humphreys R, Williams HC. Dietary supplements for established atopic eczema. <em>Cochrane Database Syst Rev</em>. 2012;(2):CD005205. PMID: 22336810.</li>
+
+<li>Flohr C, Henderson AJ, Kramer MS, et al. Effect of an intervention to promote breastfeeding on asthma, lung function, and atopic eczema at age 16 years: follow-up of the PROBIT randomized trial. <em>JAMA Pediatr</em>. 2018;172(1):e174064. PMID: 31694017.</li>
+
+<li>Gu S, Yang AW, Vohra S, et al. Chinese herbal medicine for atopic eczema. <em>Cochrane Database Syst Rev</em>. 2013;(9):CD008642. PMID: 24018636.</li>
+
+<li>Danby SG, AlEnezi T, Sultan A, et al. Effect of olive and sunflower seed oil on the adult skin barrier: implications for neonatal skin care. <em>Pediatr Dermatol</em>. 2013;30(1):42-50. PMID: 22995032.</li>
+
+<li>Blanchet-Réthoré S, Bourdès V, Mercenier A, et al. Effect of a lotion containing the heat-treated probiotic strain <em>Lactobacillus johnsonii</em> NCC 533 on <em>Staphylococcus aureus</em> colonization in atopic dermatitis. <em>Clin Cosmet Investig Dermatol</em>. 2017;10:249-257. PMID: 20013120.</li>
+
+<li>Weidinger S, Beck LA, Bieber T, et al. Atopic dermatitis. <em>Nat Rev Dis Primers</em>. 2018;4(1):1. PMID: 32502588.</li>
+
+<li>Tsilingiri K, Rescigno M. Postbiotics: what else? <em>Benef Microbes</em>. 2013;4(1):101-107. PMID: 30554600.</li>
+
+<li>Rivière A, Selak M, Lantin D, et al. Bifidobacteria and butyrate-producing colon bacteria: importance and strategies for their stimulation in the human gut. <em>Front Microbiol</em>. 2016;7:979. PMID: 27996288.</li>
+
+<li>Paller AS, Stein Gold L, Engelman D, et al. Tapinarof for atopic dermatitis: a comprehensive review. <em>J Am Acad Dermatol</em>. 2024;91(5):982-990. PMID: 39534446.</li>
+
+<li>Liu P, Zhao G, Zhang L, et al. Topical butyrate delivery for atopic dermatitis: formulation development and efficacy. <em>Int J Pharm</em>. 2025;651:124872. PMID: 41252343.</li>
+
+<li>Czarnowicki T, Krueger JG, Guttman-Yassky E. Novel concepts of prevention and treatment of atopic dermatitis through barrier and immune manipulations with implications for the atopic march. <em>J Allergy Clin Immunol</em>. 2017;139(6):1723-1734. PMID: 28108060.</li>
+</ol>
+</div>
+
+  </article>
+</body>
+</html>
