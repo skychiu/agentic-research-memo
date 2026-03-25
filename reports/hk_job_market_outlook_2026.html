@@ -733,7 +733,7 @@ const T = {
   }
 };
 
-function setLang(lang) {
+function setLang(lang, pushState = true) {
   document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
   document.title = T[lang]['page-title'];
   for (const [id, html] of Object.entries(T[lang])) {
@@ -743,7 +743,17 @@ function setLang(lang) {
   }
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  if (pushState) {
+    const url = new URL(location.href);
+    if (lang === 'en') url.searchParams.delete('lang');
+    else url.searchParams.set('lang', lang);
+    history.pushState(null, '', url);
+  }
 }
+
+// Apply language from URL on load
+const initLang = new URL(location.href).searchParams.get('lang');
+if (initLang === 'zh') setLang('zh', false);
 </script>
 
 </body>
