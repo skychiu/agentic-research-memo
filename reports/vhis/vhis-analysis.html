@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXA vs AIA VHIS Comparison</title>
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-light: #eff6ff;
+      --green: #15803d;
+      --green-bg: #f0fdf4;
+      --red: #b91c1c;
+      --red-bg: #fef2f2;
+      --yellow-bg: #fffbeb;
+      --yellow-border: #f59e0b;
+      --radius: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang HK', 'Noto Sans HK', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 48px;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+
+    /* Language Toggle */
+    .lang-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+    .lang-toggle {
+      display: flex;
+      background: var(--border);
+      border-radius: 24px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-toggle button {
+      border: none;
+      background: transparent;
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+    .lang-toggle button.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    /* Sticky floating toggle */
+    .lang-float {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-radius: 24px;
+    }
+
+    /* Content sections */
+    .lang-en, .lang-zh { display: block; }
+
+    /* Header */
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+
+    /* Alert box */
+    .alert {
+      background: var(--yellow-bg);
+      border: 1px solid var(--yellow-border);
+      border-left: 4px solid var(--yellow-border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+    .alert strong { color: #92400e; }
+
+    /* Section */
+    section { margin-bottom: 32px; }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--border);
+    }
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 16px 0 8px;
+      color: var(--accent);
+    }
+    p { margin-bottom: 10px; font-size: 0.95rem; }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      font-size: 0.875rem;
+    }
+    thead th {
+      background: #f3f4f6;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+    tbody td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #f9fafb; }
+    .col-feature { color: var(--text-muted); font-size: 0.82rem; }
+    .yes { color: var(--green); font-weight: 500; }
+    .no  { color: var(--red);   font-weight: 500; }
+
+    /* Verdict */
+    .verdict {
+      background: var(--accent-light);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+    }
+    .verdict h2 {
+      border-bottom-color: #bfdbfe;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .verdict p { font-size: 0.93rem; }
+
+    /* Action plan */
+    .action ol {
+      padding-left: 20px;
+      font-size: 0.93rem;
+    }
+    .action li { margin-bottom: 6px; }
+
+    /* Where AXA wins */
+    .axa-wins {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .axa-wins h3 { color: #374151; }
+
+    /* Footer */
+    footer {
+      margin-top: 32px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+
+  <!-- ══════════════════════════════════════════ ENGLISH ══════════════════════════════════════════ -->
+  <div class="lang-en">
+    <h1>AXA WiseGuard Pro vs AIA Privilege Ultra</h1>
+    <p class="subtitle">VHIS Comparison for a 35-Year-Old Woman Planning a Family</p>
+
+    <div class="alert">
+      <strong>⚠️ Critical Difference: Pregnancy Coverage</strong><br>
+      This is the single most important differentiator for your situation.
+    </div>
+
+    <section>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>AXA WiseGuard Pro</th>
+              <th>AIA Privilege Ultra</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-feature">Pregnancy complications</td>
+              <td class="no">❌ Fully excluded — all maternity conditions and their complications are excluded</td>
+              <td class="yes">✅ Fully covered after a 300-day waiting period</td>
+            </tr>
+            <tr>
+              <td class="col-feature">Normal delivery / maternity</td>
+              <td class="no">❌ Excluded</td>
+              <td class="no">❌ Excluded</td>
+            </tr>
+            <tr>
+              <td class="col-feature">Abortion / miscarriage</td>
+              <td class="no">❌ Excluded</td>
+              <td class="no">❌ Excluded</td>
+            </tr>
+            <tr>
+              <td class="col-feature">Infertility / IVF</td>
+              <td class="no">❌ Excluded</td>
+              <td class="no">❌ Excluded</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px; font-size:0.87rem; color:#374151;">
+        AXA's exclusion #8 blankets <strong>all</strong> maternity conditions including complications — ectopic pregnancy, pre-eclampsia, placenta praevia, emergency C-section due to complications, etc. would all be excluded.<br><br>
+        AIA explicitly carves out an exception: the <strong>Pregnancy Complications Benefit</strong> (item II(n)) provides full cover for hospital confinement and surgical procedures arising from pregnancy complications — after a <strong>300-day waiting period</strong>.
+      </p>
+      <div class="alert" style="margin-top:12px; margin-bottom:0;">
+        <strong>→ Action:</strong> If you're planning to start a family, buy the AIA plan at least 10 months before you intend to conceive to ensure the 300-day waiting period passes.
+      </div>
+    </section>
+
+    <section>
+      <h2>Plan Structure</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Feature</th><th>AXA WiseGuard Pro</th><th>AIA Privilege Ultra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="col-feature">Plan tiers</td><td>4 benefit levels (Regular → Noble)</td><td>2 geographic options (Asia / Worldwide excl. US)</td></tr>
+            <tr><td class="col-feature">Room type</td><td>General ward → Standard private (by tier)</td><td>Semi-private (HK/Macau/China); Standard private (elsewhere)</td></tr>
+            <tr><td class="col-feature">Geographic coverage</td><td>Greater China → Worldwide excl. US (by tier)</td><td>Asia or Worldwide excl. US (by choice)</td></tr>
+            <tr><td class="col-feature">Annual limit</td><td>HKD 5M–40M (by tier)</td><td><strong>HKD 12M</strong> (all options)</td></tr>
+            <tr><td class="col-feature">Lifetime limit</td><td class="yes"><strong>Nil (no lifetime limit)</strong> ✅</td><td>HKD 60M</td></tr>
+            <tr><td class="col-feature">Deductible options</td><td>HKD 0 / 20,000 / 50,000</td><td>HKD 0 / 16,000 / 25,000 / 50,000</td></tr>
+            <tr><td class="col-feature">Renewal guarantee</td><td>To age 100</td><td class="yes"><strong>Lifetime</strong> (no age cap) ✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Premium Comparison at Age 35 (Annual, HKD)</h2>
+      <h3>Nil Deductible</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Annual Premium</th></tr></thead>
+          <tbody>
+            <tr><td>AXA <strong>Enhance</strong> (semi-private, Asia)</td><td><strong>HKD 15,509</strong></td></tr>
+            <tr><td>AIA <strong>Asia</strong> (semi-private in HK, private elsewhere)</td><td><strong>HKD 19,288</strong></td></tr>
+            <tr><td>AXA <strong>Noble</strong> (private, worldwide excl. US)</td><td><strong>HKD 22,821</strong></td></tr>
+            <tr><td>AIA <strong>Worldwide excl. US</strong></td><td><strong>HKD 21,216</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>HKD 50,000 Deductible</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Annual Premium</th></tr></thead>
+          <tbody>
+            <tr><td>AXA <strong>Enhance</strong> (semi-private, Asia)</td><td><strong>HKD 4,810</strong></td></tr>
+            <tr><td>AIA <strong>Asia</strong></td><td><strong>HKD 5,984</strong></td></tr>
+            <tr><td>AXA <strong>Noble</strong> (worldwide excl. US)</td><td><strong>HKD 11,928</strong></td></tr>
+            <tr><td>AIA <strong>Worldwide excl. US</strong></td><td><strong>HKD 6,584</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:10px; font-size:0.87rem;">AXA is generally cheaper at equivalent coverage tiers, but AIA offers more deductible granularity (HKD 16,000 and 25,000 options). AIA also has an add-on plan option (attached to an existing AIA life policy) that reduces premiums by ~13%.</p>
+    </section>
+
+    <section>
+      <h2>Benefits Comparison</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Benefit</th><th>AXA WiseGuard Pro</th><th>AIA Privilege Ultra</th></tr></thead>
+          <tbody>
+            <tr><td class="col-feature">Room &amp; board</td><td>Full cover</td><td>Full cover</td></tr>
+            <tr><td class="col-feature">Surgeon's fees</td><td>Full cover</td><td>Full cover</td></tr>
+            <tr><td class="col-feature">ICU</td><td>Full cover</td><td>Full cover</td></tr>
+            <tr><td class="col-feature">Cancer treatments</td><td>Full cover</td><td>Full cover</td></tr>
+            <tr><td class="col-feature">Diagnostic imaging (CT/MRI/PET)</td><td>Full cover</td><td>Full cover</td></tr>
+            <tr><td class="col-feature">Pregnancy complications</td><td class="no">❌ Excluded</td><td class="yes">✅ Full cover (300-day wait)</td></tr>
+            <tr><td class="col-feature">TCM outpatient</td><td class="no">❌ Excluded</td><td class="yes">✅ HKD 600/visit, max 15 visits</td></tr>
+            <tr><td class="col-feature">Phase 3 clinical trial drugs</td><td class="no">❌ Not available</td><td class="yes">✅ HKD 500K/year</td></tr>
+            <tr><td class="col-feature">Stroke rehabilitation</td><td class="no">❌ Not available</td><td class="yes">✅ Home facility + ancillary + disability subsidy</td></tr>
+            <tr><td class="col-feature">Lifestage check-up</td><td>Noble only: HKD 2K/year</td><td class="yes">✅ 1 per 3 years (all tiers)</td></tr>
+            <tr><td class="col-feature">Emergency dental</td><td class="no">❌ Excluded</td><td class="yes">✅ Fully covered</td></tr>
+            <tr><td class="col-feature">Private nursing</td><td>Noble only</td><td class="yes">✅ All tiers (max 30 days/year)</td></tr>
+            <tr><td class="col-feature">Post-discharge follow-up</td><td>Up to 90 days (180 for major surgery)</td><td class="yes">Up to 90 days (365 for major surgery) ✅</td></tr>
+            <tr><td class="col-feature">No claim discount</td><td class="yes">✅ Up to 15%</td><td class="no">❌ Not available</td></tr>
+            <tr><td class="col-feature">Wellness premium rebate</td><td>AXA Goal: up to 20%</td><td>AIA Vitality: 10% discount</td></tr>
+            <tr><td class="col-feature">No lifetime cap</td><td class="yes">✅</td><td class="no">❌ (HKD 60M lifetime)</td></tr>
+            <tr><td class="col-feature">Home nursing</td><td>90 days/year</td><td class="yes">196 days/year ✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pre-Existing Conditions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>AXA</th><th>AIA</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="col-feature">Unknown pre-existing conditions</td>
+              <td class="yes"><strong>Covered immediately</strong> (no waiting period) ✅</td>
+              <td>Covered from <strong>31st day</strong> of 1st policy year</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Discount Programmes</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>AXA</th><th>AIA</th></tr></thead>
+          <tbody>
+            <tr><td class="col-feature">No-claim discount</td><td>Up to <strong>15%</strong> off (5+ claim-free years)</td><td class="no">Not available</td></tr>
+            <tr><td class="col-feature">Wellness/activity rebate</td><td>AXA Goal: up to <strong>20%</strong> (walk 10K steps/day)</td><td>AIA Vitality: <strong>10%</strong> (requires membership fee)</td></tr>
+            <tr><td class="col-feature"><strong>Maximum potential savings</strong></td><td class="yes"><strong>Up to 35%</strong> combined</td><td><strong>10%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="verdict">
+      <h2>🏆 Verdict: AIA Privilege Ultra is the better choice</h2>
+      <p>For a 35-year-old woman planning to start a family, the <strong>AIA Privilege Ultra</strong> is the clear winner, despite being somewhat more expensive.</p>
+
+      <h3>1. Pregnancy Complications Coverage Is the Dealbreaker</h3>
+      <p>AIA covers pregnancy complications (ectopic pregnancy, pre-eclampsia, placenta praevia, HELLP syndrome, emergency C-section, etc.) in full after a 300-day waiting period. AXA excludes all maternity conditions and their complications entirely. Given that roughly 8–15% of pregnancies involve some form of complication, this single benefit alone can save tens or even hundreds of thousands of HKD.</p>
+
+      <h3>2. Broader Benefits Out-of-the-Box</h3>
+      <p>AIA includes TCM outpatient visits, Phase 3 clinical trial drugs, emergency dental, and private nursing on all plan tiers — not just the top tier.</p>
+
+      <h3>3. Longer Post-Surgery Follow-Up</h3>
+      <p>AIA allows 365 days of follow-up outpatient care after major surgery (vs. 180 days for AXA).</p>
+
+      <h3>4. Lifetime Guaranteed Renewal</h3>
+      <p>AIA's renewal is guaranteed for life with no age cap, versus AXA's age-100 limit.</p>
+
+      <div class="axa-wins">
+        <h3>Where AXA Wins</h3>
+        <p style="font-size:0.9rem; color:#374151;">AXA offers no lifetime benefit cap, lower base premiums, more generous discount programmes (up to 35%), and immediate coverage of unknown pre-existing conditions. If pregnancy were not a factor, AXA would be highly competitive.</p>
+      </div>
+    </div>
+
+    <section class="action">
+      <h2>💡 Action Plan</h2>
+      <ol>
+        <li><strong>Apply for AIA Privilege Ultra now</strong> — the 300-day pregnancy complications waiting period starts on the policy effective date, so time is important.</li>
+        <li>Choose the <strong>Asia geographic cover</strong> unless you plan to deliver overseas (outside Asia).</li>
+        <li>Consider the <strong>HKD 25,000 deductible</strong> option (HKD 7,664/year) as a good balance between premium savings and out-of-pocket exposure.</li>
+        <li>Join <strong>AIA Vitality</strong> for an instant 10% premium discount in Year 1.</li>
+        <li>Budget at least <strong>HKD 7,000–19,000/year</strong> depending on your deductible choice.</li>
+      </ol>
+    </section>
+
+    <footer>
+      Sources: AXA WiseGuard Pro Product Brochure &amp; Premium Table; AIA Privilege Ultra Product Brochure &amp; Premium Table
+    </footer>
+  </div><!-- /lang-en -->
+
+
+  <!-- ══════════════════════════════════════════ CHINESE ══════════════════════════════════════════ -->
+  <div class="lang-zh" style="display:none;">
+    <h1>AXA 智醫傳 Pro 對比 AIA 優越保 Ultra</h1>
+    <p class="subtitle">自願醫保計劃比較 — 為計劃成家的35歲女性而設</p>
+
+    <div class="alert">
+      <strong>⚠️ 關鍵分別：懷孕保障</strong><br>
+      這是針對您情況最重要的一項分別。
+    </div>
+
+    <section>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>AXA 智醫傳 Pro</th>
+              <th>AIA 優越保 Ultra</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-feature">懷孕併發症</td>
+              <td class="no">❌ 完全不保 — 所有產科情況及其併發症均不獲保障</td>
+              <td class="yes">✅ 等候期300天後，全額保障</td>
+            </tr>
+            <tr>
+              <td class="col-feature">正常分娩 / 產科</td>
+              <td class="no">❌ 不保</td>
+              <td class="no">❌ 不保</td>
+            </tr>
+            <tr>
+              <td class="col-feature">人工流產 / 流產</td>
+              <td class="no">❌ 不保</td>
+              <td class="no">❌ 不保</td>
+            </tr>
+            <tr>
+              <td class="col-feature">不育 / 試管嬰兒</td>
+              <td class="no">❌ 不保</td>
+              <td class="no">❌ 不保</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px; font-size:0.87rem; color:#374151;">
+        AXA 第8項不保事項涵蓋<strong>所有</strong>產科情況及其併發症——宮外孕、子癇前症、前置胎盤、因併發症進行的緊急剖腹產等，一概不保。<br><br>
+        AIA 則設有例外條款：<strong>懷孕併發症保障</strong>（條款 II(n)）於<strong>300天等候期</strong>過後，全額承保因懷孕併發症引起的住院及手術費用。
+      </p>
+      <div class="alert" style="margin-top:12px; margin-bottom:0;">
+        <strong>→ 建議：</strong>如您計劃懷孕，請至少在預計受孕前10個月購買 AIA 計劃，以確保等候期已過。
+      </div>
+    </section>
+
+    <section>
+      <h2>計劃結構比較</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>項目</th><th>AXA 智醫傳 Pro</th><th>AIA 優越保 Ultra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="col-feature">計劃級別</td><td>4個保障級別（Regular → Noble）</td><td>2個地區選項（亞洲 / 環球（美國除外））</td></tr>
+            <tr><td class="col-feature">病房類型</td><td>普通病房 → 標準私家病房（按級別）</td><td>半私家病房（香港/澳門/中國）；標準私家病房（其他地區）</td></tr>
+            <tr><td class="col-feature">地區保障範圍</td><td>大中華地區 → 環球（美國除外）（按級別）</td><td>亞洲或環球（美國除外）（自選）</td></tr>
+            <tr><td class="col-feature">每年保障上限</td><td>500萬至4,000萬港元（按級別）</td><td><strong>1,200萬港元</strong>（所有選項）</td></tr>
+            <tr><td class="col-feature">終身保障上限</td><td class="yes"><strong>無終身上限</strong> ✅</td><td>6,000萬港元</td></tr>
+            <tr><td class="col-feature">墊底費選項</td><td>0 / 20,000 / 50,000港元</td><td>0 / 16,000 / 25,000 / 50,000港元</td></tr>
+            <tr><td class="col-feature">續保保證</td><td>保證續保至100歲</td><td class="yes"><strong>終身</strong>保證續保（無年齡上限）✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>35歲保費比較（每年，港元）</h2>
+      <h3>零墊底費</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>計劃</th><th>年繳保費</th></tr></thead>
+          <tbody>
+            <tr><td>AXA <strong>Enhance</strong>（半私家病房，亞洲）</td><td><strong>15,509港元</strong></td></tr>
+            <tr><td>AIA <strong>亞洲</strong>（香港半私家，其他地區私家）</td><td><strong>19,288港元</strong></td></tr>
+            <tr><td>AXA <strong>Noble</strong>（私家病房，環球除美國）</td><td><strong>22,821港元</strong></td></tr>
+            <tr><td>AIA <strong>環球（美國除外）</strong></td><td><strong>21,216港元</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>50,000港元墊底費</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>計劃</th><th>年繳保費</th></tr></thead>
+          <tbody>
+            <tr><td>AXA <strong>Enhance</strong>（半私家，亞洲）</td><td><strong>4,810港元</strong></td></tr>
+            <tr><td>AIA <strong>亞洲</strong></td><td><strong>5,984港元</strong></td></tr>
+            <tr><td>AXA <strong>Noble</strong>（環球除美國）</td><td><strong>11,928港元</strong></td></tr>
+            <tr><td>AIA <strong>環球（美國除外）</strong></td><td><strong>6,584港元</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:10px; font-size:0.87rem;">在同等保障級別下，AXA 的保費普遍較低，但 AIA 提供更多墊底費選項（16,000及25,000港元），且可附加於現有AIA人壽保單，保費可減約13%。</p>
+    </section>
+
+    <section>
+      <h2>保障項目比較</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>保障項目</th><th>AXA 智醫傳 Pro</th><th>AIA 優越保 Ultra</th></tr></thead>
+          <tbody>
+            <tr><td class="col-feature">病房及膳食費</td><td>全額保障</td><td>全額保障</td></tr>
+            <tr><td class="col-feature">外科醫生費用</td><td>全額保障</td><td>全額保障</td></tr>
+            <tr><td class="col-feature">深切治療部</td><td>全額保障</td><td>全額保障</td></tr>
+            <tr><td class="col-feature">癌症治療</td><td>全額保障</td><td>全額保障</td></tr>
+            <tr><td class="col-feature">影像診斷（CT/MRI/PET）</td><td>全額保障</td><td>全額保障</td></tr>
+            <tr><td class="col-feature">懷孕併發症</td><td class="no">❌ 不保</td><td class="yes">✅ 全額保障（等候期300天）</td></tr>
+            <tr><td class="col-feature">中醫門診</td><td class="no">❌ 不保</td><td class="yes">✅ 每次600港元，最多15次</td></tr>
+            <tr><td class="col-feature">第三期臨床試驗藥物</td><td class="no">❌ 不提供</td><td class="yes">✅ 每年500,000港元</td></tr>
+            <tr><td class="col-feature">中風復康</td><td class="no">❌ 不提供</td><td class="yes">✅ 家居設施 + 輔助護理 + 傷殘補助</td></tr>
+            <tr><td class="col-feature">人生階段體檢</td><td>Noble級別：每年2,000港元</td><td class="yes">✅ 每3年1次（所有級別）</td></tr>
+            <tr><td class="col-feature">緊急牙科</td><td class="no">❌ 不保</td><td class="yes">✅ 全額保障</td></tr>
+            <tr><td class="col-feature">私人護理</td><td>僅Noble級別</td><td class="yes">✅ 所有級別（最多30天/年）</td></tr>
+            <tr><td class="col-feature">出院後覆診</td><td>最多90天（大手術180天）</td><td class="yes">最多90天（大手術365天）✅</td></tr>
+            <tr><td class="col-feature">無索償折扣</td><td class="yes">✅ 最多15%</td><td class="no">❌ 不提供</td></tr>
+            <tr><td class="col-feature">健康保費回贈</td><td>AXA Goal：最多20%</td><td>AIA Vitality：10%折扣</td></tr>
+            <tr><td class="col-feature">無終身保障上限</td><td class="yes">✅</td><td class="no">❌（6,000萬港元終身上限）</td></tr>
+            <tr><td class="col-feature">家居護理</td><td>每年90天</td><td class="yes">每年196天 ✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>已有病症保障</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>AXA</th><th>AIA</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="col-feature">未知的已有病症</td>
+              <td class="yes"><strong>即時保障</strong>（無等候期）✅</td>
+              <td>第1保單年第<strong>31天</strong>起保障</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>折扣計劃</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>AXA</th><th>AIA</th></tr></thead>
+          <tbody>
+            <tr><td class="col-feature">無索償折扣</td><td>最多<strong>15%</strong>（連續5年或以上無索償）</td><td class="no">不提供</td></tr>
+            <tr><td class="col-feature">健康活動回贈</td><td>AXA Goal：最多<strong>20%</strong>（每日行10,000步）</td><td>AIA Vitality：<strong>10%</strong>（需繳付會員費）</td></tr>
+            <tr><td class="col-feature"><strong>最高總節省</strong></td><td class="yes"><strong>最多35%</strong>合計</td><td><strong>10%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="verdict">
+      <h2>🏆 結論：AIA 優越保 Ultra 是更佳選擇</h2>
+      <p>對於一位35歲、計劃成家的女性，<strong>AIA 優越保 Ultra</strong> 是明顯較佳的選擇，儘管保費略高。</p>
+
+      <h3>1. 懷孕併發症保障是決定性因素</h3>
+      <p>AIA 在300天等候期後，全額保障懷孕併發症（宮外孕、子癇前症、前置胎盤、HELLP綜合症、緊急剖腹產等）。而 AXA 則完全不保所有產科情況及其併發症。考慮到約8至15%的懷孕個案會出現某種形式的併發症，僅此一項保障已可節省數萬甚至數十萬港元。</p>
+
+      <h3>2. 更全面的基本保障</h3>
+      <p>AIA 在<strong>所有</strong>計劃級別均涵蓋中醫門診、第三期臨床試驗藥物、緊急牙科及私人護理，並非只限頂級計劃。</p>
+
+      <h3>3. 更長的術後覆診期</h3>
+      <p>AIA 大手術後的門診覆診期最長365天，而 AXA 僅為180天。</p>
+
+      <h3>4. 終身保證續保</h3>
+      <p>AIA 終身保證續保，無年齡上限，而 AXA 則以100歲為限。</p>
+
+      <div class="axa-wins">
+        <h3>AXA 的優勝之處</h3>
+        <p style="font-size:0.9rem; color:#374151;">AXA 無終身保障上限、基本保費較低、折扣計劃更優厚（最多35%），且即時保障未知的已有病症。若懷孕並非考慮因素，AXA 極具競爭力。</p>
+      </div>
+    </div>
+
+    <section class="action">
+      <h2>💡 行動建議</h2>
+      <ol>
+        <li><strong>立即申請 AIA 優越保 Ultra</strong>——懷孕併發症300天等候期由保單生效日起計，時間至關重要。</li>
+        <li>選擇<strong>亞洲地區保障</strong>，除非您計劃在亞洲以外地區分娩。</li>
+        <li>考慮選擇<strong>25,000港元墊底費</strong>選項（年繳保費約7,664港元），在保費節省與自付費用之間取得平衡。</li>
+        <li>加入 <strong>AIA Vitality</strong>，在第1年即享10%保費折扣。</li>
+        <li>根據您選擇的墊底費，每年預算至少<strong>7,000至19,000港元</strong>。</li>
+      </ol>
+    </section>
+
+    <footer>
+      資料來源：AXA 智醫傳 Pro 產品小冊子及保費表；AIA 優越保 Ultra 產品小冊子及保費表
+    </footer>
+  </div><!-- /lang-zh -->
+
+</div><!-- /container -->
+
+<!-- Floating sticky toggle (appears once user scrolls past the inline one) -->
+<div class="lang-toggle lang-float" id="lang-float">
+  <button id="fbtn-en" class="active" onclick="setLang('en')">English</button>
+  <button id="fbtn-zh" onclick="setLang('zh')">中文</button>
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelector('.lang-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelector('.lang-zh').style.display = lang === 'zh' ? 'block' : 'none';
+    document.getElementById('fbtn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('fbtn-zh').classList.toggle('active', lang === 'zh');
+    document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en';
+  }
+
+</script>
+</body>
+</html>
