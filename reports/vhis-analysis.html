@@ -602,8 +602,12 @@
     document.getElementById('fbtn-en').classList.toggle('active', lang === 'en');
     document.getElementById('fbtn-zh').classList.toggle('active', lang === 'zh');
     document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en';
+    const url = new URL(location.href);
+    lang === 'en' ? url.searchParams.delete('lang') : url.searchParams.set('lang', lang);
+    history.replaceState(null, '', url);
   }
 
+  if (new URLSearchParams(location.search).get('lang') === 'zh') setLang('zh');
 </script>
 </body>
 </html>
