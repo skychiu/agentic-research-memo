@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VHIS Plan Comparison — 35-Year-Old Woman Planning a Family</title>
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --gold: #f59e0b;
+    --silver: #94a3b8;
+    --bronze: #d97706;
+    --green: #059669;
+    --red: #dc2626;
+    --border: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'Noto Sans SC', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 80px; }
+
+  /* Language Toggle */
+  #lang-toggle {
+    position: fixed; top: 18px; right: 18px; z-index: 9999;
+    background: var(--accent); color: #fff;
+    border: none; border-radius: 24px;
+    padding: 8px 18px; font-size: 14px; font-weight: 600;
+    cursor: pointer; box-shadow: var(--shadow-lg);
+    transition: background 0.2s, transform 0.15s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  #lang-toggle:hover { background: #1d4ed8; transform: scale(1.04); }
+  #lang-toggle .icon { font-size: 16px; }
+
+  /* Header */
+  .header { text-align: center; padding: 48px 0 32px; }
+  .header h1 { font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .header .subtitle { font-size: 16px; color: var(--text-secondary); }
+
+  /* Executive Summary */
+  .exec-summary {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff; border-radius: var(--radius); padding: 32px 36px;
+    margin-bottom: 32px; box-shadow: var(--shadow-lg);
+  }
+  .exec-summary h2 { font-size: 22px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .exec-summary p { margin-bottom: 14px; line-height: 1.8; opacity: 0.95; font-size: 15px; }
+  .exec-summary strong { color: #fbbf24; }
+  .exec-summary .pick-box {
+    background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px; padding: 16px 20px; margin-top: 18px;
+  }
+  .exec-summary .pick-box .medal { font-size: 22px; }
+
+  /* Section */
+  .section { margin-bottom: 28px; }
+  .section-card {
+    background: var(--card-bg); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 28px 32px; margin-bottom: 24px;
+    border: 1px solid var(--border);
+  }
+  .section-card h2 {
+    font-size: 20px; font-weight: 700; margin-bottom: 16px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--accent-light);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-card h3 { font-size: 16px; font-weight: 700; margin: 18px 0 10px; color: var(--accent); }
+  .section-card p { margin-bottom: 12px; color: var(--text-secondary); }
+  .section-card ul { padding-left: 20px; margin-bottom: 12px; }
+  .section-card li { margin-bottom: 6px; color: var(--text-secondary); }
+
+  /* Note / Callout */
+  .callout {
+    background: #fffbeb; border-left: 4px solid var(--gold);
+    padding: 14px 18px; border-radius: 0 8px 8px 0;
+    margin: 16px 0; font-size: 14px; color: #92400e;
+  }
+  .callout.blue {
+    background: var(--accent-light); border-left-color: var(--accent); color: #1e40af;
+  }
+  .callout.green {
+    background: #ecfdf5; border-left-color: var(--green); color: #065f46;
+  }
+  .callout.red {
+    background: #fef2f2; border-left-color: var(--red); color: #991b1b;
+  }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin: 14px 0; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+    border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+  thead th {
+    background: #f1f5f9; font-weight: 700; text-align: left;
+    padding: 10px 14px; border-bottom: 2px solid var(--border);
+    white-space: nowrap; font-size: 13px; color: var(--text);
+  }
+  tbody td {
+    padding: 9px 14px; border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #f8fafc; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .highlight-row { background: #eff6ff !important; }
+  .check { color: var(--green); font-weight: 700; }
+  .warn { color: var(--gold); font-weight: 700; }
+  .cross { color: var(--red); font-weight: 700; }
+
+  /* Recommendation Cards */
+  .rec-card {
+    border-radius: var(--radius); padding: 22px 26px; margin-bottom: 16px;
+    border: 2px solid transparent;
+  }
+  .rec-card.gold-border { border-color: var(--gold); background: #fffdf5; }
+  .rec-card.silver-border { border-color: var(--silver); background: #f9fafb; }
+  .rec-card.bronze-border { border-color: var(--bronze); background: #fffbf0; }
+  .rec-card h3 { margin-top: 0; font-size: 17px; }
+  .rec-card p { font-size: 14px; }
+  .rec-card .price { font-size: 22px; font-weight: 800; color: var(--accent); }
+
+  /* Tip Box */
+  .tip-box {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border-radius: var(--radius); padding: 22px 28px; margin-top: 24px;
+    border: 1px solid #a7f3d0;
+  }
+  .tip-box h3 { color: #065f46; margin-bottom: 8px; }
+  .tip-box p { color: #065f46; font-size: 14px; }
+
+  /* Citation */
+  cite, .cite {
+    font-style: normal; font-size: 12px; color: #7c8db0;
+    background: #f1f5f9; padding: 1px 6px; border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .container { padding: 12px 10px 60px; }
+    .exec-summary { padding: 20px; }
+    .section-card { padding: 18px; }
+    .header h1 { font-size: 22px; }
+    table { font-size: 12px; }
+    thead th, tbody td { padding: 7px 8px; }
+    #lang-toggle { top: 10px; right: 10px; padding: 6px 12px; font-size: 13px; }
+  }
+
+  /* Hide inactive language */
+  [data-lang="zh"] { display: none; }
+  body.zh [data-lang="zh"] { display: revert; }
+  body.zh [data-lang="en"] { display: none; }
+</style>
+</head>
+<body>
+
+<button id="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+  <span class="icon">🌐</span>
+  <span data-lang="en">中文</span>
+  <span data-lang="zh">English</span>
+</button>
+
+<div class="container">
+
+<!-- ==================== HEADER ==================== -->
+<div class="header">
+  <h1>
+    <span data-lang="en">VHIS Plan Comparison</span>
+    <span data-lang="zh">自願醫保計劃比較</span>
+  </h1>
+  <div class="subtitle">
+    <span data-lang="en">For a 35-year-old woman planning to start a family</span>
+    <span data-lang="zh">適用於計劃生育的35歲女性</span>
+  </div>
+</div>
+
+<!-- ==================== EXECUTIVE SUMMARY ==================== -->
+<div class="exec-summary">
+  <h2>
+    <span>📋</span>
+    <span data-lang="en">Executive Summary</span>
+    <span data-lang="zh">執行摘要</span>
+  </h2>
+
+  <div data-lang="en">
+    <p>We compared five VHIS Flexi Plans — <strong>AIA Privilege Ultra</strong>, <strong>AXA WiseGuard Pro</strong>, <strong>HSBC VHIS Flexi</strong>, <strong>Manulife First VHIS</strong>, and <strong>Prudential PRUHealth VHIS VIP</strong> — across premiums, benefit coverage, pregnancy-related protection, and value for a 35-year-old woman planning a family.</p>
+
+    <p><strong>Our top pick is AIA Privilege Ultra</strong> (Asia coverage, $0 deductible) at HKD 19,288/year. It offers full cover on room &amp; board, surgeon's fees (regardless of surgical category), cancer treatment, and diagnostic imaging — with no sub-limits on core hospitalisation items. Crucially, it is one of only two plans that <strong>explicitly names pregnancy complications as a covered benefit</strong> (fully covered, 300-day waiting period) in its benefit schedule.</p>
+
+    <p><strong>Prudential PRUHealth VHIS VIP</strong> is the close runner-up — nearly identical full-cover structure, explicit pregnancy complications coverage, and slightly cheaper at HKD 17,554/year, though its lifetime limit (HKD 56M) is modestly lower than AIA's (HKD 60M).</p>
+
+    <p><strong>Manulife First VHIS</strong> offers the lowest premiums (HKD 4,354–7,735/year for women), but imposes per-item sub-limits that will leave significant out-of-pocket gaps at private hospitals. It does not explicitly highlight pregnancy complications in its brochure, and its geographic coverage is Hong Kong only.</p>
+
+    <p><strong>We recommend $0 deductible</strong> for this profile. A higher deductible can halve the premium, but a woman planning a family faces near-certain hospitalisation within the next few years. Each claim year she would absorb HKD 16,000–50,000 out of pocket before insurance pays — wiping out years of premium savings in a single event.</p>
+
+    <div class="pick-box">
+      <span class="medal">🥇</span> <strong>Best Overall: AIA Privilege Ultra</strong> — Full cover, explicit pregnancy complications, $0 deductible, HKD 19,288/yr<br>
+      <span class="medal">🥈</span> <strong>Runner-Up: Prudential VIP</strong> — Near-identical coverage, HKD 17,554/yr<br>
+      <span class="medal">🥉</span> <strong>Best Value: Manulife First + Major Medical Plus</strong> — HKD 7,735/yr (female pricing), but sub-limits apply
+    </div>
+  </div>
+
+  <div data-lang="zh">
+    <p>我們比較了五個自願醫保靈活計劃 — <strong>友邦 Privilege Ultra</strong>、<strong>安盛智尊守慧</strong>、<strong>滙豐自願醫保靈活計劃</strong>、<strong>宏利全護航</strong> 及 <strong>保誠尚賓計劃</strong> — 從保費、保障範圍、懷孕相關保障及性價比等方面，為計劃生育的35歲女性進行全面比較。</p>
+
+    <p><strong>我們的首選是友邦 Privilege Ultra</strong>（亞洲保障，$0自付費）年繳保費 HKD 19,288。此計劃全額保障住房及膳食、外科醫生費（不限手術類別）、癌症治療及診斷造影 — 核心住院保障項目無分項限額。更重要的是，它是僅有的兩個在保障表中<strong>明確列明懷孕併發症為受保項目</strong>（全額保障，300天等候期）的計劃之一。</p>
+
+    <p><strong>保誠尚賓計劃</strong>是最接近的替代選擇 — 幾乎相同的全額保障結構、明確的懷孕併發症保障，年保費略低（HKD 17,554），但終身保障限額（HKD 5,600萬）略低於友邦（HKD 6,000萬）。</p>
+
+    <p><strong>宏利全護航</strong>保費最低（女性年繳 HKD 4,354–7,735），但各項保障設有分項限額，在私家醫院就醫時將面臨較大自付費用差額。其產品小冊子未明確列出懷孕併發症保障，且地域保障僅限香港。</p>
+
+    <p><strong>我們建議選擇$0自付費</strong>。較高自付費可減半保費，但計劃生育的女性在未來幾年內幾乎必定會住院。每次索償年度她需先自付 HKD 16,000–50,000 — 一次住院即可抵消數年的保費節省。</p>
+
+    <div class="pick-box">
+      <span class="medal">🥇</span> <strong>最佳選擇：友邦 Privilege Ultra</strong> — 全額保障、明確懷孕併發症保障、$0自付費、年繳 HKD 19,288<br>
+      <span class="medal">🥈</span> <strong>次選：保誠尚賓計劃</strong> — 近乎相同保障、年繳 HKD 17,554<br>
+      <span class="medal">🥉</span> <strong>最高性價比：宏利全護航 + 特級高額醫療</strong> — 年繳 HKD 7,735（女性費率），但設有分項限額
+    </div>
+  </div>
+</div>
+
+<!-- ==================== WHY $0 DEDUCTIBLE ==================== -->
+<div class="section-card">
+  <h2>
+    <span>💰</span>
+    <span data-lang="en">Why We Recommend $0 Deductible</span>
+    <span data-lang="zh">為何建議選擇$0自付費</span>
+  </h2>
+
+  <div data-lang="en">
+    <p>A deductible is the amount you pay out of pocket each policy year before your insurer begins to reimburse. Choosing a higher deductible lowers your premium — but for a woman planning a family, the maths strongly favours $0.</p>
+
+    <h3>Premium Savings vs. Out-of-Pocket Trade-Off</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Plan</th><th>$0 Ded. Premium</th><th>Higher Ded. Premium</th><th>Saved/yr</th><th>Break-Even</th></tr></thead>
+      <tbody>
+        <tr class="highlight-row"><td><strong>AIA Privilege Ultra</strong> (Asia)</td><td class="num">$19,288</td><td class="num">$7,920 ($16K ded)</td><td class="num">$11,368</td><td>1.4 claim-free yrs</td></tr>
+        <tr><td></td><td></td><td class="num">$5,984 ($50K ded)</td><td class="num">$13,304</td><td>3.8 claim-free yrs</td></tr>
+        <tr class="highlight-row"><td><strong>Prudential VIP</strong> (Asia)</td><td class="num">$17,554</td><td class="num">$6,574 ($20K ded)</td><td class="num">$10,979</td><td>1.8 claim-free yrs</td></tr>
+        <tr><td><strong>HSBC Bronze</strong></td><td class="num">$9,181</td><td class="num">$5,955 ($16K ded)</td><td class="num">$3,226</td><td>5.0 claim-free yrs</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="cite">Sources: AIA Premium Table page_001/005/013 · Prudential Premium Table page_002/003 · HSBC Premium Table page_001</p>
+
+    <h3>Why $0 Is Right for This Profile</h3>
+    <ol style="padding-left:20px;">
+      <li style="margin-bottom:10px;"><strong>Near-certain hospitalisation in 1–3 years.</strong> With AIA's $16K deductible, she saves $11,368/yr in premium but pays $16,000 out of pocket the moment she's admitted — a net loss of <strong>$4,632</strong> in the claim year. <span class="cite">AIA Premium Table page_001, page_005</span></li>
+      <li style="margin-bottom:10px;"><strong>Deductible resets every policy year.</strong> Complications in one year + delivery the next = paying the deductible <strong>twice</strong>. Two claims with $16K deductible = $32,000 out of pocket, exceeding $22,736 in two years' premium savings.</li>
+      <li style="margin-bottom:10px;"><strong>$0 deductible = first-dollar coverage for pregnancy complications.</strong> Every dollar of eligible expenses is reimbursed immediately — no financial barrier to seeking timely care. <span class="cite">AIA Product brochure page_016</span></li>
+      <li style="margin-bottom:10px;"><strong>Higher deductibles suit low-claim-risk profiles.</strong> A healthy 25-year-old with no hospitalisation plans might rationally choose $50K deductible. A 35-year-old planning a family is entering the highest-utilisation period of her insurance life.</li>
+    </ol>
+
+    <div class="callout blue">
+      <strong>💡 Exception:</strong> If you already have a company group medical plan covering the first $16K–50K, a higher-deductible VHIS plan becomes an excellent cost-effective top-up. In that case, Prudential VIP at $6,574/yr ($20K ded) or AIA at $7,920/yr ($16K ded) offer superb value — still with explicit pregnancy complications coverage and full cover above the deductible.
+    </div>
+  </div>
+
+  <div data-lang="zh">
+    <p>自付費是每個保單年度內，保險公司開始賠償前你需自行支付的金額。選擇較高自付費可降低保費 — 但對計劃生育的女性而言，$0自付費明顯更有利。</p>
+
+    <h3>保費節省 vs. 自付費支出比較</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>計劃</th><th>$0自付費保費</th><th>較高自付費保費</th><th>每年節省</th><th>損益平衡</th></tr></thead>
+      <tbody>
+        <tr class="highlight-row"><td><strong>友邦 Privilege Ultra</strong>（亞洲）</td><td class="num">$19,288</td><td class="num">$7,920（$16K自付費）</td><td class="num">$11,368</td><td>1.4年無索償</td></tr>
+        <tr><td></td><td></td><td class="num">$5,984（$50K自付費）</td><td class="num">$13,304</td><td>3.8年無索償</td></tr>
+        <tr class="highlight-row"><td><strong>保誠尚賓</strong>（亞洲）</td><td class="num">$17,554</td><td class="num">$6,574（$20K自付費）</td><td class="num">$10,979</td><td>1.8年無索償</td></tr>
+        <tr><td><strong>滙豐 Bronze</strong></td><td class="num">$9,181</td><td class="num">$5,955（$16K自付費）</td><td class="num">$3,226</td><td>5.0年無索償</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="cite">資料來源：友邦保費表 page_001/005/013 · 保誠保費表 page_002/003 · 滙豐保費表 page_001</p>
+
+    <h3>為何$0自付費適合此情況</h3>
+    <ol style="padding-left:20px;">
+      <li style="margin-bottom:10px;"><strong>1–3年內幾乎必定住院。</strong>以友邦$16K自付費為例，每年省 $11,368保費，但一入院即需自付 $16,000 — 索償年度淨損失 <strong>$4,632</strong>。<span class="cite">友邦保費表 page_001, page_005</span></li>
+      <li style="margin-bottom:10px;"><strong>自付費每年重設。</strong>若一年出現併發症、翌年分娩住院 = 需支付自付費<strong>兩次</strong>。兩年$16K自付費 = $32,000，超過兩年保費節省的 $22,736。</li>
+      <li style="margin-bottom:10px;"><strong>$0自付費 = 首元保障懷孕併發症。</strong>每一元合資格費用均即時獲賠 — 求醫無財務障礙。<span class="cite">友邦產品小冊子 page_016</span></li>
+      <li style="margin-bottom:10px;"><strong>較高自付費適合低索償風險人士。</strong>無住院計劃的25歲健康人士可合理選擇$50K自付費。計劃生育的35歲女性正進入醫療保險使用率最高的時期。</li>
+    </ol>
+
+    <div class="callout blue">
+      <strong>💡 例外情況：</strong>如你已有公司團體醫療保險可承擔首$16K–50K住院費用，較高自付費的自願醫保可作為高性價比的補充保障。此情況下，保誠尚賓年繳 $6,574（$20K自付費）或友邦年繳 $7,920（$16K自付費）均屬優良選擇 — 仍享有明確的懷孕併發症保障及自付費以上的全額保障。
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PLANS AT A GLANCE ==================== -->
+<div class="section-card">
+  <h2>
+    <span>📑</span>
+    <span data-lang="en">1. The Five Plans at a Glance</span>
+    <span data-lang="zh">1. 五大計劃一覽</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>#</th>
+        <th data-lang="en">Plan</th><th data-lang="zh">計劃</th>
+        <th data-lang="en">Insurer</th><th data-lang="zh">保險公司</th>
+        <th data-lang="en">Sub-Tiers</th><th data-lang="zh">子級別</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>1</td><td data-lang="en"><strong>AIA Privilege Ultra</strong></td><td data-lang="zh"><strong>友邦 Privilege Ultra</strong></td><td data-lang="en">AIA</td><td data-lang="zh">友邦</td><td data-lang="en">Single plan</td><td data-lang="zh">單一計劃</td></tr>
+        <tr><td>2</td><td data-lang="en"><strong>AXA WiseGuard Pro</strong></td><td data-lang="zh"><strong>安盛智尊守慧</strong></td><td data-lang="en">AXA</td><td data-lang="zh">安盛</td><td data-lang="en">Regular / Enhance / Premier / Noble</td><td data-lang="zh">標準 / 卓越 / 優尚 / 尊貴</td></tr>
+        <tr><td>3</td><td data-lang="en"><strong>HSBC VHIS Flexi</strong></td><td data-lang="zh"><strong>滙豐自願醫保靈活計劃</strong></td><td data-lang="en">HSBC</td><td data-lang="zh">滙豐</td><td data-lang="en">Bronze – Diamond (5 levels)</td><td data-lang="zh">銅級 – 鑽石級（5級）</td></tr>
+        <tr><td>4</td><td data-lang="en"><strong>Manulife First VHIS</strong></td><td data-lang="zh"><strong>宏利全護航</strong></td><td data-lang="en">Manulife</td><td data-lang="zh">宏利</td><td data-lang="en">Ward / +Major Medical / +Major Medical Plus</td><td data-lang="zh">普通房 / +高額醫療 / +特級高額醫療</td></tr>
+        <tr><td>5</td><td data-lang="en"><strong>Prudential PRUHealth VHIS VIP</strong></td><td data-lang="zh"><strong>保誠尚賓計劃</strong></td><td data-lang="en">Prudential</td><td data-lang="zh">保誠</td><td data-lang="en">Single plan</td><td data-lang="zh">單一計劃</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== PREMIUMS ==================== -->
+<div class="section-card">
+  <h2>
+    <span>💵</span>
+    <span data-lang="en">2. Annual Premium at Age 35 (HKD, $0 Deductible)</span>
+    <span data-lang="zh">2. 35歲年繳保費（港元，$0自付費）</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-lang="en">Plan &amp; Tier</th><th data-lang="zh">計劃及級別</th>
+        <th data-lang="en">Annual Premium (HKD)</th><th data-lang="zh">年繳保費（港元）</th>
+        <th data-lang="en">Gender Basis</th><th data-lang="zh">性別定價</th>
+        <th data-lang="en">Source</th><th data-lang="zh">資料來源</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Manulife Ward</td><td class="num"><strong>$4,354</strong></td><td data-lang="en">Female</td><td data-lang="zh">女性</td><td class="cite">Manulife Premium Table p.3</td></tr>
+        <tr><td>Manulife Ward + Major Medical</td><td class="num"><strong>$6,547</strong></td><td data-lang="en">Female</td><td data-lang="zh">女性</td><td class="cite">Manulife Premium Table p.3</td></tr>
+        <tr><td>Manulife Ward + MM Plus</td><td class="num"><strong>$7,735</strong></td><td data-lang="en">Female</td><td data-lang="zh">女性</td><td class="cite">Manulife Premium Table p.3</td></tr>
+        <tr><td>HSBC Flexi Bronze</td><td class="num"><strong>$9,181</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">HSBC Premium Table p.1</td></tr>
+        <tr><td>AXA WiseGuard Pro Regular</td><td class="num"><strong>$10,668</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">AXA Premium Table p.1</td></tr>
+        <tr><td>AXA WiseGuard Pro Enhance</td><td class="num"><strong>$15,509</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">AXA Premium Table p.1</td></tr>
+        <tr class="highlight-row"><td>Prudential VIP (Asia)</td><td class="num"><strong>$17,554</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">Prudential Premium Table p.2</td></tr>
+        <tr><td>AXA WiseGuard Pro Premier</td><td class="num"><strong>$18,437</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">AXA Premium Table p.1</td></tr>
+        <tr class="highlight-row"><td>AIA Privilege Ultra (Asia)</td><td class="num"><strong>$19,288</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">AIA Premium Table p.1</td></tr>
+        <tr><td>AIA Privilege Ultra (WW ex-US)</td><td class="num"><strong>$21,216</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">AIA Premium Table p.3</td></tr>
+        <tr><td>AXA WiseGuard Pro Noble</td><td class="num"><strong>$22,821</strong></td><td data-lang="en">Unisex</td><td data-lang="zh">男女統一</td><td class="cite">AXA Premium Table p.1</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <span data-lang="en"><strong>Note:</strong> Manulife is the only plan with gender-specific pricing, making it notably cheaper for women. The other four use unisex pricing.</span>
+    <span data-lang="zh"><strong>注意：</strong>宏利是唯一按性別定價的計劃，女性保費明顯較低。其餘四個計劃均採用男女統一費率。</span>
+  </div>
+</div>
+
+<!-- ==================== BENEFIT LIMITS ==================== -->
+<div class="section-card">
+  <h2>
+    <span>📊</span>
+    <span data-lang="en">3. Benefit Limits</span>
+    <span data-lang="zh">3. 保障限額</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-lang="en">Feature</th><th data-lang="zh">項目</th>
+        <th>AIA</th><th>AXA (Reg→Noble)</th><th>HSBC Bronze</th><th>Manulife Ward</th><th>Prudential</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td data-lang="en"><strong>Annual limit</strong></td><td data-lang="zh"><strong>每年限額</strong></td>
+          <td>$12M</td><td>$5M → $40M</td><td>$5M</td><td class="check">Nil ✓</td><td>$12M</td>
+        </tr>
+        <tr>
+          <td data-lang="en"><strong>Lifetime limit</strong></td><td data-lang="zh"><strong>終身限額</strong></td>
+          <td>$60M</td><td class="check">Nil ✓</td><td>$20M</td><td class="check">Nil ✓</td><td>$56M</td>
+        </tr>
+        <tr>
+          <td data-lang="en"><strong>Deductible options</strong></td><td data-lang="zh"><strong>自付費選項</strong></td>
+          <td>$0/$16K/$25K/$50K</td><td>Nil/$20K/$50K</td><td>$0/$16K/$50K/$100K</td><td>None</td><td>$0/$20K/$50K/$96K</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cite">AIA Product brochure p.13 · AXA Product brochure p.14 · HSBC Product brochure p.29 · Manulife Product brochure p.9/11 · Prudential Product brochure p.11</p>
+</div>
+
+<!-- ==================== HOSPITALISATION ==================== -->
+<div class="section-card">
+  <h2>
+    <span>🏥</span>
+    <span data-lang="en">4. Hospitalisation &amp; Surgical Benefits</span>
+    <span data-lang="zh">4. 住院及外科保障</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-lang="en">Feature</th><th data-lang="zh">項目</th>
+        <th>AIA</th><th>AXA</th><th>HSBC Bronze</th><th>Manulife Ward</th><th>Prudential</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td data-lang="en"><strong>Room type</strong></td><td data-lang="zh"><strong>病房級別</strong></td>
+          <td data-lang="en">Semi-private</td><td data-lang="zh">半私家房</td>
+          <td data-lang="en">General (Reg) → Private (Noble)</td><td data-lang="zh">普通房(標準) → 私家房(尊貴)</td>
+          <td data-lang="en">General ward</td><td data-lang="zh">普通房</td>
+          <td data-lang="en">Ward</td><td data-lang="zh">普通房</td>
+          <td data-lang="en">Semi-private</td><td data-lang="zh">半私家房</td>
+        </tr>
+        <tr>
+          <td data-lang="en"><strong>Room &amp; board</strong></td><td data-lang="zh"><strong>住房及膳食</strong></td>
+          <td class="check">Full cover</td><td class="check">Full cover</td><td class="check">Full cover</td><td class="cross">$1,200/day</td><td class="check">Full cover</td>
+        </tr>
+        <tr>
+          <td data-lang="en"><strong>Surgeon's fee</strong></td><td data-lang="zh"><strong>外科醫生費</strong></td>
+          <td class="check">Full cover (any category)</td><td class="check">Full cover (any category)</td><td class="check">Full cover (any category)</td><td class="cross">Capped by category</td><td class="check">Full cover</td>
+        </tr>
+        <tr>
+          <td data-lang="en"><strong>Anaesthetist + OT</strong></td><td data-lang="zh"><strong>麻醉及手術室</strong></td>
+          <td class="check">Full cover</td><td class="check">Full cover</td><td class="check">Full cover</td><td class="cross">35% of surgeon cap</td><td class="check">Full cover</td>
+        </tr>
+        <tr>
+          <td data-lang="en"><strong>Cancer treatment</strong></td><td data-lang="zh"><strong>癌症治療</strong></td>
+          <td class="check">Full cover</td><td class="check">Full cover</td><td class="check">Full cover</td><td class="cross">$100K/yr</td><td class="check">Full cover</td>
+        </tr>
+        <tr>
+          <td data-lang="en"><strong>Diagnostic imaging</strong></td><td data-lang="zh"><strong>診斷造影</strong></td>
+          <td class="check">Full cover</td><td class="check">Full cover</td><td class="check">Full cover</td><td class="cross">$25K/yr (30% coinsurance)</td><td class="check">Full cover</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cite">AIA Product brochure p.14 · AXA Product brochure p.14 · HSBC Product brochure p.29 · Manulife Product brochure p.10 · Prudential Product brochure p.11</p>
+
+  <div class="callout red">
+    <span data-lang="en"><strong>⚠ Manulife gap:</strong> Despite having no overall annual/lifetime limit, per-item sub-limits (room $1,200/day, surgeon capped by category, imaging $25K/yr with 30% coinsurance) create significant out-of-pocket exposure at private hospitals. The supplementary medical benefit (Major Medical Plus add-on) carries 20% coinsurance and per-disability caps of HK$160K–305K. <span class="cite">Manulife Product brochure p.11, p.13</span></span>
+    <span data-lang="zh"><strong>⚠ 宏利差距：</strong>雖無整體年度/終身限額，但各項分項限額（住房$1,200/天、外科醫生費按手術類別設限、造影$25K/年含30%共保）在私家醫院會造成大額自付差額。特級高額醫療附加保障設有20%共保及每次傷殘限額 HK$160K–305K。<span class="cite">宏利產品小冊子 p.11, p.13</span></span>
+  </div>
+</div>
+
+<!-- ==================== PREGNANCY ==================== -->
+<div class="section-card">
+  <h2>
+    <span>🤰</span>
+    <span data-lang="en">5. Pregnancy Complications Coverage ⭐</span>
+    <span data-lang="zh">5. 懷孕併發症保障 ⭐</span>
+  </h2>
+  <div data-lang="en"><p>This is the <strong>most critical differentiator</strong> for a woman planning a family.</p></div>
+  <div data-lang="zh"><p>對計劃生育的女性而言，這是<strong>最關鍵的差異</strong>。</p></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-lang="en">Plan</th><th data-lang="zh">計劃</th>
+        <th data-lang="en">Pregnancy Complications</th><th data-lang="zh">懷孕併發症</th>
+        <th data-lang="en">Waiting Period</th><th data-lang="zh">等候期</th>
+        <th data-lang="en">Benefit Limit</th><th data-lang="zh">保障限額</th>
+        <th data-lang="en">Source</th><th data-lang="zh">資料來源</th>
+      </tr></thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td><strong>AIA Privilege Ultra</strong></td>
+          <td data-lang="en" class="check">✅ Explicitly covered</td><td data-lang="zh" class="check">✅ 明確受保</td>
+          <td data-lang="en">300 days</td><td data-lang="zh">300天</td>
+          <td data-lang="en" class="check"><strong>Fully covered</strong></td><td data-lang="zh" class="check"><strong>全額保障</strong></td>
+          <td class="cite">AIA brochure p.16</td>
+        </tr>
+        <tr class="highlight-row">
+          <td><strong>Prudential VIP</strong></td>
+          <td data-lang="en" class="check">✅ Explicitly covered</td><td data-lang="zh" class="check">✅ 明確受保</td>
+          <td data-lang="en">300 days</td><td data-lang="zh">300天</td>
+          <td data-lang="en" class="check"><strong>Covered</strong></td><td data-lang="zh" class="check"><strong>受保</strong></td>
+          <td class="cite">Prudential brochure p.13</td>
+        </tr>
+        <tr>
+          <td><strong>AXA WiseGuard Pro</strong></td>
+          <td data-lang="en" class="warn">⚠️ Not explicit in brochure</td><td data-lang="zh" class="warn">⚠️ 小冊子未明確列出</td>
+          <td>—</td><td>—</td>
+          <td class="cite">AXA brochure p.21</td>
+        </tr>
+        <tr>
+          <td><strong>HSBC Flexi</strong></td>
+          <td data-lang="en" class="warn">⚠️ Not explicit in brochure</td><td data-lang="zh" class="warn">⚠️ 小冊子未明確列出</td>
+          <td>—</td><td>—</td>
+          <td class="cite">HSBC brochure p.36</td>
+        </tr>
+        <tr>
+          <td><strong>Manulife First</strong></td>
+          <td data-lang="en" class="warn">⚠️ Not explicit in brochure</td><td data-lang="zh" class="warn">⚠️ 小冊子未明確列出</td>
+          <td>—</td><td>—</td>
+          <td class="cite">Manulife brochure p.23</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span data-lang="en"><strong>Important:</strong> All VHIS certified Flexi Plans are required to cover specified pregnancy complications (e.g. ectopic pregnancy, pre-eclampsia) with a 300-day waiting period. AXA, HSBC, and Manulife likely comply via their full policy provisions, but their product brochures do not explicitly highlight this benefit. <strong>AIA and Prudential</strong> are the only two that prominently feature it as a named benefit item — giving prospective mothers materially greater transparency.</span>
+    <span data-lang="zh"><strong>重要提示：</strong>所有認可自願醫保靈活計劃均須保障指定懷孕併發症（如宮外孕、子癇前症），設300天等候期。安盛、滙豐及宏利可能透過完整保單條款符合此要求，但其產品小冊子未明確列出此保障。<strong>友邦及保誠</strong>是唯一在保障表中明確列為受保項目的兩個計劃 — 為準媽媽提供更高透明度。</span>
+  </div>
+
+  <div class="callout red">
+    <span data-lang="en"><strong>All five plans exclude</strong> routine maternity care (normal pregnancy, delivery, prenatal care) — this is standard across all VHIS products.</span>
+    <span data-lang="zh"><strong>五個計劃均不保障</strong>常規產科護理（正常懷孕、分娩、產前檢查）— 這是所有自願醫保產品的標準做法。</span>
+  </div>
+</div>
+
+<!-- ==================== GEOGRAPHIC ==================== -->
+<div class="section-card">
+  <h2>
+    <span>🌏</span>
+    <span data-lang="en">6. Geographic Coverage</span>
+    <span data-lang="zh">6. 地域保障範圍</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-lang="en">Plan</th><th data-lang="zh">計劃</th>
+        <th data-lang="en">Non-Emergency Coverage</th><th data-lang="zh">非緊急保障範圍</th>
+        <th data-lang="en">Source</th><th data-lang="zh">資料來源</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>AIA Privilege Ultra</td><td data-lang="en">Asia <strong>or</strong> Worldwide ex-US (choice)</td><td data-lang="zh">亞洲<strong>或</strong>全球（美國除外）（可選）</td><td class="cite">AIA brochure p.13</td></tr>
+        <tr><td>AXA WiseGuard Pro</td><td data-lang="en">Greater China (Reg) → Worldwide ex-US (Noble)</td><td data-lang="zh">大中華（標準）→ 全球美國除外（尊貴）</td><td class="cite">AXA brochure p.14</td></tr>
+        <tr><td>HSBC Flexi Bronze</td><td data-lang="en">Greater China</td><td data-lang="zh">大中華</td><td class="cite">HSBC brochure p.29</td></tr>
+        <tr><td>Manulife First</td><td data-lang="en"><strong>Hong Kong only</strong></td><td data-lang="zh"><strong>僅限香港</strong></td><td class="cite">Manulife brochure p.10</td></tr>
+        <tr><td>Prudential VIP</td><td data-lang="en">Asia <strong>or</strong> Worldwide ex-US (choice)</td><td data-lang="zh">亞洲<strong>或</strong>全球（美國除外）（可選）</td><td class="cite">Prudential brochure p.11</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== EXTRAS ==================== -->
+<div class="section-card">
+  <h2>
+    <span>✨</span>
+    <span data-lang="en">7. Notable Extra Benefits</span>
+    <span data-lang="zh">7. 其他特別保障</span>
+  </h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-lang="en">Feature</th><th data-lang="zh">項目</th>
+        <th>AIA</th><th>AXA</th><th>HSBC</th><th>Manulife</th><th>Prudential</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td data-lang="en">Chinese Medicine</td><td data-lang="zh">中醫</td>
+          <td>$600/visit, 15 visits</td><td>❌</td><td data-lang="en">Diamond only</td><td data-lang="zh">僅鑽石級</td><td>❌</td><td>$600/visit, $30K/yr</td>
+        </tr>
+        <tr>
+          <td data-lang="en">Rehabilitation</td><td data-lang="zh">康復保障</td>
+          <td>$80K/yr</td><td>$80K/yr (Enh+)</td><td>$80K/yr (Plat+)</td><td>❌</td><td>$80K/yr</td>
+        </tr>
+        <tr>
+          <td data-lang="en">Wellness check-up</td><td data-lang="zh">健康檢查</td>
+          <td data-lang="en">Every 3rd renewal</td><td data-lang="zh">每3次續保</td>
+          <td>$2K/yr (Enh+)</td><td>$2K/yr (Gold+)</td><td>❌</td>
+          <td data-lang="en">Pap smear / mammogram</td><td data-lang="zh">子宮頸抹片/乳房造影</td>
+        </tr>
+        <tr>
+          <td data-lang="en">Compassionate death</td><td data-lang="zh">恩恤身故</td>
+          <td>$10K</td><td>$10K</td><td>$10K</td><td>$10K</td><td class="check"><strong>$80K</strong></td>
+        </tr>
+        <tr>
+          <td data-lang="en">Stroke rehabilitation</td><td data-lang="zh">中風康復</td>
+          <td>$50K + $100K</td><td>❌</td><td>❌</td><td>❌</td><td>$50K + $45K</td>
+        </tr>
+        <tr>
+          <td data-lang="en">Home nursing</td><td data-lang="zh">家居護理</td>
+          <td data-lang="en">Full cover, 196 days</td><td data-lang="zh">全額保障，196天</td>
+          <td data-lang="en">Full cover, 90 days (Enh+)</td><td data-lang="zh">全額，90天 (卓越+)</td>
+          <td data-lang="en">Full cover, 90 days (Plat+)</td><td data-lang="zh">全額，90天 (鉑金+)</td>
+          <td>❌</td>
+          <td>$1,600/day, 30 days</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cite">AIA brochure p.15–16 · AXA brochure p.15–16 · HSBC brochure p.30 · Manulife brochure p.10 · Prudential brochure p.12–13</p>
+</div>
+
+<!-- ==================== RECOMMENDATION ==================== -->
+<div class="section-card">
+  <h2>
+    <span>🏆</span>
+    <span data-lang="en">8. Recommendation</span>
+    <span data-lang="zh">8. 推薦</span>
+  </h2>
+
+  <!-- GOLD -->
+  <div class="rec-card gold-border">
+    <h3>🥇
+      <span data-lang="en">Best Overall: AIA Privilege Ultra (Asia, $0 Deductible)</span>
+      <span data-lang="zh">最佳選擇：友邦 Privilege Ultra（亞洲，$0自付費）</span>
+    </h3>
+    <div class="price">HKD 19,288<span style="font-size:14px;font-weight:400;color:var(--text-secondary);">/yr</span></div>
+    <div data-lang="en">
+      <ul>
+        <li><strong>Explicit pregnancy complications coverage</strong> — fully covered, 300-day waiting period <span class="cite">AIA brochure p.16</span></li>
+        <li><strong>Full-cover hospitalisation with no sub-limits</strong> — room &amp; board, surgeon's fee (any category), anaesthetist, OT, imaging, cancer treatment <span class="cite">AIA brochure p.14</span></li>
+        <li><strong>$0 deductible</strong> = zero out-of-pocket during high-claim childbearing years</li>
+        <li><strong>HKD 12M annual / HKD 60M lifetime</strong> <span class="cite">AIA brochure p.13</span></li>
+        <li><strong>Asia-wide coverage</strong> for non-emergency; worldwide for emergencies <span class="cite">AIA brochure p.13</span></li>
+        <li><strong>10% first-year discount</strong> via AIA Vitality <span class="cite">AIA Premium Table p.1</span></li>
+      </ul>
+    </div>
+    <div data-lang="zh">
+      <ul>
+        <li><strong>明確懷孕併發症保障</strong> — 全額保障，300天等候期 <span class="cite">友邦小冊子 p.16</span></li>
+        <li><strong>全額住院保障無分項限額</strong> — 住房膳食、外科醫生費（不限類別）、麻醉、手術室、造影、癌症治療 <span class="cite">友邦小冊子 p.14</span></li>
+        <li><strong>$0自付費</strong> = 高索償生育期間零自付費用</li>
+        <li><strong>每年$1,200萬 / 終身$6,000萬</strong> <span class="cite">友邦小冊子 p.13</span></li>
+        <li><strong>亞洲區保障</strong>（非緊急）；全球（緊急）<span class="cite">友邦小冊子 p.13</span></li>
+        <li><strong>首年9折</strong>透過 AIA Vitality <span class="cite">友邦保費表 p.1</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SILVER -->
+  <div class="rec-card silver-border">
+    <h3>🥈
+      <span data-lang="en">Runner-Up: Prudential PRUHealth VHIS VIP (Asia, $0 Deductible)</span>
+      <span data-lang="zh">次選：保誠尚賓計劃（亞洲，$0自付費）</span>
+    </h3>
+    <div class="price">HKD 17,554<span style="font-size:14px;font-weight:400;color:var(--text-secondary);">/yr</span></div>
+    <div data-lang="en">
+      <p>Near-identical full-cover structure, explicit pregnancy complications coverage (300-day wait), ~HKD 1,700/yr cheaper. Standout: <strong>HKD 80,000 compassionate death benefit</strong> (vs. $10K norm) and wellness benefits including Pap smear / mammogram. Slightly lower lifetime limit (HKD 56M vs. 60M).</p>
+      <p class="cite">Prudential Premium Table p.2 · Prudential Product brochure p.11, p.13</p>
+    </div>
+    <div data-lang="zh">
+      <p>幾乎相同的全額保障結構、明確懷孕併發症保障（300天等候期），每年便宜約 HKD 1,700。突出優勢：<strong>恩恤身故保障 HKD 80,000</strong>（行業標準$10K）及健康檢查福利（包括子宮頸抹片/乳房造影）。終身限額略低（HKD 5,600萬 vs. 6,000萬）。</p>
+      <p class="cite">保誠保費表 p.2 · 保誠產品小冊子 p.11, p.13</p>
+    </div>
+  </div>
+
+  <!-- BRONZE -->
+  <div class="rec-card bronze-border">
+    <h3>🥉
+      <span data-lang="en">Best Value: Manulife First VHIS Ward + Major Medical Plus (Female)</span>
+      <span data-lang="zh">最高性價比：宏利全護航普通房 + 特級高額醫療（女性）</span>
+    </h3>
+    <div class="price">HKD 7,735<span style="font-size:14px;font-weight:400;color:var(--text-secondary);">/yr</span></div>
+    <div data-lang="en">
+      <p>~60% cheaper than AIA/Prudential with <strong>no annual or lifetime limit</strong>. However: per-item sub-limits create out-of-pocket exposure, pregnancy complications not explicitly highlighted, and <strong>Hong Kong-only</strong> coverage. Best suited if paired with an employer group plan or using public/mid-tier hospitals.</p>
+      <p class="cite">Manulife Premium Table p.3 · Manulife Product brochure p.10, p.23</p>
+    </div>
+    <div data-lang="zh">
+      <p>比友邦/保誠便宜約60%，<strong>無年度及終身限額</strong>。但：各項分項限額造成自付差額、懷孕併發症未明確列出、且<strong>僅保障香港</strong>。最適合已有公司團體醫療保險或使用公立/中價私家醫院的人士。</p>
+      <p class="cite">宏利保費表 p.3 · 宏利產品小冊子 p.10, p.23</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== TIP ==================== -->
+<div class="tip-box">
+  <h3>
+    <span>⏰</span>
+    <span data-lang="en">Practical Tip for Family Planning</span>
+    <span data-lang="zh">生育規劃實用建議</span>
+  </h3>
+  <p data-lang="en"><strong>Buy early.</strong> The 300-day waiting period for pregnancy complications means you should secure your policy <strong>at least 10 months before planned conception</strong>. If you are already pregnant, the pregnancy complications benefit will <strong>not</strong> apply to this pregnancy regardless of which plan you choose.</p>
+  <p data-lang="zh"><strong>盡早投保。</strong>懷孕併發症設有300天等候期，意味你應在<strong>計劃懷孕前至少10個月</strong>投保。如你已經懷孕，無論選擇哪個計劃，懷孕併發症保障均<strong>不適用</strong>於本次懷孕。</p>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<div style="text-align:center; margin-top:40px; padding:20px; color:#94a3b8; font-size:12px;">
+  <p data-lang="en">This comparison is for informational purposes only and does not constitute financial or insurance advice. Please refer to the official product brochures and policy provisions for complete terms and conditions. All data sourced from the respective insurers' product brochures and premium tables as available in the knowledge base.</p>
+  <p data-lang="zh">本比較僅供參考，不構成財務或保險建議。請參閱官方產品小冊子及保單條款以了解完整條款及細則。所有數據來源於知識庫中各保險公司的產品小冊子及保費表。</p>
+</div>
+
+</div><!-- /container -->
+
+<script>
+function toggleLang() {
+  document.body.classList.toggle('zh');
+}
+</script>
+
+</body>
+</html>
