@@ -241,34 +241,24 @@
 <body>
     <div class="container">
         <header>
-            <h1>Agentic Equity Research</h1>
-            <p class="subtitle">Buy-side investment research memos generated autonomously by an agentic AI system. No human editing, no templates.</p>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" style="width:28px;height:28px;flex-shrink:0;"><rect width="32" height="32" rx="7" fill="#0a0a0a" stroke="#333" stroke-width="1"/><path stroke="#f59e0b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21.1 22.1A7 7 0 0110.3 11.3S11 13 13 14c0-1.75.44-4.375 2.613-6.125C17.5 9.5 19.33 10.18 20.7 11.55A6.98 6.98 0 0122.75 16a6.98 6.98 0 01-1.65 6.1z"/><path stroke="#f59e0b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.14 19.86A2.625 2.625 0 1015.26 15.5L14.25 18H12.75c0 .672.257 1.344.768 1.856z"/></svg>
+                <a href="http://agnite.ai/" target="_blank" rel="noopener noreferrer" style="font-size:13px;font-weight:600;color:#f59e0b;text-decoration:none;letter-spacing:0.3px;">agnite.ai</a>
+            </div>
+            <h1>What Agnite can research for you</h1>
+            <p class="subtitle">Agnite is an agentic AI research system. Give it a question — it reads primary sources, reasons across them, and delivers a publication-quality report. These are real outputs, unedited.</p>
         </header>
 
         <div class="how-it-works">
             <p class="section-label">How it works</p>
             <p class="how-text">
-                The system ingests <strong>raw SEC filings</strong> (10-Ks, 10-Qs) and <strong>earnings call transcripts</strong>, then produces a full research memo end-to-end — analytical framework, tables, charts, scenario analysis, and recommendation.
+                You describe what you want to know. Agnite autonomously finds and reads the relevant sources — filings, papers, web, documents — reasons across them, and produces a complete report with citations, charts, and a clear conclusion. <strong>No prompting, no templates, no human editing.</strong>
             </p>
-            <div class="stat-row">
-                <div class="stat">
-                    <span class="stat-value">10-K</span>
-                    <span class="stat-label">Annual filings</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">10-Q</span>
-                    <span class="stat-label">Quarterly filings</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">Transcripts</span>
-                    <span class="stat-label">Earnings calls</span>
-                </div>
-            </div>
         </div>
 
         <div class="divider"></div>
 
-        <p class="section-label">Reports</p>
+        <p class="section-label">Equity Research</p>
         <div class="report-list">
             <a href="reports/AAPL.html" class="report-card">
                 <div class="report-card-left">
@@ -283,27 +273,78 @@
                     <span class="arrow">→</span>
                 </div>
             </a>
+        </div>
 
-            <!-- Add more reports here:
-            <a href="reports/MSFT.html" class="report-card">
+        <div class="divider"></div>
+
+        <p class="section-label">Market Reports</p>
+        <div class="report-list">
+            <a href="reports/post_correction_assessment.html" class="report-card">
                 <div class="report-card-left">
-                    <span class="ticker-badge">MSFT</span>
+                    <span class="ticker-badge" style="color:#f59e0b;background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2);">MACRO</span>
                     <div class="report-info">
-                        <span class="report-name">Microsoft Corporation</span>
-                        <span class="report-meta">FY2019 – Q2 FY2026 · 5 10-Ks · 13 10-Qs · 19 transcripts</span>
+                        <span class="report-name">Tech Stocks Just Entered a Correction</span>
+                        <span class="report-meta">A plain-English guide to the March 2026 tech selloff</span>
                     </div>
                 </div>
                 <div class="report-card-right">
-                    <span class="report-tag tag-hold">HOLD</span>
                     <span class="arrow">→</span>
                 </div>
             </a>
-            -->
+
+            <a href="reports/hk_job_market_outlook_2026.html" class="report-card">
+                <div class="report-card-left">
+                    <span class="ticker-badge" style="color:#f59e0b;background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2);">HK</span>
+                    <div class="report-info">
+                        <span class="report-name">Hong Kong Job Market Outlook 2026</span>
+                        <span class="report-meta">March 2026 · 22 sources</span>
+                    </div>
+                </div>
+                <div class="report-card-right">
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="section-label">Consumer Research</p>
+        <div class="report-list">
+            <a href="reports/vhis-compare.html" class="report-card">
+                <div class="report-card-left">
+                    <span class="ticker-badge" style="color:#a78bfa;background:rgba(167,139,250,0.1);border-color:rgba(167,139,250,0.2);">VHIS</span>
+                    <div class="report-info">
+                        <span class="report-name">VHIS Plan Comparison</span>
+                        <span class="report-meta">For a 35-Year-Old Woman Planning a Family · March 2026</span>
+                    </div>
+                </div>
+                <div class="report-card-right">
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="section-label">Science & Medicine</p>
+        <div class="report-list">
+            <a href="pubmed/eczema-paper.html" class="report-card">
+                <div class="report-card-left">
+                    <span class="ticker-badge" style="color:#34d399;background:rgba(52,211,153,0.1);border-color:rgba(52,211,153,0.2);">MED</span>
+                    <div class="report-info">
+                        <span class="report-name">The Gut–Butyrate–NRF2–Skin Barrier Axis</span>
+                        <span class="report-meta">A Unifying Hypothesis for Natural Atopic Dermatitis Remission</span>
+                    </div>
+                </div>
+                <div class="report-card-right">
+                    <span class="arrow">→</span>
+                </div>
+            </a>
         </div>
 
         <div class="footer">
             <p>
-                This is a personal project by <a href="https://www.linkedin.com/in/skychiu/">Sky Chiu</a>. Reports are AI-generated and should not be construed as investment advice.
+                Reports are generated by <a href="http://agnite.ai/" target="_blank" rel="noopener noreferrer">Agnite · agnite.ai</a> and should not be construed as investment or professional advice. Built by <a href="https://www.linkedin.com/in/skychiu/">Sky Chiu</a>.
             </p>
         </div>
     </div>
