@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Stocks Just Entered a Correction — What You Need to Know</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #1e2128; background: #f5f6f8; line-height: 1.78; font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── Header ─── */
+  header { background: #0f2b46; color: #fff; padding: 40px 20px 32px; text-align: center; }
+  header h1 { font-size: 1.55rem; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 6px; line-height: 1.3; }
+  header .sub { font-size: 0.95rem; color: #a8c4dc; margin-bottom: 6px; }
+  header .date { font-size: 0.85rem; color: #7fa4c4; margin-bottom: 12px; }
+  .byline {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 0.74rem; color: #7fa4c4;
+  }
+  .byline svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .byline a { color: #7fa4c4; text-decoration: none; border-bottom: 1px dotted #7fa4c4; }
+  .byline a:hover { color: #a8c4dc; border-color: #a8c4dc; }
+
+  /* ── Language Toggle ─── */
+  .lang-toggle {
+    position: fixed; top: 16px; right: 20px; z-index: 1000;
+    background: #fff; border: 2px solid #1a6dab; border-radius: 24px;
+    padding: 4px; display: flex; gap: 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  .lang-toggle button {
+    background: none; border: none; padding: 5px 14px; border-radius: 20px;
+    cursor: pointer; font-size: 0.88rem; font-weight: 600; color: #1a6dab;
+    transition: background 0.18s, color 0.18s;
+  }
+  .lang-toggle button.active { background: #1a6dab; color: #fff; }
+  .lang-toggle button:hover:not(.active) { background: #eaf1f7; }
+
+  /* ── Cards ─── */
+  .card {
+    background: #fff; border-radius: 10px; border: 1px solid #dde1e6;
+    padding: 26px 24px 28px; margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 1.2rem; color: #0f2b46; margin-bottom: 6px;
+    padding-bottom: 7px; border-bottom: 3px solid #1a6dab;
+  }
+  .card h3 { font-size: 1.02rem; color: #24527a; margin: 18px 0 6px; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 8px 0 8px 20px; }
+  li { margin-bottom: 5px; }
+  strong { color: #0f2b46; }
+  a { color: #1a6dab; }
+  hr { border: none; border-top: 1px solid #e8eaed; margin: 18px 0; }
+
+  /* ── Callout Boxes ─── */
+  .box { border-radius: 8px; padding: 18px 20px; margin: 16px 0; font-size: 0.94rem; }
+  .box-top { background: #1a6dab; color: #fff; box-shadow: 0 4px 16px rgba(26,109,171,0.22); margin: -16px auto 24px; position: relative; z-index: 2; }
+  .box-top h2 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 700; color: #fff; border: none; padding: 0; }
+  .box-top strong { color: #ffe066; }
+  .box-warn { background: #fef3e0; border-left: 4px solid #e6a700; color: #5a4600; }
+  .box-info { background: #e8f0fe; border-left: 4px solid #1a6dab; color: #0f2b46; }
+  .box-green { background: #e6f4ea; border-left: 4px solid #1a7431; color: #14522a; }
+  .box-red { background: #fce8e6; border-left: 4px solid #c5221f; color: #5a0f0d; }
+  .box strong { color: inherit; }
+
+  /* ── Highlight Badges (in Bottom Line box) ─── */
+  .hl-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 10px; justify-content: center; }
+  .hl-badge {
+    display: inline-block; font-weight: 700; font-size: 0.88rem;
+    padding: 7px 18px; border-radius: 5px; letter-spacing: 0.3px;
+    text-align: center;
+  }
+  .hl-call { background: rgba(255,255,255,0.18); border: 2px solid rgba(255,255,255,0.5); color: #fff; }
+  .hl-date { background: #ffe066; color: #1e2128; border: none; }
+
+  /* ── Scenario Cards (mobile-first) ─── */
+  .scenarios { display: grid; gap: 14px; margin: 14px 0; }
+  .sc { border-radius: 8px; padding: 16px 18px; border: 1px solid #dde1e6; }
+  .sc-head { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+  .sc-body { font-size: 0.9rem; color: #3e4550; }
+  .sc-up { border-left: 4px solid #1a7431; }
+  .sc-flat { border-left: 4px solid #1a6dab; }
+  .sc-down { border-left: 4px solid #e6a700; }
+  .sc-deep { border-left: 4px solid #c5221f; }
+
+  /* ── Date Cards ─── */
+  .dates { list-style: none; padding: 0; margin: 12px 0; }
+  .dates li { position: relative; padding: 0 0 16px 26px; border-left: 2px solid #dde1e6; }
+  .dates li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .dates li::before {
+    content: ''; position: absolute; left: -7px; top: 4px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #1a6dab; border: 2px solid #fff; box-shadow: 0 0 0 2px #1a6dab;
+  }
+  .dates li:first-child::before { background: #e6a700; box-shadow: 0 0 0 2px #e6a700; }
+  .dl-date { font-weight: 700; color: #0f2b46; display: block; font-size: 0.88rem; }
+  .dl-desc { color: #3e4550; font-size: 0.9rem; }
+
+  /* ── Risk Bullets ─── */
+  .risks { list-style: none; padding: 0; margin: 10px 0; }
+  .risks li { padding: 10px 14px; border-radius: 6px; margin-bottom: 8px; font-size: 0.92rem;
+    background: #f7f8fa; border: 1px solid #e8eaed; }
+  .risks li strong { display: block; margin-bottom: 2px; }
+
+  /* ── Footer ─── */
+  footer { max-width: 680px; margin: 0 auto 40px; padding: 0 20px;
+    font-size: 0.8rem; color: #8b929e; line-height: 1.55; }
+  footer a { color: #8b929e; }
+
+  /* ── Responsive ─── */
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.3rem; }
+    .card { padding: 20px 16px 22px; }
+    .box { padding: 14px 16px; }
+    .box-top { padding: 16px 16px; }
+    .hl-badges { flex-direction: column; align-items: center; }
+    .hl-badge { width: 100%; }
+  }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    header { background: #fff; color: #000; border-bottom: 2px solid #000; }
+    header h1, header .sub { color: #000; }
+    .box-top { background: #eee; color: #000; box-shadow: none; border: 1px solid #999; }
+    .box-top strong { color: #000; }
+    .card { border: 1px solid #ccc; break-inside: avoid; }
+    .lang-toggle { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Language Toggle ── -->
+<div class="lang-toggle" aria-label="Language switcher">
+  <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+  <button id="btn-zh" onclick="setLang('zh')">中文</button>
+</div>
+
+<header>
+  <div class="wrap">
+    <h1 id="page-title">Tech Stocks Just Entered a Correction. Here's What You Need to Know.</h1>
+    <div class="sub" id="page-sub">A plain-English guide to the March 2026 tech selloff</div>
+    <div class="date" id="page-date">Written Saturday, March 28, 2026 · Data through Friday, March 27 close</div>
+    <div class="byline">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0a0a0a"/><path stroke="#f59e0b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21.1 22.1A7 7 0 0110.3 11.3S11 13 13 14c0-1.75.44-4.375 2.613-6.125C17.5 9.5 19.33 10.18 20.7 11.55A6.98 6.98 0 0122.75 16a6.98 6.98 0 01-1.65 6.1z"/><path stroke="#f59e0b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.14 19.86A2.625 2.625 0 1015.26 15.5L14.25 18H12.75c0 .672.257 1.344.768 1.856z"/></svg>
+      Research generated by <a href="http://agnite.ai/" target="_blank" rel="noopener noreferrer">Agnite · agnite.ai</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ═══ BOTTOM LINE ═══ -->
+<div class="box box-top">
+  <h2 id="bl-title">⚡ The Bottom Line</h2>
+  <div class="hl-badges" id="bl-badges">
+    <span class="hl-badge hl-call">HOLD — Moderate Conviction</span>
+    <span class="hl-badge hl-date">📅 Key Date: April 6, 2026</span>
+  </div>
+  <p id="bl-body">Tech stocks have fallen 11% from their October peak — a "correction" in Wall Street terms (a drop of 10% or more). The companies themselves are still reporting strong profits. The selloff is being driven by the Iran war and the resulting oil price shock, not by collapsing tech demand. Our call: <strong>Hold. Don't panic-sell, but don't rush in either.</strong> The situation is genuinely uncertain. The single most important date to watch is <strong>April 6</strong>, when the president's pause on attacks against Iran's energy infrastructure expires. How that deadline resolves will likely determine whether tech bounces or falls further.</p>
+</div>
+
+<!-- ═══ §1 WHAT HAPPENED ═══ -->
+<div class="card">
+  <h2 id="s1-title">1. What Happened?</h2>
+  <p id="s1-intro">On Friday, March 27, the Nasdaq-100 — an index of the 100 largest non-financial companies, dominated by big tech — closed at <strong>23,133</strong>, down 11.4% from its all-time high set in October 2025. It was the fifth straight week of losses. Here's what drove it, in order of importance:</p>
+
+  <p id="s1-iran"><strong>🔴 The Iran war and oil prices — by far the biggest factor.</strong> The U.S.-Iran conflict that started in late February has severely disrupted shipping through the Strait of Hormuz, a narrow waterway that normally carries about a fifth of the world's oil supply, according to the Congressional Research Service. Oil prices have surged roughly 55%, from about $70 a barrel before the war to above $110. On Thursday, the president announced a 10-day pause on strikes against Iran's energy facilities, creating an <strong>April 6 deadline</strong>. But markets weren't reassured — oil kept climbing Friday and stocks kept falling.</p>
+  <p id="s1-iran2">Why this hurts tech specifically: expensive oil raises inflation fears, which pushes interest rates higher. When rates rise, investors pay less for each dollar of a company's expected future profit — and tech stocks depend more heavily on future profit expectations than most other sectors.</p>
+
+  <p id="s1-google"><strong>🟡 A Google AI discovery spooked chip stocks.</strong> Google announced a technique called "TurboQuant" that could reduce the memory chips needed to run AI systems. Memory chipmakers dropped 5–6%, though most analysts think this is about making AI faster and cheaper, not about needing fewer chips overall.</p>
+
+  <p id="s1-trial"><strong>🟡 Meta and YouTube were found liable in an addiction trial.</strong> A California jury ruled against Instagram and YouTube in a landmark case about social media addiction in children. Meta fell 8% and Alphabet (Google's parent) fell about 3%.</p>
+
+  <p id="s1-software"><strong>🟠 Software stocks were already under pressure from AI disruption fears.</strong> Even before the war, software companies had been selling off since January on worries that AI tools could replace traditional business software. Software stocks are down roughly 17% this year as of early March.</p>
+
+  <p id="s1-rates"><strong>🟠 Interest rate hopes faded.</strong> The Federal Reserve held rates steady at 3.5–3.75% on March 18. At the start of the year, investors expected two rate cuts in 2026. Now they expect at most one.</p>
+</div>
+
+<!-- ═══ §2 WHY IT MATTERS ═══ -->
+<div class="card">
+  <h2 id="s2-title">2. Why Does It Matter for Your Portfolio?</h2>
+
+  <div class="box box-red" id="s2-tension">
+    <strong>The core tension you need to understand: strong companies do not automatically mean cheap stocks.</strong> Every major tech company reported double-digit revenue growth last quarter — Apple +16%, Microsoft +17%, Meta +24%, Alphabet +17%, Amazon +13.6%, NVIDIA +73%. These are genuinely healthy businesses. But that does not make them bargains at current prices, and the economic backdrop just got significantly worse.
+  </div>
+
+  <h3 id="s2-val-title">Why good earnings alone aren't enough right now</h3>
+  <p id="s2-val">Tech stocks are trading at about <strong>30 times their expected future earnings</strong> — meaning investors are paying $30 for every $1 of profit these companies are expected to earn next year. That's roughly in line with the five-year average but above the ten-year average of about 27 times.</p>
+  <p id="s2-yield">Here's the catch. Flip that ratio around: tech stocks are effectively yielding about 3.3% on their earnings. But a 10-year U.S. government bond — one of the safest investments in the world — currently yields about 4.4%. <strong>So right now, tech stocks offer a lower return than a risk-free bond, which means investors are paying a premium for growth that hasn't happened yet.</strong> If that growth disappoints even modestly, stock prices can fall even if earnings stay okay, because investors become willing to pay less per dollar of profit. That is why strong earnings do not automatically make this a buying opportunity.</p>
+
+  <h3 id="s2-spend-title">The spending question nobody can answer yet</h3>
+  <p id="s2-spend">These companies are also pouring enormous sums into AI infrastructure — Meta plans to spend $115–135 billion this year on capital projects; Alphabet guided $175–185 billion, roughly double last year's pace. Microsoft reported $37.5 billion in capital spending and equipment leases in a single quarter. The risk isn't that their businesses are shrinking. It's that they're investing massively, and it's not yet clear those investments will generate proportional returns. If the economy weakens from the oil shock at the same time these spending bills come due, profit margins could shrink.</p>
+
+  <h3 id="s2-consumer-title">Consumers are already getting nervous</h3>
+  <p id="s2-consumer">The University of Michigan's consumer sentiment survey fell 6% in March to its lowest since December 2025. Americans' one-year inflation expectations jumped from 3.4% to 3.8% — the largest one-month increase since the tariff scare in April 2025. If consumers pull back spending, that eventually hits the digital advertising and e-commerce revenue that these companies depend on.</p>
+  <p id="s2-bridge">That combination — full valuations, heavy spending commitments, and a consumer starting to worry — is why the right call is patience, not action, despite fundamentally healthy businesses.</p>
+</div>
+
+<!-- ═══ §3 WHAT SHOULD I DO ═══ -->
+<div class="card">
+  <h2 id="s3-title">3. What Should I Do?</h2>
+  <p id="s3-intro"><strong>Our call: Hold. Be patient. Wait for clearer signals.</strong> The evidence points to the Iran war and oil prices as the primary driver of this selloff, not a collapse in tech demand. But the situation is genuinely uncertain, and stocks are not cheap enough to justify betting big on a resolution.</p>
+  <p id="s3-intro2">Here's the practical guidance based on where you sit:</p>
+
+  <div class="box box-green" id="s3-box-hold">
+    <strong>If you own diversified index funds (like a target-date fund or total market fund):</strong> Do nothing unless your financial plan has changed. These funds rebalance automatically. Corrections of this size have historically been temporary — though this one's outcome depends on the war, and we can't predict that.
+  </div>
+  <div class="box box-info" id="s3-box-buy">
+    <strong>If you own individual tech stocks and are thinking about buying more:</strong> The source research's recommendation is to wait for either geopolitical clarity (especially after April 6) or a further price decline before committing significant new capital. If you do want to start building a position, consider buying in stages over weeks or months rather than all at once — that way you're protected if prices fall further.
+  </div>
+  <div class="box box-warn" id="s3-box-conc">
+    <strong>If tech dominates your portfolio:</strong> This is a reasonable time to check whether one sector is too large a share of your holdings. Owning a lot of tech during a geopolitical crisis is a concentrated bet. You don't have to sell everything — but making sure no single sector represents an outsized share of your net worth is basic portfolio hygiene.
+  </div>
+
+  <h3 id="s3-look-title">Within tech, where do fundamentals look relatively stronger?</h3>
+  <p id="s3-look-intro">This is not a buy list — any individual stock can drop 20–30% in a correction regardless of its business quality. But if you already own tech and are deciding what to hold or add on further weakness, the areas with the most visible demand are:</p>
+  <ol id="s3-look-list">
+    <li><strong>AI chip companies</strong> (NVIDIA, Broadcom) — their customers have committed to enormous spending plans for AI infrastructure, and NVIDIA's latest guidance came in far above expectations. Broadcom's AI chip revenue doubled. This doesn't make them immune to a broader selloff, but the demand signal is the strongest in tech.</li>
+    <li><strong>Apple</strong> — the most defensively positioned of the mega-caps, with relatively modest spending, massive cash flow, and an iPhone cycle that delivered 23% revenue growth. It was essentially flat — even slightly positive — on the day everything else fell sharply.</li>
+    <li><strong>Alphabet (Google)</strong> — the source research applies its lowest valuation assumptions to Alphabet, reflecting the legal risks from the social media trial and ongoing antitrust cases. But cloud revenue grew 48% and the core search business remains robust. That legal discount may be overdone.</li>
+  </ol>
+  <p id="s3-look-other">Consumer internet companies (Meta, Amazon) have strong businesses but face the most direct exposure to a consumer spending pullback if the oil shock persists. Software companies have been hit hardest (down ~25% from their September peak as of early March) and could rebound sharply if sentiment improves, but the AI disruption question is real and will take years to resolve.</p>
+
+  <h3 id="s3-change-title">What conditions would change this call?</h3>
+  <p id="s3-change-buy"><strong>We'd become more aggressive buyers if:</strong> the Strait of Hormuz reopens and oil drops below $85, the Fed signals rate cuts are back on the table, or stock prices fall enough that the math becomes more compelling.</p>
+  <p id="s3-change-sell"><strong>We'd become more defensive if:</strong> oil exceeds $130 and stays there, any major tech company misses earnings or cuts its spending guidance, or interest rates rise above 4.75% on the 10-year Treasury.</p>
+</div>
+
+<!-- ═══ §4 WHAT TO WATCH ═══ -->
+<div class="card">
+  <h2 id="s4-title">4. What Should I Watch Next?</h2>
+  <p id="s4-intro">Three signals will tell you whether this correction is ending or deepening:</p>
+  <ul class="risks" id="s4-signals">
+    <li><strong>Oil prices.</strong> If Brent crude falls meaningfully below $100 because tensions are easing, that supports a recovery. If it spikes above $120 on escalation, the correction probably isn't over.</li>
+    <li><strong>Big tech earnings guidance (late April–May).</strong> If Apple, Microsoft, Meta, Alphabet, and Amazon all confirm that AI spending continues and revenue is holding up, the "fundamentals are fine" thesis holds. If anyone cuts guidance, that changes the picture.</li>
+    <li><strong>Fed language.</strong> If the Fed hints at rate cuts at its May meeting, that's a major positive for tech. If they signal rates could stay put or even rise, high-priced growth stocks remain vulnerable.</li>
+  </ul>
+
+  <h3 id="s4-dates-title">Key Dates</h3>
+  <ul class="dates" id="s4-dates">
+    <li>
+      <span class="dl-date">⚠️ April 6 — The key date</span>
+      <span class="dl-desc">The president's 10-day pause on attacking Iran's energy infrastructure expires. A diplomatic breakthrough would likely spark a sharp relief rally. Escalation would mean more selling and higher oil.</span>
+    </li>
+    <li>
+      <span class="dl-date">Late April — Apple earnings</span>
+      <span class="dl-desc">The first major consumer-health check since the oil shock. Watch whether rising memory chip prices are eating into profit margins.</span>
+    </li>
+    <li>
+      <span class="dl-date">Late April–May — Big tech earnings wave</span>
+      <span class="dl-desc">Microsoft, Meta, Alphabet, and Amazon all report. The key question: are they still increasing AI spending, or pulling back?</span>
+    </li>
+    <li>
+      <span class="dl-date">Late May — NVIDIA earnings</span>
+      <span class="dl-desc">The most important test for the AI spending story. NVIDIA guided for $78 billion in revenue — far above expectations. If they deliver, the AI cycle is intact.</span>
+    </li>
+  </ul>
+</div>
+
+<!-- ═══ SCENARIOS ═══ -->
+<div class="card">
+  <h2 id="s5-title">How This Could Play Out — Four Scenarios</h2>
+  <p id="s5-intro">These are rough estimates based on how the main variables (oil, rates, earnings) might evolve. They are not precise forecasts — shifting any assumption would meaningfully change the numbers.</p>
+  <div class="scenarios" id="s5-scenarios">
+    <div class="sc sc-up">
+      <div class="sc-head">Quick Resolution (~25% chance)</div>
+      <div class="sc-body">The Strait of Hormuz reopens by mid-April. Oil drops back to $80–90. Confidence returns quickly. <strong>Tech stocks: up 7–14% from here.</strong></div>
+    </div>
+    <div class="sc sc-flat">
+      <div class="sc-head">Slow Improvement — most likely (~35% chance)</div>
+      <div class="sc-body">The war gradually de-escalates over months. Oil stabilizes around $80–100. Earnings continue delivering. Things normalize over 6–12 months. <strong>Tech stocks: up 7–19%.</strong></div>
+    </div>
+    <div class="sc sc-down">
+      <div class="sc-head">War Drags On (~25% chance)</div>
+      <div class="sc-body">No resolution by mid-year. Oil stays above $100. The Fed can't cut rates. The economy slows as energy costs mount. <strong>Tech stocks: down another 13–24%.</strong></div>
+    </div>
+    <div class="sc sc-deep">
+      <div class="sc-head">Full Recession (~15% chance)</div>
+      <div class="sc-body">A full energy crisis develops. Oil above $130. Businesses start cutting jobs. Credit markets tighten. <strong>Tech stocks: down 30–40% from current levels.</strong></div>
+    </div>
+  </div>
+  <p id="s5-ev">When you average these four scenarios by their estimated likelihood, the expected result over the next year is <strong>roughly flat — maybe slightly negative</strong>. That is not a strong enough expected return to justify a big bet right now. But the positive scenarios (about 60% combined probability) are meaningfully better than the negative ones, which is why we lean toward patience rather than outright selling.</p>
+</div>
+
+<!-- ═══ WHAT WE DON'T KNOW ═══ -->
+<div class="card">
+  <h2 id="s6-title">What We Don't Know</h2>
+  <p id="s6-intro">In the interest of honesty:</p>
+  <ul id="s6-list">
+    <li><strong>How long the Strait of Hormuz will stay disrupted.</strong> This is the single most important variable. Energy analysts say the market is giving it about two more weeks before pricing in a longer conflict. Nobody knows the answer.</li>
+    <li><strong>Whether the oil shock will actually hurt tech earnings</strong>, or whether these businesses are resilient enough to power through. The first real test comes in late April when the next round of quarterly results are reported.</li>
+    <li><strong>What the Fed will do.</strong> Chair Powell said the war's impact is "too soon to know." The central bank is watching the same uncertain situation as the rest of us.</li>
+  </ul>
+  <p id="s6-note">Some figures in this summary are based on management guidance and reported estimates, not final audited results. Treasury yield figures are approximate as of the March 27 close.</p>
+</div>
+
+<!-- ═══ HISTORICAL CONTEXT ═══ -->
+<div class="card">
+  <h2 id="s7-title">Putting It in Perspective</h2>
+  <p id="s7-intro">An 11% drop in tech stocks is uncomfortable but not historically unusual. Looking at similar past episodes:</p>
+  <ul id="s7-list">
+    <li><strong>April 2025 (tariff shock):</strong> Tech fell 15–18%, then recovered in about a month after the policy reversed.</li>
+    <li><strong>2022 (Fed tightening):</strong> Tech fell 35% and took over a year to recover — because the underlying problem (rising rates) persisted for many months.</li>
+    <li><strong>March 2020 (COVID crash):</strong> A 30% crash that became a buying opportunity because governments responded with massive stimulus.</li>
+    <li><strong>2008 (financial crisis):</strong> A 55% crash that was decidedly <em>not</em> a buying opportunity for a long time.</li>
+  </ul>
+  <p id="s7-conclusion">The pattern from that small sample: <strong>when the cause resolved quickly, the rebound was quick. When the problem persisted, the pain dragged on.</strong> Whether this correction follows the 2025 or the 2022 pattern depends almost entirely on what happens with Iran and oil — and that is a geopolitical question, not a stock-picking question.</p>
+</div>
+
+</div><!-- end .wrap -->
+
+<footer>
+  <div class="wrap">
+    <hr style="border-color: #dde1e6; margin-bottom: 14px;">
+    <p id="footer-text"><strong>Written Saturday, March 28, 2026.</strong> Market data through Friday, March 27, 2026 close. This summary is derived from a longer institutional research note produced using publicly available sources including: Federal Reserve FOMC statement (federalreserve.gov), FRED Treasury yield data, company earnings releases and call transcripts (Apple, Microsoft, Alphabet, Meta, Amazon, NVIDIA, Broadcom), Associated Press, CNBC, WSJ, NPR, and others. Full source ledger available in the institutional version.</p>
+    <p id="footer-disclaimer">This does not constitute investment advice. All estimates and scenario analyses are subject to the assumptions described above. Some figures derive from company guidance or secondary market reporting and may not reflect final audited results. Investors should consult their own financial advisors before making investment decisions.</p>
+  </div>
+</footer>
+
+<script>
+const T = {
+  en: {
+    'doc-title':    'Tech Stocks Just Entered a Correction — What You Need to Know',
+    'page-title':   'Tech Stocks Just Entered a Correction. Here\u2019s What You Need to Know.',
+    'page-sub':     'A plain-English guide to the March 2026 tech selloff',
+    'page-date':    'Written Saturday, March 28, 2026 \u00b7 Data through Friday, March 27 close',
+    'bl-title':     '\u26a1 The Bottom Line',
+    'bl-badges':    '<span class="hl-badge hl-call">HOLD \u2014 Moderate Conviction</span><span class="hl-badge hl-date">\ud83d\udcc5 Key Date: April 6, 2026</span>',
+    'bl-body':      'Tech stocks have fallen 11% from their October peak \u2014 a \u201ccorrection\u201d in Wall Street terms (a drop of 10% or more). The companies themselves are still reporting strong profits. The selloff is being driven by the Iran war and the resulting oil price shock, not by collapsing tech demand. Our call: <strong>Hold. Don\u2019t panic-sell, but don\u2019t rush in either.</strong> The situation is genuinely uncertain. The single most important date to watch is <strong>April 6</strong>, when the president\u2019s pause on attacks against Iran\u2019s energy infrastructure expires. How that deadline resolves will likely determine whether tech bounces or falls further.',
+    's1-title':     '1. What Happened?',
+    's1-intro':     'On Friday, March 27, the Nasdaq-100 \u2014 an index of the 100 largest non-financial companies, dominated by big tech \u2014 closed at <strong>23,133</strong>, down 11.4% from its all-time high set in October 2025. It was the fifth straight week of losses. Here\u2019s what drove it, in order of importance:',
+    's1-iran':      '<strong>\ud83d\udd34 The Iran war and oil prices \u2014 by far the biggest factor.</strong> The U.S.-Iran conflict that started in late February has severely disrupted shipping through the Strait of Hormuz, a narrow waterway that normally carries about a fifth of the world\u2019s oil supply, according to the Congressional Research Service. Oil prices have surged roughly 55%, from about $70 a barrel before the war to above $110. On Thursday, the president announced a 10-day pause on strikes against Iran\u2019s energy facilities, creating an <strong>April 6 deadline</strong>. But markets weren\u2019t reassured \u2014 oil kept climbing Friday and stocks kept falling.',
+    's1-iran2':     'Why this hurts tech specifically: expensive oil raises inflation fears, which pushes interest rates higher. When rates rise, investors pay less for each dollar of a company\u2019s expected future profit \u2014 and tech stocks depend more heavily on future profit expectations than most other sectors.',
+    's1-google':    '<strong>\ud83d\udfe1 A Google AI discovery spooked chip stocks.</strong> Google announced a technique called \u201cTurboQuant\u201d that could reduce the memory chips needed to run AI systems. Memory chipmakers dropped 5\u20136%, though most analysts think this is about making AI faster and cheaper, not about needing fewer chips overall.',
+    's1-trial':     '<strong>\ud83d\udfe1 Meta and YouTube were found liable in an addiction trial.</strong> A California jury ruled against Instagram and YouTube in a landmark case about social media addiction in children. Meta fell 8% and Alphabet (Google\u2019s parent) fell about 3%.',
+    's1-software':  '<strong>\ud83d\udfe0 Software stocks were already under pressure from AI disruption fears.</strong> Even before the war, software companies had been selling off since January on worries that AI tools could replace traditional business software. Software stocks are down roughly 17% this year as of early March.',
+    's1-rates':     '<strong>\ud83d\udfe0 Interest rate hopes faded.</strong> The Federal Reserve held rates steady at 3.5\u20133.75% on March 18. At the start of the year, investors expected two rate cuts in 2026. Now they expect at most one.',
+    's2-title':     '2. Why Does It Matter for Your Portfolio?',
+    's2-tension':   '<strong>The core tension you need to understand: strong companies do not automatically mean cheap stocks.</strong> Every major tech company reported double-digit revenue growth last quarter \u2014 Apple +16%, Microsoft +17%, Meta +24%, Alphabet +17%, Amazon +13.6%, NVIDIA +73%. These are genuinely healthy businesses. But that does not make them bargains at current prices, and the economic backdrop just got significantly worse.',
+    's2-val-title': 'Why good earnings alone aren\u2019t enough right now',
+    's2-val':       'Tech stocks are trading at about <strong>30 times their expected future earnings</strong> \u2014 meaning investors are paying $30 for every $1 of profit these companies are expected to earn next year. That\u2019s roughly in line with the five-year average but above the ten-year average of about 27 times.',
+    's2-yield':     'Here\u2019s the catch. Flip that ratio around: tech stocks are effectively yielding about 3.3% on their earnings. But a 10-year U.S. government bond \u2014 one of the safest investments in the world \u2014 currently yields about 4.4%. <strong>So right now, tech stocks offer a lower return than a risk-free bond, which means investors are paying a premium for growth that hasn\u2019t happened yet.</strong> If that growth disappoints even modestly, stock prices can fall even if earnings stay okay, because investors become willing to pay less per dollar of profit. That is why strong earnings do not automatically make this a buying opportunity.',
+    's2-spend-title':'The spending question nobody can answer yet',
+    's2-spend':     'These companies are also pouring enormous sums into AI infrastructure \u2014 Meta plans to spend $115\u2013135 billion this year on capital projects; Alphabet guided $175\u2013185 billion, roughly double last year\u2019s pace. Microsoft reported $37.5 billion in capital spending and equipment leases in a single quarter. The risk isn\u2019t that their businesses are shrinking. It\u2019s that they\u2019re investing massively, and it\u2019s not yet clear those investments will generate proportional returns. If the economy weakens from the oil shock at the same time these spending bills come due, profit margins could shrink.',
+    's2-consumer-title':'Consumers are already getting nervous',
+    's2-consumer':  'The University of Michigan\u2019s consumer sentiment survey fell 6% in March to its lowest since December 2025. Americans\u2019 one-year inflation expectations jumped from 3.4% to 3.8% \u2014 the largest one-month increase since the tariff scare in April 2025. If consumers pull back spending, that eventually hits the digital advertising and e-commerce revenue that these companies depend on.',
+    's2-bridge':    'That combination \u2014 full valuations, heavy spending commitments, and a consumer starting to worry \u2014 is why the right call is patience, not action, despite fundamentally healthy businesses.',
+    's3-title':     '3. What Should I Do?',
+    's3-intro':     '<strong>Our call: Hold. Be patient. Wait for clearer signals.</strong> The evidence points to the Iran war and oil prices as the primary driver of this selloff, not a collapse in tech demand. But the situation is genuinely uncertain, and stocks are not cheap enough to justify betting big on a resolution.',
+    's3-intro2':    'Here\u2019s the practical guidance based on where you sit:',
+    's3-box-hold':  '<strong>If you own diversified index funds (like a target-date fund or total market fund):</strong> Do nothing unless your financial plan has changed. These funds rebalance automatically. Corrections of this size have historically been temporary \u2014 though this one\u2019s outcome depends on the war, and we can\u2019t predict that.',
+    's3-box-buy':   '<strong>If you own individual tech stocks and are thinking about buying more:</strong> The source research\u2019s recommendation is to wait for either geopolitical clarity (especially after April 6) or a further price decline before committing significant new capital. If you do want to start building a position, consider buying in stages over weeks or months rather than all at once \u2014 that way you\u2019re protected if prices fall further.',
+    's3-box-conc':  '<strong>If tech dominates your portfolio:</strong> This is a reasonable time to check whether one sector is too large a share of your holdings. Owning a lot of tech during a geopolitical crisis is a concentrated bet. You don\u2019t have to sell everything \u2014 but making sure no single sector represents an outsized share of your net worth is basic portfolio hygiene.',
+    's3-look-title':'Within tech, where do fundamentals look relatively stronger?',
+    's3-look-intro':'This is not a buy list \u2014 any individual stock can drop 20\u201330% in a correction regardless of its business quality. But if you already own tech and are deciding what to hold or add on further weakness, the areas with the most visible demand are:',
+    's3-look-list': '<li><strong>AI chip companies</strong> (NVIDIA, Broadcom) \u2014 their customers have committed to enormous spending plans for AI infrastructure, and NVIDIA\u2019s latest guidance came in far above expectations. Broadcom\u2019s AI chip revenue doubled. This doesn\u2019t make them immune to a broader selloff, but the demand signal is the strongest in tech.</li><li><strong>Apple</strong> \u2014 the most defensively positioned of the mega-caps, with relatively modest spending, massive cash flow, and an iPhone cycle that delivered 23% revenue growth. It was essentially flat \u2014 even slightly positive \u2014 on the day everything else fell sharply.</li><li><strong>Alphabet (Google)</strong> \u2014 the source research applies its lowest valuation assumptions to Alphabet, reflecting the legal risks from the social media trial and ongoing antitrust cases. But cloud revenue grew 48% and the core search business remains robust. That legal discount may be overdone.</li>',
+    's3-look-other':'Consumer internet companies (Meta, Amazon) have strong businesses but face the most direct exposure to a consumer spending pullback if the oil shock persists. Software companies have been hit hardest (down ~25% from their September peak as of early March) and could rebound sharply if sentiment improves, but the AI disruption question is real and will take years to resolve.',
+    's3-change-title':'What conditions would change this call?',
+    's3-change-buy':'<strong>We\u2019d become more aggressive buyers if:</strong> the Strait of Hormuz reopens and oil drops below $85, the Fed signals rate cuts are back on the table, or stock prices fall enough that the math becomes more compelling.',
+    's3-change-sell':'<strong>We\u2019d become more defensive if:</strong> oil exceeds $130 and stays there, any major tech company misses earnings or cuts its spending guidance, or interest rates rise above 4.75% on the 10-year Treasury.',
+    's4-title':     '4. What Should I Watch Next?',
+    's4-intro':     'Three signals will tell you whether this correction is ending or deepening:',
+    's4-signals':   '<li><strong>Oil prices.</strong> If Brent crude falls meaningfully below $100 because tensions are easing, that supports a recovery. If it spikes above $120 on escalation, the correction probably isn\u2019t over.</li><li><strong>Big tech earnings guidance (late April\u2013May).</strong> If Apple, Microsoft, Meta, Alphabet, and Amazon all confirm that AI spending continues and revenue is holding up, the \u201cfundamentals are fine\u201d thesis holds. If anyone cuts guidance, that changes the picture.</li><li><strong>Fed language.</strong> If the Fed hints at rate cuts at its May meeting, that\u2019s a major positive for tech. If they signal rates could stay put or even rise, high-priced growth stocks remain vulnerable.</li>',
+    's4-dates-title':'Key Dates',
+    's4-dates':     '<li><span class="dl-date">\u26a0\ufe0f April 6 \u2014 The key date</span><span class="dl-desc">The president\u2019s 10-day pause on attacking Iran\u2019s energy infrastructure expires. A diplomatic breakthrough would likely spark a sharp relief rally. Escalation would mean more selling and higher oil.</span></li><li><span class="dl-date">Late April \u2014 Apple earnings</span><span class="dl-desc">The first major consumer-health check since the oil shock. Watch whether rising memory chip prices are eating into profit margins.</span></li><li><span class="dl-date">Late April\u2013May \u2014 Big tech earnings wave</span><span class="dl-desc">Microsoft, Meta, Alphabet, and Amazon all report. The key question: are they still increasing AI spending, or pulling back?</span></li><li><span class="dl-date">Late May \u2014 NVIDIA earnings</span><span class="dl-desc">The most important test for the AI spending story. NVIDIA guided for $78 billion in revenue \u2014 far above expectations. If they deliver, the AI cycle is intact.</span></li>',
+    's5-title':     'How This Could Play Out \u2014 Four Scenarios',
+    's5-intro':     'These are rough estimates based on how the main variables (oil, rates, earnings) might evolve. They are not precise forecasts \u2014 shifting any assumption would meaningfully change the numbers.',
+    's5-scenarios':  '<div class="sc sc-up"><div class="sc-head">Quick Resolution (~25% chance)</div><div class="sc-body">The Strait of Hormuz reopens by mid-April. Oil drops back to $80\u201390. Confidence returns quickly. <strong>Tech stocks: up 7\u201314% from here.</strong></div></div><div class="sc sc-flat"><div class="sc-head">Slow Improvement \u2014 most likely (~35% chance)</div><div class="sc-body">The war gradually de-escalates over months. Oil stabilizes around $80\u2013100. Earnings continue delivering. Things normalize over 6\u201312 months. <strong>Tech stocks: up 7\u201319%.</strong></div></div><div class="sc sc-down"><div class="sc-head">War Drags On (~25% chance)</div><div class="sc-body">No resolution by mid-year. Oil stays above $100. The Fed can\u2019t cut rates. The economy slows as energy costs mount. <strong>Tech stocks: down another 13\u201324%.</strong></div></div><div class="sc sc-deep"><div class="sc-head">Full Recession (~15% chance)</div><div class="sc-body">A full energy crisis develops. Oil above $130. Businesses start cutting jobs. Credit markets tighten. <strong>Tech stocks: down 30\u201340% from current levels.</strong></div></div>',
+    's5-ev':        'When you average these four scenarios by their estimated likelihood, the expected result over the next year is <strong>roughly flat \u2014 maybe slightly negative</strong>. That is not a strong enough expected return to justify a big bet right now. But the positive scenarios (about 60% combined probability) are meaningfully better than the negative ones, which is why we lean toward patience rather than outright selling.',
+    's6-title':     'What We Don\u2019t Know',
+    's6-intro':     'In the interest of honesty:',
+    's6-list':      '<li><strong>How long the Strait of Hormuz will stay disrupted.</strong> This is the single most important variable. Energy analysts say the market is giving it about two more weeks before pricing in a longer conflict. Nobody knows the answer.</li><li><strong>Whether the oil shock will actually hurt tech earnings</strong>, or whether these businesses are resilient enough to power through. The first real test comes in late April when the next round of quarterly results are reported.</li><li><strong>What the Fed will do.</strong> Chair Powell said the war\u2019s impact is \u201ctoo soon to know.\u201d The central bank is watching the same uncertain situation as the rest of us.</li>',
+    's6-note':      'Some figures in this summary are based on management guidance and reported estimates, not final audited results. Treasury yield figures are approximate as of the March 27 close.',
+    's7-title':     'Putting It in Perspective',
+    's7-intro':     'An 11% drop in tech stocks is uncomfortable but not historically unusual. Looking at similar past episodes:',
+    's7-list':      '<li><strong>April 2025 (tariff shock):</strong> Tech fell 15\u201318%, then recovered in about a month after the policy reversed.</li><li><strong>2022 (Fed tightening):</strong> Tech fell 35% and took over a year to recover \u2014 because the underlying problem (rising rates) persisted for many months.</li><li><strong>March 2020 (COVID crash):</strong> A 30% crash that became a buying opportunity because governments responded with massive stimulus.</li><li><strong>2008 (financial crisis):</strong> A 55% crash that was decidedly <em>not</em> a buying opportunity for a long time.</li>',
+    's7-conclusion':'The pattern from that small sample: <strong>when the cause resolved quickly, the rebound was quick. When the problem persisted, the pain dragged on.</strong> Whether this correction follows the 2025 or the 2022 pattern depends almost entirely on what happens with Iran and oil \u2014 and that is a geopolitical question, not a stock-picking question.',
+    'footer-text':  '<strong>Written Saturday, March 28, 2026.</strong> Market data through Friday, March 27, 2026 close. This summary is derived from a longer institutional research note produced using publicly available sources including: Federal Reserve FOMC statement (federalreserve.gov), FRED Treasury yield data, company earnings releases and call transcripts (Apple, Microsoft, Alphabet, Meta, Amazon, NVIDIA, Broadcom), Associated Press, CNBC, WSJ, NPR, and others. Full source ledger available in the institutional version.',
+    'footer-disclaimer':'This does not constitute investment advice. All estimates and scenario analyses are subject to the assumptions described above. Some figures derive from company guidance or secondary market reporting and may not reflect final audited results. Investors should consult their own financial advisors before making investment decisions.',
+  },
+  zh: {
+    'doc-title':    '科技股正式進入回調——你需要了解的一切',
+    'page-title':   '科技股正式進入回調。你需要了解的一切。',
+    'page-sub':     '2026年3月科技股拋售的簡明中文導讀',
+    'page-date':    '撰寫於2026年3月28日（星期六）· 數據截至3月27日（星期五）收盤',
+    'bl-title':     '⚡ 核心結論',
+    'bl-badges':    '<span class="hl-badge hl-call">持有觀望 — 中等信心</span><span class="hl-badge hl-date">📅 關鍵日期：2026年4月6日</span>',
+    'bl-body':      '科技股已從10月高點下跌11%——華爾街稱之為「回調」（從高點下跌10%以上）。這些公司本身仍在報告強勁的利潤。這次拋售的主要原因是伊朗戰爭和由此引發的油價衝擊，而非科技需求崩塌。我們的建議：<strong>持有觀望。不要恐慌拋售，但也不要急著抄底。</strong>局勢確實充滿不確定性。最需要關注的日期是<strong>4月6日</strong>——總統暫停攻擊伊朗能源設施的期限屆滿。該期限的結果很可能決定科技股是反彈還是繼續下跌。',
+    's1-title':     '一、發生了什麼？',
+    's1-intro':     '3月27日（星期五），納斯達克100指數——一個以大型科技股為主的100家最大非金融公司指數——收於<strong>23,133</strong>點，較2025年10月創下的歷史高點下跌11.4%。這是連續第五週下跌。以下是主要驅動因素，按重要性排序：',
+    's1-iran':      '<strong>🔴 伊朗戰爭與油價——目前最大的因素。</strong>2月底開始的美伊衝突嚴重擾亂了霍爾木茲海峽的航運。根據美國國會研究服務處的資料，該海峽通常承載全球約五分之一的石油供應。油價已從戰前的每桶約70美元飆升約55%至110美元以上。週四，總統宣布暫停攻擊伊朗能源設施10天，<strong>期限為4月6日</strong>。但市場未受安撫——週五油價繼續攀升，股市繼續下跌。',
+    's1-iran2':     '為什麼這特別影響科技股：高油價加劇通脹擔憂，推高利率。當利率上升時，投資者願意為公司未來每一美元的預期利潤支付的價格降低——而科技股比大多數行業更依賴於對未來利潤的預期。',
+    's1-google':    '<strong>🟡 谷歌的一項AI發現嚇壞了晶片股。</strong>谷歌宣布了一項名為「TurboQuant」的技術，可將運行AI系統所需的記憶體晶片減少至六分之一。記憶體晶片製造商股價下跌5-6%，不過多數分析師認為這是讓AI更快更便宜，而非減少對晶片的整體需求。',
+    's1-trial':     '<strong>🟡 Meta和YouTube在成癮訴訟中被判承擔責任。</strong>加州陪審團在一起關於社交媒體兒童成癮的標誌性案件中裁定Instagram和YouTube敗訴。Meta下跌8%，Alphabet（谷歌母公司）下跌約3%。',
+    's1-software':  '<strong>🟠 軟件股此前已受AI顛覆擔憂承壓。</strong>即使在戰爭之前，軟件公司自1月起就因擔心AI工具可能取代傳統商業軟件而持續被拋售。截至3月初，軟件股今年已下跌約17%。',
+    's1-rates':     '<strong>🟠 降息希望落空。</strong>美聯儲在3月18日維持利率在3.5-3.75%不變。年初時投資者預期2026年將降息兩次，現在最多只預期一次。',
+    's2-title':     '二、這對你的投資組合意味著什麼？',
+    's2-tension':   '<strong>你需要理解的核心矛盾：業績強勁的公司不等於便宜的股票。</strong>每家主要科技公司上季度都報告了兩位數的收入增長——蘋果+16%、微軟+17%、Meta +24%、Alphabet +17%、亞馬遜+13.6%、英偉達+73%。這些確實是健康的企業。但這並不意味著按目前的價格它們是划算的，而且經濟大環境剛剛顯著惡化。',
+    's2-val-title': '為什麼僅有好的業績是不夠的',
+    's2-val':       '科技股目前的交易價格約為<strong>預期未來盈利的30倍</strong>——也就是說，投資者為這些公司明年預期賺取的每1美元利潤支付30美元。這大致與五年平均水平持平，但高於約27倍的十年平均水平。',
+    's2-yield':     '關鍵在於：把這個比率反過來，科技股的盈利收益率約為3.3%。但10年期美國國債——世界上最安全的投資之一——目前的收益率約為4.4%。<strong>所以現在科技股提供的回報低於無風險債券，這意味著投資者正在為尚未實現的增長支付溢價。</strong>如果增長哪怕略有不及預期，股價也可能下跌——因為投資者會降低願意為每一美元利潤支付的價格。這就是為什麼業績強勁不代表現在就是買入時機。',
+    's2-spend-title':'沒有人能回答的支出問題',
+    's2-spend':     '這些公司也在向AI基礎設施投入巨額資金——Meta計劃今年在資本項目上投入1,150-1,350億美元；Alphabet指引1,750-1,850億美元，大約是去年的兩倍。微軟在單個季度報告了375億美元的資本支出和設備租賃。風險不在於他們的業務在萎縮，而在於他們正在大規模投資，而這些投資能否產生相應回報尚不確定。如果經濟因油價衝擊而走弱，同時這些巨額支出到期，利潤率可能會收縮。',
+    's2-consumer-title':'消費者已經開始緊張',
+    's2-consumer':  '密歇根大學消費者信心調查在3月下降6%，降至2025年12月以來的最低水平。美國人的一年期通脹預期從3.4%躍升至3.8%——這是自2025年4月關稅衝擊以來最大的單月增幅。如果消費者縮減開支，最終將影響這些公司所依賴的數字廣告和電商收入。',
+    's2-bridge':    '估值偏高、支出承諾沉重、消費者開始擔憂——這三者的結合正是為什麼正確的策略是耐心觀望，而非立即行動，儘管企業基本面依然健康。',
+    's3-title':     '三、我應該怎麼做？',
+    's3-intro':     '<strong>我們的建議：持有觀望。保持耐心。等待更明確的信號。</strong>證據指向伊朗戰爭和油價是這次拋售的主要驅動因素，而非科技需求崩塌。但局勢確實不確定，股價也不夠便宜，不值得押注於局勢好轉。',
+    's3-intro2':    '以下是根據你的具體情況提供的實用建議：',
+    's3-box-hold':  '<strong>如果你持有分散化指數基金（如目標日期基金或全市場基金）：</strong>除非你的理財計劃有變，否則什麼都不需要做。這些基金會自動再平衡。歷史上這種規模的回調通常是暫時的——不過這次的結果取決於戰爭，我們無法預測。',
+    's3-box-buy':   '<strong>如果你持有個別科技股並考慮加倉：</strong>原始研究報告的建議是等待地緣政治明朗化（尤其是4月6日之後）或價格進一步下跌後再投入大量新資金。如果你確實想開始建倉，建議在數週或數月內分批買入，而非一次性全部投入——這樣如果股價進一步下跌，你會更有保障。',
+    's3-box-conc':  '<strong>如果科技股在你的投資組合中佔比過大：</strong>現在是檢查某個行業是否佔了你持倉過大比例的合理時機。在地緣政治危機期間持有大量科技股是一個集中押注。你不必全部賣出——但確保沒有任何單一行業在你的淨資產中佔據過大份額，是基本的投資組合管理。',
+    's3-look-title':'在科技股內部，哪些領域的基本面相對更強？',
+    's3-look-intro':'這不是一份買入清單——在回調中，任何個股都可能下跌20-30%，無論其業務質量如何。但如果你已經持有科技股並在決定持有什麼或在進一步下跌時增持什麼，需求最明顯的領域是：',
+    's3-look-list': '<li><strong>AI晶片公司</strong>（英偉達、博通）——他們的客戶已經承諾為AI基礎設施投入巨額資金，英偉達的最新業績指引遠超預期。博通的AI晶片收入翻倍。這並不意味著它們免受更廣泛拋售的影響，但需求信號是科技板塊中最強的。</li><li><strong>蘋果</strong>——在大型科技公司中防禦性最強，支出相對溫和，現金流龐大，iPhone周期帶來了23%的收入增長。在其他所有科技股大幅下跌的那天，蘋果基本持平甚至微漲。</li><li><strong>Alphabet（谷歌）</strong>——原始研究對Alphabet適用了最低的估值假設，反映了社交媒體訴訟和反壟斷案件帶來的法律風險。但雲收入增長48%，核心搜索業務依然穩健。法律風險折扣可能被過度定價了。</li>',
+    's3-look-other':'消費互聯網公司（Meta、亞馬遜）業務強勁，但如果油價衝擊持續，它們面臨消費者支出回落的最直接風險。軟件公司跌幅最大（截至3月初，較9月峰值下跌約25%），如果市場情緒改善可能大幅反彈，但AI顛覆問題是真實存在的，需要數年才能解決。',
+    's3-change-title':'什麼條件會改變這一判斷？',
+    's3-change-buy':'<strong>在以下情況下我們會更積極買入：</strong>霍爾木茲海峽重新開放且油價降至85美元以下；美聯儲表示降息重新提上日程；或股價跌到足夠便宜的水平。',
+    's3-change-sell':'<strong>在以下情況下我們會更加防禦：</strong>油價超過130美元且持續高位；任何大型科技公司業績不及預期或削減支出計劃；或10年期國債利率升至4.75%以上。',
+    's4-title':     '四、接下來應該關注什麼？',
+    's4-intro':     '三個信號將告訴你這次回調是即將結束還是正在加深：',
+    's4-signals':   '<li><strong>油價。</strong>如果布倫特原油因緊張局勢緩和而大幅跌破100美元，這有利於市場復甦。如果因局勢升級而飆升至120美元以上，回調可能尚未結束。</li><li><strong>大型科技公司業績指引（4月底至5月）。</strong>如果蘋果、微軟、Meta、Alphabet和亞馬遜都確認AI支出繼續且收入保持穩定，「基本面良好」的論點成立。如果任何一家下調指引，情況就會改變。</li><li><strong>美聯儲的措辭。</strong>如果美聯儲在5月會議上暗示降息，這對科技股是重大利好。如果他們表示利率將保持不變或甚至可能上升，高估值成長股仍然脆弱。</li>',
+    's4-dates-title':'關鍵日期',
+    's4-dates':     '<li><span class="dl-date">⚠️ 4月6日——最關鍵的日期</span><span class="dl-desc">總統暫停攻擊伊朗能源設施的10天期限屆滿。外交突破可能引發大幅反彈。局勢升級則意味著更多拋售和更高油價。</span></li><li><span class="dl-date">4月底——蘋果財報</span><span class="dl-desc">油價衝擊後的首次重要消費者健康檢測。關注記憶體晶片價格上漲是否正在侵蝕利潤率。</span></li><li><span class="dl-date">4月底至5月——大型科技公司財報潮</span><span class="dl-desc">微軟、Meta、Alphabet和亞馬遜都將公布業績。核心問題：它們是否仍在增加AI支出，還是開始縮減？</span></li><li><span class="dl-date">5月底——英偉達財報</span><span class="dl-desc">AI支出故事最重要的考驗。英偉達指引收入780億美元——遠超預期。如果達標，AI周期就是完好的。</span></li>',
+    's5-title':     '四種可能的走向',
+    's5-intro':     '以下是基於主要變量（油價、利率、企業盈利）可能演變方式的粗略估計。這些不是精確預測——改變任何假設都會顯著改變結果。',
+    's5-scenarios':  '<div class="sc sc-up"><div class="sc-head">快速解決（約25%概率）</div><div class="sc-body">霍爾木茲海峽在4月中旬重新開放。油價回落至80-90美元。信心迅速恢復。<strong>科技股：從現在起上漲7-14%。</strong></div></div><div class="sc sc-flat"><div class="sc-head">緩慢改善——最可能的情況（約35%概率）</div><div class="sc-body">戰爭在數月內逐步降級。油價穩定在80-100美元。企業盈利繼續兌現。6-12個月內正常化。<strong>科技股：上漲7-19%。</strong></div></div><div class="sc sc-down"><div class="sc-head">戰爭拖延（約25%概率）</div><div class="sc-body">年中前無法解決。油價維持在100美元以上。美聯儲無法降息。能源成本上升拖累經濟。<strong>科技股：再跌13-24%。</strong></div></div><div class="sc sc-deep"><div class="sc-head">全面衰退（約15%概率）</div><div class="sc-body">全面能源危機爆發。油價超過130美元。企業開始裁員。信貸市場收緊。<strong>科技股：從當前水平再跌30-40%。</strong></div></div>',
+    's5-ev':        '按估計概率加權平均這四種情景，未來一年的預期回報<strong>大致持平——可能略為負值</strong>。這不足以證明現在大幅下注是合理的。但正面情景（合計約60%概率）明顯優於負面情景，這就是為什麼我們傾向於耐心觀望而非直接賣出。',
+    's6-title':     '我們不知道的事情',
+    's6-intro':     '為了誠實起見：',
+    's6-list':      '<li><strong>霍爾木茲海峽的中斷將持續多久。</strong>這是最重要的變量。能源分析師表示市場給予大約兩週時間來判斷衝突是否會長期化。沒有人知道答案。</li><li><strong>油價衝擊是否真的會損害科技公司的盈利</strong>，還是這些企業有足夠的韌性來抵禦。第一次真正的考驗將在4月底下一輪季度業績公布時到來。</li><li><strong>美聯儲會怎麼做。</strong>鮑威爾主席表示戰爭的影響「現在判斷為時尚早」。央行和我們一樣面對同樣的不確定局勢。</li>',
+    's6-note':      '本摘要中的部分數據基於管理層指引和已報告的估計，而非最終審計結果。國債收益率數據為截至3月27日收盤的近似值。',
+    's7-title':     '歷史視角',
+    's7-intro':     '科技股下跌11%令人不安，但從歷史上看並不罕見。回顧類似的過往事件：',
+    's7-list':      '<li><strong>2025年4月（關稅衝擊）：</strong>科技股下跌15-18%，在政策逆轉後約一個月內完全恢復。</li><li><strong>2022年（美聯儲加息）：</strong>科技股下跌35%，花了一年多才恢復——因為根本問題（利率上升）持續了很多個月。</li><li><strong>2020年3月（新冠崩盤）：</strong>30%的暴跌最終成為買入機會，因為各國政府以大規模刺激措施回應。</li><li><strong>2008年（金融危機）：</strong>55%的暴跌，在很長一段時間內絕對<em>不是</em>買入機會。</li>',
+    's7-conclusion':'從這個小樣本中可以看出的規律：<strong>當原因迅速解決時，反彈也很快。當問題持續存在時，痛苦也會延續。</strong>這次回調是走2025年的模式還是2022年的模式，幾乎完全取決於伊朗和石油的走向——而這是一個地緣政治問題，不是選股問題。',
+    'footer-text':  '<strong>撰寫於2026年3月28日（星期六）。</strong>市場數據截至2026年3月27日（星期五）收盤。本摘要源自一份更詳細的機構研究報告，該報告使用的公開來源包括：美聯儲FOMC聲明（federalreserve.gov）、FRED國債收益率數據、公司財報及電話會議紀錄（蘋果、微軟、Alphabet、Meta、亞馬遜、英偉達、博通）、美聯社、CNBC、華爾街日報、NPR等。完整來源清單可在機構版報告中查閱。',
+    'footer-disclaimer':'本文不構成投資建議。所有估計和情景分析均受上述假設的約束。部分數據來自公司指引或二級市場報告，可能不反映最終審計結果。投資者在做出投資決策前應諮詢自己的財務顧問。',
+  }
+};
+
+function setLang(lang, pushState) {
+  if (pushState === undefined) pushState = true;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+  document.title = T[lang]['doc-title'];
+  for (var id in T[lang]) {
+    if (id === 'doc-title') continue;
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = T[lang][id];
+  }
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  if (pushState) {
+    var url = new URL(location.href);
+    if (lang === 'en') url.searchParams.delete('lang');
+    else url.searchParams.set('lang', lang);
+    history.pushState(null, '', url);
+  }
+}
+
+// Apply language from URL on load
+var initLang = new URL(location.href).searchParams.get('lang');
+if (initLang === 'zh') setLang('zh', false);
+</script>
+
+</body>
+</html>
