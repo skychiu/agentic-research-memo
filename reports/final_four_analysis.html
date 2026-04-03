@@ -697,16 +697,16 @@
     <h1>2026 NCAA Final Four<br>Championship Probability Analysis</h1>
     <p class="hero-subtitle">Multi-source analysis by <a href="https://agnite.ai/" target="_blank" rel="noopener">Agnite AI</a>&nbsp; ·&nbsp; March 2026</p>
     <p class="hero-disclaimer">Built as a research demo — not betting advice.</p>
-    <p style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445686795436003328/" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid var(--border-light);border-radius:999px;background:var(--bg-secondary);color:var(--text-secondary);font-size:14px;text-decoration:none;transition:border-color 0.2s,color 0.2s;">
-        <span style="font-size:16px;">💬</span>
-        <span>Join the discussion on <strong style="color:var(--text-primary);">LinkedIn</strong></span>
-      </a>
+    <p style="margin-top:16px;">
       <a href="https://polymarket.com/event/2026-ncaa-tournament-winner" target="_blank" rel="noopener"
          style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid var(--border-light);border-radius:999px;background:var(--bg-secondary);color:var(--text-secondary);font-size:14px;text-decoration:none;transition:border-color 0.2s,color 0.2s;">
         <span style="font-size:16px;">📊</span>
         <span>Live market data: <strong style="color:var(--text-primary);">Polymarket</strong>&nbsp;·&nbsp;$24.5M volume</span>
+      </a>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445686795436003328/" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid var(--border-light);border-radius:999px;background:var(--bg-secondary);color:var(--text-secondary);font-size:14px;text-decoration:none;transition:border-color 0.2s,color 0.2s;margin-left:8px;">
+        <span style="font-size:16px;">💬</span>
+        <span>Join the discussion on <strong style="color:var(--text-primary);">LinkedIn</strong></span>
       </a>
     </p>
   </div>
@@ -716,6 +716,7 @@
 
   <!-- Table of Contents -->
   <nav class="toc" aria-label="Sections">
+    <a href="#executive-summary">Executive Summary</a>
     <a href="#prompt">The Prompt</a>
     <a href="#semis">Semifinals</a>
     <a href="#probabilities">Title Probabilities</a>
@@ -725,6 +726,88 @@
     <a href="#methodology">Methodology</a>
     <a href="#finding">Key Finding</a>
   </nav>
+
+  <!-- ==================== EXECUTIVE SUMMARY ==================== -->
+  <section id="executive-summary">
+    <div class="section-label">Executive Summary</div>
+    <h2>Executive Summary</h2>
+
+    <p style="font-size:17px;color:var(--text-secondary);margin-bottom:24px;">
+      Agnite analyzed the 2026 NCAA Final Four by pulling live data from multiple sources — season stats, advanced metrics, sportsbook lines, and prediction market odds — then built a probability model from scratch. Here's what it found.
+    </p>
+
+    <!-- Summary cards -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;">
+        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:6px;">Predicted Champion</div>
+        <div style="font-size:28px;font-weight:700;color:var(--michigan-blue);">Michigan</div>
+        <div style="font-size:14px;color:var(--text-secondary);">31.6% probability</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--accent-border);border-radius:var(--radius);padding:20px;text-align:center;">
+        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent);margin-bottom:6px;">Biggest Market Gap</div>
+        <div style="font-size:28px;font-weight:700;color:var(--illinois-orange);">Illinois</div>
+        <div style="font-size:14px;color:var(--text-secondary);">Model: 26.7% vs Market: 18.1%</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;">
+        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:6px;">Most Likely Final</div>
+        <div style="font-size:22px;font-weight:700;color:var(--text-primary);">Michigan vs Illinois</div>
+        <div style="font-size:14px;color:var(--text-secondary);">31.4% — all-Big Ten title game</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;">
+        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:6px;">Data Sources</div>
+        <div style="font-size:28px;font-weight:700;color:var(--text-primary);">10+</div>
+        <div style="font-size:14px;color:var(--text-secondary);">KenPom, Synergy, FanDuel, Polymarket…</div>
+      </div>
+    </div>
+
+    <!-- Quick results table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Agnite Model</th>
+            <th>Polymarket</th>
+            <th>Divergence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-michigan"></span>Michigan</span></td>
+            <td><strong>31.6%</strong></td>
+            <td>35.0%</td>
+            <td style="color:var(--text-secondary);">-3.4%</td>
+          </tr>
+          <tr style="background:var(--accent-dim);border-left:3px solid var(--accent);">
+            <td><span class="team-cell"><span class="team-dot dot-illinois"></span>Illinois</span></td>
+            <td><strong style="color:var(--accent);">26.7%</strong></td>
+            <td>18.1%</td>
+            <td><strong style="color:var(--accent);">+8.6% ★</strong></td>
+          </tr>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-arizona"></span>Arizona</span></td>
+            <td><strong>24.9%</strong></td>
+            <td>32.9%</td>
+            <td style="color:var(--text-secondary);">-8.0%</td>
+          </tr>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-uconn"></span>UConn</span></td>
+            <td><strong>16.7%</strong></td>
+            <td>13.9%</td>
+            <td style="color:var(--text-secondary);">+2.8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:15px;color:var(--text-secondary);margin-top:20px;">
+      <strong style="color:var(--text-primary);">The headline finding:</strong> The model's biggest divergence from the prediction market is Illinois — priced at 18.1% on Polymarket but valued at 26.7% by the model, driven by their #2 national offensive efficiency, a defensive transformation during March Madness, and the tallest roster in the country.
+    </p>
+
+    <p style="font-size:14px;color:var(--text-muted);margin-top:12px;font-style:italic;">
+      Scroll down for the full analysis — semifinal breakdowns, advanced metrics, team profiles, and methodology.
+    </p>
+  </section>
 
   <!-- ==================== SECTION 1: THE PROMPT ==================== -->
   <section id="prompt">
