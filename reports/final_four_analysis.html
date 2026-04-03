@@ -724,7 +724,7 @@
     <p>From a single prompt, Agnite autonomously executed a multi-step research workflow:</p>
     <ul class="steps">
       <li>Pulled live season records, KenPom efficiency ratings, and Synergy percentile rankings</li>
-      <li>Scraped sportsbook lines (FanDuel) and Polymarket prediction market odds</li>
+      <li>Scraped sportsbook lines (FanDuel) and <a href="https://polymarket.com/event/2026-ncaa-tournament-winner" target="_blank" rel="noopener" style="color:var(--accent);">Polymarket</a> prediction market odds ($24.5M in volume)</li>
       <li>Converted to implied probabilities and removed the vig</li>
       <li>Built a conditional probability model across semifinal and championship matchups</li>
       <li>Compared model output against market prices to identify divergences</li>
@@ -838,7 +838,7 @@
             <th>Team</th>
             <th>Record</th>
             <th>Agnite Model</th>
-            <th>Polymarket</th>
+            <th><a href="https://polymarket.com/event/2026-ncaa-tournament-winner" target="_blank" rel="noopener" style="color:var(--text-primary);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px;">Polymarket</a></th>
             <th>FanDuel (fair)</th>
             <th>Edge vs. Poly</th>
           </tr>
@@ -1173,7 +1173,7 @@
     <div class="card">
       <ol class="method-steps">
         <li>Collected season records, advanced metrics (KenPom, Synergy, Torvik), and tournament performance data</li>
-        <li>Gathered current betting lines (FanDuel spreads) and prediction market prices (Polymarket)</li>
+        <li>Gathered current betting lines (FanDuel spreads) and prediction market prices (<a href="https://polymarket.com/event/2026-ncaa-tournament-winner" target="_blank" rel="noopener" style="color:var(--accent);">Polymarket</a>)</li>
         <li>Converted American odds to implied probabilities, removed vig to get fair odds</li>
         <li>Estimated semifinal win probabilities using spread-to-probability conversion (~3% per point)</li>
         <li>Assigned championship game conditional probabilities based on matchup-specific factors (offensive/defensive efficiency gaps, stylistic matchups, rebounding, experience, tempo)</li>
@@ -1193,7 +1193,7 @@
     <div class="section-label">Section 8</div>
     <h2>Key Finding</h2>
     <div class="callout">
-      <p>The model's biggest divergence from the market: <strong style="color:var(--accent);">Illinois is priced at 18.1% on Polymarket</strong> but the model assigns <strong style="color:var(--accent);">26.7%</strong> — a gap driven by their elite offense (#2 nationally), a defensive transformation in March Madness, and the tallest roster in the country.</p>
+      <p>The model's biggest divergence from the market: <strong style="color:var(--accent);">Illinois is priced at 18.1% on <a href="https://polymarket.com/event/2026-ncaa-tournament-winner" target="_blank" rel="noopener" style="color:var(--accent);">Polymarket</a></strong> but the model assigns <strong style="color:var(--accent);">26.7%</strong> — a gap driven by their elite offense (#2 nationally), a defensive transformation in March Madness, and the tallest roster in the country.</p>
     </div>
   </section>
 
