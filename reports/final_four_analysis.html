@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 NCAA Final Four — Championship Probability Analysis | Agnite AI</title>
+<meta name="description" content="Multi-source AI analysis of 2026 NCAA Final Four championship probabilities by Agnite AI. Comparing model output against Polymarket and FanDuel odds.">
+<meta property="og:title" content="2026 NCAA Final Four — Championship Probability Analysis">
+<meta property="og:description" content="Multi-source AI analysis by Agnite. Model probabilities vs. market prices for Michigan, Arizona, Illinois, and UConn.">
+<meta property="og:type" content="article">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #1c2230;
+    --bg-card: #1a1f2b;
+    --border: #30363d;
+    --border-light: #3d444d;
+    --text-primary: #e6edf3;
+    --text-secondary: #9ca3b0;
+    --text-muted: #6b7280;
+    --accent: #f59e0b;
+    --accent-dim: rgba(245, 158, 11, 0.12);
+    --accent-border: rgba(245, 158, 11, 0.35);
+    --blue: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --purple: #bc8cff;
+    --michigan-blue: #3b82f6;
+    --arizona-red: #ef4444;
+    --illinois-orange: #f97316;
+    --uconn-navy: #6366f1;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    --max-width: 960px;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* --- Background pattern --- */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.06), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(99, 102, 241, 0.04), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- Header --- */
+  .hero {
+    text-align: center;
+    padding: 72px 24px 48px;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero-ball {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.3));
+    animation: subtle-bounce 3s ease-in-out infinite;
+  }
+
+  @keyframes subtle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, #ffffff 0%, #e6edf3 40%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .hero-subtitle a:hover { text-decoration: underline; }
+
+  .hero-disclaimer {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* --- Section styles --- */
+  section {
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-border), transparent);
+  }
+
+  h2 {
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+
+  p { margin-bottom: 14px; color: var(--text-secondary); }
+  p:last-child { margin-bottom: 0; }
+
+  /* --- Cards --- */
+  .card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 0 1px var(--accent-border), 0 4px 24px rgba(245, 158, 11, 0.08);
+    border-color: var(--accent-border);
+  }
+
+  /* --- Prompt block --- */
+  .prompt-block {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent);
+    position: relative;
+  }
+
+  .prompt-block::before {
+    content: "PROMPT";
+    position: absolute;
+    top: -9px;
+    left: 16px;
+    background: var(--bg-tertiary);
+    padding: 0 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+  }
+
+  /* --- Step list --- */
+  .steps {
+    list-style: none;
+    padding: 0;
+  }
+
+  .steps li {
+    position: relative;
+    padding: 10px 0 10px 36px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    border-left: 2px solid var(--border);
+    margin-left: 12px;
+  }
+
+  .steps li:last-child { border-left-color: transparent; }
+
+  .steps li::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid var(--bg-primary);
+  }
+
+  /* --- Tables --- */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 16px 0;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  thead th {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+  }
+
+  tbody td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.015); }
+  tbody tr:hover { background: rgba(255,255,255,0.04); }
+
+  .highlight-row {
+    background: var(--accent-dim) !important;
+    border-left: 3px solid var(--accent);
+  }
+
+  .highlight-row td {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .team-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .team-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-michigan { background: var(--michigan-blue); }
+  .dot-arizona { background: var(--arizona-red); }
+  .dot-illinois { background: var(--illinois-orange); }
+  .dot-uconn { background: var(--uconn-navy); }
+
+  .seed-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    color: var(--text-muted);
+  }
+
+  .positive { color: var(--green); font-weight: 600; }
+  .negative { color: var(--red); font-weight: 600; }
+  .star { color: var(--accent); }
+  .bold-val { color: var(--text-primary); font-weight: 700; }
+  .best-val { color: var(--green); font-weight: 700; }
+
+  /* --- Callout box --- */
+  .callout {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.04) 100%);
+    border: 1px solid var(--accent-border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    position: relative;
+    margin: 32px 0;
+  }
+
+  .callout::before {
+    content: "💡 KEY FINDING";
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .callout p {
+    color: var(--text-primary);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* --- Strengths & Weaknesses --- */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .team-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    border-top: 3px solid var(--border);
+  }
+
+  .team-card.michigan { border-top-color: var(--michigan-blue); }
+  .team-card.arizona { border-top-color: var(--arizona-red); }
+  .team-card.illinois { border-top-color: var(--illinois-orange); }
+  .team-card.uconn { border-top-color: var(--uconn-navy); }
+
+  .team-card h3 { font-size: 16px; margin-bottom: 14px; }
+
+  .sw-section { margin-bottom: 12px; }
+  .sw-section:last-child { margin-bottom: 0; }
+
+  .sw-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .sw-label.str { color: var(--green); }
+  .sw-label.weak { color: var(--red); }
+
+  .sw-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sw-list li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .sw-list li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  /* --- Methodology --- */
+  .method-steps {
+    counter-reset: method;
+    list-style: none;
+    padding: 0;
+  }
+
+  .method-steps li {
+    counter-increment: method;
+    padding: 10px 0 10px 44px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .method-steps li::before {
+    content: counter(method);
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 28px;
+    height: 28px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* --- Semifinal matchup cards --- */
+  .matchup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .matchup-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .matchup-header {
+    background: var(--bg-tertiary);
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .matchup-body { padding: 20px; }
+
+  .matchup-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  .matchup-team + .matchup-team {
+    border-top: 1px solid var(--border);
+  }
+
+  .matchup-team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .matchup-team-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 16px;
+  }
+
+  .matchup-spread {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .matchup-pct {
+    font-size: 22px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .matchup-fav { color: var(--green); }
+  .matchup-dog { color: var(--text-muted); }
+
+  /* --- Bar chart visual --- */
+  .prob-bar-wrap {
+    margin-top: 8px;
+  }
+
+  .prob-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .prob-bar-label {
+    width: 90px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0;
+    color: var(--text-primary);
+  }
+
+  .prob-bar-track {
+    flex: 1;
+    height: 28px;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .prob-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    min-width: 48px;
+    transition: width 1.5s ease;
+  }
+
+  .bar-michigan { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+  .bar-illinois { background: linear-gradient(90deg, #ea580c, #f97316); }
+  .bar-arizona { background: linear-gradient(90deg, #dc2626, #ef4444); }
+  .bar-uconn { background: linear-gradient(90deg, #4f46e5, #6366f1); }
+
+  /* --- Divider --- */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* --- Footer --- */
+  footer {
+    padding: 48px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 64px;
+  }
+
+  .footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .footer-badge:hover {
+    border-color: var(--accent-border);
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.1);
+  }
+
+  .footer-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-sources {
+    font-size: 13px;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto 12px;
+    line-height: 1.6;
+  }
+
+  .footer-sources a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-disclaimer {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* --- Advanced metrics table --- */
+  .metrics-table td:first-child {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 13px;
+    white-space: normal;
+    min-width: 160px;
+  }
+
+  /* --- Nav dots --- */
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  .toc a {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .toc a:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    background: var(--accent-dim);
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 16px 32px; }
+    .card { padding: 20px; }
+    .callout { padding: 20px; }
+    .team-grid { grid-template-columns: 1fr; }
+    .matchup-grid { grid-template-columns: 1fr; }
+    table { font-size: 13px; }
+    thead th, tbody td { padding: 8px 10px; }
+    .prob-bar-label { width: 70px; font-size: 12px; }
+    .container { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="hero">
+  <div class="container">
+    <span class="hero-ball" aria-hidden="true">🏀</span>
+    <div class="hero-badge">March Madness 2026 · Final Four</div>
+    <h1>2026 NCAA Final Four<br>Championship Probability Analysis</h1>
+    <p class="hero-subtitle">Multi-source analysis by <a href="https://agnite.ai/" target="_blank" rel="noopener">Agnite AI</a>&nbsp; ·&nbsp; March 2026</p>
+    <p class="hero-disclaimer">Built as a research demo — not betting advice.</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Table of Contents -->
+  <nav class="toc" aria-label="Sections">
+    <a href="#prompt">The Prompt</a>
+    <a href="#semis">Semifinals</a>
+    <a href="#probabilities">Title Probabilities</a>
+    <a href="#finals">Final Matchups</a>
+    <a href="#metrics">Advanced Metrics</a>
+    <a href="#profiles">Team Profiles</a>
+    <a href="#methodology">Methodology</a>
+    <a href="#finding">Key Finding</a>
+  </nav>
+
+  <!-- ==================== SECTION 1: THE PROMPT ==================== -->
+  <section id="prompt">
+    <div class="section-label">Section 1</div>
+    <h2>The Prompt</h2>
+    <div class="prompt-block">
+      "Analyze the remaining Final Four teams using live data and predict championship probabilities."
+    </div>
+    <p>From a single prompt, Agnite autonomously executed a multi-step research workflow:</p>
+    <ul class="steps">
+      <li>Pulled live season records, KenPom efficiency ratings, and Synergy percentile rankings</li>
+      <li>Scraped sportsbook lines (FanDuel) and Polymarket prediction market odds</li>
+      <li>Converted to implied probabilities and removed the vig</li>
+      <li>Built a conditional probability model across semifinal and championship matchups</li>
+      <li>Compared model output against market prices to identify divergences</li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== SECTION 2: SEMIFINAL MATCHUPS ==================== -->
+  <section id="semis">
+    <div class="section-label">Section 2</div>
+    <h2>Semifinal Matchups</h2>
+
+    <div class="matchup-grid">
+      <!-- Semi 1 -->
+      <div class="matchup-card">
+        <div class="matchup-header">Semifinal 1 · Saturday</div>
+        <div class="matchup-body">
+          <div class="matchup-team">
+            <div class="matchup-team-info">
+              <span class="team-dot dot-michigan"></span>
+              <span class="matchup-team-name">Michigan</span>
+              <span class="seed-tag">#1</span>
+              <span class="matchup-spread">-1.5</span>
+            </div>
+            <span class="matchup-pct matchup-fav">55%</span>
+          </div>
+          <div class="matchup-team">
+            <div class="matchup-team-info">
+              <span class="team-dot dot-arizona"></span>
+              <span class="matchup-team-name">Arizona</span>
+              <span class="seed-tag">#1</span>
+              <span class="matchup-spread">+1.5</span>
+            </div>
+            <span class="matchup-pct matchup-dog">45%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semi 2 -->
+      <div class="matchup-card">
+        <div class="matchup-header">Semifinal 2 · Saturday</div>
+        <div class="matchup-body">
+          <div class="matchup-team">
+            <div class="matchup-team-info">
+              <span class="team-dot dot-illinois"></span>
+              <span class="matchup-team-name">Illinois</span>
+              <span class="seed-tag">#3</span>
+              <span class="matchup-spread">-2.0</span>
+            </div>
+            <span class="matchup-pct matchup-fav">57%</span>
+          </div>
+          <div class="matchup-team">
+            <div class="matchup-team-info">
+              <span class="team-dot dot-uconn"></span>
+              <span class="matchup-team-name">UConn</span>
+              <span class="seed-tag">#2</span>
+              <span class="matchup-spread">+2.0</span>
+            </div>
+            <span class="matchup-pct matchup-dog">43%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== SECTION 3: CHAMPIONSHIP PROBABILITIES ==================== -->
+  <section id="probabilities">
+    <div class="section-label">Section 3</div>
+    <h2>Championship Probabilities</h2>
+    <p>The Agnite model price vs. two major market benchmarks. The <span style="color:var(--accent);font-weight:600;">★ Illinois edge</span> is the largest divergence.</p>
+
+    <!-- Visual bar chart -->
+    <div class="card" style="margin-bottom: 24px;">
+      <h3 style="margin-bottom: 16px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted);">Agnite Model — Championship Win Probability</h3>
+      <div class="prob-bar-wrap">
+        <div class="prob-bar-row">
+          <span class="prob-bar-label">Michigan</span>
+          <div class="prob-bar-track">
+            <div class="prob-bar-fill bar-michigan" style="width: 31.6%;">31.6%</div>
+          </div>
+        </div>
+        <div class="prob-bar-row">
+          <span class="prob-bar-label" style="color:var(--illinois-orange);">Illinois ★</span>
+          <div class="prob-bar-track">
+            <div class="prob-bar-fill bar-illinois" style="width: 26.7%;">26.7%</div>
+          </div>
+        </div>
+        <div class="prob-bar-row">
+          <span class="prob-bar-label">Arizona</span>
+          <div class="prob-bar-track">
+            <div class="prob-bar-fill bar-arizona" style="width: 24.9%;">24.9%</div>
+          </div>
+        </div>
+        <div class="prob-bar-row">
+          <span class="prob-bar-label">UConn</span>
+          <div class="prob-bar-track">
+            <div class="prob-bar-fill bar-uconn" style="width: 16.7%;">16.7%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main data table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Record</th>
+            <th>Agnite Model</th>
+            <th>Polymarket</th>
+            <th>FanDuel (fair)</th>
+            <th>Edge vs. Poly</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-michigan"></span>Michigan</span></td>
+            <td>35-3</td>
+            <td class="bold-val">31.6%</td>
+            <td>35.0%</td>
+            <td>36.1% (+155)</td>
+            <td class="negative">-3.4%</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><span class="team-cell"><span class="team-dot dot-illinois"></span>Illinois <span class="star">★</span></span></td>
+            <td>28-8</td>
+            <td class="bold-val">26.7%</td>
+            <td>18.1%</td>
+            <td>18.4% (+400)</td>
+            <td class="positive">+8.6% ★</td>
+          </tr>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-arizona"></span>Arizona</span></td>
+            <td>36-2</td>
+            <td class="bold-val">24.9%</td>
+            <td>32.9%</td>
+            <td>34.1% (+170)</td>
+            <td class="negative">-8.0%</td>
+          </tr>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-uconn"></span>UConn</span></td>
+            <td>33-5</td>
+            <td class="bold-val">16.7%</td>
+            <td>13.9%</td>
+            <td>11.5% (+700)</td>
+            <td class="positive">+2.8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== SECTION 4: CHAMPIONSHIP GAME MATCHUP PROBABILITIES ==================== -->
+  <section id="finals">
+    <div class="section-label">Section 4</div>
+    <h2>Championship Game Matchup Probabilities</h2>
+    <p>How likely is each possible title game? The semifinal brackets set up a potential <strong style="color:var(--text-primary);">all-Big Ten championship</strong>.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Matchup</th>
+            <th style="text-align:right;">Probability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:rgba(59,130,246,0.04);">
+            <td><span class="team-cell"><span class="team-dot dot-michigan"></span>Michigan &nbsp;vs&nbsp; <span class="team-dot dot-illinois" style="margin-left:4px;"></span> Illinois</span></td>
+            <td style="text-align:right;" class="bold-val">31.4%</td>
+          </tr>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-arizona"></span>Arizona &nbsp;vs&nbsp; <span class="team-dot dot-illinois" style="margin-left:4px;"></span> Illinois</span></td>
+            <td style="text-align:right;">25.7%</td>
+          </tr>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-michigan"></span>Michigan &nbsp;vs&nbsp; <span class="team-dot dot-uconn" style="margin-left:4px;"></span> UConn</span></td>
+            <td style="text-align:right;">23.7%</td>
+          </tr>
+          <tr>
+            <td><span class="team-cell"><span class="team-dot dot-arizona"></span>Arizona &nbsp;vs&nbsp; <span class="team-dot dot-uconn" style="margin-left:4px;"></span> UConn</span></td>
+            <td style="text-align:right;">19.4%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14px; margin-top:12px;">
+      <strong style="color:var(--text-primary);">Most likely final:</strong> Michigan vs Illinois — a 31.4% chance of an all-Big Ten title game.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== SECTION 5: ADVANCED METRICS ==================== -->
+  <section id="metrics">
+    <div class="section-label">Section 5</div>
+    <h2>Advanced Metrics Comparison</h2>
+    <p>Head-to-head statistical profiles from KenPom, Synergy Sports, and tournament data. <span class="best-val">Green bold</span> = best among the four teams.</p>
+
+    <div class="table-wrap">
+      <table class="metrics-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th><span class="team-dot dot-michigan" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Michigan</th>
+            <th><span class="team-dot dot-arizona" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Arizona</th>
+            <th><span class="team-dot dot-illinois" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Illinois</th>
+            <th><span class="team-dot dot-uconn" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>UConn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>KenPom Net Efficiency</td>
+            <td class="best-val">+39.02 (#1)</td>
+            <td>+38.76 (#2)</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Adj. Offensive Efficiency</td>
+            <td>#5</td>
+            <td>#4</td>
+            <td class="best-val">#2 (131.2)</td>
+            <td>#28</td>
+          </tr>
+          <tr>
+            <td>Adj. Defensive Efficiency</td>
+            <td class="best-val">#1</td>
+            <td>#2</td>
+            <td>#20 (reg season)</td>
+            <td>#9</td>
+          </tr>
+          <tr>
+            <td>Tempo (Poss/40 min)</td>
+            <td class="best-val">#22 (fastest)</td>
+            <td>#56</td>
+            <td>#296</td>
+            <td>#319 (slowest)</td>
+          </tr>
+          <tr>
+            <td>Turnover %</td>
+            <td>#154</td>
+            <td>#62</td>
+            <td class="best-val">#10 (best)</td>
+            <td>#174</td>
+          </tr>
+          <tr>
+            <td>Offensive Rebound %</td>
+            <td>#48</td>
+            <td>#4</td>
+            <td class="best-val">#3</td>
+            <td>#26</td>
+          </tr>
+          <tr>
+            <td>Free Throw %</td>
+            <td>74.2%</td>
+            <td>73.5%</td>
+            <td class="best-val">78.0% (#14)</td>
+            <td>71.9% (#206)</td>
+          </tr>
+          <tr>
+            <td>Offensive 2PT %</td>
+            <td class="best-val">61.3% (#2)</td>
+            <td>55.2%</td>
+            <td>~57%</td>
+            <td>~57%</td>
+          </tr>
+          <tr>
+            <td>Defensive 2PT %</td>
+            <td>~#2</td>
+            <td class="best-val">#1</td>
+            <td>—</td>
+            <td>~#3</td>
+          </tr>
+          <tr>
+            <td>3PT Shooting %</td>
+            <td class="best-val">36.9% (#30)</td>
+            <td>36.7%</td>
+            <td>&lt;35%</td>
+            <td>&lt;35%</td>
+          </tr>
+          <tr>
+            <td>3PT Defense %</td>
+            <td class="best-val">30.4% (#16)</td>
+            <td>~30.7%</td>
+            <td>~31.1%</td>
+            <td>~31%</td>
+          </tr>
+          <tr>
+            <td>Tourney PPP Allowed</td>
+            <td>—</td>
+            <td>—</td>
+            <td class="best-val">0.976 (best)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Tourney FG%</td>
+            <td class="best-val">55.9%</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Avg Tourney Margin</td>
+            <td class="best-val">~25 pts</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Synergy Halfcourt Offense</td>
+            <td>96th pctl</td>
+            <td>—</td>
+            <td class="best-val">97th pctl</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Synergy Transition Offense</td>
+            <td>—</td>
+            <td>94th pctl</td>
+            <td class="best-val">97th pctl</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Experience</td>
+            <td>2nd</td>
+            <td>4th (youngest)</td>
+            <td>3rd</td>
+            <td class="best-val">1st (most exp.)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== SECTION 6: TEAM PROFILES ==================== -->
+  <section id="profiles">
+    <div class="section-label">Section 6</div>
+    <h2>Key Strengths &amp; Weaknesses</h2>
+
+    <div class="team-grid">
+      <!-- Michigan -->
+      <div class="team-card michigan">
+        <h3><span class="team-dot dot-michigan" style="display:inline-block;vertical-align:middle;margin-right:6px;"></span>Michigan <span style="color:var(--text-muted);font-weight:400;font-size:14px;">35-3 · #1 Seed</span></h3>
+        <div class="sw-section">
+          <div class="sw-label str">Strengths</div>
+          <ul class="sw-list">
+            <li>#1 defense nationally (adj. efficiency)</li>
+            <li>Elite 2PT shooting (61.3%, #2) &amp; 3PT shooting (36.9%, #30)</li>
+            <li>Fastest tempo in the Final Four (#22)</li>
+            <li>25+ point average tournament margin</li>
+          </ul>
+        </div>
+        <div class="sw-section">
+          <div class="sw-label weak">Weaknesses</div>
+          <ul class="sw-list">
+            <li>Turnover rate (#154 nationally)</li>
+            <li>Offensive rebounding only #48</li>
+            <li>Untested — no close games in tournament</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Arizona -->
+      <div class="team-card arizona">
+        <h3><span class="team-dot dot-arizona" style="display:inline-block;vertical-align:middle;margin-right:6px;"></span>Arizona <span style="color:var(--text-muted);font-weight:400;font-size:14px;">36-2 · #1 Seed</span></h3>
+        <div class="sw-section">
+          <div class="sw-label str">Strengths</div>
+          <ul class="sw-list">
+            <li>36-2 record — best in the Final Four</li>
+            <li>#2 defense nationally</li>
+            <li>Elite defensive 2PT% (#1 in country)</li>
+            <li>Top-4 offensive rebounding</li>
+          </ul>
+        </div>
+        <div class="sw-section">
+          <div class="sw-label weak">Weaknesses</div>
+          <ul class="sw-list">
+            <li>Trailed Purdue at half in Elite Eight</li>
+            <li>Low 3PT volume</li>
+            <li>Youngest / most inexperienced roster</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Illinois -->
+      <div class="team-card illinois">
+        <h3><span class="team-dot dot-illinois" style="display:inline-block;vertical-align:middle;margin-right:6px;"></span>Illinois <span style="color:var(--text-muted);font-weight:400;font-size:14px;">28-8 · #3 Seed</span></h3>
+        <div class="sw-section">
+          <div class="sw-label str">Strengths</div>
+          <ul class="sw-list">
+            <li>#2 offense nationally (131.2 adj. efficiency)</li>
+            <li>Defense transformed in March — best tourney PPP allowed (0.976)</li>
+            <li>Tallest roster in the USA</li>
+            <li>Best FT% (78.0%) and lowest TO% (#10)</li>
+          </ul>
+        </div>
+        <div class="sw-section">
+          <div class="sw-label weak">Weaknesses</div>
+          <ul class="sw-list">
+            <li>8 regular-season losses (most in field)</li>
+            <li>Slow tempo (#296 nationally)</li>
+            <li>Regular-season defense was only #20</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- UConn -->
+      <div class="team-card uconn">
+        <h3><span class="team-dot dot-uconn" style="display:inline-block;vertical-align:middle;margin-right:6px;"></span>UConn <span style="color:var(--text-muted);font-weight:400;font-size:14px;">33-5 · #2 Seed</span></h3>
+        <div class="sw-section">
+          <div class="sw-label str">Strengths</div>
+          <ul class="sw-list">
+            <li>Most experienced roster in the Final Four</li>
+            <li>2024 championship DNA</li>
+            <li>19-point comeback vs #1 Duke in tourney</li>
+            <li>Solid defense (#9 adj. efficiency)</li>
+          </ul>
+        </div>
+        <div class="sw-section">
+          <div class="sw-label weak">Weaknesses</div>
+          <ul class="sw-list">
+            <li>Worst offense of the Final Four (#28 nationally)</li>
+            <li>Poor free throw shooting (#206, 71.9%)</li>
+            <li>Weak defensive rebounding (#85)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== SECTION 7: METHODOLOGY ==================== -->
+  <section id="methodology">
+    <div class="section-label">Section 7</div>
+    <h2>Methodology</h2>
+    <div class="card">
+      <ol class="method-steps">
+        <li>Collected season records, advanced metrics (KenPom, Synergy, Torvik), and tournament performance data</li>
+        <li>Gathered current betting lines (FanDuel spreads) and prediction market prices (Polymarket)</li>
+        <li>Converted American odds to implied probabilities, removed vig to get fair odds</li>
+        <li>Estimated semifinal win probabilities using spread-to-probability conversion (~3% per point)</li>
+        <li>Assigned championship game conditional probabilities based on matchup-specific factors (offensive/defensive efficiency gaps, stylistic matchups, rebounding, experience, tempo)</li>
+        <li>Computed full championship probability:<br>
+          <code style="font-family:var(--font-mono);font-size:13px;color:var(--accent);background:var(--bg-tertiary);padding:4px 10px;border-radius:4px;display:inline-block;margin-top:6px;">
+            P(title) = P(win semi) × Σ[ P(opponent wins other semi) × P(beat opponent in final) ]
+          </code>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== SECTION 8: KEY FINDING ==================== -->
+  <section id="finding">
+    <div class="section-label">Section 8</div>
+    <h2>Key Finding</h2>
+    <div class="callout">
+      <p>The model's biggest divergence from the market: <strong style="color:var(--accent);">Illinois is priced at 18.1% on Polymarket</strong> but the model assigns <strong style="color:var(--accent);">26.7%</strong> — a gap driven by their elite offense (#2 nationally), a defensive transformation in March Madness, and the tallest roster in the country.</p>
+    </div>
+  </section>
+
+</div><!-- end .container -->
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <a href="https://agnite.ai/" target="_blank" rel="noopener" class="footer-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Powered by Agnite AI
+    </a>
+    <p class="footer-sources">
+      Analysis by <a href="https://agnite.ai/" target="_blank" rel="noopener">Agnite AI</a> · Data sources: KenPom, Synergy Sports, Bart Torvik, FanDuel Sportsbook, <a href="https://polymarket.com/event/2026-ncaa-tournament-winner" target="_blank" rel="noopener">Polymarket</a>, ESPN, Sports Reference, NCAA, AP
+    </p>
+    <p class="footer-disclaimer">Built as a research demonstration — not financial or betting advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
